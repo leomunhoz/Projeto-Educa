@@ -15,6 +15,8 @@ public class player : MonoBehaviour
     public int pulosExtras = 1;
     public int axPulosExtras;
 
+    //public Animator playerAnimator;
+
     void Start()
     {
         axPulosExtras = pulosExtras;
@@ -29,12 +31,17 @@ public class player : MonoBehaviour
         direction = Input.GetAxis("Horizontal");
 
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
+       /* if(taNoChao)
+        {
+            playerAnimator.SetFloat("Horizontal", Run);
+        }*/
 
         //characterController
 
         if (Input.GetButtonDown("Jump") && taNoChao == true)
         {
             rb2d.velocity = Vector2.up * 6;
+           // playerAnimator.SetTrigger("Jump");
 
         }
 
@@ -42,6 +49,7 @@ public class player : MonoBehaviour
         {
             rb2d.velocity = Vector2.up * 6;
             axPulosExtras--;
+            //playerAnimator.SetTrigger("Jump");
         }
 
         if (taNoChao && axPulosExtras != pulosExtras)
