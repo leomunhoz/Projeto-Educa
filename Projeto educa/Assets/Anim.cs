@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Animation : MonoBehaviour
+public class Anim : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     private Vector3 esq;
@@ -36,19 +36,11 @@ public class Animation : MonoBehaviour
         }
 
         
-        if (Input.GetAxisRaw("Jump") > 0 )
+        if (Input.GetAxis("Jump") > 0 )
         {
             anim.SetInteger("state", 2);
           
         }
-        else if(Input.GetAxisRaw("Jump") < 0)
-        {
-            anim.SetInteger("state", 3);
-           
-        }
-        else
-        {
-            anim.SetInteger("state", 0);
-        }
+        
     }
 }
