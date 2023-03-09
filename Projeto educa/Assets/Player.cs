@@ -7,12 +7,14 @@ public class player : MonoBehaviour
     public Rigidbody2D rb2d;
     public float speed;
     private float direction;
+    Vector2 dir;
+    Vector2 esq;
 
     public bool taNoChao;
     public Transform detectaChao;
     public LayerMask chao;
 
-    public int pulosExtras = 1;
+    public int pulosExtras = 0;
     public int axPulosExtras;
 
     public Animator anim;
@@ -22,6 +24,9 @@ public class player : MonoBehaviour
         axPulosExtras = pulosExtras;
         rb2d = GetComponent<Rigidbody2D>();
         anim.GetComponent<Animator>();
+        dir = transform.localScale;
+        esq = transform.localScale;
+        esq.x = esq.x * -1;
     }
 
 
@@ -32,38 +37,52 @@ public class player : MonoBehaviour
         direction = Input.GetAxis("Horizontal");
 
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
-       /* if(taNoChao)
+      
+        Debug.Log(rb2d.velocity.y);
+        if (rb2d.velocity.x > 0)
         {
-            playerAnimator.SetFloat("Horizontal", Run);
-        }*/
+            anim.Play("Run");
+            transform.localScale = dir;
+        }
+        else if (rb2d.velocity.x < 0)
+        {
+            anim.Play("Run");
+            transform.localScale = esq;
+        }
+        else
+        {
+            anim.Play("Idle");
+        }
 
-        //characterController
+
+
+
 
         if (Input.GetButtonDown("Jump") && taNoChao == true)
         {
+
             rb2d.velocity = Vector2.up * 6;
-            anim.Play("Jump");
-
-            // playerAnimator.SetTrigger("Jump");
-
-        }
-        if (rb2d.velocity.y < 0)
-        {
-            anim.Play("JumptoFall");
         }
 
         if (Input.GetButtonDown("Jump") && taNoChao == false && axPulosExtras > 0)
         {
             rb2d.velocity = Vector2.up * 6;
+           
             axPulosExtras--;
-            //playerAnimator.SetTrigger("Jump");
+            
         }
 
         if (taNoChao && axPulosExtras != pulosExtras)
         {
             axPulosExtras = pulosExtras;
         }
-
     }
 
 }
+        
+       
+       
+
+
+       
+   
