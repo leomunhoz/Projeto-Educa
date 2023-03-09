@@ -15,12 +15,13 @@ public class player : MonoBehaviour
     public int pulosExtras = 1;
     public int axPulosExtras;
 
-    //public Animator playerAnimator;
+    public Animator anim;
 
     void Start()
     {
         axPulosExtras = pulosExtras;
         rb2d = GetComponent<Rigidbody2D>();
+        anim.GetComponent<Animator>();
     }
 
 
@@ -41,8 +42,14 @@ public class player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && taNoChao == true)
         {
             rb2d.velocity = Vector2.up * 6;
-           // playerAnimator.SetTrigger("Jump");
+            anim.Play("Jump");
 
+            // playerAnimator.SetTrigger("Jump");
+
+        }
+        if (rb2d.velocity.y < 0)
+        {
+            anim.Play("JumptoFall");
         }
 
         if (Input.GetButtonDown("Jump") && taNoChao == false && axPulosExtras > 0)

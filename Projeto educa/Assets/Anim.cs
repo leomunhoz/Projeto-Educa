@@ -27,18 +27,18 @@ public class Anim : MonoBehaviour
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            anim.SetInteger("state", 1);
+            anim.Play("Run");
             transform.localScale = esq ;
         }
         else
         {
-            anim.SetInteger("state", 0);
+            anim.Play("Run");
         }
 
         
         if (Input.GetAxis("Jump") > 0 )
         {
-            anim.SetInteger("state", 2);
+            anim.Play("Jump");
           
         }
         
