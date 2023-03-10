@@ -9,10 +9,13 @@ public class player : MonoBehaviour
     private float direction;
     Vector2 dir;
     Vector2 esq;
+   
+    bool isAttacking = false;
 
     public bool taNoChao;
     public Transform detectaChao;
     public LayerMask chao;
+    string[] Anim = {"Idle","Run","Jump","Fall","Attack" };
 
     public int pulosExtras = 0;
     public int axPulosExtras;
@@ -39,20 +42,48 @@ public class player : MonoBehaviour
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
       
         Debug.Log(rb2d.velocity.y);
+
+        #region anim
         if (rb2d.velocity.x > 0)
         {
-            anim.Play("Run");
             transform.localScale = dir;
         }
         else if (rb2d.velocity.x < 0)
         {
-            anim.Play("Run");
             transform.localScale = esq;
+        }
+
+        if (rb2d.velocity.y > 0)
+        {
+            AnimMovement("Jump");
+        }
+        else if (rb2d.velocity.y < 0)
+        {
+            AnimMovement("Jump");
+        }
+        else if (rb2d.velocity.x > 0)
+        {
+            AnimMovement("Run");
+        }
+        else if (rb2d.velocity.x < 0)
+        {
+            AnimMovement("Run");
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
+        {
+            AnimMovement("Attack");
+            isAttacking = true;
         }
         else
         {
-            anim.Play("Idle");
+            AnimMovement("Idle");
         }
+
+        #endregion
+
+
+
+
 
 
 
@@ -78,6 +109,15 @@ public class player : MonoBehaviour
         }
     }
 
+    void AnimMovement(string animCond) 
+    {
+        foreach (var item in Anim)
+        {
+            anim.SetBool(item, false);
+
+        }
+        anim.SetBool(animCond, true);
+    }
 }
         
        
