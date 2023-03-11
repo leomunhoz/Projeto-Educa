@@ -13,12 +13,14 @@ public class player : MonoBehaviour
 
 
 
-   public bool isAttacking = false;
+   
 
     public bool taNoChao;
     public Transform detectaChao;
     public LayerMask chao;
-
+    Vector2 dir;
+    Vector2 esq;
+    string[] Anim = { "Idle", "Run", "Jump", "Fall", "Attack" };
 
     public int pulosExtras = 0;
     public int axPulosExtras = 0;
@@ -36,7 +38,10 @@ public class player : MonoBehaviour
         axPulosExtras = pulosExtras;
         rb2d = GetComponent<Rigidbody2D>();
         anim.GetComponent<Animator>();
-        
+        dir = transform.localScale;
+        esq = transform.localScale;
+        esq.x = esq.x * -1;
+
 
     }
 
@@ -45,7 +50,44 @@ public class player : MonoBehaviour
     {
         taNoChao = Physics2D.OverlapCircle(detectaChao.position, 0.3f, chao);
         rb2d.velocity = new Vector2(direction.x * speed, rb2d.velocity.y);
+
+        if (rb2d.velocity.x > 0)
+        {
+            transform.localScale = dir;
+        }
+        else if (rb2d.velocity.x < 0)
+        {
+            transform.localScale = esq;
+        }
+
+        if (rb2d.velocity.y > 0)
+        {
+            AnimMovement("Jump");
+        }
+        else if (rb2d.velocity.y < 0)
+        {
+            AnimMovement("Fall");
+        }
+        else if (rb2d.velocity.x > 0)
+        {
+            AnimMovement("Run");
+        }
+        else if (rb2d.velocity.x < 0)
+        {
+            AnimMovement("Run");
+        }
+        else if (Input.GetButtonDown("Fire1"))
+        {
+            AnimMovement("Attack");
+        }
+        else
+        {
+            AnimMovement("Idle");
+        }
+
+
     }
+
 
 
 
@@ -70,15 +112,24 @@ public class player : MonoBehaviour
 
     public void attack(InputAction.CallbackContext context) 
     {
-        if (context.performed)
-        {
-            if (!isAttacking)
-            {
-                isAttacking = true;
-            }
-        }
+
+           
         
+
     }
+
+
+
+    void AnimMovement(string animCond)
+{
+    foreach (var item in Anim)
+    {
+        anim.SetBool(item, false);
+
+    }
+    anim.SetBool(animCond, true);
+}
+
 }
 
         
