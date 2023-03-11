@@ -16,21 +16,12 @@
                 },
                 {
                     "name": "Jumping",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "b92ba1a8-1892-4213-9fab-8dde65ec09a4",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Attacking",
-                    "type": "Button",
-                    "id": "3eaa1073-c34d-4c36-a719-5d29814d13cb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -53,28 +44,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jumping",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f7cdad2f-4856-4310-95de-1b94c85023ae",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attacking",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "378ff0d5-e9ad-435f-8f4b-3d90c61fd532",
-                    "path": "<XInputController>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attacking",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -181,6 +150,39 @@
                     "name": "right",
                     "id": "0b2b905b-04f6-462e-87c8-fe38c1cc2844",
                     "path": "<XInputController>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Mobile",
+                    "id": "c1c04a9a-9aaf-4d86-a432-8bde6c63b93a",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "43f6e1fd-b46c-48fd-baee-96781fda3815",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "06d34a3c-b0ac-4650-89f7-b8de7b52f6c7",
+                    "path": "<Gamepad>/rightStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
