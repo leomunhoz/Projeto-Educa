@@ -9,8 +9,10 @@ public class playerOne : MonoBehaviour
     public Rigidbody2D rb2d;
     public float speed;
     private Vector2 direction;
+    private Vector2 directionanterior;
     public static player instance;
     private string currantState;
+
 
     #region Const Anim
     const string Idle = "Idle";
@@ -50,6 +52,7 @@ public class playerOne : MonoBehaviour
         dir = transform.localScale;
         esq = transform.localScale;
         esq.x = esq.x * -1;
+        
 
 
     }
@@ -59,6 +62,7 @@ public class playerOne : MonoBehaviour
         taNoChao = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, chao);
         //taNoChao = Physics2D.OverlapCircle(detectaChao.position, 0.3f, chao);
 
+        
         if (!isAttacking)
         {
             if (rb2d.velocity.x != 0 && taNoChao)
@@ -80,9 +84,26 @@ public class playerOne : MonoBehaviour
     {
        // taNoChao = Physics2D.OverlapCircle(detectaChao.position, 0.3f, chao);
        
-        rb2d.velocity = new Vector2(direction.x * speed, rb2d.velocity.y);
-        
-        
+        //rb2d.velocity = new Vector2(direction.x * speed, rb2d.velocity.y);
+
+        if (isAttackingPressed)
+        {
+            
+            if (!isAttacking)
+            {
+                isAttacking = true;
+                if (taNoChao)
+                {
+                    rb2d.velocity = Vector2.up * 1;
+                    ChangeAnimState(Attack);
+                }
+                Invoke("AttackComplete", 0.55f);
+                
+            }
+            
+        }
+        else
+            rb2d.velocity = new Vector2(direction.x * speed, rb2d.velocity.y);
         if (rb2d.velocity.x > 0)
         {
             transform.localScale = dir;
@@ -92,28 +113,7 @@ public class playerOne : MonoBehaviour
             transform.localScale = esq;
         }
 
-        
-       
-        
-
-       
-        
-
-        if (isAttackingPressed)
-        {
-            isAttackingPressed = false;
-            if (!isAttacking)
-            {
-                isAttacking = true;
-                if (taNoChao)
-                {
-                    ChangeAnimState(Attack);
-                }
-               
-                Invoke("AttackComplete", 0.55f);
-              
-            }
-        }
+    
 
     }
 
@@ -145,6 +145,7 @@ public class playerOne : MonoBehaviour
         if (context.started)
         {
             isAttackingPressed = true;
+            
         }
     } 
         
@@ -154,6 +155,7 @@ public class playerOne : MonoBehaviour
     void AttackComplete() 
     {
         isAttacking = false;
+        isAttackingPressed = false;
     }
 
     void ChangeAnimState(string newState)
