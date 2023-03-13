@@ -8,16 +8,17 @@ public class playerOne : MonoBehaviour
 {
     public Rigidbody2D rb2d;
     public float speed;
+    public float jumpForce;
     public int pulosExtras = 0;
     public int axPulosExtras = 0;
     public float attackDelay = 0.55f;
     public float attackRange = 0.5f;
-    private Vector2 direction;
+    public Vector2 direction;
     private Vector2 directionanterior;
     
     private string currantState;
 
-   
+   public PlayerOneWayPlatform platform;
 
     #region Const Anim
     const string Idle = "Idle";
@@ -54,6 +55,7 @@ public class playerOne : MonoBehaviour
         axPulosExtras = pulosExtras;
         rb2d = GetComponent<Rigidbody2D>();
         anim.GetComponent<Animator>();
+        platform = GetComponent<PlayerOneWayPlatform>();    
         dir = transform.localScale;
         esq = transform.localScale;
         esq.x = esq.x * -1;
@@ -108,7 +110,7 @@ public class playerOne : MonoBehaviour
                         enemy.GetComponent<Enemy>().TakeDemage(attackDemage);
                     }
                 }
-                Invoke("AttackComplete", 0.55f);
+                Invoke("AttackComplete", attackDelay);
                 
             }
             
@@ -134,18 +136,28 @@ public class playerOne : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         direction = context.ReadValue<Vector2>();
+        
     }
-
+    public void DownPlatform(InputAction.CallbackContext context) 
+    {
+        if (context.performed)
+        {
+            if (platform.currentOneWayPlatform != null)
+            {
+                platform.StartCoroutine(platform.DisableCollision());
+            }
+        }
+    }
     public void jump(InputAction.CallbackContext context)
     {
         if (context.performed && taNoChao == true)
         {
-            rb2d.velocity = Vector2.up * 6;
+            rb2d.velocity = Vector2.up * jumpForce;
            
         }
         if (context.performed && taNoChao == false && axPulosExtras > 0)
         {
-            rb2d.velocity = Vector2.up * 6;
+            rb2d.velocity = Vector2.up * jumpForce;
 
             axPulosExtras--;
         }

@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "MultiTap",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "PlataformDown",
+                    "type": "Button",
+                    "id": "47c3984c-b38f-4aae-b00a-6afbcee4a179",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -273,6 +282,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Attackin",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "15163eeb-6bd1-42b6-baaf-e19ba8b3b157",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlataformDown",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "down",
+                    "id": "ed0db983-66c3-4f3f-a8e2-1e8aa8166f2b",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlataformDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "afc2ae67-54d8-461c-82f4-7985ea5bc3b1",
+                    "path": "<XInputController>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlataformDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e81f45eb-6b69-4909-96da-e9d77ad1c1f3",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlataformDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
