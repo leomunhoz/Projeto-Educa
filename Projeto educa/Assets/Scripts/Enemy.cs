@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     string currantState;
     public Animator animator;
+    public float tempoDeMorte;
     int currentHealth;
     bool isTakingDamege;
 
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour
             animator.SetBool("Die", true);
             GetComponent<Collider2D>().enabled = false;
             this.enabled = false;
-            Destroy(this.gameObject, 0.7f);
+            Destroy(this.gameObject, tempoDeMorte);
         }
     }
 
