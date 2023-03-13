@@ -8,11 +8,16 @@ public class playerOne : MonoBehaviour
 {
     public Rigidbody2D rb2d;
     public float speed;
+    public int pulosExtras = 0;
+    public int axPulosExtras = 0;
+    public float attackDelay = 0.55f;
+    public float attackRange = 0.5f;
     private Vector2 direction;
     private Vector2 directionanterior;
-    public static player instance;
+    
     private string currantState;
 
+   
 
     #region Const Anim
     const string Idle = "Idle";
@@ -29,15 +34,15 @@ public class playerOne : MonoBehaviour
     public bool taNoChao;
     public bool isAttacking;
     public bool isAttackingPressed;
-    public Transform detectaChao;
+    public Transform attackPoint;
+    public int attackDemage = 40;
     public LayerMask chao;
+    public LayerMask EnemyLayers;
     Vector2 dir;
     Vector2 esq;
     
+    
 
-    public int pulosExtras = 0;
-    public int axPulosExtras = 0;
-    public float attackDelay = 0.3f;
 
     public Animator anim;
 
@@ -60,7 +65,7 @@ public class playerOne : MonoBehaviour
     {
         Debug.DrawRay(transform.position, Vector2.down, Color.red, 10f);
         taNoChao = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, chao);
-        //taNoChao = Physics2D.OverlapCircle(detectaChao.position, 0.3f, chao);
+        
 
         
         if (!isAttacking)
@@ -68,6 +73,7 @@ public class playerOne : MonoBehaviour
             if (rb2d.velocity.x != 0 && taNoChao)
             {
                 ChangeAnimState(Run);
+                
             }
            else if (rb2d.velocity.y != 0)
             {
@@ -82,9 +88,7 @@ public class playerOne : MonoBehaviour
 
     void Update()
     {
-       // taNoChao = Physics2D.OverlapCircle(detectaChao.position, 0.3f, chao);
        
-        //rb2d.velocity = new Vector2(direction.x * speed, rb2d.velocity.y);
 
         if (isAttackingPressed)
         {
@@ -96,6 +100,13 @@ public class playerOne : MonoBehaviour
                 {
                     rb2d.velocity = Vector2.up * 1;
                     ChangeAnimState(Attack);
+                    
+                    Collider2D[] EnemyHits = Physics2D.OverlapCircleAll(attackPoint.position,attackRange,EnemyLayers);
+                    foreach (var enemy in EnemyHits)
+                    {
+                        Debug.Log("Hit" + enemy.name);
+                        enemy.GetComponent<Enemy>().TakeDemage(attackDemage);
+                    }
                 }
                 Invoke("AttackComplete", 0.55f);
                 
@@ -158,6 +169,15 @@ public class playerOne : MonoBehaviour
         isAttackingPressed = false;
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
     void ChangeAnimState(string newState)
     {
         if (currantState == newState)
@@ -166,7 +186,7 @@ public class playerOne : MonoBehaviour
         }
         anim.Play(newState);
     }
-
+    
 }
 
         

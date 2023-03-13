@@ -13,8 +13,8 @@ TagManager:
   - UI
   - StaticEnvironment
   - LevelMap
-  - 
-  - 
+  - EnemyLayer
+  - Player
   - 
   - 
   - 
