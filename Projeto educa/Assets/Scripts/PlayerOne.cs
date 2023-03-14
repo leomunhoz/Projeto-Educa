@@ -16,8 +16,9 @@ public class playerOne : MonoBehaviour
     public int attackDemage = 40;
     public int pulosExtras = 0;
     public int axPulosExtras = 0;
-    public float attackDelay = 0.55f;
-    public float attackRange = 0.5f;
+    public float attackDelay = 0.3f;
+    public float attackRange = 0.1f;
+    public int combo;
     public Vector2 direction;
     private Vector2 directionanterior;
 
@@ -31,7 +32,7 @@ public class playerOne : MonoBehaviour
     const string Jump = "Jump";
     const string JumptoFall = "JumptoFall";
     const string Fall = "Fall";
-    const string Attack = "Attack";
+    const string Attack = "Attack 1";
     const string WallSliding = "Wall";
 
 
@@ -50,14 +51,16 @@ public class playerOne : MonoBehaviour
     public LayerMask WallLayer;
     public LayerMask GroundLayer;
     public LayerMask EnemyLayers;
-   
-   
 
 
 
+   public Animator anim;
 
-    public Animator anim;
-
+    public AnimationClip[] Animcombo;
+    public float duraçãoDocombo = 1f;
+    public float tempoMax;
+    public float tempParaProximoAtaque;
+    int animAtual = 0;
     
 
     void Start()
@@ -137,7 +140,24 @@ public class playerOne : MonoBehaviour
                 if (isGrounded)
                 {
                     rb2d.velocity = Vector2.up * 1;
-                    ChangeAnimState(Attack);
+                    if (Time.time > tempParaProximoAtaque)
+                    {
+                        anim.Play(Animcombo[animAtual].name);
+                        tempParaProximoAtaque = Time.time + tempoMax;
+                        animAtual++;
+                        if (animAtual >= Animcombo.Length)
+                        {
+                            animAtual = 0;
+                        }
+                    }
+                    if (Time.time > tempParaProximoAtaque + duraçãoDocombo)
+                    {
+                        tempParaProximoAtaque = Time.time;
+                        animAtual = 0;
+                    }
+                   
+                    
+                   
 
                     Collider2D[] EnemyHits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, EnemyLayers);
                     foreach (var enemy in EnemyHits)
@@ -154,7 +174,7 @@ public class playerOne : MonoBehaviour
         else
             rb2d.velocity = new Vector2(direction.x * speed, Vertical);
     }
-    
+  
 
     public void WallSlide() 
     {
