@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 48b771ca97f05e14da986862a8abcfac
+guid: 7ec87da1bc034ef469684adcde7cd4bb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,18 +116,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -143,285 +131,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goblin All animation_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d67884520e3a8549808a92bcc92ec67
-      internalID: -2103932521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_1
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 160
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 743ac9900fb41d64c83e392cebb0d3f6
-      internalID: 1252873913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_2
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 160
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4a7336181c04754f96f1e73e6712f7d
-      internalID: 969605575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_3
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 160
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1469b5735f6ef984bbad1cf5343e62ff
-      internalID: 1569909444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_4
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 160
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5068195bbfe4f614590be772d2acaaad
-      internalID: -704066154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0088c143e272d4e45a78479315e1c6ae
-      internalID: 89620358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_6
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 128
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 379323f5efa06ad45894c014fa70111e
-      internalID: 130292479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_7
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 128
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f3522dba036365478246f511bf43c33
-      internalID: 816493289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_8
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 128
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bec6a67ccba34e044af7c50d1e466006
-      internalID: 1524333846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_9
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 128
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10615e76a0c679d4aa8e6f5be41e615b
-      internalID: -819014413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_10
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 128
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55d079abd1a1ac74380eb6ed2e2ba4a1
-      internalID: 551655729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_11
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 128
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05f5c084cf008af42b4434cd170439d2
-      internalID: 386161799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_12
-      rect:
-        serializedVersion: 2
-        x: 273
-        y: 128
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c2bd879b4c9c1c41bdd2ac6ca08cd57
-      internalID: 1882159824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_13
+      name: Slime All Animations_0
       rect:
         serializedVersion: 2
         x: 0
         y: 96
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -430,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ff529d4b4c51e4eb5ab3e1ac46e407
-      internalID: 1587370825
+      spriteID: 3e8c2acbf45ca434d91901990f647a1f
+      internalID: 230212033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_14
+      name: Slime All Animations_1
       rect:
         serializedVersion: 2
-        x: 39
+        x: 32
         y: 96
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -451,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0321779bdb2c0854eae6e75cca16fede
-      internalID: -280305993
+      spriteID: edc7936dba4f0c642b2eb76bc001ad05
+      internalID: -774257549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_15
+      name: Slime All Animations_2
       rect:
         serializedVersion: 2
-        x: 78
+        x: 64
         y: 96
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -472,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0b55c61f0192714e8f07645eb50ae95
-      internalID: -1356377573
+      spriteID: a8d825d5f38ad834584bb3a47ad7a573
+      internalID: 1159887307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_16
+      name: Slime All Animations_3
       rect:
         serializedVersion: 2
-        x: 117
+        x: 96
         y: 96
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -493,19 +208,61 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd6734bc2e28442469cdda50ec1143e7
-      internalID: 1338559150
+      spriteID: 5542b2e1939ab9843ade4e36b1398ab3
+      internalID: 833050356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_17
+      name: Slime All Animations_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99d6866ba8832648a2256942aaffd1d
+      internalID: 902108344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime All Animations_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4294859a1e8ba48a85e3b64ba063b5
+      internalID: -1028497231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime All Animations_6
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -514,19 +271,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4961c58e0dc35cc47b4153335dfa691f
-      internalID: -1614345726
+      spriteID: 1b3a793a096d88940ad04b9f049b0c4a
+      internalID: -192623659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_18
+      name: Slime All Animations_7
       rect:
         serializedVersion: 2
-        x: 39
+        x: 32
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -535,19 +292,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeac16f67f1242544a45fa01a278b482
-      internalID: -880255969
+      spriteID: 60a594e98d53dc94d90706459e3b1d18
+      internalID: 721144142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_19
+      name: Slime All Animations_8
       rect:
         serializedVersion: 2
-        x: 78
+        x: 64
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -556,19 +313,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba11f95f9cc121f45b187fdae8e76486
-      internalID: -629495215
+      spriteID: 3311a854671a4f74295926a6b0d84519
+      internalID: 1320951928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_20
+      name: Slime All Animations_9
       rect:
         serializedVersion: 2
-        x: 117
+        x: 96
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -577,19 +334,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36f32670c58f3ed4ebbbcba43575f942
-      internalID: 1708710014
+      spriteID: fb451fe85c3b3a64d9479e73c632de79
+      internalID: 740628331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_21
+      name: Slime All Animations_10
       rect:
         serializedVersion: 2
-        x: 156
+        x: 128
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -598,19 +355,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c80f59c94bbd93469ff6d2d4a1d6a42
-      internalID: 1074053544
+      spriteID: 18bfd9ca29e7c444fb1b8712e5405a02
+      internalID: 1096114786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_22
+      name: Slime All Animations_11
       rect:
         serializedVersion: 2
-        x: 195
+        x: 160
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -619,19 +376,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5f3fde46eb2b314faa196002ae329c1
-      internalID: -1198685714
+      spriteID: 0cb1b45a452f3b745828ba46802e440b
+      internalID: 1305374853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_23
+      name: Slime All Animations_12
       rect:
         serializedVersion: 2
-        x: 234
+        x: 192
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -640,19 +397,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcc865b8132d0974a84080424fe160da
-      internalID: 347282164
+      spriteID: ae1f3ff54e55c764c82febf6edbbf981
+      internalID: -831004156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_24
+      name: Slime All Animations_13
       rect:
         serializedVersion: 2
-        x: 273
+        x: 224
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -661,19 +418,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 240bc7ad9abb74f448273d205c1e3f55
-      internalID: -1854851470
+      spriteID: 12e9efa820416764a84dbe5f6b666034
+      internalID: -666876573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_25
+      name: Slime All Animations_14
       rect:
         serializedVersion: 2
-        x: 312
+        x: 256
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -682,19 +439,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a5c0e5674bf37b49be793afdfb67556
-      internalID: 1479664925
+      spriteID: 9839e57d3ff63ea47ada73724edc862d
+      internalID: -2048191183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_26
+      name: Slime All Animations_15
       rect:
         serializedVersion: 2
-        x: 351
+        x: 288
         y: 64
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -703,82 +460,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a317d89b76159674c92bf2ad09874f8a
-      internalID: 1605382713
+      spriteID: b721b8a48ff5ab542af52045c66e3892
+      internalID: -436082039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_27
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 64
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c125bdb247a54b4997d686f3d84ea36
-      internalID: -1628714498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_28
-      rect:
-        serializedVersion: 2
-        x: 429
-        y: 64
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ed8f0f14bacb9e4aafd71602c535c02
-      internalID: -2042688351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_29
-      rect:
-        serializedVersion: 2
-        x: 468
-        y: 64
-        width: 39
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ed4e9553a45e174cb05f56bfcab95cc
-      internalID: 706832094
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goblin All animation_30
+      name: Slime All Animations_16
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -787,19 +481,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6fb1191468ef214aaa72556e672ef2c
-      internalID: -704814935
+      spriteID: 9efe9ca32ced82b4590f683c049d36df
+      internalID: 1276044262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_31
+      name: Slime All Animations_17
       rect:
         serializedVersion: 2
-        x: 39
+        x: 32
         y: 32
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -808,19 +502,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 596cb3f0cdd36e34088dfa64235118a2
-      internalID: -1268207897
+      spriteID: a3386cfd5046ca547856bd1002a502da
+      internalID: -1361408708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_32
+      name: Slime All Animations_18
       rect:
         serializedVersion: 2
-        x: 78
+        x: 64
         y: 32
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -829,19 +523,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ffdd518efac7994e8c31147ddb0796f
-      internalID: 1005404980
+      spriteID: 8b2079f56f00c4c42ba430287795aa01
+      internalID: -1932993437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_33
+      name: Slime All Animations_19
       rect:
         serializedVersion: 2
-        x: 117
+        x: 96
         y: 32
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -850,19 +544,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 909396ddb5fa2e743a55b25c9f7d8e68
-      internalID: -1026983032
+      spriteID: c9384b36790cfa5438ebb36b622a1af3
+      internalID: 300967722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_34
+      name: Slime All Animations_20
       rect:
         serializedVersion: 2
-        x: 156
+        x: 128
         y: 32
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -871,19 +565,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 188ea5d0774a87a4a89c6eeafabe9425
-      internalID: 761745143
+      spriteID: 9752ed4e75de9d74c9036273a73756e4
+      internalID: 2063338660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_35
+      name: Slime All Animations_21
       rect:
         serializedVersion: 2
-        x: 195
+        x: 160
         y: 32
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -892,19 +586,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4e319ad8ae29cf4c90f15b1bf41a46a
-      internalID: 146266854
+      spriteID: 2b6513775ec53c34a813c35720826f4b
+      internalID: 911232151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_36
+      name: Slime All Animations_22
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -913,19 +607,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c057f01ca969044ea3b476271655f66
-      internalID: -1995112712
+      spriteID: a79cce79494b77d44ae9fcaca86e137b
+      internalID: 2023223496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_37
+      name: Slime All Animations_23
       rect:
         serializedVersion: 2
-        x: 39
+        x: 32
         y: 0
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -934,19 +628,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11e610d9b0f4bd24ca8b0a4b1011de25
-      internalID: 1311942219
+      spriteID: 091a7e33dd1ffb446ae17c79cb3eac00
+      internalID: 1484358655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_38
+      name: Slime All Animations_24
       rect:
         serializedVersion: 2
-        x: 78
+        x: 64
         y: 0
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -955,19 +649,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c30d95d51d3aa2747ab2deaf2ee9877d
-      internalID: 441284452
+      spriteID: e373da8fc6dca54489dd4293e63f143c
+      internalID: -213805060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_39
+      name: Slime All Animations_25
       rect:
         serializedVersion: 2
-        x: 117
+        x: 96
         y: 0
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -976,19 +670,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fe7135add1932b438c3a48ead3122b4
-      internalID: 6439913
+      spriteID: 4f1351980b84b194a93d27cfbbd508d5
+      internalID: -744766339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_40
+      name: Slime All Animations_26
       rect:
         serializedVersion: 2
-        x: 156
+        x: 128
         y: 0
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -997,19 +691,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7441e0293ec3f964bb3ce1dc2e33f8bf
-      internalID: 1029559461
+      spriteID: 7451567113a548248843fde2be72e2c2
+      internalID: -750321079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goblin All animation_41
+      name: Slime All Animations_27
       rect:
         serializedVersion: 2
-        x: 195
+        x: 160
         y: 0
-        width: 39
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1018,8 +712,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3190ed441188c347a978c1d4c7a0526
-      internalID: 877120561
+      spriteID: a735f437fe79d8540aafb95758d2da0f
+      internalID: 432081984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime All Animations_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904f1a05b01accc469c7b7cddc4c9d8e
+      internalID: -1843623299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime All Animations_29
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753109ecf2b4e964aae2b8d9c1913bee
+      internalID: 733897178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime All Animations_30
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f3d30c3b7ba5d4589a3e31ae1591db
+      internalID: -1170021530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime All Animations_31
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f2684041708d44ba8a950a202cb9a2
+      internalID: -1296955541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime All Animations_32
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab73f965fa3d6241aba3442d706c729
+      internalID: -1275483088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime All Animations_33
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbf1af6c60d1bc44bf4687fa6348327
+      internalID: -1605588566
       vertices: []
       indices: 
       edges: []
@@ -1035,48 +855,40 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goblin All animation_0: -2103932521
-      Goblin All animation_1: 1252873913
-      Goblin All animation_10: 551655729
-      Goblin All animation_11: 386161799
-      Goblin All animation_12: 1882159824
-      Goblin All animation_13: 1587370825
-      Goblin All animation_14: -280305993
-      Goblin All animation_15: -1356377573
-      Goblin All animation_16: 1338559150
-      Goblin All animation_17: -1614345726
-      Goblin All animation_18: -880255969
-      Goblin All animation_19: -629495215
-      Goblin All animation_2: 969605575
-      Goblin All animation_20: 1708710014
-      Goblin All animation_21: 1074053544
-      Goblin All animation_22: -1198685714
-      Goblin All animation_23: 347282164
-      Goblin All animation_24: -1854851470
-      Goblin All animation_25: 1479664925
-      Goblin All animation_26: 1605382713
-      Goblin All animation_27: -1628714498
-      Goblin All animation_28: -2042688351
-      Goblin All animation_29: 706832094
-      Goblin All animation_3: 1569909444
-      Goblin All animation_30: -704814935
-      Goblin All animation_31: -1268207897
-      Goblin All animation_32: 1005404980
-      Goblin All animation_33: -1026983032
-      Goblin All animation_34: 761745143
-      Goblin All animation_35: 146266854
-      Goblin All animation_36: -1995112712
-      Goblin All animation_37: 1311942219
-      Goblin All animation_38: 441284452
-      Goblin All animation_39: 6439913
-      Goblin All animation_4: -704066154
-      Goblin All animation_40: 1029559461
-      Goblin All animation_41: 877120561
-      Goblin All animation_5: 89620358
-      Goblin All animation_6: 130292479
-      Goblin All animation_7: 816493289
-      Goblin All animation_8: 1524333846
-      Goblin All animation_9: -819014413
+      Slime All Animations_0: 230212033
+      Slime All Animations_1: -774257549
+      Slime All Animations_10: 1096114786
+      Slime All Animations_11: 1305374853
+      Slime All Animations_12: -831004156
+      Slime All Animations_13: -666876573
+      Slime All Animations_14: -2048191183
+      Slime All Animations_15: -436082039
+      Slime All Animations_16: 1276044262
+      Slime All Animations_17: -1361408708
+      Slime All Animations_18: -1932993437
+      Slime All Animations_19: 300967722
+      Slime All Animations_2: 1159887307
+      Slime All Animations_20: 2063338660
+      Slime All Animations_21: 911232151
+      Slime All Animations_22: 2023223496
+      Slime All Animations_23: 1484358655
+      Slime All Animations_24: -213805060
+      Slime All Animations_25: -744766339
+      Slime All Animations_26: -750321079
+      Slime All Animations_27: 432081984
+      Slime All Animations_28: -1843623299
+      Slime All Animations_29: 733897178
+      Slime All Animations_3: 833050356
+      Slime All Animations_30: -1170021530
+      Slime All Animations_31: -1296955541
+      Slime All Animations_32: -1275483088
+      Slime All Animations_33: -1605588566
+      Slime All Animations_4: 902108344
+      Slime All Animations_5: -1028497231
+      Slime All Animations_6: -192623659
+      Slime All Animations_7: 721144142
+      Slime All Animations_8: 1320951928
+      Slime All Animations_9: 740628331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
