@@ -209,17 +209,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "9f33b79d-ef10-4c63-881e-232d1c27bf1c",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "GamePad(Xone)",
                     "id": "f51aeb04-a736-4e90-9297-76baae85a57a",
                     "path": "2DVector",
@@ -344,6 +333,17 @@
                     "name": "",
                     "id": "e81f45eb-6b69-4909-96da-e9d77ad1c1f3",
                     "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlataformDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85d1f54e-e687-4c45-bd43-2c06b5cb2dd5",
+                    "path": "<AndroidJoystick>/stick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

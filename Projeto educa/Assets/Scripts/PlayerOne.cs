@@ -33,7 +33,7 @@ public class playerOne : MonoBehaviour
     const string JumptoFall = "JumptoFall";
     const string Fall = "Fall";
     const string Attack = "Attack 1";
-    const string WallSliding = "Wall";
+    const string WallSliding = "SlideWall";
 
 
     #endregion
