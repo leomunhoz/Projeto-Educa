@@ -254,6 +254,17 @@
                 },
                 {
                     "name": "",
+                    "id": "47387c3c-2b0c-4816-9ac7-0b5ee4fa42bf",
+                    "path": "<AndroidJoystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3574834a-7d15-480b-a6f3-1ed689d8fcb3",
                     "path": "<Keyboard>/f",
                     "interactions": "",
@@ -278,6 +289,17 @@
                     "name": "",
                     "id": "95c24733-19e9-4564-b56f-19e547d8f7df",
                     "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attackin",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "857d0335-81be-478d-b460-caeebb398100",
+                    "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
