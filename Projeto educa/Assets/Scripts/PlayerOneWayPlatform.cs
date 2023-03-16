@@ -9,6 +9,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
     [SerializeField] public GameObject currentOneWayPlatform;
     [SerializeField]private CapsuleCollider2D capsuleCollider2D;
     public playerOne player;
+    public bool isPlatformDownPressed;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,10 +38,14 @@ public class PlayerOneWayPlatform : MonoBehaviour
     }
     public IEnumerator DisableCollision() 
     {
-        TilemapCollider2D platformCollidier = currentOneWayPlatform.GetComponent<TilemapCollider2D>();
-        Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier);
-        yield return new WaitForSeconds(1f);
-        Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier, false);
+        if (isPlatformDownPressed)
+        {
+            TilemapCollider2D platformCollidier = currentOneWayPlatform.GetComponent<TilemapCollider2D>();
+            Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier);
+            yield return new WaitForSeconds(1f);
+            Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier, false);
+        }
+        
     }
 
     

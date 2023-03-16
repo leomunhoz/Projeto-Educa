@@ -16,9 +16,9 @@
                 },
                 {
                     "name": "Jumping",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "b92ba1a8-1892-4213-9fab-8dde65ec09a4",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -29,7 +29,7 @@
                     "id": "b596fca7-7f47-4fe6-ba4d-306a797ca507",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "MultiTap",
+                    "interactions": "",
                     "initialStateCheck": true
                 },
                 {
@@ -39,7 +39,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -56,8 +56,19 @@
                 },
                 {
                     "name": "",
-                    "id": "2f333eb0-7c5f-4544-94f8-ad2bcffbfd5b",
-                    "path": "<XInputController>/buttonSouth",
+                    "id": "0104df92-1f06-43c3-96f2-b705f6e966f4",
+                    "path": "<AndroidJoystick>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jumping",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d44611e7-7e10-4f01-b698-abedc62da452",
+                    "path": "<Touchscreen>/touch0/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -185,6 +196,28 @@
                     "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "1ecb7230-9b70-4c3b-876e-1a6e46062966",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "0ba71874-88b5-4694-9e64-d5970b702d1f",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "left",
@@ -331,19 +364,8 @@
                 },
                 {
                     "name": "",
-                    "id": "e81f45eb-6b69-4909-96da-e9d77ad1c1f3",
-                    "path": "<Gamepad>/rightStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PlataformDown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "85d1f54e-e687-4c45-bd43-2c06b5cb2dd5",
-                    "path": "<AndroidJoystick>/stick/down",
+                    "id": "5da36ac4-09a2-4b96-a5d5-8b2b6f13a1de",
+                    "path": "<Touchscreen>/touch1/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

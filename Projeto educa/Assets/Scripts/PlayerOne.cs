@@ -187,6 +187,7 @@ public class playerOne : MonoBehaviour
         else
         {
             isWallSliding = false;
+            
         }
     }
 
@@ -199,6 +200,7 @@ public class playerOne : MonoBehaviour
     {
         if (context.performed)
         {
+            platform.isPlatformDownPressed = true;
             if (platform.currentOneWayPlatform != null)
             {
                 platform.StartCoroutine(platform.DisableCollision());
