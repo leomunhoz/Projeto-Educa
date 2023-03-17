@@ -67,8 +67,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d44611e7-7e10-4f01-b698-abedc62da452",
-                    "path": "<Touchscreen>/touch0/tap",
+                    "id": "88a2df59-de89-4959-8604-71adab6b05bf",
+                    "path": "<Touchscreen>/touch1/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -320,8 +320,8 @@
                 },
                 {
                     "name": "",
-                    "id": "857d0335-81be-478d-b460-caeebb398100",
-                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "id": "3385abf6-70f0-4281-9e2a-5d6e7853f80b",
+                    "path": "<Touchscreen>/touch0/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -364,8 +364,8 @@
                 },
                 {
                     "name": "",
-                    "id": "5da36ac4-09a2-4b96-a5d5-8b2b6f13a1de",
-                    "path": "<Touchscreen>/touch1/tap",
+                    "id": "bdbfa211-d7d2-41b8-8dc0-0ecef17b13d2",
+                    "path": "<Touchscreen>/touch2/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
