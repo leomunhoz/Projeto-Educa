@@ -203,7 +203,7 @@ public class playerOne : MonoBehaviour
             platform.isPlatformDownPressed = true;
             if (platform.currentOneWayPlatform != null)
             {
-                platform.StartCoroutine(platform.DisableCollision());
+               // platform.StartCoroutine(platform.DisableCollision());
             }
         }
     }
@@ -223,7 +223,7 @@ public class playerOne : MonoBehaviour
     }
     public void attack(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.performed)
         {
             isAttackingPressed = true;
 

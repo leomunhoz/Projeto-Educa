@@ -33,17 +33,21 @@ public class PlayerOneWayPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
+            //collision.gameObject.GetComponent<TilemapCollider2D>().isTrigger = true;
+            StartCoroutine(DisableCollision(collision.gameObject.GetComponent<TilemapCollider2D>()));
             currentOneWayPlatform = null;
         }
     }
-    public IEnumerator DisableCollision() 
+    public IEnumerator DisableCollision(TilemapCollider2D collider) 
     {
         if (isPlatformDownPressed)
         {
-            TilemapCollider2D platformCollidier = currentOneWayPlatform.GetComponent<TilemapCollider2D>();
-            Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier);
+            //TilemapCollider2D platformCollidier = currentOneWayPlatform.GetComponent<TilemapCollider2D>();
+            //Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier);
+            collider.isTrigger = true;
             yield return new WaitForSeconds(1f);
-            Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier, false);
+            collider.isTrigger = false;
+            //Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier, false);
         }
         
     }
