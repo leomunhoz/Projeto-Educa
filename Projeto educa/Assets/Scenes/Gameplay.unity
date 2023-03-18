@@ -8059,7 +8059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929562213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27, y: -0.251, z: 0}
+  m_LocalPosition: {x: -0.181, y: -0.198, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8543,8 +8543,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 1192368000}
-  speed: 6
-  jumpForce: 20
+  speed: 7
+  jumpForce: 12
   Horizontal: 0
   Vertical: 0
   attackDemage: 40
@@ -8559,16 +8559,14 @@ MonoBehaviour:
   isAttacking: 0
   isAttackingPressed: 0
   isJumpingPressed: 0
+  isMovingPressed: 0
   isJumping: 0
   isWallSliding: 0
-  isWallJumping: 0
-  wallJumpingDirection: 0
-  walljumpingTime: 0.2
-  wallJumpingCounter: 0
-  walljumpingDuration: 0.4
+  wallJumpDuration: 0.1
+  wallJumpForce: {x: 10, y: 12}
+  wallJumping: 0
   isFacingRigth: 1
   WallSlidingSpeed: 2
-  wallJumpinPower: {x: 0, y: 0}
   attackPoint: {fileID: 895322468}
   groundPoint: {fileID: 929562214}
   wallCheck: {fileID: 1893699045}
@@ -8673,8 +8671,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.22, y: 0.63}
-  m_Size: {x: 0.86, y: 1.7}
+  m_Offset: {x: -0.14379287, y: 0.5400001}
+  m_Size: {x: 0.9910321, y: 1.55}
   m_Direction: 0
 --- !u!114 &1192368009
 MonoBehaviour:

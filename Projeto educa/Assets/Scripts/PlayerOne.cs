@@ -19,6 +19,7 @@ public class playerOne : MonoBehaviour
     [SerializeField] private float attackDelay = 0.3f;
     [SerializeField] private float attackRange = 0.1f;
     [SerializeField] private int combo;
+    
     private Vector2 direction;
     private Vector2 directionanterior;
 
@@ -44,12 +45,17 @@ public class playerOne : MonoBehaviour
     [SerializeField] private bool isAttacking;
     [SerializeField] private bool isAttackingPressed;
     [SerializeField] private bool isJumpingPressed;
+    [SerializeField] private bool isMovingPressed;
     [SerializeField] private bool isJumping;
     [SerializeField] private bool isWallSliding;
+    public float wallJumpDuration;
+    public Vector2 wallJumpForce;
+   
+    public bool wallJumping;
    
     [SerializeField] private bool isFacingRigth = true;
     [SerializeField] private float WallSlidingSpeed = 2f;
-    [SerializeField] private Vector2 wallJumpinPower = new Vector2(15f,26f);
+    
     [SerializeField] private Transform attackPoint;
     [SerializeField] private Transform groundPoint;
     [SerializeField] private Transform wallCheck;
@@ -66,6 +72,7 @@ public class playerOne : MonoBehaviour
     [SerializeField] private float tempoMax;
     [SerializeField] private float tempParaProximoAtaque;
     int animAtual = 0;
+
     
 
     void Start()
@@ -89,6 +96,7 @@ public class playerOne : MonoBehaviour
         WallSlide();
         jump();
         
+        
     }
         
 
@@ -98,11 +106,12 @@ public class playerOne : MonoBehaviour
 
     void Update()
     {
-        if (!isWallJumping)
-        {
-            Flip();
-        }
-        WallJump();
+       
+        
+        Flip();
+        wallJump();
+        
+      
         isGrounded = Physics2D.OverlapCircle(groundPoint.position, 0.2f, GroundLayer);
         isWallSliding = Physics2D.OverlapCircle(wallCheck.position, 0.2f, WallLayer);
 
@@ -123,7 +132,7 @@ public class playerOne : MonoBehaviour
             
         }
     }
-    void ParemetroDeAnim() 
+    public void ParemetroDeAnim() 
     {
         if (!isAttacking && !isWallSliding)
         {
@@ -168,9 +177,9 @@ public class playerOne : MonoBehaviour
                         tempParaProximoAtaque = Time.time;
                         animAtual = 0;
                     }
-                   
-                    
-                   
+
+
+
 
                     Collider2D[] EnemyHits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, EnemyLayers);
                     foreach (var enemy in EnemyHits)
@@ -186,29 +195,36 @@ public class playerOne : MonoBehaviour
         }
         else
             rb2d.velocity = new Vector2(direction.x * speed, Vertical);
+
     }
   
+   
+        
+    
     void jump() 
     {
         if (isJumpingPressed)
         {
-            
-                if (!isJumping && isGrounded == true && !isWallSliding)
-                {
-                    rb2d.velocity = Vector2.up * jumpForce;
-                }
-                if (isGrounded == false && axPulosExtras > 0 && !isWallSliding)
-                {
-                    rb2d.velocity = Vector2.up * jumpForce;
+            if (!isJumping && isGrounded == true && !isWallSliding)
+            {
+                rb2d.velocity = Vector2.up * jumpForce;
+            }
+            else if(isJumping && isGrounded == false && axPulosExtras > 0 && !isWallSliding)
+            {
+                rb2d.velocity = Vector2.up * jumpForce;
 
-                    axPulosExtras--;
-                }
-                isJumpingPressed = false;
-            
-            
-              
+                axPulosExtras--;
+            }
+           
+
+            isJumpingPressed = false;
         }
-        
+
+
+
+
+
+
     }
     public void WallSlide()
     {
@@ -221,14 +237,36 @@ public class playerOne : MonoBehaviour
         else
         {
             isWallSliding = false;
-            
+            ParemetroDeAnim();
+
+
         }
     }
 
-  
+    public void wallJump()
+    {
+        if (isWallSliding)
+        {
+            wallJumping = true;
+            Invoke("StopWallJumping", wallJumpDuration);
+        }
+        if (isJumpingPressed)
+        {
+            if (wallJumping)
+            {
+                rb2d.velocity = new Vector2(wallJumpForce.x , wallJumpForce.y);
+            }
+            
+        }
+    }  
+        
+        
+        
+    
 
     public void Move(InputAction.CallbackContext context)
     {
+        
         direction = context.ReadValue<Vector2>();
         
 
@@ -247,7 +285,7 @@ public class playerOne : MonoBehaviour
     }
     public void jump(InputAction.CallbackContext context)
     {
-        if (context.performed )
+        if (context.performed)
         {
             isJumpingPressed = true;
 
@@ -271,7 +309,7 @@ public class playerOne : MonoBehaviour
 
     void StopWallJumping() 
     {
-        isWallJumping = false;
+        wallJumping = false;
     
     }
     private void OnDrawGizmosSelected()
