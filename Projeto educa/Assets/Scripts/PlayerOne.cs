@@ -8,18 +8,18 @@ using UnityEngine.InputSystem;
 
 public class playerOne : MonoBehaviour
 {
-    public Rigidbody2D rb2d;
-    public float speed;
-    public float jumpForce;
-    float Horizontal;
-    float Vertical;
-    public int attackDemage = 40;
-    public int pulosExtras = 0;
-    public int axPulosExtras = 0;
-    public float attackDelay = 0.3f;
-    public float attackRange = 0.1f;
-    public int combo;
-    public Vector2 direction;
+    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float Horizontal;
+    [SerializeField] private float Vertical;
+    [SerializeField] private int attackDemage = 40;
+    [SerializeField] private int pulosExtras = 0;
+    [SerializeField] private int axPulosExtras = 0;
+    [SerializeField] private float attackDelay = 0.3f;
+    [SerializeField] private float attackRange = 0.1f;
+    [SerializeField] private int combo;
+    private Vector2 direction;
     private Vector2 directionanterior;
 
     private string currantState;
@@ -40,26 +40,31 @@ public class playerOne : MonoBehaviour
 
 
     public bool isGrounded;
-    public bool isAttacking;
-    public bool isAttackingPressed;
-    public bool isWallSliding;
-    public bool isFacingRigth = true;
-    public float WallSlidingSpeed = 2f;
-    public Transform attackPoint;
-    public Transform groundPoint;
-    public Transform wallCheck;
-    public LayerMask WallLayer;
-    public LayerMask GroundLayer;
-    public LayerMask EnemyLayers;
+    public bool isJoyDown;
+    [SerializeField] private bool isAttacking;
+    [SerializeField] private bool isAttackingPressed;
+    [SerializeField] private bool isJumpingPressed;
+    [SerializeField] private bool isJumping;
+    [SerializeField] private bool isWallSliding;
+   
+    [SerializeField] private bool isFacingRigth = true;
+    [SerializeField] private float WallSlidingSpeed = 2f;
+    [SerializeField] private Vector2 wallJumpinPower = new Vector2(15f,26f);
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private Transform groundPoint;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask WallLayer;
+    [SerializeField] private LayerMask GroundLayer;
+    [SerializeField] private LayerMask EnemyLayers;
 
 
 
    public Animator anim;
 
-    public AnimationClip[] Animcombo;
-    public float duraçãoDocombo = 1f;
-    public float tempoMax;
-    public float tempParaProximoAtaque;
+    [SerializeField] private AnimationClip[] Animcombo;
+    [SerializeField] private float duraçãoDocombo = 1f;
+    [SerializeField] private float tempoMax;
+    [SerializeField] private float tempParaProximoAtaque;
     int animAtual = 0;
     
 
@@ -79,20 +84,28 @@ public class playerOne : MonoBehaviour
         Horizontal = rb2d.velocity.x;
         Vertical = rb2d.velocity.y;
 
-        isGrounded = Physics2D.OverlapCircle(groundPoint.position, 0.2f, GroundLayer);
-        isWallSliding = Physics2D.OverlapCircle(wallCheck.position, 0.2f, WallLayer);
-
-
         attack();
         ParemetroDeAnim();
+        WallSlide();
+        jump();
+        
     }
+        
+
+
+        
+    
 
     void Update()
     {
+        if (!isWallJumping)
+        {
+            Flip();
+        }
+        WallJump();
+        isGrounded = Physics2D.OverlapCircle(groundPoint.position, 0.2f, GroundLayer);
+        isWallSliding = Physics2D.OverlapCircle(wallCheck.position, 0.2f, WallLayer);
 
-        Flip();
-        WallSlide();
-        
     }
     
  
@@ -175,8 +188,29 @@ public class playerOne : MonoBehaviour
             rb2d.velocity = new Vector2(direction.x * speed, Vertical);
     }
   
+    void jump() 
+    {
+        if (isJumpingPressed)
+        {
+            
+                if (!isJumping && isGrounded == true && !isWallSliding)
+                {
+                    rb2d.velocity = Vector2.up * jumpForce;
+                }
+                if (isGrounded == false && axPulosExtras > 0 && !isWallSliding)
+                {
+                    rb2d.velocity = Vector2.up * jumpForce;
 
-    public void WallSlide() 
+                    axPulosExtras--;
+                }
+                isJumpingPressed = false;
+            
+            
+              
+        }
+        
+    }
+    public void WallSlide()
     {
         if (isWallSliding && !isGrounded && Vertical != 0)
         {
@@ -191,9 +225,12 @@ public class playerOne : MonoBehaviour
         }
     }
 
+  
+
     public void Move(InputAction.CallbackContext context)
     {
         direction = context.ReadValue<Vector2>();
+        
 
     }
     public void DownPlatform(InputAction.CallbackContext context)
@@ -201,6 +238,7 @@ public class playerOne : MonoBehaviour
         if (context.performed)
         {
             platform.isPlatformDownPressed = true;
+            
             if (platform.currentOneWayPlatform != null)
             {
                 platform.StartCoroutine(platform.DisableCollision());
@@ -209,17 +247,13 @@ public class playerOne : MonoBehaviour
     }
     public void jump(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded == true && !isWallSliding)
+        if (context.performed )
         {
-            rb2d.velocity = Vector2.up * jumpForce;
+            isJumpingPressed = true;
 
         }
-        if (context.performed && isGrounded == false && axPulosExtras > 0 && !isWallSliding)
-        {
-            rb2d.velocity = Vector2.up * jumpForce;
-
-            axPulosExtras--;
-        }
+        
+        
     }
     public void attack(InputAction.CallbackContext context)
     {
@@ -233,6 +267,12 @@ public class playerOne : MonoBehaviour
     {
         isAttacking = false;
         isAttackingPressed = false;
+    }
+
+    void StopWallJumping() 
+    {
+        isWallJumping = false;
+    
     }
     private void OnDrawGizmosSelected()
     {

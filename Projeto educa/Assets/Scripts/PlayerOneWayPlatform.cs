@@ -40,7 +40,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
     }
     public IEnumerator DisableCollision() 
     {
-        if (isPlatformDownPressed)
+        if (isPlatformDownPressed )
         {
             TilemapCollider2D platformCollidier = currentOneWayPlatform.GetComponent<TilemapCollider2D>();
             //Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier);

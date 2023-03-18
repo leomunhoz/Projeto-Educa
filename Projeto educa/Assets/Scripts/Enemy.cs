@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour
     }
     public void Hunt()
     {
-        direction.x = (playerPos.x - enemyPos.x);//.normalized;//move na direção do player
+        direction.x = (playerPos.x  - enemyPos.x);//.normalized;//move na direção do player
         //animator.SetTrigger("Run");
         if (isGrounded)
         { 
