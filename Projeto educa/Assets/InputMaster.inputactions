@@ -66,17 +66,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "88a2df59-de89-4959-8604-71adab6b05bf",
-                    "path": "<Touchscreen>/touch1/tap",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jumping",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "2D Vector",
                     "id": "00baeb50-6ea7-42c7-8344-719af0b97249",
                     "path": "2DVector",
@@ -308,28 +297,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "95c24733-19e9-4564-b56f-19e547d8f7df",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attackin",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3385abf6-70f0-4281-9e2a-5d6e7853f80b",
-                    "path": "<Touchscreen>/touch0/tap",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attackin",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "2D Vector",
                     "id": "15163eeb-6bd1-42b6-baaf-e19ba8b3b157",
                     "path": "2DVector",
@@ -355,17 +322,6 @@
                     "name": "",
                     "id": "afc2ae67-54d8-461c-82f4-7985ea5bc3b1",
                     "path": "<XInputController>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PlataformDown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bdbfa211-d7d2-41b8-8dc0-0ecef17b13d2",
-                    "path": "<Touchscreen>/touch2/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
