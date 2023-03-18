@@ -15,18 +15,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jumping",
+                    "name": "Attackin",
                     "type": "Button",
-                    "id": "b92ba1a8-1892-4213-9fab-8dde65ec09a4",
+                    "id": "b596fca7-7f47-4fe6-ba4d-306a797ca507",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Attackin",
-                    "type": "Value",
-                    "id": "b596fca7-7f47-4fe6-ba4d-306a797ca507",
+                    "name": "Jumping",
+                    "type": "Button",
+                    "id": "b92ba1a8-1892-4213-9fab-8dde65ec09a4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -58,6 +58,17 @@
                     "name": "",
                     "id": "0104df92-1f06-43c3-96f2-b705f6e966f4",
                     "path": "<AndroidJoystick>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jumping",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "935eb31a-09c9-4143-9d76-51c39ec9981c",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -275,28 +286,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "3574834a-7d15-480b-a6f3-1ed689d8fcb3",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attackin",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "976e645c-072d-42c4-9833-6c259ffe1fb4",
-                    "path": "<XInputController>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attackin",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "2D Vector",
                     "id": "15163eeb-6bd1-42b6-baaf-e19ba8b3b157",
                     "path": "2DVector",
@@ -326,6 +315,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "PlataformDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd09dad7-a16e-4088-b8af-9b413c45a7f0",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlataformDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3574834a-7d15-480b-a6f3-1ed689d8fcb3",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attackin",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "976e645c-072d-42c4-9833-6c259ffe1fb4",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attackin",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d41fbc97-e657-44aa-a150-040c1cf2edc6",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attackin",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

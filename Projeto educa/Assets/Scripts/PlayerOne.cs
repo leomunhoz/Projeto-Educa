@@ -203,7 +203,7 @@ public class playerOne : MonoBehaviour
             platform.isPlatformDownPressed = true;
             if (platform.currentOneWayPlatform != null)
             {
-               // platform.StartCoroutine(platform.DisableCollision());
+                platform.StartCoroutine(platform.DisableCollision());
             }
         }
     }
