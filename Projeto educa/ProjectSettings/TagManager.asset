@@ -48,21 +48,3 @@ TagManager:
   - name: 222
     uniqueID: 3944284869
     locked: 0
-  - name: Other 2
-    uniqueID: 2026656083
-    locked: 0
-  - name: Other
-    uniqueID: 3399802207
-    locked: 0
-  - name: Back
-    uniqueID: 343995213
-    locked: 0
-  - name: Platform
-    uniqueID: 3789194409
-    locked: 0
-  - name: Wall
-    uniqueID: 1482831147
-    locked: 0
-  - name: Graund
-    uniqueID: 913709789
-    locked: 0
