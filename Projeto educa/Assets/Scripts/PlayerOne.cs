@@ -45,7 +45,7 @@ public class playerOne : MonoBehaviour
     [SerializeField] private bool isAttacking;
     [SerializeField] private bool isAttackingPressed;
     [SerializeField] private bool isJumpingPressed;
-    [SerializeField] private bool isMovingPressed;
+    [SerializeField] private Vector2 isMovingPressed;
     [SerializeField] private bool isJumping;
     [SerializeField] private bool isWallSliding;
     public float wallJumpDuration;
@@ -95,6 +95,7 @@ public class playerOne : MonoBehaviour
         ParemetroDeAnim();
         WallSlide();
         jump();
+        DownPlat();
         
         
     }
@@ -106,10 +107,15 @@ public class playerOne : MonoBehaviour
 
     void Update()
     {
-       
+        direction = Gamepad.current.leftStick.ReadValue();
         
+
+        isJumpingPressed = Gamepad.current.buttonWest.isPressed || Keyboard.current.spaceKey.isPressed;
+        isAttackingPressed = Gamepad.current.buttonNorth.isPressed;
+        Debug.Log(direction.y);
         Flip();
         wallJump();
+      
         
       
         isGrounded = Physics2D.OverlapCircle(groundPoint.position, 0.2f, GroundLayer);
@@ -198,7 +204,21 @@ public class playerOne : MonoBehaviour
 
     }
   
-   
+    void DownPlat() 
+    {
+        if (direction.y < 0 && platform.isPlatformDownPressed)
+        {
+            if (direction.y < 0)
+            {
+               platform.isPlatformDownPressed = true;
+            }
+           
+            if (platform.currentOneWayPlatform != null)
+            {
+                platform.StartCoroutine(platform.DisableCollision());
+            }
+        }
+    }
         
     
     void jump() 
@@ -261,17 +281,17 @@ public class playerOne : MonoBehaviour
     }  
         
         
-        
+       
     
 
     public void Move(InputAction.CallbackContext context)
     {
         
-        direction = context.ReadValue<Vector2>();
+       // direction = context.ReadValue<Vector2>();
         
 
     }
-    public void DownPlatform(InputAction.CallbackContext context)
+   /*public void DownPlatform(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
@@ -282,8 +302,8 @@ public class playerOne : MonoBehaviour
                 platform.StartCoroutine(platform.DisableCollision());
             }
         }
-    }
-    public void jump(InputAction.CallbackContext context)
+    }*/
+   /* public void jump(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
@@ -292,15 +312,15 @@ public class playerOne : MonoBehaviour
         }
         
         
-    }
-    public void attack(InputAction.CallbackContext context)
+    }*/
+   /* public void attack(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             isAttackingPressed = true;
 
         }
-    }
+    }*/
     void AttackComplete()
     {
         isAttacking = false;
@@ -314,7 +334,7 @@ public class playerOne : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null && wallCheck == null)
+        if (attackPoint == null && wallCheck == null && groundPoint == null)
         {
             return;
         }
