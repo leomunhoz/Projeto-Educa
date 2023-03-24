@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public float tempoDeMorte=20f;
     bool isTakingDamege;
     private GameObject character;
-    public float velo = 3f;
+    public float velo = 1f;
     private Rigidbody2D rb2d;
     const string Run = "Run";
     const string Die = "Death";
@@ -28,8 +28,13 @@ public class Enemy : MonoBehaviour
 
     public Transform Ground;
     public LayerMask Grounded;
-    bool isGrounded = false;   
+    bool isGrounded = false;
 
+    [SerializeField]int distAtaque=1;
+    [SerializeField] int distPersegue = 1;
+    [SerializeField] int distPatrulha = 1;
+    bool inHome = true;
+    int cont = 0;
 
 
 
@@ -57,24 +62,32 @@ public class Enemy : MonoBehaviour
             playerPos = new Vector2(character.transform.position.x, character.transform.position.y);
             knockBack = new Vector2(10, 10);
             distancia = Vector2.Distance(enemyPos, playerPos);
-            if (distancia <= 5)
+            if (distancia <= distPersegue)
             {
+                inHome = false;
                 Hunt();
                 
             }
-            else
+            else if(initialPosition==enemyPos)
+            {
+                animator.SetTrigger("Idle");
+                //print("Descançando");
+            }
+            else if (distancia>distPatrulha)
             {
                 Home();
             }
+            if(rb2d.velocity.x==0)
+                animator.SetTrigger("Idle");
         }
     }
     public void TakeDemage(int damage) 
     {
        
         currentHealth -= damage;
-        direction = (knockBack + enemyPos).normalized;
-        rb2d.velocity = direction;
-        isKnockBack = true;
+        //direction = (knockBack + enemyPos).normalized;
+        //rb2d.velocity = direction;
+        //isKnockBack = true;
         animator.SetTrigger("Hurt");
 
         if (currentHealth <= 0)
@@ -93,8 +106,17 @@ public class Enemy : MonoBehaviour
 
     public void Patrulha() 
     {
-        
-    
+        if (enemyPos.x < initialPosition.x + 5)
+        {
+            direction.x = 1;
+            rb2d.velocity = direction * 1;//
+            transform.localScale = new Vector2(Mathf.Sign(direction.x), 1);
+            animator.SetTrigger("Run");
+        }
+        else
+            inHome = false;
+        cont++;
+        print(cont);
     }
 
     public void Attack() 
@@ -113,38 +135,57 @@ public class Enemy : MonoBehaviour
     public void Hunt()
     {
         direction.x = (playerPos.x  - enemyPos.x);//.normalized;//move na direção do player
-        //animator.SetTrigger("Run");
+        
+        
         if (isGrounded)
         { 
             rb2d.velocity = direction * velo;//
             transform.localScale = new Vector2(Mathf.Sign(direction.x), 1);
             animator.SetTrigger("Run");
+            //print("Correndo");
 
-            if (distancia <= 1)
+            if (distancia <= distAtaque)
             {
                 //Debug.Log("Atacar");
                 rb2d.velocity = direction * 0;//
+
+                //print("Atacando");
             }
+            else
+            {
+                animator.SetTrigger("Idle");
+                //print("Descançado Caça");
+            }
+
         }
-        else
-            animator.SetTrigger("Idle");
     }
     public void Home()
     {
+       
         float home;
-        if (isGrounded && initialPosition != enemyPos)
-        { 
-            direction = (initialPosition - enemyPos).normalized;//move na direção do player
-            rb2d.velocity = direction * velo;//
-            home = Vector2.Distance(enemyPos, initialPosition);
-            transform.localScale = new Vector2(Mathf.Sign(direction.x), 1);
-            if (home <= 1)
+        if (!inHome)
+        {
+            if (isGrounded && initialPosition != enemyPos)
             {
-                rb2d.velocity = direction * 0;//
+                direction = (initialPosition - enemyPos).normalized;//move na direção do player
+                rb2d.velocity = direction * velo;//
+                home = Vector2.Distance(enemyPos, initialPosition);
+                transform.localScale = new Vector2(Mathf.Sign(direction.x), 1);
+                if (home <= 1)
+                {
+                    rb2d.velocity = direction * 0;//
+                                                  //print("Voltando para casa");
+                    animator.SetTrigger("Idle");
+                    inHome = true;
+                }
+
             }
         }
         else
-            animator.SetTrigger("Idle");
+            Patrulha();
+        
+        
+        
     }
     private void OnDrawGizmos()
     {
