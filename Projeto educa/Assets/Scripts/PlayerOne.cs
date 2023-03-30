@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 
 public class playerOne : MonoBehaviour
@@ -21,7 +22,8 @@ public class playerOne : MonoBehaviour
     [SerializeField] private int combo;
     
     private Vector2 direction;
-    private Vector2 directionanterior;
+    private Vector2 horizontal;
+   
 
     private string currantState;
 
@@ -46,6 +48,7 @@ public class playerOne : MonoBehaviour
     [SerializeField] private bool isAttackingPressed;
     [SerializeField] private bool isJumpingPressed;
     [SerializeField] private bool isMovingPressed;
+    public bool isStackDown;
     [SerializeField] private bool isJumping;
     [SerializeField] private bool isWallSliding;
     public float wallJumpDuration;
@@ -95,6 +98,7 @@ public class playerOne : MonoBehaviour
         ParemetroDeAnim();
         WallSlide();
         jump();
+        DownPlat();
         
         
     }
@@ -106,33 +110,33 @@ public class playerOne : MonoBehaviour
 
     void Update()
     {
+       // direction = Gamepad.current.leftStick.ReadValue();
+        isJumpingPressed = Gamepad.current.buttonWest.isPressed || Keyboard.current.spaceKey.isPressed;
+        isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
        
-        
+        Debug.Log(direction.y);
         Flip();
         wallJump();
-        
-      
+
+
+
         isGrounded = Physics2D.OverlapCircle(groundPoint.position, 0.2f, GroundLayer);
         isWallSliding = Physics2D.OverlapCircle(wallCheck.position, 0.2f, WallLayer);
-
     }
-    
- 
 
-
-    void Flip() 
+    void Flip()
     {
-        
+
         if (isFacingRigth && Horizontal < 0 || !isFacingRigth && Horizontal > 0)
         {
             isFacingRigth = !isFacingRigth;
             Vector3 LocalScale = transform.localScale;
             LocalScale.x *= -1;
-            transform.localScale = LocalScale;  
-            
+            transform.localScale = LocalScale;
+
         }
     }
-    public void ParemetroDeAnim() 
+    public void ParemetroDeAnim()
     {
         if (!isAttacking && !isWallSliding)
         {
@@ -141,7 +145,7 @@ public class playerOne : MonoBehaviour
                 ChangeAnimState(Run);
 
             }
-            else if (Vertical != 0 )
+            else if (Vertical != 0)
             {
                 ChangeAnimState(Jump);
             }
@@ -197,25 +201,38 @@ public class playerOne : MonoBehaviour
             rb2d.velocity = new Vector2(direction.x * speed, Vertical);
 
     }
-  
-   
-        
-    
-    void jump() 
+
+    void DownPlat()
     {
-        if (isJumpingPressed)
+        if (direction.y < 0 && platform.isPlatformDownPressed)
         {
+            platform.isPlatformDownPressed = true;
+
+            if (platform.currentOneWayPlatform != null)
+            {
+                platform.StartCoroutine(platform.DisableCollision());
+            }
+        }
+    }
+
+
+    void jump()
+    {
+
+        if (isJumpingPressed && !(direction.y < 0))
+        {
+
             if (!isJumping && isGrounded == true && !isWallSliding)
             {
                 rb2d.velocity = Vector2.up * jumpForce;
             }
-            else if(isJumping && isGrounded == false && axPulosExtras > 0 && !isWallSliding)
+            else if (isJumping && isGrounded == false && axPulosExtras > 0 && !isWallSliding)
             {
                 rb2d.velocity = Vector2.up * jumpForce;
 
                 axPulosExtras--;
             }
-           
+
 
             isJumpingPressed = false;
         }
@@ -254,67 +271,56 @@ public class playerOne : MonoBehaviour
         {
             if (wallJumping)
             {
-                rb2d.velocity = new Vector2(wallJumpForce.x , wallJumpForce.y);
+                rb2d.velocity = new Vector2(wallJumpForce.x, wallJumpForce.y);
             }
-            
+
         }
-    }  
-        
-        
-        
-    
+    }
+
+
+
+
 
     public void Move(InputAction.CallbackContext context)
     {
-        
+
         direction = context.ReadValue<Vector2>();
-        
+
 
     }
-    public void DownPlatform(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            platform.isPlatformDownPressed = true;
-            
-            if (platform.currentOneWayPlatform != null)
-            {
-                platform.StartCoroutine(platform.DisableCollision());
-            }
-        }
-    }
-    public void jump(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            isJumpingPressed = true;
 
-        }
-        
-        
-    }
-    public void attack(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            isAttackingPressed = true;
+    /* public void jump(InputAction.CallbackContext context)
+     {
+         if (context.performed)
+         {
+             isJumpingPressed = true;
 
-        }
-    }
+         }
+
+
+     }*/
+    /* public void attack(InputAction.CallbackContext context)
+     {
+         if (context.performed)
+         {
+             isAttackingPressed = true;
+
+         }
+     }*/
     void AttackComplete()
     {
         isAttacking = false;
         isAttackingPressed = false;
     }
 
-    void StopWallJumping() 
+    void StopWallJumping()
     {
         wallJumping = false;
-    
+
     }
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null && wallCheck == null)
+        if (attackPoint == null && wallCheck == null && groundPoint == null)
         {
             return;
         }
@@ -330,7 +336,29 @@ public class playerOne : MonoBehaviour
         }
         anim.Play(newState);
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -19,7 +19,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        isPlatformDownPressed = Gamepad.current.buttonWest.isPressed;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

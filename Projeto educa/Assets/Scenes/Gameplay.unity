@@ -10446,7 +10446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovementRange: 106.03
   m_DynamicOriginRange: 100
-  m_ControlPath: <AndroidJoystick>/stick
+  m_ControlPath: <Gamepad>/leftStick
   m_Behaviour: 0
   m_UseIsolatedInputActions: 0
   m_PointerDownAction:
