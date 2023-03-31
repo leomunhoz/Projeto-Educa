@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -15,15 +16,15 @@ public class playerOne : MonoBehaviour
     [SerializeField] private float Horizontal;
     [SerializeField] private float Vertical;
     [SerializeField] private int attackDemage = 40;
-    [SerializeField] private int pulosExtras = 0;
-    [SerializeField] private int axPulosExtras = 0;
+    [SerializeField] private int pulosExtras = 1;
+    [SerializeField] private int axPulosExtras = 1;
     [SerializeField] private float attackDelay = 0.3f;
     [SerializeField] private float attackRange = 0.1f;
     [SerializeField] private int combo;
-    
+
     private Vector2 direction;
-    private Vector2 horizontal;
-   
+
+
 
     private string currantState;
 
@@ -37,28 +38,33 @@ public class playerOne : MonoBehaviour
     const string Fall = "Fall";
     const string Attack = "Attack 1";
     const string WallSliding = "SlideWall";
+    const string Down = "Down";
 
 
     #endregion
 
 
-    public bool isGrounded;
-    public bool isJoyDown;
-    [SerializeField] private bool isAttacking;
-    [SerializeField] private bool isAttackingPressed;
-    [SerializeField] private bool isJumpingPressed;
-    [SerializeField] private bool isMovingPressed;
-    public bool isStackDown;
-    [SerializeField] private bool isJumping;
-    [SerializeField] private bool isWallSliding;
+
+     private bool isGrounded;
+     private bool isAttacking;
+     private bool isAttackingPressed;
+     private bool isJumpingPressed;
+     private bool isRollingPressed;
+     private bool isSkeyDownPress;
+     private bool isMousePress;
+     private bool isJumping;
+     private bool isWallSliding;
+
+
     public float wallJumpDuration;
     public Vector2 wallJumpForce;
-   
     public bool wallJumping;
-   
+
+
+
     [SerializeField] private bool isFacingRigth = true;
     [SerializeField] private float WallSlidingSpeed = 2f;
-    
+
     [SerializeField] private Transform attackPoint;
     [SerializeField] private Transform groundPoint;
     [SerializeField] private Transform wallCheck;
@@ -68,15 +74,13 @@ public class playerOne : MonoBehaviour
 
 
 
-   public Animator anim;
+    public Animator anim;
 
     [SerializeField] private AnimationClip[] Animcombo;
     [SerializeField] private float duraçãoDocombo = 1f;
     [SerializeField] private float tempoMax;
     [SerializeField] private float tempParaProximoAtaque;
     int animAtual = 0;
-
-    
 
     void Start()
     {
@@ -85,7 +89,7 @@ public class playerOne : MonoBehaviour
         anim.GetComponent<Animator>();
         platform = GetComponent<PlayerOneWayPlatform>();
 
-        
+
 
 
     }
@@ -99,21 +103,18 @@ public class playerOne : MonoBehaviour
         WallSlide();
         jump();
         DownPlat();
-        
-        
+
+
     }
-        
-
-
-        
-    
-
     void Update()
     {
-       // direction = Gamepad.current.leftStick.ReadValue();
-        isJumpingPressed = Gamepad.current.buttonWest.isPressed || Keyboard.current.spaceKey.isPressed;
+
+        isJumpingPressed = Gamepad.current.buttonSouth.isPressed || Keyboard.current.spaceKey.isPressed;
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
-       
+        isRollingPressed = Gamepad.current.buttonEast.isPressed;
+        isSkeyDownPress = Keyboard.current.sKey.isPressed;
+        isMousePress = Mouse.current.leftButton.isPressed;
+
         Debug.Log(direction.y);
         Flip();
         wallJump();
@@ -122,9 +123,9 @@ public class playerOne : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundPoint.position, 0.2f, GroundLayer);
         isWallSliding = Physics2D.OverlapCircle(wallCheck.position, 0.2f, WallLayer);
-    }
 
-    void Flip()
+    }
+    public void Flip()
     {
 
         if (isFacingRigth && Horizontal < 0 || !isFacingRigth && Horizontal > 0)
@@ -136,28 +137,9 @@ public class playerOne : MonoBehaviour
 
         }
     }
-    public void ParemetroDeAnim()
+    public void attack()
     {
-        if (!isAttacking && !isWallSliding)
-        {
-            if (Horizontal != 0 && isGrounded)
-            {
-                ChangeAnimState(Run);
-
-            }
-            else if (Vertical != 0)
-            {
-                ChangeAnimState(Jump);
-            }
-            else
-            {
-                ChangeAnimState(Idle);
-            }
-        }
-    }
-    void attack()
-    {
-        if (isAttackingPressed)
+        if (isAttackingPressed || isMousePress)
         {
 
             if (!isAttacking)
@@ -201,22 +183,7 @@ public class playerOne : MonoBehaviour
             rb2d.velocity = new Vector2(direction.x * speed, Vertical);
 
     }
-
-    void DownPlat()
-    {
-        if (direction.y < 0 && platform.isPlatformDownPressed)
-        {
-            platform.isPlatformDownPressed = true;
-
-            if (platform.currentOneWayPlatform != null)
-            {
-                platform.StartCoroutine(platform.DisableCollision());
-            }
-        }
-    }
-
-
-    void jump()
+    public void jump()
     {
 
         if (isJumpingPressed && !(direction.y < 0))
@@ -243,6 +210,28 @@ public class playerOne : MonoBehaviour
 
 
     }
+    public void DownPlat()
+    {
+        if (direction.y < 0)
+        {
+            ChangeAnimState(Down);
+            speed = 0;
+            if (direction.y < 0 && platform.isPlatformDownPressed || isSkeyDownPress)
+            {
+                platform.isPlatformDownPressed = true;
+
+                if (platform.currentOneWayPlatform != null)
+                {
+                    platform.StartCoroutine(platform.DisableCollision());
+                }
+            }
+        }
+        else
+        {
+            speed = 7;
+        }
+       
+    }
     public void WallSlide()
     {
         if (isWallSliding && !isGrounded && Vertical != 0)
@@ -259,7 +248,6 @@ public class playerOne : MonoBehaviour
 
         }
     }
-
     public void wallJump()
     {
         if (isWallSliding)
@@ -276,11 +264,6 @@ public class playerOne : MonoBehaviour
 
         }
     }
-
-
-
-
-
     public void Move(InputAction.CallbackContext context)
     {
 
@@ -312,7 +295,6 @@ public class playerOne : MonoBehaviour
         isAttacking = false;
         isAttackingPressed = false;
     }
-
     void StopWallJumping()
     {
         wallJumping = false;
@@ -336,9 +318,49 @@ public class playerOne : MonoBehaviour
         }
         anim.Play(newState);
     }
+    public void ParemetroDeAnim()
+    {
+        if (!isAttacking && !isWallSliding && !(direction.y < 0))
+        {
+            if (Horizontal != 0 && isGrounded)
+            {
+                ChangeAnimState(Run);
 
+            }
+            else if (Vertical != 0)
+            {
+                ChangeAnimState(Jump);
+            }
+            else
+            {
+                ChangeAnimState(Idle);
+            }
+        }
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
