@@ -102,6 +102,7 @@ public class playerOne : MonoBehaviour
         ParemetroDeAnim();
         WallSlide();
         jump();
+       
         DownPlat();
 
 
@@ -171,7 +172,7 @@ public class playerOne : MonoBehaviour
                     foreach (var enemy in EnemyHits)
                     {
                         Debug.Log("Hit" + enemy.name);
-                        enemy.GetComponent<Enemy>().TakeDemage(attackDemage);
+                        enemy.GetComponent<Inimigo>().TakeDemage(attackDemage);
                     }
                 }
                 Invoke("AttackComplete", attackDelay);
@@ -180,8 +181,19 @@ public class playerOne : MonoBehaviour
 
         }
         else
-            rb2d.velocity = new Vector2(direction.x * speed, Vertical);
+        {
+            Move();
+        }
+        
 
+    }
+    void Move() 
+    {
+        if (!isAttackingPressed)
+        {
+            rb2d.velocity = new Vector2(direction.x * speed, Vertical);
+        }
+       
     }
     public void jump()
     {
@@ -212,7 +224,7 @@ public class playerOne : MonoBehaviour
     }
     public void DownPlat()
     {
-        if (direction.y < 0)
+        if (direction.y < -0.55 && isGrounded)
         {
             ChangeAnimState(Down);
             speed = 0;
@@ -259,8 +271,10 @@ public class playerOne : MonoBehaviour
         {
             if (wallJumping)
             {
-                rb2d.velocity = new Vector2(wallJumpForce.x, wallJumpForce.y);
+                rb2d.velocity = new Vector2(-wallJumpForce.x, wallJumpForce.y);
+
             }
+           
 
         }
     }

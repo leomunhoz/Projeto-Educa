@@ -15,6 +15,11 @@ public class Inimigo : MonoBehaviour
     public Vector2 pontoFinal;
     private bool indoParaDireita = true;
 
+    public int maxHealth = 100;
+    public int currentHealth;
+    public float tempoDeMorte = 20f;
+    bool isDead = false;
+
     public Animator animator;
     public GameObject player;
     public Vector2 posHero;
@@ -40,6 +45,7 @@ public class Inimigo : MonoBehaviour
         walLayer =  LayerMask.GetMask("Wall");
         chao = LayerMask.GetMask("chao");
         ataque = 3f;
+        currentHealth = maxHealth;
         //slime = GameObject.Find("Slime All Animations_0");
     }
 
@@ -148,11 +154,11 @@ public class Inimigo : MonoBehaviour
                 fechadura = true;
         }
     }
-    public void TakeDemage()
+    public void TakeDemage(int damage)
     {
         animator.SetTrigger("Hurt");
 
-        /*if (currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             animator.SetBool("Die", true);
             isDead = true;
@@ -161,7 +167,7 @@ public class Inimigo : MonoBehaviour
             this.enabled = false;
             Destroy(this.gameObject, tempoDeMorte);
             GetComponent<Collider2D>().enabled = false;
-            GetComponent<Enemy>().enabled = false;
-        }*/
+            GetComponent<Inimigo>().enabled = false;
+        }
     }
 }

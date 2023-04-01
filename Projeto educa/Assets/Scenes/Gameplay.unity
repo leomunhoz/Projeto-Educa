@@ -8404,6 +8404,9 @@ MonoBehaviour:
     m_Bits: 0
   pontoInicial: {x: 0, y: 0}
   pontoFinal: {x: 0, y: 0}
+  maxHealth: 100
+  currentHealth: 0
+  tempoDeMorte: 20
   animator: {fileID: 0}
   player: {fileID: 0}
   posHero: {x: 0, y: 0}
@@ -8747,9 +8750,8 @@ MonoBehaviour:
   attackRange: 0.58
   combo: 0
   platform: {fileID: 0}
-  isGrounded: 0
   wallJumpDuration: 0.1
-  wallJumpForce: {x: 10, y: 12}
+  wallJumpForce: {x: 100, y: 12}
   wallJumping: 0
   isFacingRigth: 1
   WallSlidingSpeed: 2
@@ -10560,7 +10562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 106.03
+  m_MovementRange: 126
   m_DynamicOriginRange: 100
   m_ControlPath: <Gamepad>/leftStick
   m_Behaviour: 0
