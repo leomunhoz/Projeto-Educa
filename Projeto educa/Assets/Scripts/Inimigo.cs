@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+/*Cores dos Raios: 
+ * Verde: Chão
+ * Vermelho: Patrulha
+ * Branco: Parede
+*/
 public class Inimigo : MonoBehaviour
 {
     public float velocidade = 2f;
@@ -17,7 +21,7 @@ public class Inimigo : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-    public float tempoDeMorte = 20f;
+    public float tempoDeMorte = 4f;
     bool isDead = false;
 
     public Animator animator;
@@ -28,12 +32,9 @@ public class Inimigo : MonoBehaviour
     public float herovsInimigo;
     public float persegue;
     public float ataque;
-    public float tempoDeEspera = 2f;
     public bool fechadura=false;
     //
-    //public GameObject slime;
-    //public Vector2 slimePos;
-    //public float slimeDis;
+
     //
     private void Start()
     {
@@ -46,28 +47,21 @@ public class Inimigo : MonoBehaviour
         chao = LayerMask.GetMask("chao");
         ataque = 3f;
         currentHealth = maxHealth;
-        //slime = GameObject.Find("Slime All Animations_0");
     }
 
     private void Update()
     {
         direcao = indoParaDireita ? Vector2.right : Vector2.left;
         posHero = new Vector2(player.transform.position.x, player.transform.position.y);
-        //slimePos = new Vector2(slime.transform.position.x, slime.transform.position.y);
         posInimigo = new Vector2(transform.position.x,transform.position.y);
         herovsInimigo = Vector2.Distance(posHero, posInimigo);
-        //slimeDis = Vector2.Distance(slimePos, posInimigo);
-       // print("Entre Hero e Inimigo"+herovsInimigo);
-        //print("Entre Slime e Inimigo" + slimeDis);
         raioAFrente = transform.TransformPoint(0.5f, 0.0f, 0.0f);
-        RaycastHit2D surfaceHit = Physics2D.Raycast(raioAFrente, Vector2.down, 1.5f, chao);
-        Debug.DrawRay(raioAFrente, dir: transform.TransformDirection(Vector2.down) * 1.5f, color: Color.green);
+        RaycastHit2D surfaceHit = Physics2D.Raycast(raioAFrente, Vector2.down, 4f, chao);
+        Debug.DrawRay(raioAFrente, dir: transform.TransformDirection(Vector2.down) * 1.75f, color: Color.green);
         if (surfaceHit.collider == null)
         {
             MudaPatrulha();
         }
-
-
         if (herovsInimigo < persegue)
         {
             Persegue();
@@ -79,12 +73,13 @@ public class Inimigo : MonoBehaviour
     private void Patrulhar()
     {
         // Verifica se há obstáculos no caminho
-        RaycastHit2D obstaculo = Physics2D.Raycast(transform.position, direcao, distanciaPatrulha-4f, walLayer);
-        Debug.DrawRay(posInimigo, dir: direcao * 2.0f, color: Color.red);
+        RaycastHit2D obstaculo = Physics2D.Raycast(transform.position, direcao, distanciaPatrulha-(distanciaPatrulha-1), walLayer);
+        Debug.DrawRay(posInimigo, dir: direcao * 2.0f, color: Color.white);
         {
             if (obstaculo.collider != null)
             {
                 // Se houver obstáculo, muda a direção
+                MudaPatrulha();
                 indoParaDireita = !indoParaDireita;
 
             }
