@@ -24,7 +24,7 @@ public class BossComportamento : MonoBehaviour
         posHero = new Vector2(player.transform.position.x, player.transform.position.y);
         posInimigo = new Vector2(transform.position.x, transform.position.y);
         herovsInimigo = Vector2.Distance(posHero, posInimigo);
-        print("Distancia do Boss para com o Player: "+ herovsInimigo);
+        //print("Distancia do Boss para com o Player: "+ herovsInimigo);
         //animator.SetTrigger("Idle");
     }
 }

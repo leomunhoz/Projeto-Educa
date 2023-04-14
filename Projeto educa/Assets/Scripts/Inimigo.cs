@@ -26,7 +26,7 @@ public class Inimigo : MonoBehaviour
 
     public Animator animator;
     public GameObject player;
-    public Vector2 posHero;
+    public Vector2 posHero;//Sugeito a GameManager
     public Vector2 posInimigo;
     public Vector2 direcao;
     public float herovsInimigo;
@@ -34,8 +34,14 @@ public class Inimigo : MonoBehaviour
     public float ataque;
     public bool fechadura=false;
     //
-
+    #region Const Anim
+    const string Idle = "Idle";
+    const string Run = "Run";
+    const string Jump = "Jump";
+    const string Attack = "Attack";
+    #endregion
     //
+    private string currantState;
     private void Start()
     {
         pontoInicial = transform.position;
@@ -100,8 +106,8 @@ public class Inimigo : MonoBehaviour
     {
         if (herovsInimigo<= ataque)
         {
-            animator.SetTrigger("Attack");
-            //print("Boing");
+            ChangeAnimState(Attack);//animator.SetTrigger("RangeAttack");
+            print("Boing");
         }
         else
             Move();
@@ -115,9 +121,10 @@ public class Inimigo : MonoBehaviour
     }
     public void Move()
     {
-        
+
         // Se não houver obstáculo, move o objeto na direção atual
-        animator.SetTrigger("Run");
+        ChangeAnimState(Run);//animator.SetTrigger("Run");
+        print("Anda");
         transform.Translate(direcao * velocidade * Time.deltaTime, Space.World);
         // Vira o inimigo para a direção do movimento
         transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
@@ -164,5 +171,13 @@ public class Inimigo : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Inimigo>().enabled = false;
         }
+    }
+    void ChangeAnimState(string newState)
+    {
+        if (currantState == newState)
+        {
+            return;
+        }
+        animator.Play(newState);
     }
 }

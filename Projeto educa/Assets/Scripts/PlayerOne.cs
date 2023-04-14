@@ -44,7 +44,7 @@ public class playerOne : MonoBehaviour
     #endregion
 
 
-
+    
      private bool isGrounded;
      private bool isAttacking;
      private bool isAttackingPressed;
@@ -54,7 +54,7 @@ public class playerOne : MonoBehaviour
      private bool isMousePress;
      private bool isJumping;
      private bool isWallSliding;
-
+   
 
     public float wallJumpDuration;
     public Vector2 wallJumpForce;
@@ -116,7 +116,7 @@ public class playerOne : MonoBehaviour
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
         isMousePress = Mouse.current.leftButton.isPressed;
 
-        Debug.Log(direction.y);
+        //Debug.Log(direction.y);
         Flip();
         wallJump();
 
