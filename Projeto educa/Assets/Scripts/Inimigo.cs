@@ -100,8 +100,8 @@ public class Inimigo : MonoBehaviour
     {
         if (herovsInimigo<= ataque)
         {
-            animator.SetTrigger("Idle");
-            print("Boing");
+            animator.SetTrigger("Attack");
+            //print("Boing");
         }
         else
             Move();
@@ -126,7 +126,7 @@ public class Inimigo : MonoBehaviour
     {
         if (!fechadura)//Em contado com Patrulha()
             {
-                print("Volta");
+                //print("Volta");
                 if (indoParaDireita)
                 {
                     pontoInicial.x = transform.position.x;
@@ -134,7 +134,7 @@ public class Inimigo : MonoBehaviour
                     pontoFinal.x = (transform.position.x - 1f);
                     pontoInicial.x = (pontoInicial.x - distanciaPatrulha);
                     //indoParaDireita = !indoParaDireita;
-                    print("Direita");
+                    //print("Direita");
                 }
                 else
                 {
@@ -143,7 +143,7 @@ public class Inimigo : MonoBehaviour
                     pontoInicial.x = (transform.position.x + 1f);
                     pontoFinal.x = (pontoFinal.x + distanciaPatrulha);
 
-                    print("Esquerda");
+                    //print("Esquerda");
                 }
                 indoParaDireita = !indoParaDireita;
                 fechadura = true;
