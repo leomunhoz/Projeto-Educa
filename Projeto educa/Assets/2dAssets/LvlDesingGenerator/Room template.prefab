@@ -209,7 +209,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 26
-      m_TileSpriteIndex: 26
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -479,7 +479,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 25
-      m_TileSpriteIndex: 25
+      m_TileSpriteIndex: 26
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -699,7 +699,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 25
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1064,8 +1064,8 @@ Tilemap:
     m_Data: {fileID: 1593106570, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 1743041416, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -123755524, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 539497624, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
   - m_RefCount: 1
@@ -1099,13 +1099,13 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: -1868434582, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: -123755524, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: 681699219, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1664558097, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
-  - m_RefCount: 1
     m_Data: {fileID: -448043380, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1664558097, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -166158751, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
   m_TileMatrixArray:
@@ -7714,12 +7714,24 @@ MonoBehaviour:
   DoorLength: 1
   DoorsList: []
   Socket: {fileID: 0}
-  SelectedMode: 0
+  SelectedMode: 1
   HybridDoorModeData:
     DefaultLength: 1
     DoorLines: []
   ManualDoorModeData:
-    DoorsList: []
+    DoorsList:
+    - From: {x: 34, y: -21, z: 0}
+      To: {x: 34, y: -16, z: 0}
+      Direction: 0
+      Socket: {fileID: 0}
+    - From: {x: -1, y: -5, z: 0}
+      To: {x: -1, y: 0, z: 0}
+      Direction: 0
+      Socket: {fileID: 0}
+    - From: {x: 33, y: -22, z: 0}
+      To: {x: 28, y: -22, z: 0}
+      Direction: 0
+      Socket: {fileID: 0}
   SimpleDoorModeData:
     DistanceFromCorners: 1
     DoorLength: 1
