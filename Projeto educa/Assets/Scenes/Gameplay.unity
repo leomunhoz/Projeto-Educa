@@ -8415,7 +8415,6 @@ MonoBehaviour:
   herovsInimigo: 0
   persegue: 0
   ataque: 0
-  tempoDeEspera: 2
   fechadura: 0
 --- !u!1 &959649001
 GameObject:
