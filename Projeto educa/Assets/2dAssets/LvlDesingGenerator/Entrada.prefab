@@ -7753,7 +7753,7 @@ GameObject:
   - component: {fileID: 6491121407872855728}
   - component: {fileID: 8064790281735041367}
   m_Layer: 0
-  m_Name: Start
+  m_Name: Entrada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
