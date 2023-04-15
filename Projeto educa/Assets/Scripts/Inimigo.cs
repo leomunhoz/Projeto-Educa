@@ -35,13 +35,13 @@ public class Inimigo : MonoBehaviour
     public bool fechadura=false;
     //
     #region Const Anim
-    const string Idle = "Idle";
-    const string Run = "Run";
-    const string Jump = "Jump";
-    const string Attack = "Attack";
+    readonly int Idle = Animator.StringToHash("Idle");
+    readonly int Run = Animator.StringToHash("Run");
+    readonly int Jump = Animator.StringToHash("Jump");
+    readonly int Attack = Animator.StringToHash("Attack");
     #endregion
     //
-    private string currantState;
+    private int currantState;
     private void Start()
     {
         pontoInicial = transform.position;
@@ -172,7 +172,7 @@ public class Inimigo : MonoBehaviour
             GetComponent<Inimigo>().enabled = false;
         }
     }
-    void ChangeAnimState(string newState)
+    void ChangeAnimState(int newState)
     {
         if (currantState == newState)
         {
