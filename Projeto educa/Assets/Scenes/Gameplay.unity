@@ -1095,6 +1095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin boss All Animation_0
       objectReference: {fileID: 0}
+    - target: {fileID: 1398248046854251708, guid: 24a91c7021080c940a19f89ef69c76d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2361479469771362791, guid: 24a91c7021080c940a19f89ef69c76d4, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -11315,6 +11319,10 @@ PrefabInstance:
       propertyPath: currentOneWayPlatform
       value: 
       objectReference: {fileID: 18433848}
+    - target: {fileID: 2844219273763285988, guid: bf43843619d9a9b40a9dba766a328905, type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3992377319786773866, guid: bf43843619d9a9b40a9dba766a328905, type: 3}
       propertyPath: m_RootOrder
       value: 3
