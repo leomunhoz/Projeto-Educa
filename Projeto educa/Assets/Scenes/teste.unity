@@ -131,6 +131,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2813349812384050973, guid: b8f18faf806744848bed7a8bf73ba792, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449826048656361204, guid: b8f18faf806744848bed7a8bf73ba792, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5111012933300762520, guid: b8f18faf806744848bed7a8bf73ba792, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -180,7 +188,8 @@ PrefabInstance:
       value: Entrada
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5161519952678392778, guid: b8f18faf806744848bed7a8bf73ba792, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8f18faf806744848bed7a8bf73ba792, type: 3}
