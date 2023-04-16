@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 */
 public class Inimigo : MonoBehaviour
 {
-    public float velocidade = 2f;
+    public float velocidade = 2;
     public float distanciaPatrulha = 5f;
     public LayerMask walLayer;
     public LayerMask chao;
