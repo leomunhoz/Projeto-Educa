@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Criaturas: Habilidades
-{ 
-    public class Heroi: Criatura, AtaqueDuplo
+public class Criaturas : Habilidades
+{
+    public class Heroi : Criatura, AtaqueDuplo
     {
         public int contMortos;
         public int ContMortos
@@ -20,16 +20,19 @@ public class Criaturas: Habilidades
             ContMortos = contMortos;
         }
     }
-    public class Slime : Criatura
+    public class Slime : Tread
     {
-        public Slime() : base("Slime", 2, 1, 0)
+        public Slime() : base(/*nome=*/"Slime", /*vida=*/2, /*dano=*/1, /*defesa=*/0,
+                     /*disPersegue=*/5f, /*disAtaque=*/1f, /*velocidade=*/2f, /*DisPatrulha=*/10f)
         {
         }
     }
-    public class Goblin : Criatura
+    public class Goblin : Tread
     {
-        public Goblin() : base("Goblin", 100, 1, 0)
+        public Goblin() : base(/*nome=*/"Goblin", /*vida=*/100, /*dano=*/1, /*defesa=*/0,
+                     /*disPersegue=*/5f, /*disAtaque=*/3f, /*velocidade=*/2f, /*DisPatrulha=*/5f)
         {
+
         }
     }
 }
