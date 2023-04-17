@@ -224,11 +224,10 @@ public class playerOne : MonoBehaviour
     }
     public void DownPlat()
     {
-        if (direction.y < -0.90 && isGrounded)
+        if (direction.y < -0.55 && isGrounded)
         {
             ChangeAnimState(Down);
             speed = 0;
-            Debug.Log(speed);
             if (direction.y < 0 && platform.isPlatformDownPressed || isSkeyDownPress)
             {
                 platform.isPlatformDownPressed = true;
@@ -287,7 +286,24 @@ public class playerOne : MonoBehaviour
 
     }
 
-  
+    /* public void jump(InputAction.CallbackContext context)
+     {
+         if (context.performed)
+         {
+             isJumpingPressed = true;
+
+         }
+
+
+     }*/
+    /* public void attack(InputAction.CallbackContext context)
+     {
+         if (context.performed)
+         {
+             isAttackingPressed = true;
+
+         }
+     }*/
     void AttackComplete()
     {
         isAttacking = false;

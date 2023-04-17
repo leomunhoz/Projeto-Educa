@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR;
 
 public abstract class Criatura
 {
     public int vidaTotal;
-    public int poder;
     public int vida;
-    public string Nome { get; private set; }
+    public string Nome; //{ get; private set; }
     public int VidaTotal
     {
         get { return vidaTotal; }
         protected set
         {
-            if (vidaTotal < 0)
+            if (value < 0)
                 vidaTotal = 0;
             else
                 vidaTotal = value;
@@ -22,14 +22,7 @@ public abstract class Criatura
     }
     public int Dano { get; private set; }
     public int Defesa { get; private set; }
-    public int Poder
-    {
-        get { return poder; }
-        protected set
-        {
-            poder = (10 * Defesa) + VidaTotal;
-        }
-    }
+    public int Poder { get; protected set; }
 
     public Criatura(string nome, int vidaTotal, int dano, int defesa)
     {
@@ -38,6 +31,7 @@ public abstract class Criatura
         Dano = dano;
         Defesa = defesa;
         vida = VidaTotal;
+        Poder = (10 * Defesa) + VidaTotal;
     }
     public void Ataque(Criatura criatura)
     {
@@ -69,6 +63,21 @@ public abstract class Criatura
             Debug.Log("Ataque duplo!! ");
         }
         return Mathf.Max((ataque.Dano + bonus) - defesa.Defesa, 0);
+    }
+}
+public class Tread: Criatura
+{
+    public float DisPersegue { get; set; }
+    public float DisAtaque { get; set; }
+    public float Velocidade { get; set; }
+    public float DisPatrulha { get; set; }
+    public Tread(string nome, int vidaTotal, int dano, int defesa, float disPerseguir, float disAtaque, float velocidade, float disPatrulha)
+        : base(nome, vidaTotal, dano, defesa)
+    {
+        DisPersegue = disPerseguir;
+        DisAtaque = disAtaque;
+        Velocidade = velocidade;
+        DisPatrulha = disPatrulha;
     }
 
 }
