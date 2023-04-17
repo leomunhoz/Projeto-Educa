@@ -95,37 +95,33 @@ public class playerOne : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Horizontal = rb2d.velocity.x;
-        Vertical = rb2d.velocity.y;
+       
+        isGrounded = Physics2D.OverlapCircle(groundPoint.position, 0.2f, GroundLayer);
+        isWallSliding = Physics2D.OverlapCircle(wallCheck.position, 0.2f, WallLayer);
 
         attack();
         ParemetroDeAnim();
         WallSlide();
         jump();
-       
+        wallJump();
         DownPlat();
+        Flip();
 
 
     }
     void Update()
     {
-
+        Horizontal = rb2d.velocity.x;
+        Vertical = rb2d.velocity.y;
         isJumpingPressed = Gamepad.current.buttonSouth.isPressed || Keyboard.current.spaceKey.isPressed;
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
         isMousePress = Mouse.current.leftButton.isPressed;
 
-        //Debug.Log(direction.y);
-        Flip();
-        wallJump();
-
-
-
-        isGrounded = Physics2D.OverlapCircle(groundPoint.position, 0.2f, GroundLayer);
-        isWallSliding = Physics2D.OverlapCircle(wallCheck.position, 0.2f, WallLayer);
-
-    }
+       
+    } 
+         
     public void Flip()
     {
 
@@ -189,7 +185,7 @@ public class playerOne : MonoBehaviour
     }
     void Move() 
     {
-        if (!isAttackingPressed)
+        if (!isAttackingPressed && !isSkeyDownPress || !platform.isPlatformDownPressed)
         {
             rb2d.velocity = new Vector2(direction.x * speed, Vertical);
         }
@@ -286,24 +282,7 @@ public class playerOne : MonoBehaviour
 
     }
 
-    /* public void jump(InputAction.CallbackContext context)
-     {
-         if (context.performed)
-         {
-             isJumpingPressed = true;
-
-         }
-
-
-     }*/
-    /* public void attack(InputAction.CallbackContext context)
-     {
-         if (context.performed)
-         {
-             isAttackingPressed = true;
-
-         }
-     }*/
+   
     void AttackComplete()
     {
         isAttacking = false;
