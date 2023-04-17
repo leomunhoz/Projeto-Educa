@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ef4d6150ab304419a6d090cfda4aed, type: 3}
   m_Name: Metroidvania Post Process
   m_EditorClassIdentifier: 
-  SpawnEnemies: 1
-  Enemies: []
+  SpawnEnemies: 0
+  Enemies:
+  - {fileID: 0}
   CreateLevelMap: 1
   WallTile: {fileID: 11400000, guid: d01e20e8e6c0d084690d815feb7c3f75, type: 2}
   LevelMapWallTile: {fileID: 11400000, guid: 62c0be2d4883efa4da66538d3d7ea0a2, type: 2}

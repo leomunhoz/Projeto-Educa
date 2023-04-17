@@ -3922,7 +3922,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -20232,7 +20232,7 @@ Tilemap:
       - {fileID: 293253392, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
       - {fileID: -1205936588, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
       - {fileID: -1761430922, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -3, y: -41, z: 0}
@@ -20325,7 +20325,7 @@ Tilemap:
       - {fileID: -2002074844, guid: 9c90dd706baad414ba5841a61adb7863, type: 3}
       - {fileID: -1549757294, guid: 9c90dd706baad414ba5841a61adb7863, type: 3}
       - {fileID: -905486208, guid: 9c90dd706baad414ba5841a61adb7863, type: 3}
-      m_AnimationSpeed: 7
+      m_AnimationSpeed: 7.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 8, y: -28, z: 0}
@@ -20357,7 +20357,7 @@ Tilemap:
       - {fileID: -151031288, guid: 4337a995e8a5dce479aa6322b39bdbdc, type: 3}
       - {fileID: 306167045, guid: 4337a995e8a5dce479aa6322b39bdbdc, type: 3}
       - {fileID: 696830514, guid: 4337a995e8a5dce479aa6322b39bdbdc, type: 3}
-      m_AnimationSpeed: 7.0000005
+      m_AnimationSpeed: 7
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -15, y: -26, z: 0}
@@ -20465,7 +20465,7 @@ Tilemap:
       - {fileID: 78012099, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
       - {fileID: 1346625747, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
       - {fileID: 1768351426, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: -12, z: 0}
@@ -22372,7 +22372,7 @@ GameObject:
   - component: {fileID: 2961382825986317311}
   - component: {fileID: 7046025545573881001}
   - component: {fileID: 1756952837670695773}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platforms
   m_TagString: OneWayPlatform
   m_Icon: {fileID: 0}

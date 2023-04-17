@@ -9319,11 +9319,15 @@ MonoBehaviour:
   ManualDoorModeData:
     DoorsList:
     - From: {x: -19, y: 1, z: 0}
-      To: {x: -19, y: 6, z: 0}
+      To: {x: -19, y: 9, z: 0}
       Direction: 0
       Socket: {fileID: 0}
     - From: {x: 13, y: 12, z: 0}
-      To: {x: 13, y: 17, z: 0}
+      To: {x: 13, y: 20, z: 0}
+      Direction: 0
+      Socket: {fileID: 0}
+    - From: {x: 7, y: -10, z: 0}
+      To: {x: 7, y: -2, z: 0}
       Direction: 0
       Socket: {fileID: 0}
     - From: {x: -5, y: -11, z: 0}
