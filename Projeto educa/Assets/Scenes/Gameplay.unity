@@ -8490,28 +8490,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7a02bb15fa3ae4ba90cbdc872b04ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 2
-  distanciaPatrulha: 5
+  player: {fileID: 0}
   walLayer:
     serializedVersion: 2
     m_Bits: 0
   chao:
     serializedVersion: 2
     m_Bits: 0
-  pontoInicial: {x: 0, y: 0}
-  pontoFinal: {x: 0, y: 0}
-  maxHealth: 100
-  currentHealth: 0
-  tempoDeMorte: 20
-  animator: {fileID: 0}
-  player: {fileID: 0}
   posHero: {x: 0, y: 0}
   posInimigo: {x: 0, y: 0}
   direcao: {x: 0, y: 0}
-  herovsInimigo: 0
-  persegue: 0
-  ataque: 0
+  pontoInicial: {x: 0, y: 0}
+  pontoFinal: {x: 0, y: 0}
   fechadura: 0
+  currentHealth: 0
+  tempoDeMorte: 20
+  herovsInimigo: 0
+  vidaTotal: 0
+  disPersegue: 0
+  velocidade: 2
+  disPatrulha: 0
 --- !u!1 &959649001
 GameObject:
   m_ObjectHideFlags: 0
