@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 8271431113302041193}
   - component: {fileID: 4704504607545859233}
   m_Layer: 0
-  m_Name: Room template
+  m_Name: Sala02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
