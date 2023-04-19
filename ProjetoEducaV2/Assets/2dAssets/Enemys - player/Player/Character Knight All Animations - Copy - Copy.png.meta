@@ -1,0 +1,2734 @@
+fileFormatVersion: 2
+guid: 0cab6cebcfa9b074b8a341c37ad361b2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Character Knight All Animations_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22dd3e536f0a264696c2243a4f21eb5
+      internalID: 1167429835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26d400c266a7ed478e95e93acb45f17
+      internalID: 2107212610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50fa9f72fa4c5fb41a530984bf2c592c
+      internalID: -1904360272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71dec42f09553064ca79ae193feb8562
+      internalID: 1153191108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d36689532a113a40af8376346abd54c
+      internalID: 1186697025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_5
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde1c3a056a919843a7c4bb69f7ed2d8
+      internalID: 739411108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fcd6d56c94066748b629bca95b114cf
+      internalID: -1439329710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5139f6346581ebd43ad6fe88c878c766
+      internalID: -1385287852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8941e3f69c0db0f47b04c488a1457791
+      internalID: 1095681048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_9
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67232371dbb8f144e957855813249bad
+      internalID: -1977098092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_10
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecb0d2a5754c6842b7ca968036be28d
+      internalID: 320680526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_11
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2100a974ac2d3b49bf2777dbf4a5435
+      internalID: -2012167739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae849a53512ace4409690773dac28221
+      internalID: -996197902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_13
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1614a43a13078664cab0b8005df4947f
+      internalID: -1199638059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115c42fefe087d942bf24687038fdaaa
+      internalID: -1024741016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_15
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cdb14c7dd91e2f47999e303459bfd7b
+      internalID: -2024391125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_16
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88447c57ad2f4874dbcc42f5ef566771
+      internalID: 1095961525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_17
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b443a2f1c30d9d409544c142cf2cf46
+      internalID: -1885293883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_18
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0baf1c2d0327e94c94f70de996e4950
+      internalID: 1665358932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_19
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95669dc8a290c374ca0b2ca0026e6e32
+      internalID: 1209404835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_20
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4785c17775c7df84584ce49a8ce73d08
+      internalID: -972721886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_21
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a860bd6ad99ccf47a6dc20aba2e94bb
+      internalID: -116769965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39678f39599eeba4d83fa655552e2637
+      internalID: -306661666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_23
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8bd915ff38d41c4da00b926f393be47
+      internalID: -1609305635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_24
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e612698f9297e45b5ca102aca0bf39
+      internalID: -1227515669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_25
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb473df8a1fe709479eb8fad0f76bc57
+      internalID: 403062478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_26
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4dc379e75469c4c88e80640ec727ff
+      internalID: 217944490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_27
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7f75ed9de5c4346a10983b38400842
+      internalID: -936627369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_28
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f344dec7157e7e34a88a9bc294b4e039
+      internalID: -1315111047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_29
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e64874d86318ae44810cd52334a59e7
+      internalID: -1663541913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_30
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c1efa65ce2b2245a91d4cefc7f5685
+      internalID: 1667255502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_31
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d139517edd18504aa4f8a693c0b8a31
+      internalID: 2057459127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_32
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc22ef7fe9d55049bedddf26f1708c1
+      internalID: -616904050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 839376ffa34edab4db96104458546499
+      internalID: 1653172510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_34
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45c18559cd6d8542ad9be9229ad89c2
+      internalID: 1275778267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_35
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546489efd6121204a8557760e1170f07
+      internalID: 1627770464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_36
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351897f44adacf7468e278d4c72662f5
+      internalID: -1501819199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_37
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafad318093e1774eb7c455e6d15d0b3
+      internalID: -1814935681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_38
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c579d920b6519e844824c1fda15e0e2d
+      internalID: 1603395337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_39
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467fec07205a91647bc47590b95db836
+      internalID: 187798158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_40
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4ad303b2d0a184ba8d3cb43ef66d5c
+      internalID: -501709906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_41
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44063a24d3d262458334d1701f60b78
+      internalID: -169211229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_42
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3befbd6c951f1d44b0526bcb7098d93
+      internalID: 1798411759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_43
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca029ef6837dd54bb3e3b5944f16902
+      internalID: -486721884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_44
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ff5e9bca3ec8d54e81fad8469e79cd4
+      internalID: -649102070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcfb49088da1584e8396da9e1e794e5
+      internalID: -1689124160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_46
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16cf63b00d38df42b7d7c62e1505c9a
+      internalID: -946348440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_47
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d12676931ec83742b413ea1ed90fc9f
+      internalID: -408731524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_48
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bf38bd04a073c4b8f0415a614a6f1f
+      internalID: 1403017944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_49
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd29e520ca05a3c42ac6d9326f53db93
+      internalID: -1914042041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_50
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aba3c1476281114e89ddcd4aee42375
+      internalID: 902789648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_51
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa36838cb170b62409164ac560b713f1
+      internalID: 1387037815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_52
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c2b8ce7cfb9d14285a5cb4c2460314
+      internalID: 1620706405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_53
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba74fe5c4359ae47adc87c07dbb3d5a
+      internalID: -913730801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_54
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187484fd98cf3af499b86a38edcd6f98
+      internalID: 812340503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_55
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3f4ba71b4735440abe48844a018a88
+      internalID: -1816211208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_56
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dba220a73b106d45afca18b015117fa
+      internalID: 221798259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_57
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d21b23a0c6daa4783e3f28a29e0cc0
+      internalID: 800844990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_58
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e2d23ec16b85f40bef18aa30314aec
+      internalID: 656245510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_59
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d34ced45d917224eba05ea0865f5273
+      internalID: 137867355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_60
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216e56fcad3d14f4caeaf03c8c50465a
+      internalID: -719201564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_61
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d050f1e218d465469d25bb5038b7c64
+      internalID: 1658693016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_62
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e7cca00ee62f249814c5dea43c5cc1
+      internalID: -2115216694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_63
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e2586642d986442940296e7160742a
+      internalID: 1497402105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_64
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0b96afa745b7340836b77e17e27303
+      internalID: 2054310093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_65
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda31f6d3b09d7248b79a1f0a192f88d
+      internalID: 1095749550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5868ee306f1fd3a40a51e739109cf537
+      internalID: -1379374098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_67
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc0f21617c2546447be54dabd43fd1af
+      internalID: 1325988997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_68
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079aa6845a2c7e14c98c40f66fabd380
+      internalID: 1547658975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_69
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9666531b2daa1b248891a1bb673bcfe6
+      internalID: 1482838721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_70
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b42684d966e3f345b0b3dd32c41b63b
+      internalID: -282799032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_71
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebeadf26c9e6c2548be08e9f43d67dd7
+      internalID: -32229642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_72
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fd0087eed26f14b9fcd6f4a0a0a2a2
+      internalID: -96911575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_73
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45bca875a637ad345a9215dc8a786bd0
+      internalID: -723908737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_74
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38f3fc3156b8a2448ab82bd86d3fcf0
+      internalID: -2122216049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_75
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbbf9c9039d2614a970d1038e7a9e2c
+      internalID: 1711732575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_76
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18fced77d78957c478c241ef139bc1a6
+      internalID: -1923201926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_77
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b00fabe288fb747b905b516f0e27d9
+      internalID: -1862938797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_78
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2edac678d6c6864ea01c1c1e82aa8c0
+      internalID: 942899324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_79
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37043352e7c59674e8232039bfa11246
+      internalID: 666287652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_80
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678646f69b5dc6f47b4c783207dd05b6
+      internalID: -1165733172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_81
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322be3ba56f7e67469c266b9e931127f
+      internalID: -628948830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_82
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550fd829ca8e2af4b873c49e9780f6af
+      internalID: -1006181805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_83
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d877c451b9e49f4ca8b7af7e163ba6d
+      internalID: 1648770907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4613cab412ad27c4192457daa6a3c595
+      internalID: 933704778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_85
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957c301aaa167b044951bcfbaa620d31
+      internalID: 1971600289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_86
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81febaa0d1a44484b8ddeffd5c414a01
+      internalID: 398406695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_87
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9569b0665672b89459b2073bc8df9655
+      internalID: -2107343619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_88
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116008a005f0c0540b5f4d1a1459be03
+      internalID: -1642771964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_89
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00eaee4e98fdbb7439bc6079e87709e6
+      internalID: 1649674528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_90
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc02f44e14e90d04b988faa32b2ac3c8
+      internalID: -1734826245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_91
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887f14378eaf49c488387793f18444d0
+      internalID: -1758715145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_92
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa85f180971b8c4b87569547907d1e7
+      internalID: -562652541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_93
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f46a33a51921a4ab4ecb314ec6cf37
+      internalID: -1992936613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_94
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750bd43d14c8826408fec2b0223b5141
+      internalID: 67772824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_95
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6eb1e61765278e4ba2a7098db96eb35
+      internalID: 1873068122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_96
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1082e5625396d648a0fa97c5a750885
+      internalID: -2016871682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_97
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5361a5f1f9f7dc4582ac4d1877f3e62
+      internalID: -1552838924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_98
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823748c14964c18489621c796b161e75
+      internalID: -906753966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_99
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c04f0d8263a9240b13742245569254
+      internalID: 1980347262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_100
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e436e5cd85732044f95e41870c381ef5
+      internalID: 1152811765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_101
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466dae6b0c6cb3b468b0f6a2aa72e60e
+      internalID: -24038928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_102
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad9f464743735b4bba19813c44c8acf
+      internalID: 1180656148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_103
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e85716de01bd349afa324105991234
+      internalID: -1338021393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_104
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9352330aa3e4f41499721e4eaf216071
+      internalID: 762383544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_105
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caddc6c489f7d6747af305810051f9b3
+      internalID: -1219269801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_106
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e37417655042a45b2128c6d813cbc3
+      internalID: -786721876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_107
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94da70f0155e68840b5ecec2465b1d1b
+      internalID: -1830832080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_108
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15ce6ffea83b4c408e0d95aec4e65d2
+      internalID: -1885008351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_109
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b13da5fcca7b44dbfbca590f044af1
+      internalID: 505852118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_110
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee032dac664c30e4cb6163f13d6f2392
+      internalID: -1939227569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_111
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7ac6186eea4f74fb19ec1f12a57b8b
+      internalID: -1102113808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_112
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffec1b7b803458946bac31470852728d
+      internalID: 521245301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_113
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f27604555412d4db68519c4864c87a
+      internalID: -1248226668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_114
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e520933f9c9d2cd4482f86766ebd70cd
+      internalID: 655847549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_115
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae23f2f18c2019043a5a892a901eae2e
+      internalID: 1073806084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All Animations_116
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ee4969eeef1d940a3a9c24073811bc
+      internalID: -1363487994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Character Knight All Animations_0: 1167429835
+      Character Knight All Animations_1: 2107212610
+      Character Knight All Animations_10: 320680526
+      Character Knight All Animations_100: 1152811765
+      Character Knight All Animations_101: -24038928
+      Character Knight All Animations_102: 1180656148
+      Character Knight All Animations_103: -1338021393
+      Character Knight All Animations_104: 762383544
+      Character Knight All Animations_105: -1219269801
+      Character Knight All Animations_106: -786721876
+      Character Knight All Animations_107: -1830832080
+      Character Knight All Animations_108: -1885008351
+      Character Knight All Animations_109: 505852118
+      Character Knight All Animations_11: -2012167739
+      Character Knight All Animations_110: -1939227569
+      Character Knight All Animations_111: -1102113808
+      Character Knight All Animations_112: 521245301
+      Character Knight All Animations_113: -1248226668
+      Character Knight All Animations_114: 655847549
+      Character Knight All Animations_115: 1073806084
+      Character Knight All Animations_116: -1363487994
+      Character Knight All Animations_12: -996197902
+      Character Knight All Animations_13: -1199638059
+      Character Knight All Animations_14: -1024741016
+      Character Knight All Animations_15: -2024391125
+      Character Knight All Animations_16: 1095961525
+      Character Knight All Animations_17: -1885293883
+      Character Knight All Animations_18: 1665358932
+      Character Knight All Animations_19: 1209404835
+      Character Knight All Animations_2: -1904360272
+      Character Knight All Animations_20: -972721886
+      Character Knight All Animations_21: -116769965
+      Character Knight All Animations_22: -306661666
+      Character Knight All Animations_23: -1609305635
+      Character Knight All Animations_24: -1227515669
+      Character Knight All Animations_25: 403062478
+      Character Knight All Animations_26: 217944490
+      Character Knight All Animations_27: -936627369
+      Character Knight All Animations_28: -1315111047
+      Character Knight All Animations_29: -1663541913
+      Character Knight All Animations_3: 1153191108
+      Character Knight All Animations_30: 1667255502
+      Character Knight All Animations_31: 2057459127
+      Character Knight All Animations_32: -616904050
+      Character Knight All Animations_33: 1653172510
+      Character Knight All Animations_34: 1275778267
+      Character Knight All Animations_35: 1627770464
+      Character Knight All Animations_36: -1501819199
+      Character Knight All Animations_37: -1814935681
+      Character Knight All Animations_38: 1603395337
+      Character Knight All Animations_39: 187798158
+      Character Knight All Animations_4: 1186697025
+      Character Knight All Animations_40: -501709906
+      Character Knight All Animations_41: -169211229
+      Character Knight All Animations_42: 1798411759
+      Character Knight All Animations_43: -486721884
+      Character Knight All Animations_44: -649102070
+      Character Knight All Animations_45: -1689124160
+      Character Knight All Animations_46: -946348440
+      Character Knight All Animations_47: -408731524
+      Character Knight All Animations_48: 1403017944
+      Character Knight All Animations_49: -1914042041
+      Character Knight All Animations_5: 739411108
+      Character Knight All Animations_50: 902789648
+      Character Knight All Animations_51: 1387037815
+      Character Knight All Animations_52: 1620706405
+      Character Knight All Animations_53: -913730801
+      Character Knight All Animations_54: 812340503
+      Character Knight All Animations_55: -1816211208
+      Character Knight All Animations_56: 221798259
+      Character Knight All Animations_57: 800844990
+      Character Knight All Animations_58: 656245510
+      Character Knight All Animations_59: 137867355
+      Character Knight All Animations_6: -1439329710
+      Character Knight All Animations_60: -719201564
+      Character Knight All Animations_61: 1658693016
+      Character Knight All Animations_62: -2115216694
+      Character Knight All Animations_63: 1497402105
+      Character Knight All Animations_64: 2054310093
+      Character Knight All Animations_65: 1095749550
+      Character Knight All Animations_66: -1379374098
+      Character Knight All Animations_67: 1325988997
+      Character Knight All Animations_68: 1547658975
+      Character Knight All Animations_69: 1482838721
+      Character Knight All Animations_7: -1385287852
+      Character Knight All Animations_70: -282799032
+      Character Knight All Animations_71: -32229642
+      Character Knight All Animations_72: -96911575
+      Character Knight All Animations_73: -723908737
+      Character Knight All Animations_74: -2122216049
+      Character Knight All Animations_75: 1711732575
+      Character Knight All Animations_76: -1923201926
+      Character Knight All Animations_77: -1862938797
+      Character Knight All Animations_78: 942899324
+      Character Knight All Animations_79: 666287652
+      Character Knight All Animations_8: 1095681048
+      Character Knight All Animations_80: -1165733172
+      Character Knight All Animations_81: -628948830
+      Character Knight All Animations_82: -1006181805
+      Character Knight All Animations_83: 1648770907
+      Character Knight All Animations_84: 933704778
+      Character Knight All Animations_85: 1971600289
+      Character Knight All Animations_86: 398406695
+      Character Knight All Animations_87: -2107343619
+      Character Knight All Animations_88: -1642771964
+      Character Knight All Animations_89: 1649674528
+      Character Knight All Animations_9: -1977098092
+      Character Knight All Animations_90: -1734826245
+      Character Knight All Animations_91: -1758715145
+      Character Knight All Animations_92: -562652541
+      Character Knight All Animations_93: -1992936613
+      Character Knight All Animations_94: 67772824
+      Character Knight All Animations_95: 1873068122
+      Character Knight All Animations_96: -2016871682
+      Character Knight All Animations_97: -1552838924
+      Character Knight All Animations_98: -906753966
+      Character Knight All Animations_99: 1980347262
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
