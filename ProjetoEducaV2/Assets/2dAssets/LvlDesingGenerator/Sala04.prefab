@@ -11678,7 +11678,7 @@ GameObject:
   - component: {fileID: 5465672096630541395}
   m_Layer: 0
   m_Name: Platforms
-  m_TagString: Untagged
+  m_TagString: OneWayPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16124,7 +16124,7 @@ Tilemap:
       - {fileID: 293253392, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
       - {fileID: -1205936588, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
       - {fileID: -1761430922, guid: 0a741bfbb63c13e4eab5b6c6c82a56db, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: 21, z: 0}
@@ -16595,7 +16595,7 @@ GameObject:
   - component: {fileID: 216478425744320151}
   - component: {fileID: 6447860260885262035}
   - component: {fileID: 3479341359368384520}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}

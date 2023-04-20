@@ -125,10 +125,10 @@ MonoBehaviour:
   player: {fileID: 0}
   walLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   chao:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   posHero: {x: 0, y: 0}
   posInimigo: {x: 0, y: 0}
   direcao: {x: 0, y: 0}

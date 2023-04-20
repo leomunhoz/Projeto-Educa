@@ -8,7 +8,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
 {
     [SerializeField] public GameObject currentOneWayPlatform;
     [SerializeField]private CapsuleCollider2D capsuleCollider2D;
-    public playerOne player;
+    public PlayerOne player;
     public bool isPlatformDownPressed;
     // Start is called before the first frame update
     void Start()

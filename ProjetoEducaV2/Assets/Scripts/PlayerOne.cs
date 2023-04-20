@@ -8,19 +8,20 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
 
-public class playerOne : MonoBehaviour
+public class PlayerOne : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
-    [SerializeField] private float Horizontal;
-    [SerializeField] private float Vertical;
+    private float Horizontal;
+    private float Vertical;
     [SerializeField] private int attackDemage = 40;
     [SerializeField] private int pulosExtras = 1;
     [SerializeField] private int axPulosExtras = 1;
     [SerializeField] private float attackDelay = 0.3f;
     [SerializeField] private float attackRange = 0.1f;
     [SerializeField] private int combo;
+   
 
     private Vector2 direction;
 
@@ -44,17 +45,17 @@ public class playerOne : MonoBehaviour
     #endregion
 
 
-    
-     private bool isGrounded;
-     private bool isAttacking;
-     private bool isAttackingPressed;
-     private bool isJumpingPressed;
-     private bool isRollingPressed;
-     private bool isSkeyDownPress;
-     private bool isMousePress;
-     private bool isJumping;
-     private bool isWallSliding;
-   
+
+    public bool isGrounded;
+    private bool isAttacking;
+    private bool isAttackingPressed;
+    private bool isJumpingPressed;
+    private bool isRollingPressed;
+    private bool isSkeyDownPress;
+    private bool isMousePress;
+    private bool isJumping;
+    private bool isWallSliding;
+
 
     public float wallJumpDuration;
     public Vector2 wallJumpForce;
@@ -95,33 +96,37 @@ public class playerOne : MonoBehaviour
     }
     private void FixedUpdate()
     {
-       
+
         isGrounded = Physics2D.OverlapCircle(groundPoint.position, 0.2f, GroundLayer);
         isWallSliding = Physics2D.OverlapCircle(wallCheck.position, 0.2f, WallLayer);
+        Horizontal = rb2d.velocity.x;
+        Vertical = rb2d.velocity.y;
 
         attack();
-        ParemetroDeAnim();
         WallSlide();
         jump();
-        wallJump();
-        DownPlat();
-        Flip();
+        
+        
+        
 
 
     }
     void Update()
     {
-        Horizontal = rb2d.velocity.x;
-        Vertical = rb2d.velocity.y;
+        
         isJumpingPressed = Gamepad.current.buttonSouth.isPressed || Keyboard.current.spaceKey.isPressed;
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
         //isMousePress = Mouse.current.leftButton.isPressed;
+        wallJump();
+        Flip();
+        DownPlat();
+        ParemetroDeAnim();
 
-       
-    } 
-         
+
+    }
+
     public void Flip()
     {
 
@@ -171,7 +176,7 @@ public class playerOne : MonoBehaviour
                         enemy.GetComponent<Inimigo>().TakeDemage(attackDemage);
                     }
                 }
-                Invoke("AttackComplete", attackDelay);
+                StartCoroutine(AttackComplete());
 
             }
 
@@ -180,16 +185,16 @@ public class playerOne : MonoBehaviour
         {
             Move();
         }
-        
+
 
     }
-    void Move() 
+    void Move()
     {
         if (!isAttackingPressed && !isSkeyDownPress || !platform.isPlatformDownPressed)
         {
             rb2d.velocity = new Vector2(direction.x * speed, Vertical);
         }
-       
+
     }
     public void jump()
     {
@@ -238,7 +243,7 @@ public class playerOne : MonoBehaviour
         {
             speed = 7;
         }
-       
+
     }
     public void WallSlide()
     {
@@ -261,16 +266,28 @@ public class playerOne : MonoBehaviour
         if (isWallSliding)
         {
             wallJumping = true;
-            Invoke("StopWallJumping", wallJumpDuration);
+            
+            StartCoroutine(StopWallJumping());
         }
         if (isJumpingPressed)
         {
-            if (wallJumping)
+            if (wallJumping && !isGrounded)
             {
-                rb2d.velocity = new Vector2(-wallJumpForce.x, wallJumpForce.y);
+                float currentTime = 0;
+                float time = currentTime / wallJumpDuration;
+                //rb2d.velocity = new Vector2(wallJumpForce.x * speed, wallJumpForce.y);
+                if (isFacingRigth)
+                {
+                    rb2d.AddForce(new Vector2(Mathf.Lerp(-wallJumpForce.x, 0, time), Mathf.Lerp(wallJumpForce.y, 0, time)));
+                }
+                else
+                {
+                    rb2d.AddForce(new Vector2(Mathf.Lerp(wallJumpForce.x, 0, time), Mathf.Lerp(wallJumpForce.y, 0, time)));
+                }
 
             }
            
+
 
         }
     }
@@ -282,14 +299,16 @@ public class playerOne : MonoBehaviour
 
     }
 
-   
-    void AttackComplete()
+
+    IEnumerator AttackComplete()
     {
+        yield return new WaitForSeconds(attackDelay);
         isAttacking = false;
         isAttackingPressed = false;
     }
-    void StopWallJumping()
+    IEnumerator StopWallJumping()
     {
+        yield return new WaitForSeconds(wallJumpDuration);
         wallJumping = false;
 
     }
@@ -332,63 +351,3 @@ public class playerOne : MonoBehaviour
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
