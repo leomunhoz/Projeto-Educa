@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 308
+  controlID: 120
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1051,23 +1051,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Documentos\GitHub\Projeto-Educa\Projeto educa
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5ad60000
-    m_LastClickedID: 54874
-    m_ExpandedIDs: 000000005ad600005cd600005ed6000060d6000062d6000064d6000066d6000000ca9a3b
+    scrollPos: {x: 0, y: 41}
+    m_SelectedIDs: 20d80000
+    m_LastClickedID: 55328
+    m_ExpandedIDs: 000000005cd600005ed6000060d6000062d6000064d6000068d6000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1095,7 +1095,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005ad600005cd600005ed6000060d6000062d6000064d6000066d60000
+    m_ExpandedIDs: 000000005cd600005ed6000060d6000062d6000064d6000066d6000068d60000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000e6700000aa700000707000003670000078710000d67000000e710000746800006e68000002640000207000005caa0000c2af0000f4b90000029600000a960000fa9500000c9600004ecf0000b03d0000b2e10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1235,9 +1235,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ccfaffff
-      m_LastClickedID: -1332
-      m_ExpandedIDs: dcfaffffe4faffff
+      m_SelectedIDs: fe370000
+      m_LastClickedID: 0
+      m_ExpandedIDs: d8faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1645,7 +1645,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 9.782024, y: 19.606913, z: 6.6056886}
     speed: 2
-    m_Value: {x: 8.430581, y: 19.53396, z: 6.5947456}
+    m_Value: {x: 9.782024, y: 19.606913, z: 6.6056886}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1697,7 +1697,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 23.223192
     speed: 2
-    m_Value: 24.317478
+    m_Value: 23.223192
   m_Ortho:
     m_Target: 1
     speed: 2
