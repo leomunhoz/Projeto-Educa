@@ -11676,7 +11676,7 @@ GameObject:
   - component: {fileID: 8595752336360765239}
   - component: {fileID: 8968912584519241419}
   - component: {fileID: 5465672096630541395}
-  m_Layer: 11
+  m_Layer: 3
   m_Name: Platforms
   m_TagString: OneWayPlatform
   m_Icon: {fileID: 0}
@@ -16089,7 +16089,7 @@ Tilemap:
       - {fileID: -151031288, guid: 4337a995e8a5dce479aa6322b39bdbdc, type: 3}
       - {fileID: 306167045, guid: 4337a995e8a5dce479aa6322b39bdbdc, type: 3}
       - {fileID: 696830514, guid: 4337a995e8a5dce479aa6322b39bdbdc, type: 3}
-      m_AnimationSpeed: 7
+      m_AnimationSpeed: 7.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: 18, z: 0}
