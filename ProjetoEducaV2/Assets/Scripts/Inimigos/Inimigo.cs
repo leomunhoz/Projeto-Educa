@@ -26,7 +26,7 @@ public class Inimigo : MonoBehaviour
     bool isDead = false;
    
     public float currentHealth;
-    public float tempoDeMorte = 4f;
+    public float tempoDeMorte = 20f;
     public float herovsInimigo;
     public float vidaTotal;//virá do construct
     public float disPersegue;//virá do construct
@@ -170,14 +170,15 @@ public class Inimigo : MonoBehaviour
     public void TakeDemage(int damage)
     {
         //animator.SetTrigger("Hurt");
-
+        currentHealth =- damage;
         if (currentHealth <= 0)
         {
-            //animator.SetBool("Die", true);
+            AnimaInimigo.ChangeAnimState(GetComponent<Animator>(),"Death");
             isDead = true;
             //rb2d.velocity = direcao * 0;
             //currentHealth = 0;
             this.enabled = false;
+            rd.gravityScale = 0;
             Destroy(this.gameObject, tempoDeMorte);
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Inimigo>().enabled = false;

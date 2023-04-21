@@ -15,7 +15,7 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private float jumpForce;
     private float Horizontal;
     private float Vertical;
-    [SerializeField] private int attackDemage = 40;
+    [SerializeField] private int attackDemage = 15;
     [SerializeField] private int pulosExtras = 1;
     [SerializeField] private int axPulosExtras = 1;
     [SerializeField] private float attackDelay = 0.3f;
