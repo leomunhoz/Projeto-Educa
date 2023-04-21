@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 316133378812319475}
   - component: {fileID: 8734244238093355679}
   - component: {fileID: 1669894457816249230}
-  m_Layer: 0
-  m_Name: Goblin
+  m_Layer: 6
+  m_Name: goblinPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050910093316395198}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -198,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1213342654899181216}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Gound
   m_TagString: Untagged
   m_Icon: {fileID: 0}

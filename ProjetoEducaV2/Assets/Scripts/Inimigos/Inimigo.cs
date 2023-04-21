@@ -37,11 +37,6 @@ public class Inimigo : MonoBehaviour
     private Rigidbody2D rd;
     public void Parametros(string nome, float Persegue, float Ataque, float Patrulha, float velo, float vidaToda)
     {
-        print("Persegue=" + Persegue);
-        print("Ataque=" + Ataque);
-        print("Patrulha=" + Patrulha);
-        print("velo=" + velo);
-        print("vidaToda=" + vidaToda);
         disPersegue = Persegue;
         disAtaque = Ataque;
         disPatrulha = Patrulha;
@@ -52,11 +47,6 @@ public class Inimigo : MonoBehaviour
     private void Start()
     {
         //print("Nome=" + nome);
-        print("DisPersegue=" + disPersegue);
-        print("DisAtaque=" + disAtaque);
-        print("DisPatrulha=" + disPatrulha);
-        print("Velocidade=" + velocidade);
-        print("vidaTotal=" + vidaTotal);
         pontoInicial = transform.position;
         pontoFinal = pontoInicial + Vector2.right * disPatrulha;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -124,6 +114,7 @@ public class Inimigo : MonoBehaviour
     }
     public void Persegue()
     {
+        print("Haaa achei você!"+herovsInimigo);
             Move();
     }
 
