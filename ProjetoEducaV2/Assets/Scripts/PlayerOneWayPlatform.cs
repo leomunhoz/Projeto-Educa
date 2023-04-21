@@ -42,10 +42,10 @@ public class PlayerOneWayPlatform : MonoBehaviour
     {
         if (isPlatformDownPressed )
         {
-            TilemapCollider2D platformCollidier = currentOneWayPlatform.GetComponent<TilemapCollider2D>();
+            CompositeCollider2D platformCollidier = currentOneWayPlatform.GetComponent<CompositeCollider2D>();
             //Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier);
             platformCollidier.isTrigger = true;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             platformCollidier.isTrigger = false;
             //Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier, false);
         }
