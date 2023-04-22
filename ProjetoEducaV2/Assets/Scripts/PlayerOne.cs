@@ -247,15 +247,12 @@ public class PlayerOne : MonoBehaviour
     }
     public void WallSlide()
     {
-        if (isWallSliding && !isGrounded && Vertical != 0)
+        if (isWallSliding && !isGrounded && Vertical == 0)
         {
             isWallSliding = true;
             ChangeAnimState(WallSliding);
             rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Clamp(rb2d.velocity.y, -WallSlidingSpeed, float.MaxValue));
-            if (isWallSliding && Vertical == 0)
-            {
-                ChangeAnimState(WallSliding);
-            }
+           
         }
         else
         {
