@@ -8,18 +8,32 @@ public class GameManager : IPresistentSingleton<GameManager>
   /*  public GameObject slimePrefab;
     public GameObject batPrefab;*/
     public GameObject goblinPrefab;
-    public Transform spawnPoint;
+    public GameObject heroiPrefab;
+    public Vector3 spawnPointInimigo;
+    public Vector3 spawnPointHeroi;
 
 
     public int numGoblins=5;
     void Start()
     {
         print("Começa");
-     /*   slimePrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/slimePrefab");
-        batPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/batPrefab");*/
+        heroiPrefab = Resources.Load<GameObject>("Prefab/PrefabHeroi/HeroiPrefab");
+        spawnPointHeroi = GameObject.Find("SpawnPointHeroi").transform.position;
+        GameObject heroi = Instantiate(heroiPrefab, spawnPointHeroi, Quaternion.identity);
+        Criaturas.Heroi heroiCriatura = new Criaturas.Heroi();
+        PlayerOne heroiScript = heroi.GetComponent<PlayerOne>();
+        heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);
+
+        /*   slimePrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/slimePrefab");
+           batPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/batPrefab");*/
         goblinPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/goblinPrefab");
-        spawnPoint = GameObject.Find("SpawnPoint").transform;
-        
+        spawnPointInimigo = GameObject.Find("SpawnPoint").transform.position;
+        GameObject goblin = Instantiate(goblinPrefab, spawnPointInimigo, Quaternion.identity);
+        Criaturas.Goblin goblinCriatura = new Criaturas.Goblin();
+        Inimigo goblinScript = goblin.GetComponent<Inimigo>();
+        goblinScript.Parametros(goblinCriatura.Nome, goblinCriatura.Dano, goblinCriatura.Defesa, goblinCriatura.DisPersegue, goblinCriatura.DisAtaque, goblinCriatura.DisPatrulha, goblinCriatura.Velocidade, goblinCriatura.vidaTotal);
+
+       
 
         /*   GameObject slime = Instantiate(slimePrefab, new Vector2(3, 12.85f), Quaternion.identity);
            Criaturas.Slime slimeCriatura = new Criaturas.Slime();
@@ -32,14 +46,7 @@ public class GameManager : IPresistentSingleton<GameManager>
            batScript.Parametros(batCriatura.Nome, batCriatura.DisPersegue, batCriatura.DisAtaque, batCriatura.DisPatrulha, batCriatura.Velocidade, batCriatura.vidaTotal);
 
            */
-        GameObject goblin = Instantiate(goblinPrefab, spawnPoint.transform.position, Quaternion.identity);
 
- //       GameObject goblin = Instantiate(goblinPrefab, new Vector2(20f, 0f), Quaternion.identity);
-        Criaturas.Goblin goblinCriatura = new Criaturas.Goblin();
-        Inimigo goblinScript = goblin.GetComponent<Inimigo>();
-        goblinScript.Parametros(goblinCriatura.Nome, goblinCriatura.DisPersegue, goblinCriatura.DisAtaque, goblinCriatura.DisPatrulha, goblinCriatura.Velocidade, goblinCriatura.vidaTotal);
-
-        
         //GameObject goblin1 = Instantiate(goblinPrefab, new Vector2(5, 12.85f), Quaternion.identity);
         //Criaturas.Goblin goblinCriatura1 = new Criaturas.Goblin();
         //Inimigo goblinScript1 = new Inimigo();

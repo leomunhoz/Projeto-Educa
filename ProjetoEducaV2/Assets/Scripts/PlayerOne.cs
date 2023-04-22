@@ -15,7 +15,7 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private float jumpForce;
     private float Horizontal;
     private float Vertical;
-    [SerializeField] private int attackDemage = 15;
+    [SerializeField] private int attackDemage;
     [SerializeField] private int pulosExtras = 1;
     [SerializeField] private int axPulosExtras = 1;
     [SerializeField] private float attackDelay = 0.3f;
@@ -82,6 +82,17 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private float tempoMax;
     [SerializeField] private float tempParaProximoAtaque;
     int animAtual = 0;
+    public int mortos;
+    public int vida;
+    public int defesa;
+
+    public void Parametros(int contMortos,int danoH, int vidaH, int defesaH)
+    {
+        mortos = contMortos;
+        attackDemage = danoH;
+        vida = vidaH;
+        defesa = defesaH;
+    }
 
     void Start()
     {

@@ -33,15 +33,21 @@ public class Inimigo : MonoBehaviour
     private float disAtaque;//virá do construct
     public float velocidade;//virá do construct
     public float disPatrulha;//virá do construct
+    public int dano;
+    public int defesa;
+    public string nome;
 
     private Rigidbody2D rd;
-    public void Parametros(string nome, float Persegue, float Ataque, float Patrulha, float velo, float vidaToda)
+    public void Parametros(string nomeC, int danoC, int def, float Persegue, float Ataque, float Patrulha, float velo, float vidaToda)
     {
         disPersegue = Persegue;
         disAtaque = Ataque;
         disPatrulha = Patrulha;
         velocidade = velo;
         vidaTotal = vidaToda;
+        defesa = def;
+        dano = danoC;
+        nome = nomeC;
     }
 
     private void Start()
@@ -114,7 +120,6 @@ public class Inimigo : MonoBehaviour
     }
     public void Persegue()
     {
-        print("Haaa achei você!"+herovsInimigo);
             Move();
     }
 
@@ -169,8 +174,10 @@ public class Inimigo : MonoBehaviour
     }
     public void TakeDemage(int damage)
     {
-        //animator.SetTrigger("Hurt");
-        currentHealth =- damage;
+        
+        currentHealth = currentHealth - (damage-defesa);
+        AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Hurt");
+
         if (currentHealth <= 0)
         {
             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(),"Death");
