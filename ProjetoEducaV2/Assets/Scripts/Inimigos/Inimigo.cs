@@ -38,6 +38,10 @@ public class Inimigo : MonoBehaviour
     public string nome;
 
     private Rigidbody2D rd;
+
+   /* public float radius;
+    public GameObject animacaoDanoPrefab;
+    public LayerMask playerLayer;*/
     public void Parametros(string nomeC, int danoC, int def, float Persegue, float Ataque, float Patrulha, float velo, float vidaToda)
     {
         disPersegue = Persegue;
@@ -201,7 +205,16 @@ public class Inimigo : MonoBehaviour
             {
                 AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                 rd.velocity = direcao * 0;
-            }
+                
+                    // Verifica se a lança colide com o jogador
+                    /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+                     if (hit != null && hit.CompareTag("Player"))
+                     {
+                         // Subtrai a vida do jogador e instancia a animação
+                         player.GetComponent<PlayerOne>().vida -= dano;
+                         Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
+                     }*/
+                }
         }
         else
         {
@@ -211,6 +224,15 @@ public class Inimigo : MonoBehaviour
             {
                 AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                 rd.velocity = direcao * 0;
+                
+                // Verifica se a lança colide com o jogador
+               /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+                if (hit != null && hit.CompareTag("Player"))
+                {
+                    // Subtrai a vida do jogador e instancia a animação
+                    player.GetComponent<PlayerOne>().vida -= dano;
+                    Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
+                }*/
             }
         }
     }

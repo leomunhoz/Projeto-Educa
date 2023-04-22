@@ -86,6 +86,17 @@ public class PlayerOne : MonoBehaviour
     public int vida;
     public int defesa;
 
+    public GameObject Life1;
+    public GameObject Life2;
+    public GameObject Life3;
+    public GameObject Life4;
+    public GameObject Life5;
+    public GameObject Life6;
+    public GameObject Life7;
+    public GameObject Life8;
+    public GameObject Life9;
+    public GameObject Life10;
+
     public void Parametros(int contMortos,int danoH, int vidaH, int defesaH)
     {
         mortos = contMortos;
@@ -134,6 +145,77 @@ public class PlayerOne : MonoBehaviour
         Flip();
         DownPlat();
         ParemetroDeAnim();
+
+
+        if (vida > 89 && vida < 91) // 90
+        {
+
+            Life1.SetActive(false);
+
+        }
+
+        if (vida > 79 && vida < 81) // 80
+        {
+
+            Life2.SetActive(false);
+
+        }
+
+        if (vida > 69 && vida < 71) // 70
+        {
+
+            Life3.SetActive(false);
+
+        }
+
+        if (vida > 59 && vida < 61) // 60
+        {
+
+            Life4.SetActive(false);
+
+        }
+
+        if (vida > 49 && vida < 51) // 50
+        {
+
+            Life5.SetActive(false);
+
+        }
+
+        if (vida > 39 && vida < 41) // 40
+        {
+
+            Life6.SetActive(false);
+
+        }
+
+        if (vida > 29 && vida < 31) // 30
+        {
+
+            Life7.SetActive(false);
+
+        }
+
+        if (vida > 19 && vida < 21) // 20
+        {
+
+            Life8.SetActive(false);
+
+        }
+
+        if (vida > 9 && vida < 11) // 10
+        {
+
+            Life9.SetActive(false);
+
+        }
+
+        if (vida < 1) // 00
+        {
+
+            Life10.SetActive(false);
+
+        }
 
 
     }
@@ -359,6 +441,14 @@ public class PlayerOne : MonoBehaviour
             {
                 ChangeAnimState(Idle);
             }
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            vida = vida - 10;
         }
     }
 
