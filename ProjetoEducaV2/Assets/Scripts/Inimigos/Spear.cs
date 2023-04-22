@@ -23,17 +23,23 @@ public class Spear : MonoBehaviour
         playerHits = Physics2D.OverlapCircleAll(spearAttack.position, attackRange, playerLayer);
         foreach (var Player in playerHits) 
         {
-            Debug.Log("Macaco");
+            print(damage);
             Player.GetComponent<PlayerOne>().TakeDamage(damage);
-            Destroy(this.gameObject,1); 
+            Destroy(this.gameObject);
+            //DestroyImmediate(this.gameObject);
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<Spear>().enabled = false;
         }
         
-        rbd2.velocity = new Vector2 (-5, 0);
+        rbd2.velocity = new Vector2 (-2, 0);
+        transform.localScale = new Vector2(Mathf.Sign(-1), 1f);
+        
     }
    
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(spearAttack.position, attackRange);
     }
+    
 }
 

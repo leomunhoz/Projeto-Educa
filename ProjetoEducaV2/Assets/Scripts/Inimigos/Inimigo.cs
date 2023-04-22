@@ -21,10 +21,12 @@ public class Inimigo : MonoBehaviour
     private Vector2 raioAFrente;
     public Vector2 pontoInicial;
     public Vector2 pontoFinal;
+    public Vector2 spearPosition;
 
     private bool indoParaDireita = true;
     public bool fechadura = false;
-    bool isDead = false;
+    public bool isDead = false;
+    public bool emAtaque=false;
    
     public float currentHealth;
     public float tempoDeMorte = 20f;
@@ -61,8 +63,8 @@ public class Inimigo : MonoBehaviour
         pontoInicial = transform.position;
         pontoFinal = pontoInicial + Vector2.right * disPatrulha;
         player = GameObject.FindGameObjectWithTag("Player");
-        walLayer =  LayerMask.GetMask("Wall");
-        chao = LayerMask.GetMask("chao");
+        walLayer =  LayerMask.GetMask("Chao");
+        chao = LayerMask.GetMask("Chao");
         currentHealth = vidaTotal;
         rd=GetComponent<Rigidbody2D>();
     }
@@ -80,6 +82,7 @@ public class Inimigo : MonoBehaviour
             posHero = new Vector2(player.transform.position.x, player.transform.position.y);
             posInimigo = new Vector2(transform.position.x, transform.position.y);
             herovsInimigo = Vector2.Distance(posHero, posInimigo);
+            
             raioAFrente = transform.TransformPoint(0.5f, 0.0f, 0.0f);
             RaycastHit2D surfaceHit = Physics2D.Raycast(raioAFrente, Vector2.down, 4f, chao);
             Debug.DrawRay(raioAFrente, dir: transform.TransformDirection(Vector2.down) * 1.75f, color: Color.green);
@@ -202,16 +205,20 @@ public class Inimigo : MonoBehaviour
     }
     public void Atacar()
     {
-        if (posHero.x > posInimigo.x)
+        if (!emAtaque)
         {
-            indoParaDireita = true;
-            transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
-            if ((posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
+            emAtaque = true;
+            if (posHero.x > posInimigo.x)
             {
-                AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
-                rd.velocity = direcao * 0;
-                //Projetil = GameObject.Instantiate(Projetil, posInimigo, Quaternion.identity);
-                
+                indoParaDireita = true;
+                transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
+                spearPosition = new Vector2(transform.position.x + 1, transform.position.y);
+                if ((posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
+                {
+                    AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+                    rd.velocity = direcao * 0;
+                    Projetil = GameObject.Instantiate(Projetil, posInimigo, Quaternion.identity);
+                    StartCoroutine(SpearAttack());
                     // Verifica se a lança colide com o jogador
                     /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
                      if (hit != null && hit.CompareTag("Player"))
@@ -221,42 +228,37 @@ public class Inimigo : MonoBehaviour
                          Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
                      }*/
                 }
-        }
-        else
-        {
-            indoParaDireita = false;
-            transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
-            if ((posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))
+            }
+            else
             {
-                AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
-                rd.velocity = direcao * 0;
-                StartCoroutine(SpearAttack());
-                
-
-                // Verifica se a lança colide com o jogador
-                /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
-                 if (hit != null && hit.CompareTag("Player"))
-                 {
-                     // Subtrai a vida do jogador e instancia a animação
-                     player.GetComponent<PlayerOne>().vida -= dano;
-                     Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
-                 }*/
+                indoParaDireita = false;
+                transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
+                spearPosition = new Vector2(transform.position.x - 1, transform.position.y-0.3f);
+                if ((posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))
+                {
+                    AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+                    rd.velocity = direcao * 0;
+                    StartCoroutine(SpearAttack());
+                    // Verifica se a lança colide com o jogador
+                    /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+                     if (hit != null && hit.CompareTag("Player"))
+                     {
+                         // Subtrai a vida do jogador e instancia a animação
+                         player.GetComponent<PlayerOne>().vida -= dano;
+                         Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
+                     }*/
+                }
             }
         }
+        
+        
     }
 
     IEnumerator SpearAttack() 
     {
-      
-
-            yield return new WaitForSeconds(1);
-            GameObject pro = GameObject.Instantiate(Projetil, posInimigo, Quaternion.identity);
-           
-        
-       
-        
-       
-        
-
+        yield return new WaitForSeconds(1);
+        GameObject pro = GameObject.Instantiate(Projetil, spearPosition, Quaternion.identity);
+        emAtaque = false;
+        print(emAtaque);
     }
 }

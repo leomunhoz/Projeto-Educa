@@ -456,8 +456,11 @@ public class PlayerOne : MonoBehaviour
     }*/
     public void TakeDamage(int damage) 
     {
+        print("currentHealth=" + currentHealth);
+        print("damage="+damage);
         currentHealth = currentHealth -(damage - defesa);
-        
+        print("currentHealth=" + currentHealth);
+
         if (currentHealth < 0)
         {
             rb2d.gravityScale = 0;
