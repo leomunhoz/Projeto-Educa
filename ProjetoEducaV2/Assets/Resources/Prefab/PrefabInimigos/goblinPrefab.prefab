@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1669894457816249230}
   m_Layer: 6
   m_Name: goblinPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,12 +123,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  Projetil: {fileID: 7189164648616258952, guid: febe67ec51b807f42ab11049b0e02509, type: 3}
   walLayer:
     serializedVersion: 2
     m_Bits: 8
   chao:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 2056
   posHero: {x: 0, y: 0}
   posInimigo: {x: 0, y: 0}
   direcao: {x: 0, y: 0}
@@ -142,6 +143,9 @@ MonoBehaviour:
   disPersegue: 0
   velocidade: 2
   disPatrulha: 0
+  dano: 0
+  defesa: 0
+  nome: 
 --- !u!95 &8734244238093355679
 Animator:
   serializedVersion: 5
@@ -213,7 +217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5026425987902186032}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.004, y: -0.96499974, z: 0}
+  m_LocalPosition: {x: -0.119, y: -0.96499974, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []

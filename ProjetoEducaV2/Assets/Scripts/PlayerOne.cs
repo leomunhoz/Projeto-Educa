@@ -21,6 +21,7 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private float attackDelay = 0.3f;
     [SerializeField] private float attackRange = 0.1f;
     [SerializeField] private int combo;
+    public int currentHealth;
    
 
     private Vector2 direction;
@@ -40,6 +41,7 @@ public class PlayerOne : MonoBehaviour
     const string Attack = "Attack 1";
     const string WallSliding = "SlideWall";
     const string Down = "Down";
+    const string Death = "Death";
 
 
     #endregion
@@ -107,6 +109,7 @@ public class PlayerOne : MonoBehaviour
 
     void Start()
     {
+        currentHealth = vida;
         axPulosExtras = pulosExtras;
         rb2d = GetComponent<Rigidbody2D>();
         anim.GetComponent<Animator>();
@@ -444,11 +447,21 @@ public class PlayerOne : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    /*public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Projetil"))
         {
             vida = vida - 10;
+        }
+    }*/
+    public void TakeDamage(int damage) 
+    {
+        currentHealth = currentHealth -(damage - defesa);
+        
+        if (currentHealth < 0)
+        {
+            rb2d.gravityScale = 0;
+            ChangeAnimState(Death);
         }
     }
 

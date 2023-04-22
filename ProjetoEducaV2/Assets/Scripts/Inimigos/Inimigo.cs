@@ -11,6 +11,7 @@ using UnityEngine.UIElements;
 public class Inimigo : MonoBehaviour
 {
     public GameObject player;
+    public GameObject Projetil;
     public LayerMask walLayer;
     public LayerMask chao;
 
@@ -68,6 +69,11 @@ public class Inimigo : MonoBehaviour
 
     private void Update()
     {
+       
+        
+    }
+    private void FixedUpdate()
+    {
         if (!isDead)
         {
             direcao = indoParaDireita ? Vector2.right : Vector2.left;
@@ -93,7 +99,6 @@ public class Inimigo : MonoBehaviour
             else
                 Patrulhar();
         }
-        
     }
 
     private void Patrulhar()
@@ -205,6 +210,7 @@ public class Inimigo : MonoBehaviour
             {
                 AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                 rd.velocity = direcao * 0;
+                //Projetil = GameObject.Instantiate(Projetil, posInimigo, Quaternion.identity);
                 
                     // Verifica se a lança colide com o jogador
                     /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
@@ -224,16 +230,33 @@ public class Inimigo : MonoBehaviour
             {
                 AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                 rd.velocity = direcao * 0;
+                StartCoroutine(SpearAttack());
                 
+
                 // Verifica se a lança colide com o jogador
-               /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
-                if (hit != null && hit.CompareTag("Player"))
-                {
-                    // Subtrai a vida do jogador e instancia a animação
-                    player.GetComponent<PlayerOne>().vida -= dano;
-                    Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
-                }*/
+                /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+                 if (hit != null && hit.CompareTag("Player"))
+                 {
+                     // Subtrai a vida do jogador e instancia a animação
+                     player.GetComponent<PlayerOne>().vida -= dano;
+                     Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
+                 }*/
             }
         }
+    }
+
+    IEnumerator SpearAttack() 
+    {
+      
+
+            yield return new WaitForSeconds(1);
+            GameObject pro = GameObject.Instantiate(Projetil, posInimigo, Quaternion.identity);
+           
+        
+       
+        
+       
+        
+
     }
 }

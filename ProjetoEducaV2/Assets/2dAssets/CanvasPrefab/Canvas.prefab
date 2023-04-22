@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 2041336939}
   - component: {fileID: 2041336938}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: VidaPainel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -803,10 +803,10 @@ RectTransform:
   m_Father: {fileID: 2694022343446607694}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -725.451, y: 406.979}
-  m_SizeDelta: {x: -1592.865, y: -936.419}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 343.2785, y: -110.520996}
+  m_SizeDelta: {x: 544.59375, y: 98.58099}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2041336939
 CanvasRenderer:
