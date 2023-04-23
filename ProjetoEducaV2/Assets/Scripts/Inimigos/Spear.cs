@@ -6,14 +6,18 @@ using UnityEngine;
 public class Spear : MonoBehaviour
 {
     public  Rigidbody2D rbd2;
-    public Inimigo inimigo;
     public  Collider2D[] playerHits;
     public  LayerMask playerLayer;
     public LayerMask Wall;
     public  Transform spearAttack;
     public  float attackRange;
     public int damage = 10;
+    public static bool lado;
    
+    public static void Direcao(bool direita)
+    {
+        lado = direita;
+    }
 
     private void Awake()
     {
@@ -33,7 +37,7 @@ public class Spear : MonoBehaviour
             GetComponent<Spear>().enabled = false;
         }
        
-        if (inimigo.direcao.x < 0)
+        if (!lado)
         {
             rbd2.velocity = new Vector2(-5, 0);
             transform.localScale = new Vector2(Mathf.Sign(-1), 1f);

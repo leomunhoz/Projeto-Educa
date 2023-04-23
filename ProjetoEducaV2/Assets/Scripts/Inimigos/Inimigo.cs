@@ -220,9 +220,9 @@ public class Inimigo : MonoBehaviour
                     emAtaque = true;
                       if ((posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
                      {
-                     AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
-                     rd.velocity = direcao * 0;
-                         Projetil = GameObject.Instantiate(Projetil, posInimigo, Quaternion.identity);
+                        AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+                        rd.velocity = direcao * 0;
+                        
                         
                          // Verifica se a lança colide com o jogador
                          /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
@@ -248,17 +248,17 @@ public class Inimigo : MonoBehaviour
                      {
                          AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                          rd.velocity = direcao * 0;
-                          GameObject pro = GameObject.Instantiate(Projetil, spearPosition, Quaternion.identity);
-                         
-                         // Verifica se a lança colide com o jogador
-                         /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
-                          if (hit != null && hit.CompareTag("Player"))
-                          {
-                              // Subtrai a vida do jogador e instancia a animação
-                              player.GetComponent<PlayerOne>().vida -= dano;
-                              Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
-                          }*/
-                     }
+                        
+
+                        // Verifica se a lança colide com o jogador
+                        /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
+                         if (hit != null && hit.CompareTag("Player"))
+                         {
+                             // Subtrai a vida do jogador e instancia a animação
+                             player.GetComponent<PlayerOne>().vida -= dano;
+                             Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
+                         }*/
+                    }
                  }
              }
          }
@@ -268,7 +268,7 @@ public class Inimigo : MonoBehaviour
     public void InstanciarLanca() 
     {
         GameObject Lanca = Instantiate(Projetil, spearPosition, Quaternion.identity);
-
+        Spear.Direcao(indoParaDireita);
     }
 
 
