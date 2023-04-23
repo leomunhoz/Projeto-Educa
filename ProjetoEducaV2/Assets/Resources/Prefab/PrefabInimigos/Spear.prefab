@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6983231826872637872}
   - component: {fileID: 1530982717569109418}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goblin Spear_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5988848913819854199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 3354077872501405817}
   - component: {fileID: 4963506990672088234}
   - component: {fileID: 5168267674454098314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spear
   m_TagString: Projetil
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.002204895, y: 0.0066092312}
+  m_Offset: {x: 0.03396693, y: 0.0066092312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -196,7 +196,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0448151, y: 0.08211225}
+  m_Size: {x: 0.9812731, y: 0.08211225}
   m_EdgeRadius: 0
 --- !u!114 &5168267674454098314
 MonoBehaviour:
@@ -211,14 +211,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbd2: {fileID: 3354077872501405817}
-  inimigo: {fileID: 316133378812319475, guid: 9b6c66824a760964f9f64db23ed1c83b, type: 3}
   playerHits: []
+  chaoHits: []
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
   Wall:
     serializedVersion: 2
-    m_Bits: 3592
+    m_Bits: 2568
   spearAttack: {fileID: 5988848913819854199}
   attackRange: 0.12
   damage: 10
+  right: 0
+  fecha: 0
+  inicial: 0
+  disMax: 10
+  com: {x: 0, y: 0}

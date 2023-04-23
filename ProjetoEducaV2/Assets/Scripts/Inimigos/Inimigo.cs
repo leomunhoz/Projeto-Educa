@@ -93,10 +93,17 @@ public class Inimigo : MonoBehaviour
                     Atacar();
                 }
                 else
+                {
                     Persegue();
+                    emAtaque = false;
+                }
             }
             else
+            {
                 Patrulhar();
+                emAtaque = false;
+            }
+                
         }
 
     }
@@ -187,10 +194,8 @@ public class Inimigo : MonoBehaviour
     }
     public void TakeDemage(int damage)
     {
-
         currentHealth = currentHealth - (damage - defesa);
         AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Hurt");
-
         if (currentHealth <= 0)
         {
             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Death");
@@ -206,9 +211,7 @@ public class Inimigo : MonoBehaviour
     }
     public void Atacar()
     {
-
         {
-
             if (posHero.x > posInimigo.x)
              {
                 indoParaDireita = true;

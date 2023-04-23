@@ -1,3 +1,4 @@
+using Edgar.GraphBasedGenerator.Common.ChainDecomposition;
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +23,9 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private float attackRange = 0.1f;
     [SerializeField] private int combo;
     public int currentHealth;
-   
+    public bool isChain;
+    public bool isClimbing;
+
 
     public Vector2 direction;
 
@@ -270,7 +273,7 @@ public class PlayerOne : MonoBehaviour
                     Collider2D[] EnemyHits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, EnemyLayers);
                     foreach (var enemy in EnemyHits)
                     {
-                        Debug.Log("Hit" + enemy.name);
+                        //Debug.Log("Hit" + enemy.name);
                         enemy.GetComponent<Inimigo>().TakeDemage(attackDemage);
                     }
                 }
@@ -458,11 +461,7 @@ public class PlayerOne : MonoBehaviour
     }*/
     public void TakeDamage(int damage) 
     {
-        print("currentHealth=" + currentHealth);
-        print("damage="+damage);
         currentHealth = currentHealth -(damage - defesa);
-        print("currentHealth=" + currentHealth);
-
         if (currentHealth <= 0)
         {
             isDead = true;
@@ -475,25 +474,49 @@ public class PlayerOne : MonoBehaviour
             
         }
     }
+    public void climb()
+    {
+        // float vertical = Input.GetAxis("Vertical");
+
+        if (isChain && Mathf.Abs(direction.y) > 0)
+        {
+            isClimbing = true;
+        }
+        if (isClimbing)
+        {
+            rb2d.velocity = new Vector2(0, Vertical * 5);
+            rb2d.gravityScale = 0;
+            ChangeAnimState(Climb);
+            print(rb2d.velocity.y);
+
+        }
+        else
+        {
+            rb2d.gravityScale = 1;
+        }
+
+
+
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Correntes"))
+        if (collision.gameObject.CompareTag("Chain"))
         {
-            print("Ola");
-            rb2d.gravityScale = 0;
-            if (direction.y > 0.85)
-            {
-                ChangeAnimState(Climb);
-                rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 5);
-            }
+            isChain = true;
+            print("ola");
+
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Correntes"))
+        if (collision.gameObject.CompareTag("Chain"))
         {
-            rb2d.gravityScale = 1;
+            isClimbing = false;
+            isChain = false;
         }
+
+
     }
 }
