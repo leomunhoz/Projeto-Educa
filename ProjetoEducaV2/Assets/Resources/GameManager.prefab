@@ -46,6 +46,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goblinPrefab: {fileID: 8460599986773213620, guid: bf43843619d9a9b40a9dba766a328905, type: 3}
   heroiPrefab: {fileID: 2050910093316395198, guid: 9b6c66824a760964f9f64db23ed1c83b, type: 3}
-  spawnPointInimigo: {x: 0, y: 0, z: 0}
-  spawnPointHeroi: {x: 0, y: 0, z: 0}
+  spawnPointInimigo:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnPointHeroi: {x: 0, y: 0}
   numGoblins: 5

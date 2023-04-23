@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Projetil
   - Correntes
+  - Spawn
   layers:
   - Default
   - TransparentFX

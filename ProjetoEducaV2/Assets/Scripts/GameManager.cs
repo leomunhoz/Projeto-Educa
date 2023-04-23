@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : IPresistentSingleton<GameManager>
@@ -9,8 +10,9 @@ public class GameManager : IPresistentSingleton<GameManager>
     public GameObject batPrefab;*/
     public GameObject goblinPrefab;
     public GameObject heroiPrefab;
-    public Vector3 spawnPointInimigo;
-    public Vector3 spawnPointHeroi;
+    public GameObject[] spawnPointInimigo;
+    
+    public Vector2 spawnPointHeroi;
 
 
     public int numGoblins=5;
@@ -27,12 +29,18 @@ public class GameManager : IPresistentSingleton<GameManager>
         /*   slimePrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/slimePrefab");
            batPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/batPrefab");*/
         goblinPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/goblinPrefab");
-        spawnPointInimigo = GameObject.Find("SpawnPoint").transform.position;
-        GameObject goblin = Instantiate(goblinPrefab, spawnPointInimigo, Quaternion.identity);
-        Criaturas.Goblin goblinCriatura = new Criaturas.Goblin();
-        Inimigo goblinScript = goblin.GetComponent<Inimigo>();
-        goblinScript.Parametros(goblinCriatura.Nome, goblinCriatura.Dano, goblinCriatura.Defesa, goblinCriatura.DisPersegue, goblinCriatura.DisAtaque, goblinCriatura.DisPatrulha, goblinCriatura.Velocidade, goblinCriatura.vidaTotal);
+        //spawnPointInimigo = GameObject.FindGameObjectWithTag("spawn");
+        GameObject[] spawnPointInimigo = GameObject.FindGameObjectsWithTag("Spawn");
+        //int spawnIndex = spawnPointInimigo.Length;
+        foreach (GameObject spawnPoint in spawnPointInimigo)
+        {
+          
+            GameObject goblin = Instantiate(goblinPrefab, spawnPoint.transform.position, Quaternion.identity);
+            Criaturas.Goblin goblinCriatura = new Criaturas.Goblin();
+            Inimigo goblinScript = goblin.GetComponent<Inimigo>();
+            goblinScript.Parametros(goblinCriatura.Nome, goblinCriatura.Dano, goblinCriatura.Defesa, goblinCriatura.DisPersegue, goblinCriatura.DisAtaque, goblinCriatura.DisPatrulha, goblinCriatura.Velocidade, goblinCriatura.vidaTotal);
 
+        }
        
 
         /*   GameObject slime = Instantiate(slimePrefab, new Vector2(3, 12.85f), Quaternion.identity);
