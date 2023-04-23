@@ -23,7 +23,7 @@ public abstract class IStates
         this.rb2d = rb2d;
     }
 
-    public abstract void OnBegin(Vector2 direction);
+    public abstract void OnBegin(Vector2 direction, bool isMove);
     public abstract EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded);
     public abstract void OnExit();
 

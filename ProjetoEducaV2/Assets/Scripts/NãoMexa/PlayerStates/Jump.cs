@@ -9,11 +9,12 @@ public class Jump : IStates
     float jumpForce;
     public Jump(Animator animator, Rigidbody2D rb2d, float jumpForce) : base(animator, rb2d) { this.jumpForce = jumpForce; }
 
-    public override void OnBegin(Vector2 direction)
+    public override void OnBegin(Vector2 direction, bool isMove)
     {
         nextState = EStates.Jump;   
         rb2d.velocity = Vector2.up * jumpForce;
         animator.Play("Jump");
+       
     }
     public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded)
     {
@@ -25,6 +26,10 @@ public class Jump : IStates
         else if (direction.x == 0 )
         {
             nextState = EStates.Idle;
+        }
+        else if (isJumpingPressed && isGrounded)
+        {
+            nextState = EStates.Jump;
         }
         
         return nextState;

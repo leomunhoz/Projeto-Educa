@@ -11,15 +11,20 @@ public class Run : IStates
     public Run(Animator animator, Rigidbody2D rb2d,float speed) : base(animator, rb2d) { this.speed = speed; }
 
 
-    public override void OnBegin(Vector2 direction)
+    public override void OnBegin(Vector2 direction ,bool isMove)
     {
         nextState = EStates.Run;
-        rb2d.velocity = new Vector2(direction.x * speed, rb2d.velocity.y);
-        animator.Play("Run");
+        if (isMove)
+        {
+            rb2d.velocity = new Vector2(direction.x * speed, rb2d.velocity.y);
+            animator.Play("Run");
+        }
+      
+       
     }
     public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded)
     {
-        if (direction.x != 0 && rb2d.velocity.x != 0) 
+        if (direction.x != 0) 
         {
             nextState = EStates.Run;
         }

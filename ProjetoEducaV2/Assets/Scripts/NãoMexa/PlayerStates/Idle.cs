@@ -12,17 +12,21 @@ public class Idle : IStates
     
      
 
-    public override void OnBegin(Vector2 direction)
+    public override void OnBegin(Vector2 direction, bool isMove)
     {
         nextState = EStates.Idle;
-        animator.Play("Idle");
-
+        if (!isMove)
+        {
+            animator.Play("Idle");
+            rb2d.velocity = new Vector2(direction.x * 0, rb2d.velocity.y);
+        }
+       
     }
        
 
     public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded)
     {
-        if (direction.x == 0 && rb2d.velocity.x == 0)
+        if (direction.x == 0 )
         {
             nextState = EStates.Idle;
         }

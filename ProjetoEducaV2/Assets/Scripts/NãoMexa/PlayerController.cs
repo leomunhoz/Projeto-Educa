@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isGrounded;
     public bool isWallsliding;
+    public bool isMove = false;
     public bool isFacingRigth;
     private bool isAttacking;
     private bool isAttackingPressed;
@@ -83,7 +84,7 @@ public class PlayerController : MonoBehaviour
         if (nextState != currentState)
         {
             states[(int)currentState].OnExit();
-            states[(int)nextState].OnBegin(direction);
+            states[(int)nextState].OnBegin(direction,isMove);
             currentState = nextState;
         }
         
@@ -92,6 +93,7 @@ public class PlayerController : MonoBehaviour
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
+        
 
         if (isFacingRigth && rb2d.velocity.x > 0 || !isFacingRigth && rb2d.velocity.x < 0)
         {
@@ -108,15 +110,27 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        states[(int)nextState].OnBegin(direction);
+        states[(int)nextState].OnBegin(direction,isMove);
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f ,groundLayer);
         isWallsliding = Physics2D.OverlapCircle(wallChack.position, 0.5f, wallLayer);
     }
 
-  public void move(InputAction.CallbackContext context) 
+    public void move(InputAction.CallbackContext context)
     {
         direction = context.ReadValue<Vector2>();
-    }
+        if (direction.x != 0)
+        {
+            isMove = true;
+        }
+        else
+        {
+            isMove=false;
+        }
+    }     
+          
+           
+       
+    
     
    
 }
