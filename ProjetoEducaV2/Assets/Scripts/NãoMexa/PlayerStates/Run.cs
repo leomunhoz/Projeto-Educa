@@ -5,8 +5,7 @@ using UnityEngine;
 public class Run : IStates
 {
     
-    Rigidbody2D rb2d;
-    Animator animator;
+    
     float speed;
 
     public Run(Animator animator, Rigidbody2D rb2d,float speed) : base(animator, rb2d) { this.speed = speed; }
@@ -14,25 +13,25 @@ public class Run : IStates
 
     public override void OnBegin(Vector2 direction)
     {
-        
-        animator.Play("Run");
+        nextState = EStates.Run;
         rb2d.velocity = new Vector2(direction.x * speed, rb2d.velocity.y);
+        animator.Play("Run");
     }
     public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded)
     {
-        if (direction.x != 0) 
+        if (direction.x != 0 && rb2d.velocity.x != 0) 
         {
             nextState = EStates.Run;
         }
-        else if (direction.x == 0)
+        else if (direction.x == 0 )
         {
             nextState = EStates.Idle;
         }
-        if (isJumpingPressed && isJumpingPressed)
+        if (isJumpingPressed && isGrounded)
         {
             nextState = EStates.Jump;
         }
-        return EStates.Run;
+        return nextState;
     }
     public override void OnExit()
     {

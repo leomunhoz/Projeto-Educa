@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Idle : IStates
 {
-    
-   
-    Rigidbody2D rb2d;
-    Animator animator;
+
+
 
 
     public Idle(Animator animator, Rigidbody2D rb2d) : base(animator, rb2d) { }
@@ -16,19 +14,19 @@ public class Idle : IStates
 
     public override void OnBegin(Vector2 direction)
     {
+        nextState = EStates.Idle;
         animator.Play("Idle");
-
 
     }
        
 
     public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded)
     {
-        if (direction.x == 0)
+        if (direction.x == 0 && rb2d.velocity.x == 0)
         {
             nextState = EStates.Idle;
         }
-        else if (direction.x != 0)
+        else if (direction.x != 0 )
         {
             nextState = EStates.Run;
 
@@ -38,7 +36,7 @@ public class Idle : IStates
             nextState = EStates.Jump;
         }
 
-        return EStates.Idle;
+        return nextState;
     }
 
     public override void OnExit()

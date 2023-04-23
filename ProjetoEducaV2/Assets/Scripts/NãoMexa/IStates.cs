@@ -9,12 +9,13 @@ public enum EStates
     Jump,
    
 }
-
+[System.Serializable]
 public abstract class IStates
 {
-    Animator animator;
-    Rigidbody2D rb2d;
-    protected EStates nextState;
+   protected Animator animator;
+   protected Rigidbody2D rb2d;
+  
+   protected EStates nextState;
 
     public IStates(Animator animator, Rigidbody2D rb2d)
     {

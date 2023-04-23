@@ -12,13 +12,13 @@ using UnityEngine.InputSystem;
 [System.Serializable]
 public class PlayerController : MonoBehaviour
 {
-     private EStates currentState;
-     private EStates nextState;
+     public EStates currentState;
+     public EStates nextState;
 
 
-     public Rigidbody2D rb2d = null;
-     public SpriteRenderer SpriteRenderer = null;
-     public Animator animator = null;
+     public Rigidbody2D rb2d;
+     public SpriteRenderer SpriteRenderer;
+     public Animator animator;
      public float speed;
      public float jumpForce;
      private int pulosExtras = 1;
@@ -62,9 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        currentState = EStates.Idle;
-        nextState = EStates.Idle;
-        List<IStates> states = new List<IStates>();
+        states = new List<IStates>();
         Idle idle = new Idle(animator, rb2d);
         Run run = new Run(animator, rb2d, speed);
         Jump jump = new Jump(animator, rb2d, jumpForce);
@@ -72,12 +70,15 @@ public class PlayerController : MonoBehaviour
         states.Add(run);
         states.Add(jump);
 
+        currentState = EStates.Idle;
+        nextState = EStates.Idle;
     }
     
 
     // Update is called once per frame
     void Update()
     {
+        //direction = new Vector2(Input.GetAxisRaw("Horizontal") * speed, 0.0f);
          nextState = states[(int)currentState].OnUpdate(direction, isJumpingPressed, isGrounded);
         if (nextState != currentState)
         {
@@ -85,15 +86,14 @@ public class PlayerController : MonoBehaviour
             states[(int)nextState].OnBegin(direction);
             currentState = nextState;
         }
-        //direction = new Vector2(Input.GetAxisRaw("Horizontal") * speed, 0.0f);
-        isJumpingPressed = Input.GetKeyDown(KeyCode.Escape);
+        
        
         isJumpingPressed = Gamepad.current.buttonSouth.isPressed || Keyboard.current.spaceKey.isPressed;
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
 
-        if (isFacingRigth && rb2d.velocity.x < 0 || !isFacingRigth && rb2d.velocity.x > 0)
+        if (isFacingRigth && rb2d.velocity.x > 0 || !isFacingRigth && rb2d.velocity.x < 0)
         {
             isFacingRigth = !isFacingRigth;
             Vector2 LocalScale = transform.localScale;
@@ -108,9 +108,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        states[(int)nextState].OnBegin(direction);
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f ,groundLayer);
         isWallsliding = Physics2D.OverlapCircle(wallChack.position, 0.5f, wallLayer);
-        states[(int)nextState].OnBegin(direction);
     }
 
   public void move(InputAction.CallbackContext context) 
