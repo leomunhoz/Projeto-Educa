@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RangeAttack
-  serializedVersion: 7
+  serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -18,25 +18,27 @@ AnimationClip:
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
-  - serializedVersion: 2
-    curve:
+  - curve:
     - time: 0
       value: {fileID: -1995112712, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - time: 0.083333336
       value: {fileID: 1311942219, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - time: 0.16666667
-      value: {fileID: 441284452, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
+      value: {fileID: 1311942219, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - time: 0.25
-      value: {fileID: 6439913, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
+      value: {fileID: 441284452, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - time: 0.33333334
-      value: {fileID: 1029559461, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
+      value: {fileID: 6439913, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - time: 0.41666666
+      value: {fileID: 1029559461, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
+    - time: 0.5
+      value: {fileID: 877120561, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
+    - time: 0.5833333
       value: {fileID: 877120561, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-    flags: 2
   m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
@@ -51,21 +53,21 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: -1995112712, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
+    - {fileID: 1311942219, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - {fileID: 1311942219, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - {fileID: 441284452, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - {fileID: 6439913, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - {fileID: 1029559461, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
+    - {fileID: 877120561, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
     - {fileID: 877120561, guid: 48b771ca97f05e14da986862a8abcfac, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -84,4 +86,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.41666666
+    functionName: InstanciarLanca
+    data: 
+    objectReferenceParameter: {fileID: 7189164648616258952, guid: febe67ec51b807f42ab11049b0e02509, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -38,6 +38,8 @@ public class PlayerOneWayPlatform : MonoBehaviour
             currentOneWayPlatform = null;
         }
     }
+
+    
     public IEnumerator DisableCollision() 
     {
         if (isPlatformDownPressed )

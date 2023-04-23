@@ -6,8 +6,10 @@ using UnityEngine;
 public class Spear : MonoBehaviour
 {
     public  Rigidbody2D rbd2;
+    public Inimigo inimigo;
     public  Collider2D[] playerHits;
     public  LayerMask playerLayer;
+    public LayerMask Wall;
     public  Transform spearAttack;
     public  float attackRange;
     public int damage = 10;
@@ -30,9 +32,21 @@ public class Spear : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Spear>().enabled = false;
         }
+       
+        if (inimigo.direcao.x < 0)
+        {
+            rbd2.velocity = new Vector2(-5, 0);
+            transform.localScale = new Vector2(Mathf.Sign(-1), 1f);
+           
+        }
+        else
+        {
+            rbd2.velocity = new Vector2(5, 0);
+            transform.localScale = new Vector2(Mathf.Sign(1), 1f);
+            
+        }
         
-        rbd2.velocity = new Vector2 (-2, 0);
-        transform.localScale = new Vector2(Mathf.Sign(-1), 1f);
+       
         
     }
    
@@ -40,6 +54,16 @@ public class Spear : MonoBehaviour
     {
         Gizmos.DrawWireSphere(spearAttack.position, attackRange);
     }
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("SLA");
+        if (collision.gameObject.layer == Wall )
+        {
+           
+            Destroy(this.gameObject);
+        }
+       
+    }
+
 }
 

@@ -211,10 +211,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbd2: {fileID: 3354077872501405817}
+  inimigo: {fileID: 316133378812319475, guid: 9b6c66824a760964f9f64db23ed1c83b, type: 3}
   playerHits: []
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+  Wall:
+    serializedVersion: 2
+    m_Bits: 3592
   spearAttack: {fileID: 5988848913819854199}
   attackRange: 0.12
   damage: 10

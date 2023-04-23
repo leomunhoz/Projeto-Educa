@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1526588215512869508}
   m_Layer: 10
   m_Name: Collideable
-  m_TagString: Untagged
+  m_TagString: Correntes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

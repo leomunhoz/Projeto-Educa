@@ -630,6 +630,7 @@ MonoBehaviour:
   attackDelay: 0.3
   attackRange: 0.34
   combo: 0
+  currentHealth: 0
   platform: {fileID: 0}
   isGrounded: 0
   wallJumpDuration: 0.1
@@ -684,7 +685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentOneWayPlatform: {fileID: 0}
   capsuleCollider2D: {fileID: 4833720325111621798}
-  player: {fileID: 0}
+  player: {fileID: 1018884457627820892}
   isPlatformDownPressed: 0
 --- !u!114 &5659040967759917901
 MonoBehaviour:

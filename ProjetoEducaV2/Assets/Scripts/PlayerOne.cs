@@ -10,7 +10,7 @@ using UnityEngine.InputSystem.Controls;
 
 public class PlayerOne : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] public Rigidbody2D rb2d;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     private float Horizontal;
@@ -24,7 +24,7 @@ public class PlayerOne : MonoBehaviour
     public int currentHealth;
    
 
-    private Vector2 direction;
+    public Vector2 direction;
 
 
 
@@ -42,6 +42,7 @@ public class PlayerOne : MonoBehaviour
     const string WallSliding = "SlideWall";
     const string Down = "Down";
     const string Death = "Death";
+    const string Climb = "Climb";
 
 
     #endregion
@@ -57,6 +58,7 @@ public class PlayerOne : MonoBehaviour
     private bool isMousePress;
     private bool isJumping;
     private bool isWallSliding;
+    private bool isDead;
 
 
     public float wallJumpDuration;
@@ -114,7 +116,7 @@ public class PlayerOne : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim.GetComponent<Animator>();
         platform = GetComponent<PlayerOneWayPlatform>();
-
+       
 
 
 
@@ -419,7 +421,7 @@ public class PlayerOne : MonoBehaviour
         Gizmos.DrawWireSphere(wallCheck.position, 0.2f);
         Gizmos.DrawWireSphere(groundPoint.position, 0.1f);
     }
-    void ChangeAnimState(string newState)
+    public void ChangeAnimState(string newState)
     {
         if (currantState == newState)
         {
@@ -429,7 +431,7 @@ public class PlayerOne : MonoBehaviour
     }
     public void ParemetroDeAnim()
     {
-        if (!isAttacking && !isWallSliding && !(direction.y < 0))
+        if (!isAttacking && !isWallSliding && !(direction.y < 0) && !isDead)
         {
             if (Horizontal != 0 && isGrounded)
             {
@@ -461,11 +463,37 @@ public class PlayerOne : MonoBehaviour
         currentHealth = currentHealth -(damage - defesa);
         print("currentHealth=" + currentHealth);
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
+            isDead = true;
+            if (isDead)
+            {
+                ChangeAnimState(Death);
+                rb2d.gravityScale = 0;
+            }
+            
+            
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Correntes"))
+        {
+            print("Ola");
             rb2d.gravityScale = 0;
-            ChangeAnimState(Death);
+            if (direction.y > 0.85)
+            {
+                ChangeAnimState(Climb);
+                rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 5);
+            }
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Correntes"))
+        {
+            rb2d.gravityScale = 1;
+        }
+    }
 }
