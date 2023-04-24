@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 120
+  controlID: 60
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1065,9 +1065,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 41}
-    m_SelectedIDs: 20d80000
-    m_LastClickedID: 55328
-    m_ExpandedIDs: 000000005cd600005ed6000060d6000062d6000064d6000068d6000000ca9a3b
+    m_SelectedIDs: 4c070000
+    m_LastClickedID: 1868
+    m_ExpandedIDs: 00000000e80600006c080000bc08000004090000280a00004c0a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1095,7 +1095,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005cd600005ed6000060d6000062d6000064d6000066d6000068d60000
+    m_ExpandedIDs: 00000000e80600006c080000bc08000004090000280a00004c0a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000e6700000aa700000707000003670000078710000d67000000e710000746800006e68000002640000207000005caa0000c2af0000f4b90000029600000a960000fa9500000c9600004ecf0000b03d0000b2e10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1235,9 +1235,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: fe370000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d8faffff
+      m_ExpandedIDs: e828fcff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1629,6 +1629,19 @@ MonoBehaviour:
       snapCorner: 0
       id: Cinemachine Tool Settings
       index: 13
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: AINavigationOverlay
+      index: 14
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
