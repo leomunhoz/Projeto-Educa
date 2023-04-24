@@ -38,7 +38,7 @@ public class Criaturas : Habilidades
     public class Goblin : Tread
     {
         public Goblin() : base(/*nome=*/"Goblin", /*vida=*/80, /*dano=*/20, /*defesa=*/5,
-                     /*disPersegue=*/10f, /*disAtaque=*/8f, /*velocidade=*/3f, /*DisPatrulha=*/5f)
+                     /*disPersegue=*/10f, /*disAtaque=*/8f, /*velocidade=*/3f, /*DisPatrulha=*/15f)
         {
 
         }

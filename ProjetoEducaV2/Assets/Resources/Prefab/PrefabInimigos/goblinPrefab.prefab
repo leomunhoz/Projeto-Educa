@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8838062094305365666}
   - component: {fileID: 316133378812319475}
   - component: {fileID: 8734244238093355679}
-  - component: {fileID: 1669894457816249230}
+  - component: {fileID: -8690398883776662036}
   m_Layer: 6
   m_Name: goblinPrefab
   m_TagString: Enemy
@@ -129,13 +129,17 @@ MonoBehaviour:
     m_Bits: 8
   chao:
     serializedVersion: 2
-    m_Bits: 2056
+    m_Bits: 8
   posHero: {x: 0, y: 0}
   posInimigo: {x: 0, y: 0}
   direcao: {x: 0, y: 0}
   pontoInicial: {x: 0, y: 0}
   pontoFinal: {x: 0, y: 0}
+  spearPosition: {x: 0, y: 0}
+  indoParaDireita: 1
   fechadura: 0
+  isDead: 0
+  emAtaque: 0
   currentHealth: 0
   tempoDeMorte: 20
   herovsInimigo: 0
@@ -167,8 +171,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &1669894457816249230
-BoxCollider2D:
+--- !u!70 &-8690398883776662036
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -180,19 +184,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.041588545, y: -0.39668846}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4375, y: 2}
-    newSize: {x: 2.4375, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.85714436, y: 1.2066231}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.15, y: -0.46}
+  m_Size: {x: 0.87, y: 1.09}
+  m_Direction: 0
 --- !u!1 &5026425987902186032
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,7 +65,7 @@ public class Inimigo : MonoBehaviour
         pontoFinal = pontoInicial + Vector2.right * disPatrulha;
         player = GameObject.FindGameObjectWithTag("Player");
         walLayer = LayerMask.GetMask("Chao");
-        chao = LayerMask.GetMask("Chao");
+        chao = LayerMask.GetMask("Chao","Platform");
         currentHealth = vidaTotal;
         rd = GetComponent<Rigidbody2D>();
     }
@@ -195,7 +195,8 @@ public class Inimigo : MonoBehaviour
     public void TakeDemage(int damage)
     {
         currentHealth = currentHealth - (damage - defesa);
-        AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Hurt");
+        //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Hurt");
+        StartCoroutine(Flash());
         if (currentHealth <= 0)
         {
             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Death");
@@ -209,9 +210,32 @@ public class Inimigo : MonoBehaviour
             GetComponent<Inimigo>().enabled = false;
         }
     }
+    //
+    IEnumerator Flash()
+    {
+        float flashDuration = 0.1f;
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        // salva a cor original do sprite
+        Color originalColor = spriteRenderer.color;
+
+        // define a cor vermelha
+        Color damageColor = Color.red;
+
+        // muda a cor do sprite para vermelho
+        spriteRenderer.color = damageColor;
+
+        // espera um tempo
+        yield return new WaitForSeconds(flashDuration);
+
+        // retorna a cor original do sprite
+        spriteRenderer.color = originalColor;
+
+    }
+    //
     public void Atacar()
     {
         {
+
             if (posHero.x > posInimigo.x)
              {
                 indoParaDireita = true;
@@ -271,7 +295,15 @@ public class Inimigo : MonoBehaviour
     public void InstanciarLanca() 
     {
         GameObject Lanca = Instantiate(Projetil, spearPosition, Quaternion.identity);
-        Spear.Direcao(indoParaDireita);
+        Spear spear= Lanca.GetComponent<Spear>();
+        if (indoParaDireita)
+        {
+            spear.direction = Vector2.right;
+        }
+        else
+        {
+            spear.direction = Vector2.left;
+        }
     }
 
 

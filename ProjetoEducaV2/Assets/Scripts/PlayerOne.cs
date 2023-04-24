@@ -504,8 +504,6 @@ public class PlayerOne : MonoBehaviour
         if (collision.gameObject.CompareTag("Chain"))
         {
             isChain = true;
-            print("ola");
-
         }
     }
 

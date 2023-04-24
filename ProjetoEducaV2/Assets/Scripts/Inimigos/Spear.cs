@@ -11,27 +11,16 @@ public class Spear : MonoBehaviour
     public  LayerMask playerLayer;
     public LayerMask Wall;
     public  Transform spearAttack;
+    public Vector2 direction;
     public  float attackRange;
     public int damage = 10;
-    public bool right = false;
-    public bool fecha = false;
     public float inicial;
-    public static bool lado;
     public float disMax=10f;
    
-    public static void Direcao(bool direita)
-    {
-        lado = direita;
-    }
-
     private void Awake()
     {
         rbd2 = GetComponent<Rigidbody2D>();
-        if (lado)
-            right = true;
-        else
-            right = false;
-        inicial = spearAttack.position.x;
+
     }
     private void Update()
     {
@@ -50,7 +39,7 @@ public class Spear : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Spear>().enabled = false;
         }
-        if (!right)
+        if (direction==Vector2.left)
         {
             rbd2.velocity = new Vector2(-5, 0.0f);
             transform.localScale = new Vector2(Mathf.Sign(-1), 1f);
@@ -61,13 +50,6 @@ public class Spear : MonoBehaviour
             rbd2.velocity = new Vector2(5, 0.0f);
             transform.localScale = new Vector2(Mathf.Sign(1), 1f);
             
-        }
-        if (spearAttack.position.x>(inicial+disMax) || spearAttack.position.x < (inicial - disMax)||right!=lado)
-        {
-            Destroy(this.gameObject);
-            GetComponent<Collider2D>().enabled = false;
-            GetComponent<Spear>().enabled = false;
-
         }
     }
    
