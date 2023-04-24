@@ -4214,10 +4214,15 @@ MonoBehaviour:
   isFacingRigth: 0
   isAttacking: 0
   isJumpingPressed: 0
+  duracaoDocombo: 1
+  tempoMax: 0.3
+  tempParaProximoAtaque: 0
   Animcombo:
   - {fileID: 7400000, guid: 5adc2fd1bf64ec043808a935b4dc5799, type: 2}
   - {fileID: 7400000, guid: 071ce5840487e5d4fa415126d1f126cd, type: 2}
   - {fileID: 7400000, guid: cee4e8356960b944ab93eb634153924e, type: 2}
+  timeToResetAttack: 0.3
+  timeSinceLastAttack: 0
 --- !u!114 &1426987092
 MonoBehaviour:
   m_ObjectHideFlags: 0
