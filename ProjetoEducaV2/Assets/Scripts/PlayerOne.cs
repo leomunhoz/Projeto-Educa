@@ -178,7 +178,7 @@ public class PlayerOne : MonoBehaviour
                 isAttacking = true;
                 if (isGrounded)
                 {
-                    rb2d.velocity = Vector2.up * 1;
+                    rb2d.velocity = new Vector2(direction.x * 0, Vertical);
                     if (Time.time > tempParaProximoAtaque)
                     {
                         anim.Play(Animcombo[animAtual].name);
@@ -424,7 +424,7 @@ public class PlayerOne : MonoBehaviour
     public void Climbing()
     {
         // float vertical = Input.GetAxis("Vertical");
-        
+       
         if (isChain && Mathf.Abs(direction.y) > 0)
         {
             isClimbing = true;
@@ -444,6 +444,7 @@ public class PlayerOne : MonoBehaviour
             rb2d.gravityScale = 1;
         }
 
+        
 
 
 

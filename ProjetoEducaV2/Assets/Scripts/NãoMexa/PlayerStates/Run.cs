@@ -11,7 +11,7 @@ public class Run : IStates
     public Run(Animator animator, Rigidbody2D rb2d,float speed) : base(animator, rb2d) { this.speed = speed; }
 
 
-    public override void OnBegin(Vector2 direction ,bool isMove)
+    public override void OnBegin(Vector2 direction ,bool isMove, bool isAttacking)
     {
         nextState = EStates.Run;
         if (isMove)
@@ -22,7 +22,7 @@ public class Run : IStates
       
        
     }
-    public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded)
+    public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded, bool isAttackinPressed)
     {
         if (direction.x != 0) 
         {
@@ -35,6 +35,10 @@ public class Run : IStates
         if (isJumpingPressed && isGrounded)
         {
             nextState = EStates.Jump;
+        }
+        if (isGrounded && isAttackinPressed)
+        {
+            nextState = EStates.Attack;
         }
         return nextState;
     }

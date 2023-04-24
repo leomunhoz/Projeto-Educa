@@ -4210,8 +4210,14 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   isGrounded: 0
   isWallsliding: 0
+  isMove: 0
   isFacingRigth: 0
+  isAttacking: 0
   isJumpingPressed: 0
+  Animcombo:
+  - {fileID: 7400000, guid: 5adc2fd1bf64ec043808a935b4dc5799, type: 2}
+  - {fileID: 7400000, guid: 071ce5840487e5d4fa415126d1f126cd, type: 2}
+  - {fileID: 7400000, guid: cee4e8356960b944ab93eb634153924e, type: 2}
 --- !u!114 &1426987092
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     public bool isWallsliding;
     public bool isMove = false;
     public bool isFacingRigth;
-    private bool isAttacking;
+    public bool isAttacking;
     private bool isAttackingPressed;
     public bool isJumpingPressed;
     private bool isRollingPressed;
@@ -48,6 +48,13 @@ public class PlayerController : MonoBehaviour
     private bool isWallSliding;
     private bool isDead;
 
+    public float duracaoDocombo = 1f;
+    public float tempoMax;
+    public float tempParaProximoAtaque;
+    int animAtual = 0;
+    public AnimationClip[] Animcombo;
+    public float timeToResetAttack = 0.3f;
+    public float timeSinceLastAttack = 0f;
 
     private int Idle = Animator.StringToHash("Idle");
     private int Run = Animator.StringToHash("Run");
@@ -67,9 +74,11 @@ public class PlayerController : MonoBehaviour
         Idle idle = new Idle(animator, rb2d);
         Run run = new Run(animator, rb2d, speed);
         Jump jump = new Jump(animator, rb2d, jumpForce);
+        Attack attack = new Attack(animator, rb2d,duracaoDocombo,tempoMax,tempParaProximoAtaque,animAtual,Animcombo,timeToResetAttack,timeSinceLastAttack);
         states.Add(idle);
         states.Add(run);
         states.Add(jump);
+        states.Add(attack);
 
         currentState = EStates.Idle;
         nextState = EStates.Idle;
@@ -80,11 +89,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //direction = new Vector2(Input.GetAxisRaw("Horizontal") * speed, 0.0f);
-         nextState = states[(int)currentState].OnUpdate(direction, isJumpingPressed, isGrounded);
+         nextState = states[(int)currentState].OnUpdate(direction, isJumpingPressed, isGrounded,isAttackingPressed);
         if (nextState != currentState)
         {
             states[(int)currentState].OnExit();
-            states[(int)nextState].OnBegin(direction,isMove);
+            states[(int)nextState].OnBegin(direction,isMove,isAttacking);
             currentState = nextState;
         }
         
@@ -110,7 +119,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        states[(int)nextState].OnBegin(direction,isMove);
+        states[(int)nextState].OnBegin(direction,isMove,isAttacking);
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f ,groundLayer);
         isWallsliding = Physics2D.OverlapCircle(wallChack.position, 0.5f, wallLayer);
     }
@@ -126,11 +135,11 @@ public class PlayerController : MonoBehaviour
         {
             isMove=false;
         }
-    }     
-          
-           
-       
-    
-    
+    }
+
+
    
+
+
+
 }

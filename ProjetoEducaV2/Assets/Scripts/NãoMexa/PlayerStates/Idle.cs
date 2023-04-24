@@ -12,7 +12,7 @@ public class Idle : IStates
     
      
 
-    public override void OnBegin(Vector2 direction, bool isMove)
+    public override void OnBegin(Vector2 direction, bool isMove,bool isAttacking)
     {
         nextState = EStates.Idle;
         if (!isMove)
@@ -24,7 +24,7 @@ public class Idle : IStates
     }
        
 
-    public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded)
+    public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded, bool isAttackinPressed)
     {
         if (direction.x == 0 )
         {
@@ -38,6 +38,10 @@ public class Idle : IStates
         if (isJumpingPressed && isGrounded)
         {
             nextState = EStates.Jump;
+        }
+        if (isGrounded && isAttackinPressed)
+        {
+            nextState = EStates.Attack;
         }
 
         return nextState;
