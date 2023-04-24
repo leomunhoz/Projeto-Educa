@@ -10,6 +10,7 @@ TagManager:
   - Correntes
   - Spawn
   - Chain
+  - Life
   layers:
   - Default
   - TransparentFX

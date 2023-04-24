@@ -631,6 +631,9 @@ MonoBehaviour:
   attackRange: 0.34
   combo: 0
   currentHealth: 0
+  isChain: 0
+  isClimbing: 0
+  direction: {x: 0, y: 0}
   platform: {fileID: 0}
   isGrounded: 0
   wallJumpDuration: 0.1

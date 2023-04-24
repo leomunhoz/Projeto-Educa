@@ -25,6 +25,7 @@ public class GameManager : IPresistentSingleton<GameManager>
         Criaturas.Heroi heroiCriatura = new Criaturas.Heroi();
         PlayerOne heroiScript = heroi.GetComponent<PlayerOne>();
         heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);
+        
 
         /*   slimePrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/slimePrefab");
            batPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/batPrefab");*/

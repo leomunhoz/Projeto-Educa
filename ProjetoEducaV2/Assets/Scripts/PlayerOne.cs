@@ -6,6 +6,7 @@ using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem.Controls;
 
 
@@ -93,16 +94,9 @@ public class PlayerOne : MonoBehaviour
     public int vida;
     public int defesa;
 
-    public GameObject Life1;
-    public GameObject Life2;
-    public GameObject Life3;
-    public GameObject Life4;
-    public GameObject Life5;
-    public GameObject Life6;
-    public GameObject Life7;
-    public GameObject Life8;
-    public GameObject Life9;
-    public GameObject Life10;
+    GameObject[] PlayerVida;
+
+   
 
     public void Parametros(int contMortos,int danoH, int vidaH, int defesaH)
     {
@@ -114,13 +108,14 @@ public class PlayerOne : MonoBehaviour
 
     void Start()
     {
+        
         currentHealth = vida;
         axPulosExtras = pulosExtras;
         rb2d = GetComponent<Rigidbody2D>();
         anim.GetComponent<Animator>();
         platform = GetComponent<PlayerOneWayPlatform>();
-       
 
+       PlayerVida = GameObject.FindGameObjectsWithTag("Life");
 
 
     }
@@ -155,75 +150,7 @@ public class PlayerOne : MonoBehaviour
         ParemetroDeAnim();
 
 
-        if (vida > 89 && vida < 91) // 90
-        {
-
-            Life1.SetActive(false);
-
-        }
-
-        if (vida > 79 && vida < 81) // 80
-        {
-
-            Life2.SetActive(false);
-
-        }
-
-        if (vida > 69 && vida < 71) // 70
-        {
-
-            Life3.SetActive(false);
-
-        }
-
-        if (vida > 59 && vida < 61) // 60
-        {
-
-            Life4.SetActive(false);
-
-        }
-
-        if (vida > 49 && vida < 51) // 50
-        {
-
-            Life5.SetActive(false);
-
-        }
-
-        if (vida > 39 && vida < 41) // 40
-        {
-
-            Life6.SetActive(false);
-
-        }
-
-        if (vida > 29 && vida < 31) // 30
-        {
-
-            Life7.SetActive(false);
-
-        }
-
-        if (vida > 19 && vida < 21) // 20
-        {
-
-            Life8.SetActive(false);
-
-        }
-
-        if (vida > 9 && vida < 11) // 10
-        {
-
-            Life9.SetActive(false);
-
-        }
-
-        if (vida < 1) // 00
-        {
-
-            Life10.SetActive(false);
-
-        }
+       
 
 
     }
@@ -242,7 +169,7 @@ public class PlayerOne : MonoBehaviour
     }
     public void attack()
     {
-        if (isAttackingPressed || isMousePress)
+        if (isAttackingPressed || isMousePress && !isDead)
         {
 
             if (!isAttacking)
@@ -291,7 +218,7 @@ public class PlayerOne : MonoBehaviour
     }
     void Move()
     {
-        if (!isAttackingPressed && !isSkeyDownPress || !platform.isPlatformDownPressed)
+        if (!isAttackingPressed && !isSkeyDownPress || !platform.isPlatformDownPressed && isDead)
         {
             rb2d.velocity = new Vector2(direction.x * speed, Vertical);
         }
@@ -300,7 +227,7 @@ public class PlayerOne : MonoBehaviour
     public void jump()
     {
 
-        if (isJumpingPressed && !(direction.y < 0))
+        if (isJumpingPressed && !(direction.y < 0) && !isDead)
         {
 
             if (!isJumping && isGrounded == true && !isWallSliding)
@@ -395,8 +322,11 @@ public class PlayerOne : MonoBehaviour
     }
     public void Move(InputAction.CallbackContext context)
     {
-
-        direction = context.ReadValue<Vector2>();
+        if (!isDead)
+        {
+            direction = context.ReadValue<Vector2>();
+        }
+      
 
 
     }
@@ -462,13 +392,28 @@ public class PlayerOne : MonoBehaviour
     public void TakeDamage(int damage) 
     {
         currentHealth = currentHealth -(damage - defesa);
+        for (int i = 0; i < PlayerVida.Length; i++)
+        {
+            if (currentHealth >= (i + 1) * 10)
+            {
+                PlayerVida[i].SetActive(true);
+            }
+            else
+            {
+                PlayerVida[i].SetActive(false);
+            }
+        }
         if (currentHealth <= 0)
         {
             isDead = true;
             if (isDead)
             {
                 ChangeAnimState(Death);
+                speed = 0;
+                jumpForce = 0;
                 rb2d.gravityScale = 0;
+                StartCoroutine(SceneLoad());
+               
             }
             
             
@@ -516,5 +461,10 @@ public class PlayerOne : MonoBehaviour
         }
 
 
+    }
+    IEnumerator SceneLoad() 
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(0);
     }
 }
