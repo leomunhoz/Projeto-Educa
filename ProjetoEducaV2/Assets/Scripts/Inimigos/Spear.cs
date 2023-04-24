@@ -20,7 +20,7 @@ public class Spear : MonoBehaviour
     private void Awake()
     {
         rbd2 = GetComponent<Rigidbody2D>();
-
+        inicial = Mathf.Abs(spearAttack.position.x);
     }
     private void Update()
     {
@@ -51,8 +51,21 @@ public class Spear : MonoBehaviour
             transform.localScale = new Vector2(Mathf.Sign(1), 1f);
             
         }
+        if (Mathf.Abs(spearAttack.position.x)>(inicial +disMax) || Mathf.Abs(spearAttack.position.x) < (inicial - disMax))
+        {
+            Destroy(this.gameObject);
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<Spear>().enabled = false;
+        }
     }
-   
+    public void TakeDemage(int damage)
+    {
+        Destroy(this.gameObject);
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Spear>().enabled = false;
+    }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(spearAttack.position, attackRange);

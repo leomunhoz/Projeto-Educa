@@ -208,6 +208,9 @@ public class Inimigo : MonoBehaviour
             Destroy(this.gameObject, tempoDeMorte);
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Inimigo>().enabled = false;
+            PlayerOne play = player.GetComponent<PlayerOne>();
+            play.mortos++;
+            print(nome + " Mortos "+ play.mortos);
         }
     }
     //

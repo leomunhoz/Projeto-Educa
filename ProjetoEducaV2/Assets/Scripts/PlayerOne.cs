@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem.Controls;
-
+using UnityEditor;
 
 public class PlayerOne : MonoBehaviour
 {
@@ -148,6 +148,7 @@ public class PlayerOne : MonoBehaviour
         Flip();
         DownPlat();
         ParemetroDeAnim();
+        Climbing();
 
 
        
@@ -366,18 +367,19 @@ public class PlayerOne : MonoBehaviour
     {
         if (!isAttacking && !isWallSliding && !(direction.y < 0) && !isDead)
         {
-            if (Horizontal != 0 && isGrounded)
+            if (Horizontal != 0 && isGrounded && !isClimbing)
             {
                 ChangeAnimState(Run);
 
             }
-            else if (Vertical != 0)
+            else if (Vertical != 0 && !isClimbing)
             {
                 ChangeAnimState(Jump);
             }
             else
             {
-                ChangeAnimState(Idle);
+                if (!isClimbing)
+                    ChangeAnimState(Idle);
             }
         }
     }
@@ -419,20 +421,22 @@ public class PlayerOne : MonoBehaviour
             
         }
     }
-    public void climb()
+    public void Climbing()
     {
         // float vertical = Input.GetAxis("Vertical");
-
+        
         if (isChain && Mathf.Abs(direction.y) > 0)
         {
             isClimbing = true;
+            //print("isClimbing="+ isClimbing);
         }
         if (isClimbing)
         {
-            rb2d.velocity = new Vector2(0, Vertical * 5);
+            //rb2d.velocity = new Vector2(0, Vertical * 5);
             rb2d.gravityScale = 0;
+            float verticalInput = Input.GetAxisRaw("Vertical");
+            rb2d.velocity = new Vector2(0, verticalInput * 5);
             ChangeAnimState(Climb);
-            print(rb2d.velocity.y);
 
         }
         else
@@ -449,6 +453,7 @@ public class PlayerOne : MonoBehaviour
         if (collision.gameObject.CompareTag("Chain"))
         {
             isChain = true;
+            //print("Sobe");
         }
     }
 
