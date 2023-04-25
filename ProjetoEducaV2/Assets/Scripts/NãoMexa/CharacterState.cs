@@ -4,14 +4,22 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [System.Serializable]
-public class CharacterState 
+public class CharacterState
 {
     //List<IStates> states;
     private IStates[] states;
+    public float isMovingX;
+    public float IsMovingY;
     public float speed;
     public float jumpForce;
-    private int pulosExtras = 1;
-    private int axPulosExtras = 1;
+    public int pulosExtras = 1;
+    public int axPulosExtras = 1;
+    public float timeBetweenHits = 0.5f;
+    public int maxComboHits = 4;
+    public string[] comboAnimations;
+    public int currentComboHits = 0;
+    public float timeSinceLastHit = 0f;
+    public float timeAttackingStarted;
 
 
     public Transform groundCheck;
@@ -26,9 +34,9 @@ public class CharacterState
 
     public bool isGrounded;
     public bool isWallsliding;
-    
+
     public bool isFacingRigth;
-    //public bool isAttacking;
+    public bool isAttacking;
     public bool isAttackingPressed;
     public bool isJumpingPressed;
     public bool isRollingPressed;
@@ -37,29 +45,13 @@ public class CharacterState
     public bool isJumping;
     public bool isWallSliding;
     public bool isDead;
-    public float isMovingX;
-    public float IsMovingY;
-
-
-    public float timeBetweenHits = 0.5f;
-    public int maxComboHits = 4;
-   
-    public string[] comboAnimations;
-
-    public int currentComboHits = 0;
-    public float timeSinceLastHit = 0f;
-
-    public bool isAttacking;
-    public float timeAttackingStarted;
-  
-
 
     [SerializeField]
     private EStates currentState = EStates.Idle;
 
     public void OnBegin(PlayerController controller)
     {
-        states = new IStates[]{ new Idle(controller, this), new Run(controller, this), new Jump(controller, this), new Attack(controller, this) };
+        states = new IStates[] { new Idle(controller, this), new Run(controller, this), new Jump(controller, this), new Attack(controller, this) };
         states[0].OnBegin();
     }
 
@@ -73,7 +65,7 @@ public class CharacterState
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed || Keyboard.current.cKey.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
-        isMovingX = Gamepad.current.leftStick.x.ReadValue() + (Keyboard.current.dKey.isPressed ? 1 : 0 ) + (Keyboard.current.aKey.isPressed ? -1 : 0);
+        isMovingX = Gamepad.current.leftStick.x.ReadValue() + (Keyboard.current.dKey.isPressed ? 1 : 0) + (Keyboard.current.aKey.isPressed ? -1 : 0);
         IsMovingY = Gamepad.current.leftStick.y.ReadValue() + +(Keyboard.current.wKey.isPressed ? 0 : 1) + (Keyboard.current.sKey.isPressed ? 0 : -1);
 
 
@@ -89,3 +81,12 @@ public class CharacterState
         currentState = nextState;
     }
 }
+
+
+
+   
+
+  
+
+
+
