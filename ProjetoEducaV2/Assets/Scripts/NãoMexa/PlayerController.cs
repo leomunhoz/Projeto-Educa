@@ -13,10 +13,6 @@ public class PlayerController : MonoBehaviour
 {
      public CharacterState characterState;
 
-     
-   
-     public Vector2 direction;
-
     private void Awake()
     {
 
@@ -37,16 +33,4 @@ public class PlayerController : MonoBehaviour
     {
         characterState.OnFixedUpdate();
     }
-
-    public void move(InputAction.CallbackContext context)
-    {
-        direction = context.ReadValue<Vector2>();
-       
-    }
-
-
-   
-
-
-
 }

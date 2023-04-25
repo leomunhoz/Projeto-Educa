@@ -4230,6 +4230,14 @@ MonoBehaviour:
     - {fileID: 7400000, guid: cee4e8356960b944ab93eb634153924e, type: 2}
     timeToResetAttack: 0.3
     timeSinceLastAttack: 0
+    timeBetweenHits: 0.5
+    maxComboHits: 3
+    comboAnimations:
+    - Attack 1
+    - Attack 2
+    - Attack 3
+    currentComboHits: 0
+    timeSinceLastHit: 0
     currentState: 0
   direction: {x: 0, y: 0}
 --- !u!114 &1426987092

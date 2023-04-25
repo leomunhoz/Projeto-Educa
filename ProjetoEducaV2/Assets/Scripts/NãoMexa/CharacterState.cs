@@ -28,7 +28,7 @@ public class CharacterState
     public bool isWallsliding;
     
     public bool isFacingRigth;
-    public bool isAttacking;
+    //public bool isAttacking;
     public bool isAttackingPressed;
     public bool isJumpingPressed;
     public bool isRollingPressed;
@@ -37,15 +37,22 @@ public class CharacterState
     public bool isJumping;
     public bool isWallSliding;
     public bool isDead;
+    public float isMovingX;
+    public float IsMovingY;
 
 
-    public float duracaoDocombo = 1f;
-    public float tempoMax;
-    public float tempParaProximoAtaque;
-    public int animAtual = 0;
-    public AnimationClip[] Animcombo;
-    public float timeToResetAttack = 0.3f;
-    public float timeSinceLastAttack = 0f;
+    public float timeBetweenHits = 0.5f;
+    public int maxComboHits = 4;
+   
+    public string[] comboAnimations;
+
+    public int currentComboHits = 0;
+    public float timeSinceLastHit = 0f;
+
+    public bool isAttacking;
+    public float timeAttackingStarted;
+  
+
 
     [SerializeField]
     private EStates currentState = EStates.Idle;
@@ -66,6 +73,8 @@ public class CharacterState
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed || Keyboard.current.cKey.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
+        isMovingX = Gamepad.current.leftStick.x.ReadValue() + (Keyboard.current.dKey.isPressed ? 1 : 0 ) + (Keyboard.current.aKey.isPressed ? -1 : 0);
+        IsMovingY = Gamepad.current.leftStick.y.ReadValue() + +(Keyboard.current.wKey.isPressed ? 0 : 1) + (Keyboard.current.sKey.isPressed ? 0 : -1);
 
 
     }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Idle : IStates
 {
-    Vector2 direction;
+    
     
     CharacterState characterState;
  public Idle(PlayerController controller, CharacterState character) : base(controller,character) 
     {
-        direction = controller.direction;
+       
        
         characterState = character;
        
@@ -21,7 +21,7 @@ public class Idle : IStates
     {
         
      animator.Play(Idle);
-     rb2d.velocity = new Vector2(direction.x * 0, rb2d.velocity.y);
+     rb2d.velocity = new Vector2(characterState.isMovingX * 0, rb2d.velocity.y);
     }
        
 
@@ -29,11 +29,11 @@ public class Idle : IStates
     {
         if (characterState.isGrounded)
         {
-            if (direction.x == 0)
+            if (characterState.isMovingX == 0)
             {
                 nextState = EStates.Idle;
             }
-            if (direction.x != 0)
+            if (characterState.isMovingX != 0)
             {
                 nextState = EStates.Run;
 

@@ -11,7 +11,7 @@ public class Run : IStates
     {
         characterState = character;
         
-        direction = controller.direction;
+       
     }
 
 
@@ -19,20 +19,19 @@ public class Run : IStates
     {
 
         animator.Play(Run);
-        rb2d.velocity = new Vector2(direction.x * characterState.speed, rb2d.velocity.y);
-
+       
     }
     public override EStates OnUpdate()
     {
        
         if (characterState.isGrounded)
         {
-            if (direction.x != 0)
+            if (characterState.isMovingX != 0)
             {
                
                 nextState = EStates.Run;
             }
-            if (direction.x == 0)
+            if (characterState.isMovingX == 0)
             {
                 nextState = EStates.Idle;
             }
@@ -52,10 +51,11 @@ public class Run : IStates
     public override void OnFixedUpdate()
     {
         characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
-        
+        rb2d.velocity = new Vector2(characterState.isMovingX * characterState.speed, rb2d.velocity.y);
+
     }
-      
-      
+
+
     public override void OnExit()
     {
         nextState = EStates.Run;

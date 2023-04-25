@@ -10,7 +10,7 @@ public class Jump : IStates
   
  public Jump(PlayerController controller, CharacterState character) : base(controller, character) 
  {
-        direction = controller.direction;
+        
         characterState = character;
  }
 
@@ -25,11 +25,11 @@ public class Jump : IStates
     {
         if (characterState.isGrounded)
         {
-            if (direction.x != 0)
+            if (characterState.isMovingX != 0)
             {
                 nextState = EStates.Run;
             }
-            if (direction.x == 0)
+            if (characterState.isMovingX == 0)
             {
                 nextState = EStates.Idle;
             }

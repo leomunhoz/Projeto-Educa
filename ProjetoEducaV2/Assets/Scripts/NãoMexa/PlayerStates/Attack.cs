@@ -11,44 +11,42 @@ public class Attack : IStates
     public Attack(PlayerController controller, CharacterState character) : base(controller, character)
     {
 
-        direction = controller.direction;
-        characterState = character;
+      characterState = character;
 
     }
     public override void OnBegin()
     {
-        if (!characterState.isAttacking)
+        if (characterState.isAttacking)
         {
-            characterState.isAttacking = true;
-            rb2d.velocity = new Vector2(direction.x  , rb2d.velocity.y);
-            if (Time.time > characterState.tempParaProximoAtaque)
+            rb2d.velocity = Vector2.zero;
+            if (characterState.timeSinceLastHit < characterState.timeBetweenHits && characterState.currentComboHits < characterState.maxComboHits)
             {
-                animator.Play(characterState.Animcombo[characterState.animAtual].name);
-                characterState.tempParaProximoAtaque = Time.time + characterState.tempoMax;
-                characterState.animAtual++;
-                if (characterState.animAtual >= characterState.Animcombo.Length)
-                {
-                    characterState.animAtual = 0;
-                }
+                characterState.currentComboHits++;
             }
-            if (Time.time > characterState.tempParaProximoAtaque + characterState.duracaoDocombo)
+            else
             {
-                characterState.tempParaProximoAtaque = Time.time;
-                characterState.animAtual = 0;
+                characterState.currentComboHits = 1;
             }
+            int index = Mathf.Clamp(characterState.currentComboHits - 1, 0, characterState.comboAnimations.Length - 1);
+            animator.Play(characterState.comboAnimations[index]);
+            characterState.timeSinceLastHit = 0f;
+            characterState.timeSinceLastHit += Time.deltaTime;
 
-
-            Collider2D[] EnemyHits = Physics2D.OverlapCircleAll(characterState.attackCheck.position,characterState.attackRange, characterState.EnemyLayer);
-            foreach (var enemy in EnemyHits)
+            if (characterState.timeSinceLastHit > characterState.timeBetweenHits)
             {
-                //Debug.Log("Hit" + enemy.name);
-                enemy.GetComponent<Inimigo>().TakeDemage(characterState.attackDamage);
+                characterState.currentComboHits = 0;
             }
 
+            if (characterState.currentComboHits >= characterState.maxComboHits)
+            {
+                animator.Play(characterState.comboAnimations[index]);
+                characterState.currentComboHits = 0;
+                characterState.timeSinceLastHit = 0f;
+            }
             characterState.isAttacking = false;
         }
-        
-    }
+
+}
     public override EStates OnUpdate()
     {
       if (characterState.isGrounded)
@@ -62,12 +60,13 @@ public class Attack : IStates
         {
             nextState = EStates.Run;
         }
-        if (characterState.isAttackingPressed)
-        {
-            nextState = EStates.Attack;
-        }
+            if (characterState.isAttackingPressed)
+            {
+                characterState.isAttacking = true;
+                nextState = EStates.Attack;
+            }
 
-       }
+        }
      
         return nextState;
     }
