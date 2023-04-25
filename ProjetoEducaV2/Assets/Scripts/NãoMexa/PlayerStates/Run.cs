@@ -4,48 +4,63 @@ using UnityEngine;
 
 public class Run : IStates
 {
+    CharacterState characterState;
     
-    
-    float speed;
-
-    public Run(Animator animator, Rigidbody2D rb2d,float speed) : base(animator, rb2d) { this.speed = speed; }
-
-
-    public override void OnBegin(Vector2 direction ,bool isMove, bool isAttacking)
+    Vector2 direction;
+    public Run(PlayerController controller, CharacterState character): base(controller, character)
     {
-        nextState = EStates.Run;
-        if (isMove)
-        {
-            rb2d.velocity = new Vector2(direction.x * speed, rb2d.velocity.y);
-            animator.Play("Run");
-        }
-      
-       
+        characterState = character;
+        
+        direction = controller.direction;
     }
-    public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded, bool isAttackinPressed)
+
+
+    public override void OnBegin()
     {
-        if (direction.x != 0) 
+
+        animator.Play(Run);
+        rb2d.velocity = new Vector2(direction.x * characterState.speed, rb2d.velocity.y);
+
+    }
+    public override EStates OnUpdate()
+    {
+       
+        if (characterState.isGrounded)
         {
-            nextState = EStates.Run;
+            if (direction.x != 0)
+            {
+               
+                nextState = EStates.Run;
+            }
+            if (direction.x == 0)
+            {
+                nextState = EStates.Idle;
+            }
+            if (characterState.isAttackingPressed)
+            {
+                nextState = EStates.Attack;
+            }
         }
-        else if (direction.x == 0 )
-        {
-            nextState = EStates.Idle;
-        }
-        if (isJumpingPressed && isGrounded)
+        
+        if (characterState.isJumpingPressed && characterState.isGrounded)
         {
             nextState = EStates.Jump;
         }
-        if (isGrounded && isAttackinPressed)
-        {
-            nextState = EStates.Attack;
-        }
+       
         return nextState;
     }
+    public override void OnFixedUpdate()
+    {
+        characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
+        
+    }
+      
+      
     public override void OnExit()
     {
-      
+        nextState = EStates.Run;
     }
+
 }
 
 

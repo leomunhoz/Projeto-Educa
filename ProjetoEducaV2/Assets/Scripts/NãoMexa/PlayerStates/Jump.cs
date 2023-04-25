@@ -4,40 +4,53 @@ using UnityEngine;
 
 public class Jump : IStates
 {
+   
+    CharacterState characterState;
+    Vector2 direction;
   
-    
-    float jumpForce;
-    public Jump(Animator animator, Rigidbody2D rb2d, float jumpForce) : base(animator, rb2d) { this.jumpForce = jumpForce; }
+ public Jump(PlayerController controller, CharacterState character) : base(controller, character) 
+ {
+        direction = controller.direction;
+        characterState = character;
+ }
 
-    public override void OnBegin(Vector2 direction, bool isMove, bool isAttacking)
+    public override void OnBegin()
     {
-        nextState = EStates.Jump;   
-        animator.Play("Jump");
-        rb2d.velocity = Vector2.up * jumpForce;
        
+        animator.Play(Jump);
+        rb2d.velocity = Vector2.up * characterState.jumpForce;
+
     }
-    public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded, bool isAttackinPressed)
+    public override EStates OnUpdate()
     {
-        
-        if (direction.x != 0)
+        if (characterState.isGrounded)
         {
-            nextState = EStates.Run;
+            if (direction.x != 0)
+            {
+                nextState = EStates.Run;
+            }
+            if (direction.x == 0)
+            {
+                nextState = EStates.Idle;
+            }
+
+
+            if (characterState.isJumpingPressed)
+            {
+                nextState = EStates.Jump;
+            }
         }
-        else if (direction.x == 0 )
-        {
-            nextState = EStates.Idle;
-        }
-        if (isJumpingPressed && isGrounded)
-        {
-            nextState = EStates.Jump;
-        }
-        
         return nextState;
+    }
+    public override void OnFixedUpdate()
+    {
+        characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
+        
     }
 
     public override void OnExit()
     {
-
+        nextState = EStates.Jump;
     }
 
 }

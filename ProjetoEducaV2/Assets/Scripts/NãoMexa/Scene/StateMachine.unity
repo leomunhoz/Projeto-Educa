@@ -4188,41 +4188,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63182cce6968f5644a851b395663c3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
-  nextState: 0
-  rb2d: {fileID: 1426987088}
-  SpriteRenderer: {fileID: 1426987089}
-  animator: {fileID: 797111863}
-  speed: 12
-  jumpForce: 12
-  groundCheck: {fileID: 85858677}
-  wallChack: {fileID: 1804729720}
-  attackCheck: {fileID: 1506781237}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  attackLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  characterState:
+    speed: 10
+    jumpForce: 10
+    groundCheck: {fileID: 85858677}
+    wallChack: {fileID: 1804729720}
+    attackCheck: {fileID: 1506781237}
+    attackRange: 0
+    attackDamage: 0
+    groundLayer:
+      serializedVersion: 2
+      m_Bits: 8
+    wallLayer:
+      serializedVersion: 2
+      m_Bits: 8
+    attackLayer:
+      serializedVersion: 2
+      m_Bits: 64
+    EnemyLayer:
+      serializedVersion: 2
+      m_Bits: 64
+    isGrounded: 0
+    isWallsliding: 0
+    isFacingRigth: 0
+    isAttacking: 0
+    isAttackingPressed: 0
+    isJumpingPressed: 0
+    isRollingPressed: 0
+    isSkeyDownPress: 0
+    isMousePress: 0
+    isJumping: 0
+    isWallSliding: 0
+    isDead: 0
+    duracaoDocombo: 1
+    tempoMax: 0
+    tempParaProximoAtaque: 0
+    animAtual: 0
+    Animcombo:
+    - {fileID: 7400000, guid: 5adc2fd1bf64ec043808a935b4dc5799, type: 2}
+    - {fileID: 7400000, guid: 071ce5840487e5d4fa415126d1f126cd, type: 2}
+    - {fileID: 7400000, guid: cee4e8356960b944ab93eb634153924e, type: 2}
+    timeToResetAttack: 0.3
+    timeSinceLastAttack: 0
+    currentState: 0
   direction: {x: 0, y: 0}
-  isGrounded: 0
-  isWallsliding: 0
-  isMove: 0
-  isFacingRigth: 0
-  isAttacking: 0
-  isJumpingPressed: 0
-  duracaoDocombo: 1
-  tempoMax: 0.3
-  tempParaProximoAtaque: 0
-  Animcombo:
-  - {fileID: 7400000, guid: 5adc2fd1bf64ec043808a935b4dc5799, type: 2}
-  - {fileID: 7400000, guid: 071ce5840487e5d4fa415126d1f126cd, type: 2}
-  - {fileID: 7400000, guid: cee4e8356960b944ab93eb634153924e, type: 2}
-  timeToResetAttack: 0.3
-  timeSinceLastAttack: 0
 --- !u!114 &1426987092
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,77 +4,82 @@ using UnityEngine;
 
 public class Attack : IStates
 {
-    public float duracaoDocombo;
-    public float tempoMax;
-    public float tempParaProximoAtaque;
-    public int animAtual;
-    public AnimationClip[] animCombo;
-    public float timeToResetAttack;
-    public float timeSinceLastAttack;
-
-    public Attack(Animator animator, Rigidbody2D rb2d, float duracaoDocombo, float tempoMax, float tempParaProximoAtaque, int animAtual, AnimationClip[] animCombo, float timeToResetAttack, float timeSinceLastAttack) : base(animator, rb2d)
+    CharacterState characterState;
+    Vector2 direction;
+    
+   
+    public Attack(PlayerController controller, CharacterState character) : base(controller, character)
     {
-        this.duracaoDocombo = duracaoDocombo;
-        this.tempoMax = tempoMax;
-        this.tempParaProximoAtaque = tempParaProximoAtaque;
-        this.animAtual = animAtual;
-        this.animCombo = animCombo;
-        this.timeToResetAttack = timeToResetAttack;
-        this.timeSinceLastAttack = timeSinceLastAttack;
-       
+
+        direction = controller.direction;
+        characterState = character;
 
     }
-    public override void OnBegin(Vector2 direction, bool isMove, bool isAttacking)
+    public override void OnBegin()
     {
-        if (!isAttacking)
+        if (!characterState.isAttacking)
         {
-            isAttacking = true;
-            rb2d.velocity = new Vector2(direction.x * 0, rb2d.velocity.y);
-            if (Time.time > tempParaProximoAtaque)
+            characterState.isAttacking = true;
+            rb2d.velocity = new Vector2(direction.x  , rb2d.velocity.y);
+            if (Time.time > characterState.tempParaProximoAtaque)
             {
-                animator.Play(animCombo[animAtual].name);
-                tempParaProximoAtaque = Time.time + tempoMax;
-                animAtual++;
-                if (animAtual >= animCombo.Length)
+                animator.Play(characterState.Animcombo[characterState.animAtual].name);
+                characterState.tempParaProximoAtaque = Time.time + characterState.tempoMax;
+                characterState.animAtual++;
+                if (characterState.animAtual >= characterState.Animcombo.Length)
                 {
-                    animAtual = 0;
+                    characterState.animAtual = 0;
                 }
             }
-            if (Time.time > tempParaProximoAtaque + duracaoDocombo)
+            if (Time.time > characterState.tempParaProximoAtaque + characterState.duracaoDocombo)
             {
-                tempParaProximoAtaque = Time.time;
-                animAtual = 0;
+                characterState.tempParaProximoAtaque = Time.time;
+                characterState.animAtual = 0;
             }
 
-            
+
+            Collider2D[] EnemyHits = Physics2D.OverlapCircleAll(characterState.attackCheck.position,characterState.attackRange, characterState.EnemyLayer);
+            foreach (var enemy in EnemyHits)
+            {
+                //Debug.Log("Hit" + enemy.name);
+                enemy.GetComponent<Inimigo>().TakeDemage(characterState.attackDamage);
+            }
+
+            characterState.isAttacking = false;
         }
         
     }
-    public override EStates OnUpdate(Vector2 direction, bool isJumpingPressed, bool isGrounded, bool isAttackinPressed)
+    public override EStates OnUpdate()
     {
+      if (characterState.isGrounded)
+       {
+
         if (direction.x == 0)
         {
             nextState = EStates.Idle;
         }
-        else if (direction.x != 0)
+        if (direction.x != 0)
         {
             nextState = EStates.Run;
-
         }
-        if (isJumpingPressed && isGrounded)
-        {
-            nextState = EStates.Jump;
-        }
-        if (isGrounded && isAttackinPressed)
+        if (characterState.isAttackingPressed)
         {
             nextState = EStates.Attack;
         }
+
+       }
+     
         return nextState;
+    }
+    public override void OnFixedUpdate()
+    {
+        characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
+    
     }
 
     public override void OnExit()
     {
-
+        nextState = EStates.Attack;
     }
 
    
