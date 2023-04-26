@@ -15,6 +15,8 @@ public class Inimigo : MonoBehaviour
     public GameObject Projetil;
     public LayerMask walLayer;
     public LayerMask chao;
+    public LayerMask PlayerLayer;
+    public RaycastHit2D playerHit;
 
     public Vector2 posHero;//Sugeito a GameManager
     public Vector2 posInimigo;
@@ -66,6 +68,7 @@ public class Inimigo : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         walLayer = LayerMask.GetMask("Chao");
         chao = LayerMask.GetMask("Chao","Platform");
+        PlayerLayer = LayerMask.GetMask("Player");
         currentHealth = vidaTotal;
         rd = GetComponent<Rigidbody2D>();
     }
@@ -88,7 +91,7 @@ public class Inimigo : MonoBehaviour
             }
             if (herovsInimigo < disPersegue)
             {
-                if (herovsInimigo <= disAtaque)
+                if (herovsInimigo <= disAtaque && playerHit)
                 {
                     Atacar();
                 }
@@ -109,7 +112,7 @@ public class Inimigo : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
+        playerHit = Physics2D.Raycast(transform.position,direcao,disAtaque,PlayerLayer);
     }
 
     private void Patrulhar()
@@ -238,7 +241,7 @@ public class Inimigo : MonoBehaviour
     public void Atacar()
     {
         {
-
+          
             if (posHero.x > posInimigo.x)
              {
                 indoParaDireita = true;

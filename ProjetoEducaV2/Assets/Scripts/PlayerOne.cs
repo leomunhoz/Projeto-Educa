@@ -447,6 +447,7 @@ public class PlayerOne : MonoBehaviour
         else
         {
             rb2d.gravityScale = 1;
+            anim.speed = 1;
         }
 
         
