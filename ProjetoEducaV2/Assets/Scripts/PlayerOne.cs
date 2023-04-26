@@ -384,13 +384,7 @@ public class PlayerOne : MonoBehaviour
         }
     }
 
-    /*public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Projetil"))
-        {
-            vida = vida - 10;
-        }
-    }*/
+  
     public void TakeDamage(int damage) 
     {
         currentHealth = currentHealth -(damage - defesa);
@@ -432,11 +426,22 @@ public class PlayerOne : MonoBehaviour
         }
         if (isClimbing)
         {
-            //rb2d.velocity = new Vector2(0, Vertical * 5);
-            rb2d.gravityScale = 0;
-            float verticalInput = Input.GetAxisRaw("Vertical");
-            rb2d.velocity = new Vector2(0, verticalInput * 5);
-            ChangeAnimState(Climb);
+            if(direction.y > 0.55f)
+            {
+                rb2d.gravityScale = 0;
+                anim.speed = 1;
+                rb2d.velocity = new Vector2(0,direction.y * 5);
+                ChangeAnimState(Climb);
+                
+            }
+            if (direction.y == 0)
+            {
+                rb2d.gravityScale = 0;
+                rb2d.velocity = new Vector2(0, direction.y * 0);
+                anim.speed = 0;
+                ChangeAnimState(Climb);
+            }
+
 
         }
         else

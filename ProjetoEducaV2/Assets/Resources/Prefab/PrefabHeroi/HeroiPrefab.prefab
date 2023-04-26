@@ -558,9 +558,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1482831147
+  m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -664,16 +664,6 @@ MonoBehaviour:
   mortos: 0
   vida: 100
   defesa: 0
-  Life1: {fileID: 0}
-  Life2: {fileID: 0}
-  Life3: {fileID: 0}
-  Life4: {fileID: 0}
-  Life5: {fileID: 0}
-  Life6: {fileID: 0}
-  Life7: {fileID: 0}
-  Life8: {fileID: 0}
-  Life9: {fileID: 0}
-  Life10: {fileID: 0}
 --- !u!114 &1084106264063448202
 MonoBehaviour:
   m_ObjectHideFlags: 0

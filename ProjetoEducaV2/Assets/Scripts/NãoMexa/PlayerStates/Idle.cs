@@ -29,31 +29,31 @@ public class Idle : IStates
     {
         if (characterState.isGrounded)
         {
-            if (characterState.isMovingX == 0)
-            {
-                nextState = EStates.Idle;
-            }
-            if (characterState.isMovingX != 0)
+            if (Mathf.Abs(characterState.isMovingX) != 0)
             {
                 nextState = EStates.Run;
 
             }
-            if (characterState.isJumpingPressed)
+            if (Mathf.Abs(characterState.isMovingX) == 0)
             {
-                nextState = EStates.Jump;
+                nextState = EStates.Idle;
             }
             if (characterState.isAttackingPressed)
             {
                 nextState = EStates.Attack;
             }
+            if (characterState.isJumpingPressed)
+            {
+                nextState = EStates.Jump;
+            }
         }
-      
+
 
         return nextState;
     }
     public override void OnFixedUpdate()
     {
-        characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
+        characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, characterState.groundRadius, characterState.groundLayer);
        
     }
 

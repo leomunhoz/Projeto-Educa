@@ -19,17 +19,17 @@ public class Jump : IStates
        
         animator.Play(Jump);
         rb2d.AddForce(new Vector2(0.0f, characterState.jumpForce), ForceMode2D.Impulse);
-
+       
     }
     public override EStates OnUpdate()
     {
         if (characterState.isGrounded)
         {
-            if (characterState.isMovingX != 0)
+            if (Mathf.Abs(characterState.isMovingX) != 0)
             {
                 nextState = EStates.Run;
             }
-            if (characterState.isMovingX == 0)
+            if (Mathf.Abs(characterState.isMovingX) == 0)
             {
                 nextState = EStates.Idle;
             }
@@ -48,8 +48,8 @@ public class Jump : IStates
     }
     public override void OnFixedUpdate()
     {
-        characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
-        characterState.isWallsliding = Physics2D.OverlapCircle(characterState.wallChack.position, 0.5f, characterState.wallLayer);
+        characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, characterState.groundRadius, characterState.groundLayer);
+        characterState.isWallsliding = Physics2D.OverlapCircle(characterState.wallChack.position, characterState.WallRadius, characterState.wallLayer);
         
     }
 

@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 [System.Serializable]
 public class CharacterState
 {
-   
-    //List<IStates> states;
+
+    [Header("Variables")]
     private IStates[] states;
     public float isMovingX;
     public float IsMovingY;
@@ -22,22 +22,25 @@ public class CharacterState
     public int currentComboHits = 0;
     public float timeSinceLastHit = 0f;
     public float timeAttackingStarted;
+    public float attackRange;
+    public int attackDamage;
 
-
+    [Header("Physics")]
     public Transform groundCheck;
     public Transform wallChack;
     public Transform attackCheck;
-    public int attackRange;
-    public int attackDamage;
+    public float WallRadius;
+    public float groundRadius;
     public LayerMask groundLayer;
     public LayerMask wallLayer;
     public LayerMask attackLayer;
     public LayerMask EnemyLayer;
 
+    [Header("Boolians")]
     public bool isGrounded;
     public bool isWallsliding;
-
-    public bool isFacingRigth;
+    public bool isFacingRigth = true;
+    public bool isAttackingAnimationPlaying;
     public bool isAttacking;
     public bool isAttackingPressed;
     public bool isJumpingPressed;
@@ -70,7 +73,7 @@ public class CharacterState
         isMovingX = Gamepad.current.leftStick.x.ReadValue() + (Keyboard.current.dKey.isPressed ? 1 : 0) + (Keyboard.current.aKey.isPressed ? -1 : 0);
         IsMovingY = Gamepad.current.leftStick.y.ReadValue() + +(Keyboard.current.wKey.isPressed ? 0 : 1) + (Keyboard.current.sKey.isPressed ? 0 : -1);
 
-       
+     
 
 
     }

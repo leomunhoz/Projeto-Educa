@@ -17,13 +17,14 @@ public class WallSlide : IStates
 
     public override EStates OnUpdate()
     {
-        if (characterState.isGrounded)
+        if (characterState.isGrounded )
         {
-            if (characterState.isMovingX != 0)
+            if (Mathf.Abs(characterState.isMovingX) != 0)
             {
+                
                 nextState = EStates.Run;
             }
-            if (characterState.isMovingX == 0)
+            if (Mathf.Abs(characterState.isMovingX) == 0)
             {
                 nextState = EStates.Idle;
             }
@@ -45,6 +46,7 @@ public class WallSlide : IStates
         characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
         characterState.isWallsliding = Physics2D.OverlapCircle(characterState.wallChack.position, 0.5f, characterState.wallLayer);
         rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Clamp(rb2d.velocity.y, -characterState.WallSlidingSpeed, float.MaxValue));
+       
     }
     public override void OnExit()
     {

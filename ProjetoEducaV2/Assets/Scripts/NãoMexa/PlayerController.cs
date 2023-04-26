@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     {
 
         characterState.OnUpdate();
-        if (characterState.isFacingRigth && characterState.isMovingX > 0 || !characterState.isFacingRigth && characterState.isMovingX < 0)
+        if (characterState.isFacingRigth && characterState.isMovingX < 0 || !characterState.isFacingRigth && characterState.isMovingX > 0)
         {
             characterState.isFacingRigth = !characterState.isFacingRigth;
             Vector3 LocalScale = transform.localScale;
@@ -38,5 +38,12 @@ public class PlayerController : MonoBehaviour
         private void FixedUpdate()
     {
         characterState.OnFixedUpdate();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(characterState.attackCheck.position, characterState.attackRange);
+        Gizmos.DrawWireSphere(characterState.wallChack.position, characterState.WallRadius);
+        Gizmos.DrawWireSphere(characterState.groundCheck.position, characterState.groundRadius);
     }
 }

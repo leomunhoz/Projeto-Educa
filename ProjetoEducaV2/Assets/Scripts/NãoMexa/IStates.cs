@@ -45,6 +45,7 @@ public abstract class IStates
 
     public abstract void OnFixedUpdate();
     public abstract void OnExit();
+    
 
 }
 

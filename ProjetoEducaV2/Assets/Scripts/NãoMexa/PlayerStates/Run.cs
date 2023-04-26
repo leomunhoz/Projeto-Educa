@@ -26,31 +26,31 @@ public class Run : IStates
        
         if (characterState.isGrounded)
         {
-            if (characterState.isMovingX != 0)
+            if (Mathf.Abs(characterState.isMovingX) != 0)
             {
-               
+                
                 nextState = EStates.Run;
             }
-            if (characterState.isMovingX == 0)
+            if (Mathf.Abs(characterState.isMovingX) == 0)
             {
                 nextState = EStates.Idle;
             }
-            if (characterState.isAttackingPressed)
+            if (characterState.isAttackingPressed )
             {
                 nextState = EStates.Attack;
             }
+            if (characterState.isJumpingPressed)
+            {
+                nextState = EStates.Jump;
+            }
         }
         
-        if (characterState.isJumpingPressed && characterState.isGrounded)
-        {
-            nextState = EStates.Jump;
-        }
        
         return nextState;
     }
     public override void OnFixedUpdate()
     {
-        characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
+        characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, characterState.groundRadius, characterState.groundLayer);
         rb2d.velocity = new Vector2(characterState.isMovingX * characterState.speed, rb2d.velocity.y);
 
     }
