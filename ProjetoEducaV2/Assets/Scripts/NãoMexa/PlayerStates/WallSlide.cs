@@ -2,25 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jump : IStates
+public class WallSlide : IStates
 {
-   
-    CharacterState characterState;
-   
-  
- public Jump(PlayerController controller, CharacterState character) : base(controller, character) 
- {
-        
+    public CharacterState characterState;
+    public WallSlide(PlayerController controller,CharacterState character): base(controller, character) 
+    {
         characterState = character;
- }
-
+    }
     public override void OnBegin()
     {
+        animator.Play(WallSliding);
        
-        animator.Play(Jump);
-        rb2d.AddForce(new Vector2(0.0f, characterState.jumpForce), ForceMode2D.Impulse);
-
     }
+
     public override EStates OnUpdate()
     {
         if (characterState.isGrounded)
@@ -44,18 +38,17 @@ public class Jump : IStates
             nextState = EStates.WallSlide;
         }
         return nextState;
-
     }
+
     public override void OnFixedUpdate()
     {
         characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
         characterState.isWallsliding = Physics2D.OverlapCircle(characterState.wallChack.position, 0.5f, characterState.wallLayer);
-        
+        rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Clamp(rb2d.velocity.y, -characterState.WallSlidingSpeed, float.MaxValue));
     }
-
     public override void OnExit()
     {
-        nextState = EStates.Jump;
+        nextState = EStates.WallSlide;
     }
 
 }

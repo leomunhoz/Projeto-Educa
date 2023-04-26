@@ -7,7 +7,8 @@ public enum EStates
     Idle,
     Run,
     Jump,
-    Attack
+    Attack,
+    WallSlide
    
 }
 
@@ -17,6 +18,7 @@ public abstract class IStates
    protected Animator animator;
    protected Rigidbody2D rb2d;
    protected SpriteRenderer sprite;
+  
    protected static readonly int Idle = Animator.StringToHash("Idle");
    protected static readonly int Run = Animator.StringToHash("Run");
    protected static readonly int Jump = Animator.StringToHash("Jump");
@@ -35,6 +37,7 @@ public abstract class IStates
         animator =controller.GetComponentInChildren<Animator>();
         rb2d = controller.GetComponent<Rigidbody2D>();
         sprite = controller.GetComponentInChildren<SpriteRenderer>();
+       
     }
 
     public abstract void OnBegin();

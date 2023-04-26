@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 [System.Serializable]
 public class CharacterState
 {
+   
     //List<IStates> states;
     private IStates[] states;
     public float isMovingX;
@@ -14,6 +15,7 @@ public class CharacterState
     public float jumpForce;
     public int pulosExtras = 1;
     public int axPulosExtras = 1;
+    public float WallSlidingSpeed = 2f;
     public float timeBetweenHits = 0.5f;
     public int maxComboHits = 4;
     public string[] comboAnimations;
@@ -51,7 +53,7 @@ public class CharacterState
 
     public void OnBegin(PlayerController controller)
     {
-        states = new IStates[] { new Idle(controller, this), new Run(controller, this), new Jump(controller, this), new Attack(controller, this) };
+        states = new IStates[] { new Idle(controller, this), new Run(controller, this), new Jump(controller, this), new Attack(controller, this),new WallSlide(controller,this) };
         states[0].OnBegin();
     }
 
@@ -68,11 +70,15 @@ public class CharacterState
         isMovingX = Gamepad.current.leftStick.x.ReadValue() + (Keyboard.current.dKey.isPressed ? 1 : 0) + (Keyboard.current.aKey.isPressed ? -1 : 0);
         IsMovingY = Gamepad.current.leftStick.y.ReadValue() + +(Keyboard.current.wKey.isPressed ? 0 : 1) + (Keyboard.current.sKey.isPressed ? 0 : -1);
 
+       
+
 
     }
     public void OnFixedUpdate()
     {
         states[(int)currentState].OnFixedUpdate();
+
+       
     }
     private void ChangeState(EStates nextState)
     {
