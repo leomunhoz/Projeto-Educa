@@ -28,15 +28,21 @@ public class WallSlide : IStates
             {
                 nextState = EStates.Idle;
             }
-            if (characterState.isJumpingPressed)
-            {
-                nextState = EStates.Jump;
-            }
+           
+        }
+        if (characterState.isJumpingPressed && characterState.isGrounded || !characterState.isGrounded)
+        {
+            nextState = EStates.Jump;
         }
         if (!characterState.isGrounded && characterState.isWallsliding)
         {
             characterState.isWallsliding = true;
             nextState = EStates.WallSlide;
+        }
+        if (characterState.isWallsliding && characterState.isJumpingPressed && !characterState.isGrounded)
+        {
+            characterState.wallJumping = true;
+            nextState = EStates.WallJump;
         }
         return nextState;
     }
@@ -45,7 +51,15 @@ public class WallSlide : IStates
     {
         characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
         characterState.isWallsliding = Physics2D.OverlapCircle(characterState.wallChack.position, 0.5f, characterState.wallLayer);
-        rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Clamp(rb2d.velocity.y, -characterState.WallSlidingSpeed, float.MaxValue));
+        if (characterState.isMovingX != 0)
+        {
+            rb2d.velocity = new Vector2(characterState.isMovingX * characterState.speed, characterState.IsMovingY);
+        }
+        else
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Clamp(rb2d.velocity.y, -characterState.WallSlidingSpeed, float.MaxValue));
+        }
+        
        
     }
     public override void OnExit()

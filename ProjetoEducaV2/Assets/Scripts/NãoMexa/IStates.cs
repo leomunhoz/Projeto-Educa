@@ -8,7 +8,8 @@ public enum EStates
     Run,
     Jump,
     Attack,
-    WallSlide
+    WallSlide,
+    WallJump
    
 }
 

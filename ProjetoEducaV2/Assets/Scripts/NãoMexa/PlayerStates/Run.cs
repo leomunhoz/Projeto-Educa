@@ -5,12 +5,12 @@ using UnityEngine;
 public class Run : IStates
 {
     CharacterState characterState;
-    
+    PlayerController playerController;
     Vector2 direction;
     public Run(PlayerController controller, CharacterState character): base(controller, character)
     {
         characterState = character;
-        
+        playerController = controller;
        
     }
 
@@ -28,7 +28,7 @@ public class Run : IStates
         {
             if (Mathf.Abs(characterState.isMovingX) != 0)
             {
-                
+                characterState.Flip(playerController);
                 nextState = EStates.Run;
             }
             if (Mathf.Abs(characterState.isMovingX) == 0)
@@ -39,13 +39,14 @@ public class Run : IStates
             {
                 nextState = EStates.Attack;
             }
-            if (characterState.isJumpingPressed)
-            {
-                nextState = EStates.Jump;
-            }
+           
         }
-        
-       
+        if (characterState.isJumpingPressed && characterState.isGrounded || !characterState.isGrounded)
+        {
+            nextState = EStates.Jump;
+        }
+
+
         return nextState;
     }
     public override void OnFixedUpdate()

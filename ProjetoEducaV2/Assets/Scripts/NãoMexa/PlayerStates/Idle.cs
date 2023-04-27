@@ -42,10 +42,11 @@ public class Idle : IStates
             {
                 nextState = EStates.Attack;
             }
-            if (characterState.isJumpingPressed)
-            {
-                nextState = EStates.Jump;
-            }
+            
+        }
+        if (characterState.isJumpingPressed && characterState.isGrounded || !characterState.isGrounded)
+        {
+            nextState = EStates.Jump;
         }
 
 
