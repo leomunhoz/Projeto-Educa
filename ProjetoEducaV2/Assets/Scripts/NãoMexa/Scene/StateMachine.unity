@@ -382,6 +382,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992441609551011615, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 177.3929
+      objectReference: {fileID: 0}
+    - target: {fileID: 992441609551011615, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 189.6519
+      objectReference: {fileID: 0}
+    - target: {fileID: 992441609551011615, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 992441609551011615, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 992441609837223141, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 322.7751
+      objectReference: {fileID: 0}
+    - target: {fileID: 992441609837223141, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 337.2543
+      objectReference: {fileID: 0}
+    - target: {fileID: 992441609837223141, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 309.02264
+      objectReference: {fileID: 0}
+    - target: {fileID: 992441609837223141, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 238.1322
+      objectReference: {fileID: 0}
     - target: {fileID: 2694022343399619985, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -469,6 +501,10 @@ PrefabInstance:
     - target: {fileID: 2694022343399619989, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694022343741811978, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
+      propertyPath: m_MovementRange
+      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a03f19e9137bae4582a935d61009100, type: 3}
@@ -735,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6215355373072475812, guid: 6678d9a00d9e21d4683b6e7a40ad67a2, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
-      value: 7.0000005
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6215355373072475812, guid: 6678d9a00d9e21d4683b6e7a40ad67a2, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[6].second.m_AnimationSpeed
