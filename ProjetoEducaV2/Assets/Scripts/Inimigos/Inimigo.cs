@@ -204,7 +204,7 @@ public class Inimigo : MonoBehaviour
         {
             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Death");
             isDead = true;
-            //rb2d.velocity = direcao * 0;
+            rd.velocity = direcao * 0;
             //currentHealth = 0;
             this.enabled = false;
             rd.gravityScale = 0;

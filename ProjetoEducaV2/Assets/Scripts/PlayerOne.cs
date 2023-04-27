@@ -143,6 +143,7 @@ public class PlayerOne : MonoBehaviour
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
+        
         //isMousePress = Mouse.current.leftButton.isPressed;
         wallJump();
         Flip();
@@ -441,7 +442,7 @@ public class PlayerOne : MonoBehaviour
                 anim.speed = 0;
                 ChangeAnimState(Climb);
             }
-
+           
 
         }
         else
