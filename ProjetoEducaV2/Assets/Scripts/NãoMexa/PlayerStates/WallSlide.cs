@@ -12,7 +12,7 @@ public class WallSlide : IStates
     public override void OnBegin()
     {
         animator.Play(WallSliding);
-       
+        
     }
 
     public override EStates OnUpdate()
@@ -54,15 +54,15 @@ public class WallSlide : IStates
         if (characterState.isMovingX != 0)
         {
             rb2d.velocity = new Vector2(characterState.isMovingX * characterState.speed, characterState.IsMovingY);
-            animator.speed = 0;
+           
         }
         else
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Clamp(rb2d.velocity.y, -characterState.WallSlidingSpeed, float.MaxValue));
-            animator.speed = 1;
+            
         }
-        
        
+
     }
     public override void OnExit()
     {

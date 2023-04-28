@@ -762,6 +762,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6215355373072475812, guid: 6678d9a00d9e21d4683b6e7a40ad67a2, type: 3}
+      propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
+      value: 5.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215355373072475812, guid: 6678d9a00d9e21d4683b6e7a40ad67a2, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
       value: 5
       objectReference: {fileID: 0}
@@ -779,7 +783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6215355373072475812, guid: 6678d9a00d9e21d4683b6e7a40ad67a2, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[7].second.m_AnimationSpeed
-      value: 7.0000005
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6215355373072475812, guid: 6678d9a00d9e21d4683b6e7a40ad67a2, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[8].second.m_AnimationSpeed
@@ -950,7 +954,7 @@ MonoBehaviour:
     currentComboHits: 0
     timeSinceLastHit: 0
     timeAttackingStarted: 0
-    attackRange: 0.4
+    attackRange: 0.81
     attackDamage: 0
     wallJumpDuration: 0
     AttackDuration: 0
@@ -1056,7 +1060,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506781236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.87, y: 0, z: 0}
+  m_LocalPosition: {x: 0.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
