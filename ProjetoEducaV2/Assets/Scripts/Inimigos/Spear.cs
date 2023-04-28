@@ -27,7 +27,8 @@ public class Spear : MonoBehaviour
         playerHits = Physics2D.OverlapCircleAll(spearAttack.position, attackRange, playerLayer);
         foreach (var Player in playerHits) 
         {
-            Player.GetComponent<PlayerOne>().TakeDamage(damage);
+            //Player.GetComponent<PlayerOne>().TakeDamage(damage);
+            Player.GetComponent<PlayerOne>().TakeDamage(0);//
             Destroy(this.gameObject);
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Spear>().enabled = false;

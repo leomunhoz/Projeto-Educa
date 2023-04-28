@@ -21,12 +21,9 @@ public class Mapa1 : MonoBehaviour
         heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);
 
 
-        /*   slimePrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/slimePrefab");
-           batPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/batPrefab");*/
-        goblinPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/goblinPrefab");
         //spawnPointInimigo = GameObject.FindGameObjectWithTag("spawn");
+        goblinPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/goblinPrefab");
         GameObject[] spawnPointInimigo = GameObject.FindGameObjectsWithTag("Spawn");
-        //int spawnIndex = spawnPointInimigo.Length;
         foreach (GameObject spawnPoint in spawnPointInimigo)
         {
 

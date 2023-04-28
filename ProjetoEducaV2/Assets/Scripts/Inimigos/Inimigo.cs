@@ -12,6 +12,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Inimigo : MonoBehaviour
 {
     public GameObject player;
+    PlayerOne play;
     public GameObject Projetil;
     public LayerMask walLayer;
     public LayerMask chao;
@@ -89,23 +90,22 @@ public class Inimigo : MonoBehaviour
             raioAFrente = transform.TransformPoint(0.5f, 0.0f, 0.0f);
             RaycastHit2D surfaceHit = Physics2D.Raycast(raioAFrente, Vector2.down, 4f, chao);
             Debug.DrawRay(raioAFrente, dir: transform.TransformDirection(Vector2.down) * 1.75f, color: Color.green);
+            
             if (surfaceHit.collider == null)
             {
                 MudaPatrulha();
                 
             }
-            if (herovsInimigo < disPersegue && Mathf.Abs(posY)<0.9)
+            if (herovsInimigo < disPersegue)
             {
-                print("Percegue");
-                if (herovsInimigo <= disAtaque)
+                if (playerHitFrente || (posY)<3)
                 {
-                    
                     Atacar();
                 }
                 else
                 {
                     Persegue();
-                    emAtaque = false;
+                    
                 }
             }
             else
@@ -113,14 +113,15 @@ public class Inimigo : MonoBehaviour
                 Patrulhar();
                 emAtaque = false;
             }
-                
+
         }
 
     }
     private void FixedUpdate()
     {
         playerHitFrente = Physics2D.Raycast(transform.position,direcao,disPersegue,PlayerLayer);
-       // playerHitCosta = Physics2D.Raycast(transform.position, Vector2.left,disPersegue, PlayerLayer);
+        Debug.DrawRay(posInimigo, dir: direcao * disPersegue, color: Color.yellow);
+        // playerHitCosta = Physics2D.Raycast(transform.position, Vector2.left,disPersegue, PlayerLayer);
     }
 
     private void Patrulhar()
@@ -150,8 +151,13 @@ public class Inimigo : MonoBehaviour
         }
     }
     public void Persegue()
+
     {
-        Move();
+        ViraParaPlayer();
+        if (herovsInimigo >= disAtaque)
+            Move();
+        else
+            AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
     }
 
     private void OnDrawGizmosSelected()
@@ -162,17 +168,6 @@ public class Inimigo : MonoBehaviour
     }
     public void Move()
     {
-        //MOVIMENTO POR TRANSLATE
-        /* // Se não houver obstáculo, move o objeto na direção atual
-         AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Run");
-         print("Anda");
-         transform.Translate(direcao * velocidade * Time.deltaTime, Space.World);
-         // Vira o inimigo para a direção do movimento
-         transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);*/
-
-
-        //MOVIMENTO POR RIGIDBODY
-        // Se não houver obstáculo, move o objeto na direção atual
         AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Run");
         rd.velocity = direcao * velocidade;
         // Vira o inimigo para a direção do movimento
@@ -184,20 +179,19 @@ public class Inimigo : MonoBehaviour
         {
             if (indoParaDireita)
             {
+                //("Direita");
                 pontoInicial.x = transform.position.x;
                 pontoFinal.x = transform.position.x;
                 pontoFinal.x = (transform.position.x - 1f);
                 pontoInicial.x = (pontoInicial.x - disPatrulha);
-                //print("Direita");
             }
             else
             {
+                //("Esquerda");
                 pontoInicial.x = transform.position.x;
                 pontoFinal.x = transform.position.x;
                 pontoInicial.x = (transform.position.x + 1f);
                 pontoFinal.x = (pontoFinal.x + disPatrulha);
-
-                //print("Esquerda");
             }
             indoParaDireita = !indoParaDireita;
             fechadura = true;
@@ -219,7 +213,7 @@ public class Inimigo : MonoBehaviour
             Destroy(this.gameObject, tempoDeMorte);
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Inimigo>().enabled = false;
-            PlayerOne play = player.GetComponent<PlayerOne>();
+            play = player.GetComponent<PlayerOne>();
             play.mortos++;
             print(nome + " Mortos "+ play.mortos);
         }
@@ -249,63 +243,102 @@ public class Inimigo : MonoBehaviour
     public void Atacar()
     {
         {
-          
-            if (posHero.x > posInimigo.x)
-             {
-                indoParaDireita = true;
-                direcao = indoParaDireita ? Vector2.right : Vector2.left;
-                transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
-                 spearPosition = new Vector2(transform.position.x + 1, transform.position.y);
-                 if (!emAtaque)
+            direcao = ViraParaPlayer();
+            if (indoParaDireita)//Direita
+            { 
+                if (!emAtaque)
                  {
-                    emAtaque = true;
-                      if ((posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
-                     {
-                        AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
-                        rd.velocity = direcao * 0;
-                        
-                        
-                         // Verifica se a lança colide com o jogador
-                         /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
-                          if (hit != null && hit.CompareTag("Player"))
-                          {
-                              // Subtrai a vida do jogador e instancia a animação
-                              player.GetComponent<PlayerOne>().vida -= dano;
-                              Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
-                          }*/
-                     }
+                    
+                    //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
+                    if ((posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
+                      {
+                        {
+                            emAtaque = true;
+                            spearPosition = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.3f);
+                            AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+                            rd.velocity = direcao * 0;
+                        }
+                      }
                  }
              }
-             else
+             else//Esquerda
              {
-                indoParaDireita = false;
-                direcao = indoParaDireita ? Vector2.right : Vector2.left;
-                transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
-                 spearPosition = new Vector2(transform.position.x - 1, transform.position.y-0.3f);
-                 if (!emAtaque && playerHitFrente)
-                 {
-                     emAtaque = true;
-                     if ((posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))
-                     {
-                         AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
-                         rd.velocity = direcao * 0;
-                        
 
-                        // Verifica se a lança colide com o jogador
-                        /* Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
-                         if (hit != null && hit.CompareTag("Player"))
-                         {
-                             // Subtrai a vida do jogador e instancia a animação
-                             player.GetComponent<PlayerOne>().vida -= dano;
-                             Instantiate(animacaoDanoPrefab, hit.transform.position, hit.transform.rotation);
-                         }*/
+                if (!emAtaque )
+                 {
+                    //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
+                    if ((posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))
+                     {
+                        //if (act.isJumping || posY < 0.9)
+                        {
+                            spearPosition = new Vector2(transform.position.x -1f, transform.position.y - 0.3f);
+                            emAtaque = true;
+                            AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+                            rd.velocity = direcao * 0;
+                        }
                     }
                  }
              }
          }
-
-
     }
+    /*IEnumerator Atacar()
+    {
+        {
+            direcao = ViraParaPlayer();
+            if (indoParaDireita)
+            { 
+                if (!emAtaque)
+                {
+                    print("Ataque passou if 2");
+                    //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
+                    if ((posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
+                    {
+                        print("Ataque passou if 3");
+                        //if (act.isJumping || posY<0.9)
+                        {
+                            spearPosition = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.3f);
+                            emAtaque = true;
+                            AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+                            AnimatorStateInfo animState = AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+                            while (animState.IsName("Attack") && animState.normalizedTime < 1.0f)
+                            {
+                                yield return null;
+                                animState = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+                            }
+                            rd.velocity = direcao * 0;
+                        }
+                    }
+                }
+            }
+            else//Esquerda
+            {
+                if (!emAtaque)
+                {
+                    print("Ataque passou if 2");
+                    //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
+                    if ((posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))
+                    {
+                        print("Ataque passou if 3");
+                        //if (act.isJumping || posY < 0.9)
+                        {
+                            spearPosition = new Vector2(transform.position.x - 1, transform.position.y - 0.3f);
+                            emAtaque = true;
+                            AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+                            AnimatorStateInfo animState = AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+                            while (animState.IsName("Attack") && animState.normalizedTime < 1.0f)
+                            {
+                                yield return null;
+                                animState = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+                            }
+                            rd.velocity = direcao * 0;
+                        }
+                    }
+                }
+            }
+        }
+    }*/
+
+
     public void InstanciarLanca() 
     {
         GameObject Lanca = Instantiate(Projetil, spearPosition, Quaternion.identity);
@@ -318,9 +351,28 @@ public class Inimigo : MonoBehaviour
         {
             spear.direction = Vector2.left;
         }
+        spear = null;
     }
 
+    public Vector2 ViraParaPlayer()
+    {
+        if (posHero.x > posInimigo.x)
+        {
+            indoParaDireita = true;
+            direcao = indoParaDireita ? Vector2.right : Vector2.left;
+            transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
+            emAtaque = false;
+        }
+        else//Esquerda
+        {
+            indoParaDireita = false;
+            direcao = indoParaDireita ? Vector2.right : Vector2.left;
+            transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
 
+            emAtaque = false;
+        }
+        return direcao;
+    }
 }
 
 
