@@ -16,7 +16,8 @@ public class Inimigo : MonoBehaviour
     public LayerMask walLayer;
     public LayerMask chao;
     public LayerMask PlayerLayer;
-    public RaycastHit2D playerHit;
+    public RaycastHit2D playerHitFrente;
+    public RaycastHit2D playerHitCosta;
 
     public Vector2 posHero;//Sugeito a GameManager
     public Vector2 posInimigo;
@@ -89,7 +90,7 @@ public class Inimigo : MonoBehaviour
             {
                 MudaPatrulha();
             }
-            if (herovsInimigo < disPersegue)
+            if (herovsInimigo < disPersegue )
             {
                 if (herovsInimigo <= disAtaque )
                 {
@@ -112,7 +113,8 @@ public class Inimigo : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        playerHit = Physics2D.Raycast(transform.position,direcao,disAtaque,PlayerLayer);
+        playerHitFrente = Physics2D.Raycast(transform.position,Vector2.right,disAtaque,PlayerLayer);
+        playerHitCosta = Physics2D.Raycast(transform.position, Vector2.left,disAtaque, PlayerLayer);
     }
 
     private void Patrulhar()
@@ -248,7 +250,7 @@ public class Inimigo : MonoBehaviour
                 direcao = indoParaDireita ? Vector2.right : Vector2.left;
                 transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
                  spearPosition = new Vector2(transform.position.x + 1, transform.position.y);
-                 if (!emAtaque && playerHit)
+                 if (!emAtaque && playerHitFrente)
                  {
                     emAtaque = true;
                       if ((posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
@@ -274,7 +276,7 @@ public class Inimigo : MonoBehaviour
                 direcao = indoParaDireita ? Vector2.right : Vector2.left;
                 transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
                  spearPosition = new Vector2(transform.position.x - 1, transform.position.y-0.3f);
-                 if (!emAtaque && playerHit)
+                 if (!emAtaque && playerHitFrente)
                  {
                      emAtaque = true;
                      if ((posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))

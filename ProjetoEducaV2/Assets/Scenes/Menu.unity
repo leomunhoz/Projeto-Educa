@@ -172,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &114210995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2560,7 +2560,7 @@ Tilemap:
       - {fileID: -151031288, guid: 4337a995e8a5dce479aa6322b39bdbdc, type: 3}
       - {fileID: 306167045, guid: 4337a995e8a5dce479aa6322b39bdbdc, type: 3}
       - {fileID: 696830514, guid: 4337a995e8a5dce479aa6322b39bdbdc, type: 3}
-      m_AnimationSpeed: 7
+      m_AnimationSpeed: 7.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -3871,7 +3871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000062942, y: 605}
+  m_AnchoredPosition: {x: -0.000062942, y: 464}
   m_SizeDelta: {x: 446.446, y: 97.87271}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1453926743
