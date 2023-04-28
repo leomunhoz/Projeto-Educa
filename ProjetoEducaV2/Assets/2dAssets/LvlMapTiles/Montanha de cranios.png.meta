@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0298fcfec48090d44b1496ded7f2d1af
+guid: 0c805bb5596a44f429b5b41abaa234bf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Montanha de gold_0
+      name: Montanha de cranios_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 458b6465de2203d44914cab1fe7fb904
-      internalID: -1951568670
+      spriteID: cc07a27d2c1760040804588c1a686801
+      internalID: 397779823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Montanha de gold_1
+      name: Montanha de cranios_1
       rect:
         serializedVersion: 2
         x: 16
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 543319a495a690344b701b1ec3cde235
-      internalID: 714013536
+      spriteID: 4235956821d2c67418138f8329150ca3
+      internalID: -124363439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Montanha de gold_2
+      name: Montanha de cranios_2
       rect:
         serializedVersion: 2
         x: 32
@@ -197,35 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 469f03d4a9d07c749a2e032dd14abf24
-      internalID: 1768674702
+      spriteID: 60036c2ffb7674c41a15808047487a82
+      internalID: -59881192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Montanha de gold_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6f759afca5d75641a2dab320a8d8730
-      internalID: -1152295378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Montanha de gold_4
+      name: Montanha de cranios_3
       rect:
         serializedVersion: 2
         x: 0
@@ -239,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bb0d43865c33d34eaeba430c8061961
-      internalID: 100717801
+      spriteID: a9ab9273be47d664d8a918cda97b5962
+      internalID: -462241198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Montanha de gold_5
+      name: Montanha de cranios_4
       rect:
         serializedVersion: 2
         x: 16
@@ -260,14 +239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 911e7c6661dee8c479c8e2b262f22736
-      internalID: -1870165498
+      spriteID: 55381290aa21d7a4384cae2b1355f1ed
+      internalID: 115888701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Montanha de gold_6
+      name: Montanha de cranios_5
       rect:
         serializedVersion: 2
         x: 32
@@ -281,29 +260,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70a471dcc3567344abb38d9ec6f1dee2
-      internalID: 1389107041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Montanha de gold_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5cff42e160d31c4da053e3b88b9bd31
-      internalID: -1770461197
+      spriteID: eaf6cb75e73527e49a491b17ee8806a8
+      internalID: 1925762755
       vertices: []
       indices: 
       edges: []
@@ -319,14 +277,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Montanha de gold_0: -1951568670
-      Montanha de gold_1: 714013536
-      Montanha de gold_2: 1768674702
-      Montanha de gold_3: -1152295378
-      Montanha de gold_4: 100717801
-      Montanha de gold_5: -1870165498
-      Montanha de gold_6: 1389107041
-      Montanha de gold_7: -1770461197
+      Montanha de cranios_0: 397779823
+      Montanha de cranios_1: -124363439
+      Montanha de cranios_2: -59881192
+      Montanha de cranios_3: -462241198
+      Montanha de cranios_4: 115888701
+      Montanha de cranios_5: 1925762755
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
