@@ -12,13 +12,14 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Inimigo : MonoBehaviour
 {
     public GameObject player;
-    PlayerOne play;
+    public PlayerOne play;
     public GameObject Projetil;
     public LayerMask walLayer;
     public LayerMask chao;
     public LayerMask PlayerLayer;
     public RaycastHit2D playerHitFrente;
-    public RaycastHit2D playerHitCosta;
+    public RaycastHit2D playerOUParece;
+    public RaycastHit2D obstaculo;
 
     public Vector2 posHero;//Sugeito a GameManager
     public Vector2 posInimigo;
@@ -32,8 +33,12 @@ public class Inimigo : MonoBehaviour
     public bool fechadura = false;
     public bool isDead = false;
     public bool emAtaque = false;
+    public bool parede = false;
+
 
     public float posY;
+    public float disPlayerRay;
+    public float disParede;
     public float currentHealth;
     public float tempoDeMorte = 20f;
     public float herovsInimigo;
@@ -84,21 +89,37 @@ public class Inimigo : MonoBehaviour
             posHero = new Vector2(player.transform.position.x, player.transform.position.y);
             posInimigo = new Vector2(transform.position.x, transform.position.y);
             herovsInimigo = Vector2.Distance(posHero, posInimigo);
-            posY= (Mathf.Abs(posInimigo.y) - Mathf.Abs(posHero.y));
+            
             //print(posY);
 
             raioAFrente = transform.TransformPoint(0.5f, 0.0f, 0.0f);
             RaycastHit2D surfaceHit = Physics2D.Raycast(raioAFrente, Vector2.down, 4f, chao);
             Debug.DrawRay(raioAFrente, dir: transform.TransformDirection(Vector2.down) * 1.75f, color: Color.green);
-            
+
+            playerHitFrente = Physics2D.Raycast(transform.position, direcao, disPersegue, PlayerLayer);
+            Debug.DrawRay(posInimigo, dir: direcao * disPersegue, color: Color.yellow);
+            disPlayerRay = playerHitFrente.distance;
+
+            playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
+            disParede = playerOUParece.distance;
+
+            //posY = (posInimigo.y) - (posHero.y);
+
+            if (disPlayerRay == 0)
+                disPlayerRay = disParede + 1f;
+
             if (surfaceHit.collider == null)
             {
                 MudaPatrulha();
                 
             }
-            if (herovsInimigo < disPersegue)
+            /*if ((disParede < disPlayerRay))
+                parede = true;
+            else
+                parede = false;*/
+            if (herovsInimigo < disPersegue && !parede)
             {
-                if (playerHitFrente || (posY)<3)
+                if (Mathf.Abs(Mathf.Abs(posInimigo.y) - Mathf.Abs(posHero.y)) < 2)
                 {
                     Atacar();
                 }
@@ -115,20 +136,19 @@ public class Inimigo : MonoBehaviour
             }
 
         }
-
     }
     private void FixedUpdate()
     {
-        playerHitFrente = Physics2D.Raycast(transform.position,direcao,disPersegue,PlayerLayer);
-        Debug.DrawRay(posInimigo, dir: direcao * disPersegue, color: Color.yellow);
+       
         // playerHitCosta = Physics2D.Raycast(transform.position, Vector2.left,disPersegue, PlayerLayer);
     }
 
     private void Patrulhar()
     {
         // Verifica se há obstáculos no caminho
-        RaycastHit2D obstaculo = Physics2D.Raycast(transform.position, direcao, disPatrulha - (disPatrulha - 1), walLayer);
+        obstaculo = Physics2D.Raycast(transform.position, direcao, disPatrulha - (disPatrulha - 1), walLayer);
         Debug.DrawRay(posInimigo, dir: direcao * 2.0f, color: Color.white);
+
         {
             if (obstaculo.collider != null)
             {
