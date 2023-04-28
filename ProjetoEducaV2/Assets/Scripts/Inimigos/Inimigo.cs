@@ -32,6 +32,7 @@ public class Inimigo : MonoBehaviour
     public bool isDead = false;
     public bool emAtaque = false;
 
+    public float posY;
     public float currentHealth;
     public float tempoDeMorte = 20f;
     public float herovsInimigo;
@@ -82,6 +83,8 @@ public class Inimigo : MonoBehaviour
             posHero = new Vector2(player.transform.position.x, player.transform.position.y);
             posInimigo = new Vector2(transform.position.x, transform.position.y);
             herovsInimigo = Vector2.Distance(posHero, posInimigo);
+            posY= (Mathf.Abs(posInimigo.y) - Mathf.Abs(posHero.y));
+            //print(posY);
 
             raioAFrente = transform.TransformPoint(0.5f, 0.0f, 0.0f);
             RaycastHit2D surfaceHit = Physics2D.Raycast(raioAFrente, Vector2.down, 4f, chao);
@@ -89,11 +92,14 @@ public class Inimigo : MonoBehaviour
             if (surfaceHit.collider == null)
             {
                 MudaPatrulha();
+                
             }
-            if (herovsInimigo < disPersegue )
+            if (herovsInimigo < disPersegue && Mathf.Abs(posY)<0.9)
             {
-                if (herovsInimigo <= disAtaque )
+                print("Percegue");
+                if (herovsInimigo <= disAtaque)
                 {
+                    
                     Atacar();
                 }
                 else
@@ -113,8 +119,8 @@ public class Inimigo : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        playerHitFrente = Physics2D.Raycast(transform.position,Vector2.right,disAtaque,PlayerLayer);
-        playerHitCosta = Physics2D.Raycast(transform.position, Vector2.left,disAtaque, PlayerLayer);
+        playerHitFrente = Physics2D.Raycast(transform.position,direcao,disPersegue,PlayerLayer);
+       // playerHitCosta = Physics2D.Raycast(transform.position, Vector2.left,disPersegue, PlayerLayer);
     }
 
     private void Patrulhar()
@@ -250,7 +256,7 @@ public class Inimigo : MonoBehaviour
                 direcao = indoParaDireita ? Vector2.right : Vector2.left;
                 transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
                  spearPosition = new Vector2(transform.position.x + 1, transform.position.y);
-                 if (!emAtaque && playerHitFrente)
+                 if (!emAtaque)
                  {
                     emAtaque = true;
                       if ((posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
