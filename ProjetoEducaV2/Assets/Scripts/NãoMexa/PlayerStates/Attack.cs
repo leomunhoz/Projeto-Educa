@@ -15,6 +15,7 @@ public class Attack : IStates
     }
     public override void OnBegin()
     {
+        characterState.AttackDuration = 0;
         rb2d.velocity = Vector2.zero;
         if (characterState.timeSinceLastHit < characterState.timeBetweenHits && characterState.currentComboHits < characterState.maxComboHits)
         {
@@ -48,40 +49,38 @@ public class Attack : IStates
             //Debug.Log("Hit" + enemy.name);
             enemy.GetComponent<Inimigo>().TakeDemage(characterState.attackDamage);
         }
-
     }
        
 
     public override EStates OnUpdate()
     {
+        characterState.AttackDuration += Time.deltaTime;
       if (characterState.isGrounded)
        {
 
-        if (Mathf.Abs(characterState.isMovingX) != 0)
-        {
+            if (Mathf.Abs(characterState.isMovingX) != 0 && characterState.AttackDuration >= 0.35)
+            {
             
-            nextState = EStates.Run;
-        }
-        if (Mathf.Abs(characterState.isMovingX) == 0)
-        {
-            nextState = EStates.Idle;
-        }
-        if (characterState.isAttackingPressed )
-        {
-                characterState.isAttacking = true;
+                nextState = EStates.Run;
+            }
+            if (Mathf.Abs(characterState.isMovingX) == 0 && characterState.AttackDuration >=0.35)
+            {
+                nextState = EStates.Idle;
+            }
+            if (characterState.isAttackingPressed)
+            {
+
                 nextState = EStates.Attack;
-        }
+            }
 
       }
-       
+
 
         return nextState;
     }
     public override void OnFixedUpdate()
     {
         characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, characterState.groundRadius, characterState.groundLayer);
-       
-
     }
 
     public override void OnExit()
@@ -90,34 +89,4 @@ public class Attack : IStates
     }
 
    }
-/*if (characterState.timeSinceLastHit < characterState.timeBetweenHits && characterState.currentComboHits < characterState.maxComboHits)
-{
-    characterState.currentComboHits++;
-}
-else
-{
-    characterState.currentComboHits = 1;
-}
-int index = Mathf.Clamp(characterState.currentComboHits - 1, 0, characterState.comboAnimations.Length - 1);
-animator.Play(characterState.comboAnimations[index]);
-characterState.timeSinceLastHit = 0f;
-characterState.timeSinceLastHit += Time.deltaTime;
 
-if (characterState.timeSinceLastHit > characterState.timeBetweenHits)
-{
-    characterState.currentComboHits = 0;
-}
-
-if (characterState.currentComboHits >= characterState.maxComboHits)
-{
-    animator.Play(characterState.comboAnimations[index]);
-    characterState.currentComboHits = 0;
-    characterState.timeSinceLastHit = 0f;
-}
-
-Collider2D[] EnemyHits = Physics2D.OverlapCircleAll(characterState.attackCheck.position, characterState.attackRange, characterState.EnemyLayer);
-foreach (var enemy in EnemyHits)
-{
-    //Debug.Log("Hit" + enemy.name);
-    enemy.GetComponent<Inimigo>().TakeDemage(characterState.attackDamage);
-}*/

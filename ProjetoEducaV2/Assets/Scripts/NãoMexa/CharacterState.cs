@@ -26,6 +26,7 @@ public class CharacterState
     public float attackRange;
     public int attackDamage;
     public float wallJumpDuration;
+    public float AttackDuration;
 
     [Header("Physics")]
     public Transform groundCheck;
@@ -69,7 +70,7 @@ public class CharacterState
             ChangeState(nextState);
 
         isJumpingPressed = Gamepad.current.buttonSouth.isPressed || Keyboard.current.spaceKey.isPressed;
-        isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
+        isAttackingPressed = Gamepad.current.buttonNorth.wasPressedThisFrame || Keyboard.current.fKey.wasPressedThisFrame;
         isRollingPressed = Gamepad.current.buttonEast.isPressed || Keyboard.current.cKey.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
         isMovingX = Gamepad.current.leftStick.x.ReadValue() + (Keyboard.current.dKey.isPressed ? 1 : 0) + (Keyboard.current.aKey.isPressed ? -1 : 0);
