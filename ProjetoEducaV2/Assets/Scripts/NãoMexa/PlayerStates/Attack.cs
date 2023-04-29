@@ -50,10 +50,18 @@ public class Attack : IStates
             enemy.GetComponent<Inimigo>().TakeDemage(characterState.attackDamage);
         }
     }
-       
 
+    float deltaAttackTime = 0.0f;
     public override EStates OnUpdate()
     {
+
+        //deltaAttackTime += Time.deltaTime;
+        //if (deltaAttackTime >= 0.3f)
+        //{
+        //    // TODO: retornar idel ou wak
+        //}
+
+
         characterState.AttackDuration += Time.deltaTime;
       if (characterState.isGrounded)
        {

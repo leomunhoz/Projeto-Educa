@@ -38,6 +38,7 @@ public class CharacterState
     public LayerMask wallLayer;
     public LayerMask attackLayer;
     public LayerMask EnemyLayer;
+
     [Header("Boolians")]
     public bool isGrounded;
     public bool isWallsliding;

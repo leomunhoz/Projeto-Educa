@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+
+    private void Awake()
+    {
+        GameManager tem = GameManager.Instance;
+    }
+
+
+
     public void loadscene(string cena)
     {
         SceneManager.LoadScene(cena);
