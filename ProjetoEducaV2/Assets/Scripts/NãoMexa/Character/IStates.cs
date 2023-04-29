@@ -9,7 +9,9 @@ public enum EStates
     Jump,
     Attack,
     WallSlide,
-    WallJump
+    WallJump,
+    Dash
+    
    
 }
 
@@ -28,6 +30,7 @@ public abstract class IStates
    protected static readonly int Down = Animator.StringToHash("Down");
    protected static readonly int Death = Animator.StringToHash("Death");
    protected static readonly int Climb = Animator.StringToHash("Climb");
+    protected static readonly int Dash = Animator.StringToHash("Roll");
 
 
 

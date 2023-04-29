@@ -60,7 +60,7 @@ public class CharacterState
 
     public void OnBegin(PlayerController controller)
     {
-        states = new IStates[] { new Idle(controller, this), new Run(controller, this), new Jump(controller, this), new Attack(controller, this),new WallSlide(controller,this), new WallJump(controller,this) };
+        states = new IStates[] { new Idle(controller, this), new Run(controller, this), new Jump(controller, this), new Attack(controller, this),new WallSlide(controller,this), new WallJump(controller,this), new Dash(controller,this) };
         states[0].OnBegin();
     }
 
