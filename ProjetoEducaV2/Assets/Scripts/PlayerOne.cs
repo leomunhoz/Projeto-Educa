@@ -427,6 +427,7 @@ public class PlayerOne : MonoBehaviour
                 speed = 0;
                 jumpForce = 0;
                 rb2d.gravityScale = 0;
+                rb2d.velocity = Vector2.zero;
                 StartCoroutine(SceneLoad());
                
             }

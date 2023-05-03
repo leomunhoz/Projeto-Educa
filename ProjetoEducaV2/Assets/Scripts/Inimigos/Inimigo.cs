@@ -70,6 +70,7 @@ public class Inimigo : MonoBehaviour
 
     private void Start()
     {
+        
         //print("Nome=" + nome);
         pontoInicial = transform.position;
         pontoFinal = pontoInicial + Vector2.right * disPatrulha;
