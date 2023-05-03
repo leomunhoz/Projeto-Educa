@@ -63,6 +63,7 @@ public class PlayerOne : MonoBehaviour
     private bool isJumping;
     private bool isWallSliding;
     private bool isDead;
+    private bool IMORTAL=false;
 
 
     public float wallJumpDuration;
@@ -150,9 +151,25 @@ public class PlayerOne : MonoBehaviour
         DownPlat();
         ParemetroDeAnim();
         Climbing();
+        if (Keyboard.current.lKey.wasPressedThisFrame)
+        {
+
+            if (!IMORTAL)
+            {
+                print("Imortal");
+                IMORTAL = true;
+            }
+            else
+            {
+                print("Mortal");
+                IMORTAL = false;
+            }
+                
+        }
+            
 
 
-       
+
 
 
     }
@@ -388,7 +405,8 @@ public class PlayerOne : MonoBehaviour
   
     public void TakeDamage(int damage) 
     {
-        currentHealth = currentHealth -(damage - defesa);
+        if (!IMORTAL)
+            currentHealth = currentHealth -(damage - defesa);
         for (int i = 0; i < PlayerVida.Length; i++)
         {
             if (currentHealth >= (i + 1) * 10)
