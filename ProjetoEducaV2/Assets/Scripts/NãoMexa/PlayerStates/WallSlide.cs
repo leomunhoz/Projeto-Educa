@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class WallSlide : IStates
 {
     public CharacterState characterState;
+    float slideTime = 0;
     public WallSlide(PlayerController controller,CharacterState character): base(controller, character) 
     {
         characterState = character;
@@ -17,6 +19,7 @@ public class WallSlide : IStates
 
     public override EStates OnUpdate()
     {
+        slideTime += Time.deltaTime;
         if (characterState.isGrounded )
         {
             if (Mathf.Abs(characterState.isMovingX) != 0)
@@ -51,16 +54,11 @@ public class WallSlide : IStates
     {
         characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, 0.2f, characterState.groundLayer);
         characterState.isWallsliding = Physics2D.OverlapCircle(characterState.wallChack.position, 0.5f, characterState.wallLayer);
-        if (characterState.isMovingX != 0)
-        {
-            rb2d.velocity = new Vector2(characterState.isMovingX * characterState.speed, characterState.IsMovingY);
-           
-        }
-        else
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Clamp(rb2d.velocity.y, -characterState.WallSlidingSpeed, float.MaxValue));
+       
+        
+        rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Clamp(rb2d.velocity.y, -characterState.WallSlidingSpeed, float.MaxValue));
             
-        }
+        
        
 
     }

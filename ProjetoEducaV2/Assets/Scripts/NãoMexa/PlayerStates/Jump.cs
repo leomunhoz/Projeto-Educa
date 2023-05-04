@@ -38,7 +38,7 @@ public class Jump : IStates
         }
         if (characterState.isJumpingPressed && characterState.isGrounded || !characterState.isGrounded)
         {
-            characterState.Flip(playerController);
+            
            nextState = EStates.Jump;
         }
         if (!characterState.isGrounded && characterState.isWallsliding)
@@ -53,7 +53,7 @@ public class Jump : IStates
     {
         characterState.isGrounded = Physics2D.OverlapCircle(characterState.groundCheck.position, characterState.groundRadius, characterState.groundLayer);
         characterState.isWallsliding = Physics2D.OverlapCircle(characterState.wallChack.position, characterState.WallRadius, characterState.wallLayer);
-        if (characterState.isGrounded)
+        if (characterState.isGrounded && characterState.isJumpingPressed)
         {
             rb2d.AddForce(new Vector2(0.0f, characterState.jumpForce), ForceMode2D.Impulse);
         }
