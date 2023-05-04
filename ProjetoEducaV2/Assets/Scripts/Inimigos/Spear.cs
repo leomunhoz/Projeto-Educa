@@ -64,6 +64,7 @@ public class Spear : MonoBehaviour
         Destroy(this.gameObject);
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Spear>().enabled = false;
+        print("Destruido");
     }
 
 

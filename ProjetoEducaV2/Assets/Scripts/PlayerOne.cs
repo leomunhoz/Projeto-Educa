@@ -65,7 +65,7 @@ public class PlayerOne : MonoBehaviour
     private bool isDead;
     private bool IMORTAL=false;
 
-
+    public int hashS = "Spear(Clone)".GetHashCode();
     public float wallJumpDuration;
     public Vector2 wallJumpForce;
     public bool wallJumping;
@@ -81,6 +81,7 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private LayerMask WallLayer;
     [SerializeField] private LayerMask GroundLayer;
     [SerializeField] private LayerMask EnemyLayers;
+    private LayerMask SpearLayer;
 
 
 
@@ -144,7 +145,7 @@ public class PlayerOne : MonoBehaviour
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
-        
+
         //isMousePress = Mouse.current.leftButton.isPressed;
         wallJump();
         Flip();
@@ -212,15 +213,23 @@ public class PlayerOne : MonoBehaviour
                         tempParaProximoAtaque = Time.time;
                         animAtual = 0;
                     }
-
-
-
-
                     Collider2D[] EnemyHits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, EnemyLayers);
                     foreach (var enemy in EnemyHits)
                     {
-                        //Debug.Log("Hit" + enemy.name);
-                        enemy.GetComponent<Inimigo>().TakeDemage(attackDemage);
+                        
+                            enemy.GetComponent<Inimigo>().TakeDemage(attackDemage);
+
+                    }
+                    Collider2D[] hitObjects = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
+                    foreach (var hitObject in hitObjects)
+                    {
+                        //Debug.Log("Hit  " + hitObject.name);
+                        if (hitObject.name.GetHashCode()== hashS)
+                        {
+                            
+                          hitObject.GetComponent<Spear>().TakeDemage(attackDemage);
+                        }
+                            
                     }
                 }
                 StartCoroutine(AttackComplete());

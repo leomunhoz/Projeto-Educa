@@ -36,6 +36,7 @@ public class Inimigo : MonoBehaviour
     public bool parede = false;
 
 
+    public int hashG = "Goblin".GetHashCode();
     public float posY;
     public float disPlayerRay;
     public float disParede;
@@ -275,7 +276,9 @@ public class Inimigo : MonoBehaviour
                       {
                         {
                             emAtaque = true;
-                            spearPosition = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.3f);
+                            if (nome.GetHashCode() == hashG)
+                                spearPosition = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.3f);
+
                             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                             rd.velocity = direcao * 0;
                         }
@@ -292,7 +295,8 @@ public class Inimigo : MonoBehaviour
                      {
                         //if (act.isJumping || posY < 0.9)
                         {
-                            spearPosition = new Vector2(transform.position.x -1f, transform.position.y - 0.3f);
+                            if (nome.GetHashCode() == hashG)
+                                spearPosition = new Vector2(transform.position.x -1f, transform.position.y - 0.3f);
                             emAtaque = true;
                             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                             rd.velocity = direcao * 0;
