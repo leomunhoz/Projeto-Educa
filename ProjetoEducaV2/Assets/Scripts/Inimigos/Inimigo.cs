@@ -20,6 +20,7 @@ public class Inimigo : MonoBehaviour
     public RaycastHit2D playerHitFrente;
     public RaycastHit2D playerOUParece;
     public RaycastHit2D obstaculo;
+    public Collider2D[] playerHits;
 
     public Vector2 posHero;//Sugeito a GameManager
     public Vector2 posInimigo;
@@ -103,8 +104,8 @@ public class Inimigo : MonoBehaviour
             if (nome.GetHashCode() == hashB)
                 if (disChao >= 1f || disChao == 0)
                     transform.position = new Vector2(transform.position.x, transform.position.y - 0.1f);
-                if (disChao <= 1f)
-                    transform.position = new Vector2(transform.position.x, transform.position.y + 0.1f);
+                if (disChao < 1f)
+                    transform.position = new Vector2(transform.position.x, transform.position.y + 0.0001f);
             playerHitFrente = Physics2D.Raycast(transform.position, direcao, disPersegue, PlayerLayer);
             Debug.DrawRay(posInimigo, dir: direcao * disPersegue, color: Color.yellow);
             disPlayerRay = playerHitFrente.distance;
@@ -287,7 +288,10 @@ public class Inimigo : MonoBehaviour
                             emAtaque = true;
                             if (nome.GetHashCode() == hashG)
                                 spearPosition = new Vector2(transform.position.x + 0.5f, transform.position.y - 0.3f);
-
+                            else
+                            {
+                                //MelleDano();
+                            }
                             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                             rd.velocity = direcao * 0;
                         }
@@ -306,6 +310,10 @@ public class Inimigo : MonoBehaviour
                         {
                             if (nome.GetHashCode() == hashG)
                                 spearPosition = new Vector2(transform.position.x -1f, transform.position.y - 0.3f);
+                            else
+                            {
+                                //MelleDano();
+                            }
                             emAtaque = true;
                             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                             rd.velocity = direcao * 0;
@@ -418,6 +426,15 @@ public class Inimigo : MonoBehaviour
             emAtaque = false;
         }
         return direcao;
+    }
+    public void MelleDano()
+    {
+        playerHits = Physics2D.OverlapCircleAll(transform.position, disAtaque, LayerMask.GetMask("Player"));
+        foreach (var Player in playerHits)
+        {
+            print("Dano: " + dano);
+            Player.GetComponent<PlayerOne>().TakeDamage(dano);
+        }
     }
 }
 
