@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7549973924280149148}
   - component: {fileID: 3529228681112453693}
   - component: {fileID: 3740035301859434094}
+  - component: {fileID: -7942541462486346021}
   m_Layer: 6
   m_Name: slimePrefab
   m_TagString: Enemy
@@ -170,9 +171,11 @@ MonoBehaviour:
   emAtaque: 0
   parede: 0
   hashG: -137741679
+  hashB: 696030471
   posY: 0
   disPlayerRay: 0
   disParede: 0
+  disChao: 0
   currentHealth: 0
   tempoDeMorte: 20
   herovsInimigo: 0
@@ -183,3 +186,24 @@ MonoBehaviour:
   dano: 0
   defesa: 0
   nome: 
+--- !u!95 &-7942541462486346021
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519686237795815805}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44d4d06fa7cc5a041a49b47ed02d8c84, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
