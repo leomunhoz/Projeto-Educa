@@ -113,7 +113,7 @@ public class Inimigo : MonoBehaviour
             playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
             disParede = playerOUParece.distance;
 
-            //posY = (posInimigo.y) - (posHero.y);
+            posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(posHero.y);
 
             if (disPlayerRay == 0)
                 disPlayerRay = disParede + 1f;
@@ -130,7 +130,7 @@ public class Inimigo : MonoBehaviour
             if (herovsInimigo < disPersegue && !parede)
             {
                 //if (Mathf.Abs(Mathf.Abs(posInimigo.y) - Mathf.Abs(posHero.y)) < 2)
-                if (herovsInimigo <=disAtaque && (Mathf.Abs(Mathf.Abs(posInimigo.y) - Mathf.Abs(posHero.y)) < 2))
+                if (herovsInimigo <=disAtaque && Mathf.Abs(posY) < 2)
                 {
                     Atacar();
                 }
@@ -183,11 +183,19 @@ public class Inimigo : MonoBehaviour
     public void Persegue()
 
     {
-        ViraParaPlayer();
-        if (herovsInimigo >= disAtaque)
+
+        if (herovsInimigo >= disAtaque && Mathf.Abs(posY) < 2)
+        {
+            ViraParaPlayer();
             Move();
+        }
         else
+        {
             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
+            rd.velocity = direcao * 0;
+        }
+            
+        
     }
 
     private void OnDrawGizmosSelected()
@@ -432,7 +440,6 @@ public class Inimigo : MonoBehaviour
         playerHits = Physics2D.OverlapCircleAll(transform.position, disAtaque, LayerMask.GetMask("Player"));
         foreach (var Player in playerHits)
         {
-            print("Dano: " + dano);
             Player.GetComponent<PlayerOne>().TakeDamage(dano);
         }
     }

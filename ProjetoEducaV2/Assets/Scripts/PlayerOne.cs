@@ -63,7 +63,7 @@ public class PlayerOne : MonoBehaviour
     private bool isJumping;
     private bool isWallSliding;
     private bool isDead;
-    private bool IMORTAL=false;
+    public bool IMORTAL=false;
 
     public int hashS = "Spear(Clone)".GetHashCode();
     public float wallJumpDuration;

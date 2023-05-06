@@ -1,0 +1,2865 @@
+fileFormatVersion: 2
+guid: 71ff0d7682d1ba54fb1e5cd573d7c93f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 456
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bee9ab85083bbc4f92c000aeb1dbdf3
+      internalID: 51030245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 456
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc4507ecf2c0b6409b8158ee8031df6
+      internalID: 1193826958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 456
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7694c7570d0f2e94e9e045976b0266ef
+      internalID: -85321077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 456
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2282e6e59bc1784396433c5b7c2064f
+      internalID: -2114538465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145ef392a166b8f4e8ec9baf8d57184f
+      internalID: 1878409465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_5
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9eb3f0cc56b0a46b5503a64e8be106
+      internalID: -40550201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d7d1c0f08597041b980553d5645ff2
+      internalID: -359475559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0413fb7519e94747b4357e9d3ac5a83
+      internalID: 1325163112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1b473b297694049871e8178b8544ba
+      internalID: 1186477642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_9
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cba1ade04aa2734e9a1adbcd9891706
+      internalID: -1057745425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_10
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60761e35f16fd9b4f9c4566bccdb7ac5
+      internalID: -2108821546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_11
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 418
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7f0e5aeda5b9447867923582a0ea3b
+      internalID: 891733023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7deeaf422001749916e0d8e62352c9
+      internalID: 1750503746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_13
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38c17f7fff3eaf46b7984c469b4ed01
+      internalID: 402727041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44b114dcd82028489e29d17be47218b
+      internalID: 364343752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_15
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8c385124a7b1541aa7d7c47464fdb6
+      internalID: -985489263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_16
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a1452e07f5f4d448272b4fd611483d
+      internalID: -1548900861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_17
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940985cdb2af66049999d28b8f5874f0
+      internalID: -108637717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_18
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e8773b2e3b61434a867f7c741810dda
+      internalID: 1194693211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_19
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f47b16110971b4196ba2eea4b99513
+      internalID: -2047861342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_20
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d4fbe7f14f75442bdddb0a749bc859
+      internalID: -2128201131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_21
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 380
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e53bf6f431f194fa36384dad7f7cdc
+      internalID: 993231601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06f0096ac49ee145b299d0ec4d0746e
+      internalID: -1470163421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_23
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4416e060cb2fa36489c365fe4aff29cd
+      internalID: 1079193940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_24
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2af9d1dda7bfd4ebc340315bd4589c
+      internalID: 335710037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_25
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc16fcf951ef0343a5058b26a3f5711
+      internalID: 1745919127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_26
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28b827acdafdf748971a5c85bad15fa
+      internalID: 613500115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_27
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02530c719f1a1ef488d792ce9137db0c
+      internalID: -1515682384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_28
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3b04b24f682bf43830360d2b6190ea
+      internalID: 727805147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_29
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9b19c5796958842b71f00720afe938
+      internalID: 1886477022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_30
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee99292fafa8dac4696cff8b36d641ab
+      internalID: 353155585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_31
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b541e0ee31263f4894c25739d6aae39
+      internalID: 121638753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_32
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 342
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2ee593cc3c15d4d9417f58f5e12d58
+      internalID: 2097753479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f5d7d4b4345a24b9dbe7610ecfca3e
+      internalID: 2126930891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_34
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f401dc173190e45a167c5bc4eb7bb6
+      internalID: -1033111519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_35
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173f264b63da91a4b8e62f77ced44006
+      internalID: 510193496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_36
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1507423c70c14934196f1f1a365734a3
+      internalID: -1446046332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_37
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15c6fa45188d0442ad56265eac5323e
+      internalID: -106926005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_38
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3763c0285cfcb44b4e02abee6a170e
+      internalID: 2010002042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_39
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f11f2ec5beeee4b918254d1e9bc0fa
+      internalID: 802895861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_40
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99019247db51794458a77b5b953ddf02
+      internalID: 572597664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_41
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e4459ea3eec0d47a52f914a1f08cb7
+      internalID: -1943755426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_42
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53111cac1c651744b680f886b8e28dd
+      internalID: -306625539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_43
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b09a2dacd24474e9b58084fe038e09
+      internalID: 180991716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_44
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 304
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dcb63305c65eea46a7548f4f749ab2d
+      internalID: -62014246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b5a243ff714ef4f8b42736319b46c8
+      internalID: 948853189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_46
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139b6db57197c4944a616de378c528e7
+      internalID: -574898935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_47
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c477c1a5c90a74bb645c87322445f0
+      internalID: -463551161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_48
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609bb2c8a02a374428d240743971cbb6
+      internalID: -1721314579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_49
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52dd486d4301dc46af3a48798018243
+      internalID: -1213377131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_50
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 266
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbfa0e8d85fed0469621e1e027e5595
+      internalID: 1019120882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267e0f760dca5c0458bbf733236e1a20
+      internalID: 592218313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_52
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ff7b5b6de172f488472f8efcf6664f
+      internalID: 50136290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_53
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d184c0d8569cc488f285e8b7399c6b
+      internalID: 910984647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_54
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7ab859b990c634abbdfb1d91fd1c39
+      internalID: -686557727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_55
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a174017c841c5da4eb051f33741795c8
+      internalID: -1799248197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_56
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66ba8cb98a92d14593d64b10c069132
+      internalID: -2099441345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_57
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084cbfc84a8faeb4ea1961a606e7df3b
+      internalID: -192887982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_58
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c752565a3d642419950fcf62179d68
+      internalID: -966163668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_59
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf0797af8d979642bcc20d205fd8f5c
+      internalID: -1877169308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_60
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd1329cb3e6bca4d901c80e868031c3
+      internalID: 1137422523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_61
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f82ddce69b4647499f1906e5c19dd5c
+      internalID: -308914316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_62
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864e1c8c3baf3f04ca39b780d8688e51
+      internalID: 1406354554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_63
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471a445fd7f082145aea4ea6ae1fcbce
+      internalID: 1195896970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_64
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908b1165768cb9349bd003a48b5b60d4
+      internalID: -1216839537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_65
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e1106343567d44397d2d0e618d5f20
+      internalID: -312113216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_66
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969bbd5c9dbba7749895d0dac5faaa48
+      internalID: 1588630733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_67
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44146f5454a578d4c9ba8db9a935df35
+      internalID: 2094154231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_68
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1121af51cd89b3b44afb3b6df34dedee
+      internalID: -1342389974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_69
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf75555ece6393147adc5e17b3b0b4ff
+      internalID: 2126257376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_70
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418905d40758531429e25dfe873b44cd
+      internalID: -1554170234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_71
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 228
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7339772229d9df740acb843a8627d218
+      internalID: -1169021943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0cd9f49159b0e748b4d733016ad1fa4
+      internalID: 194542087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_73
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e17df19d8663c046b7753aaa744bfa5
+      internalID: 1085809453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_74
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7365ad3bad0e8148ba668200fd3b7a6
+      internalID: 199822761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_75
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89dbcc6768da30f4f9576d5b52c9a8b9
+      internalID: -234323264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_76
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 190
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fbdabd5fded6b94a8ddcf0d0cccafda
+      internalID: 1944979130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547ccf05420f5794fb245731a7f52543
+      internalID: 1507006012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_78
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590ef63b7892d474d81eb9dcf7e9ec3b
+      internalID: 1426206216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_79
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d8bcb3a7df3ba49ab7b11c1394b8f0
+      internalID: 83872884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_80
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef38a7143b2499f4aafe33b986271d84
+      internalID: -1374483753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_81
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8f4d0b4ad6ae74f99f8aa1c1aaa8bf
+      internalID: -862670973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_82
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6720944451b7a4343b4f8d2ccce57c59
+      internalID: 1502488288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_83
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e9356187b03f44f8258bcae5f27f14
+      internalID: -1751351518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_84
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ea715aa1f704442855468a25979002
+      internalID: 867475854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_85
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691191d95a94b724a8555e028c0812c0
+      internalID: 1470182713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_86
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9389aa13e008f204698df1b957cdaa36
+      internalID: -1483253552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_87
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8bfeef83f578e4d8fd1bd5849cefcb
+      internalID: -144526057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_88
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde1361d00636b24891978a80f52388b
+      internalID: -1510777601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_89
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 152
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d3b22fd70531f429c2fb6fb413bf6f
+      internalID: 185797101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88773d4ff8e3fe14aa05a01d8264086e
+      internalID: -1942856075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_91
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2f0f31baa55d54aacaf0486bc4f328
+      internalID: -1959809676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_92
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0709209063eece439a709bbdbc09ac1
+      internalID: 1762995533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_93
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4f5dfdcc256344199ead3b4cc8774f
+      internalID: 1210937507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_94
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204fe777a2865cb428e8e8992fabc3ed
+      internalID: 1069065400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_95
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4a635aaf34a4147b911a0618f63a14
+      internalID: 1552559095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_96
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06665c62f35df2f43b860d33d455e1bc
+      internalID: -88652371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_97
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 114
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56408c95c0252d34a92e5d59e6b0a889
+      internalID: 1927000153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_98
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55711b96e0661f944ab100a9f7f788d7
+      internalID: -1916897804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_99
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35b21f64bc063e469e163babb158e6d
+      internalID: 208808067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_100
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2121b5f3cd28d154f9f1ae40041e4b1e
+      internalID: -44609171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_101
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444934f58534c9f44be660d37c56ffc3
+      internalID: 1830015791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_102
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2174ef4c5c1cf214e8413dd3227889e1
+      internalID: 2070889259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_103
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c7359cb9df59d44a4909159e3afe90
+      internalID: -2025377892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_104
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b6b77b97ac93e4ab5591d9d8d17611
+      internalID: 1874071336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_105
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af335c744b58af4bbf79658bb2d3a12
+      internalID: -975509463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_106
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb727070f712eb545b1679eba8d12344
+      internalID: -549706401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_107
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c57da0feff9e0f5409680bae6773f12e
+      internalID: 277294349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_108
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33e37348ea2c3a47a8837c8e26306e7
+      internalID: 753669177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_109
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4dc5b4e6bf11b049bf588d71458748e
+      internalID: -602563037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_110
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3424e82a61cb248bb67a8ca5fc5680
+      internalID: 1046900311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_111
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd11143829b3c9d45a1da201145ea23a
+      internalID: 759374822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_112
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472a613fead112d49b7a6459e15aa935
+      internalID: 504421025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_113
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159050d3063e7844b80104bf852ba865
+      internalID: -93190926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_114
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 76
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5321c7db5bbaecc41b1502efdca2e104
+      internalID: 67591948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_115
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8808dcc2fe21e0144bba622d6cb424d3
+      internalID: 318952165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_116
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d897482dce2f13840988dd1300606eb6
+      internalID: 545639133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_117
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11dee4220db691d46b42d689e9788101
+      internalID: 1196005773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_118
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da59382ec3d09b4396f59ebb79043d5
+      internalID: 1024372913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_119
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6636e77e2769aa3408a5a29dbba57adc
+      internalID: -2121765497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_120
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 38
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da767e59d6b8cf94eb8f85aa8fa6d0ff
+      internalID: -795903590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_121
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2114c071f271c184d9e8dae475c3757a
+      internalID: -1085968069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character Knight All AnimationsFinal - Gold_122
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d0809ec7cf8a944ab1681e19ce788e
+      internalID: 228687249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Character Knight All AnimationsFinal - Gold_0: 51030245
+      Character Knight All AnimationsFinal - Gold_1: 1193826958
+      Character Knight All AnimationsFinal - Gold_10: -2108821546
+      Character Knight All AnimationsFinal - Gold_100: -44609171
+      Character Knight All AnimationsFinal - Gold_101: 1830015791
+      Character Knight All AnimationsFinal - Gold_102: 2070889259
+      Character Knight All AnimationsFinal - Gold_103: -2025377892
+      Character Knight All AnimationsFinal - Gold_104: 1874071336
+      Character Knight All AnimationsFinal - Gold_105: -975509463
+      Character Knight All AnimationsFinal - Gold_106: -549706401
+      Character Knight All AnimationsFinal - Gold_107: 277294349
+      Character Knight All AnimationsFinal - Gold_108: 753669177
+      Character Knight All AnimationsFinal - Gold_109: -602563037
+      Character Knight All AnimationsFinal - Gold_11: 891733023
+      Character Knight All AnimationsFinal - Gold_110: 1046900311
+      Character Knight All AnimationsFinal - Gold_111: 759374822
+      Character Knight All AnimationsFinal - Gold_112: 504421025
+      Character Knight All AnimationsFinal - Gold_113: -93190926
+      Character Knight All AnimationsFinal - Gold_114: 67591948
+      Character Knight All AnimationsFinal - Gold_115: 318952165
+      Character Knight All AnimationsFinal - Gold_116: 545639133
+      Character Knight All AnimationsFinal - Gold_117: 1196005773
+      Character Knight All AnimationsFinal - Gold_118: 1024372913
+      Character Knight All AnimationsFinal - Gold_119: -2121765497
+      Character Knight All AnimationsFinal - Gold_12: 1750503746
+      Character Knight All AnimationsFinal - Gold_120: -795903590
+      Character Knight All AnimationsFinal - Gold_121: -1085968069
+      Character Knight All AnimationsFinal - Gold_122: 228687249
+      Character Knight All AnimationsFinal - Gold_13: 402727041
+      Character Knight All AnimationsFinal - Gold_14: 364343752
+      Character Knight All AnimationsFinal - Gold_15: -985489263
+      Character Knight All AnimationsFinal - Gold_16: -1548900861
+      Character Knight All AnimationsFinal - Gold_17: -108637717
+      Character Knight All AnimationsFinal - Gold_18: 1194693211
+      Character Knight All AnimationsFinal - Gold_19: -2047861342
+      Character Knight All AnimationsFinal - Gold_2: -85321077
+      Character Knight All AnimationsFinal - Gold_20: -2128201131
+      Character Knight All AnimationsFinal - Gold_21: 993231601
+      Character Knight All AnimationsFinal - Gold_22: -1470163421
+      Character Knight All AnimationsFinal - Gold_23: 1079193940
+      Character Knight All AnimationsFinal - Gold_24: 335710037
+      Character Knight All AnimationsFinal - Gold_25: 1745919127
+      Character Knight All AnimationsFinal - Gold_26: 613500115
+      Character Knight All AnimationsFinal - Gold_27: -1515682384
+      Character Knight All AnimationsFinal - Gold_28: 727805147
+      Character Knight All AnimationsFinal - Gold_29: 1886477022
+      Character Knight All AnimationsFinal - Gold_3: -2114538465
+      Character Knight All AnimationsFinal - Gold_30: 353155585
+      Character Knight All AnimationsFinal - Gold_31: 121638753
+      Character Knight All AnimationsFinal - Gold_32: 2097753479
+      Character Knight All AnimationsFinal - Gold_33: 2126930891
+      Character Knight All AnimationsFinal - Gold_34: -1033111519
+      Character Knight All AnimationsFinal - Gold_35: 510193496
+      Character Knight All AnimationsFinal - Gold_36: -1446046332
+      Character Knight All AnimationsFinal - Gold_37: -106926005
+      Character Knight All AnimationsFinal - Gold_38: 2010002042
+      Character Knight All AnimationsFinal - Gold_39: 802895861
+      Character Knight All AnimationsFinal - Gold_4: 1878409465
+      Character Knight All AnimationsFinal - Gold_40: 572597664
+      Character Knight All AnimationsFinal - Gold_41: -1943755426
+      Character Knight All AnimationsFinal - Gold_42: -306625539
+      Character Knight All AnimationsFinal - Gold_43: 180991716
+      Character Knight All AnimationsFinal - Gold_44: -62014246
+      Character Knight All AnimationsFinal - Gold_45: 948853189
+      Character Knight All AnimationsFinal - Gold_46: -574898935
+      Character Knight All AnimationsFinal - Gold_47: -463551161
+      Character Knight All AnimationsFinal - Gold_48: -1721314579
+      Character Knight All AnimationsFinal - Gold_49: -1213377131
+      Character Knight All AnimationsFinal - Gold_5: -40550201
+      Character Knight All AnimationsFinal - Gold_50: 1019120882
+      Character Knight All AnimationsFinal - Gold_51: 592218313
+      Character Knight All AnimationsFinal - Gold_52: 50136290
+      Character Knight All AnimationsFinal - Gold_53: 910984647
+      Character Knight All AnimationsFinal - Gold_54: -686557727
+      Character Knight All AnimationsFinal - Gold_55: -1799248197
+      Character Knight All AnimationsFinal - Gold_56: -2099441345
+      Character Knight All AnimationsFinal - Gold_57: -192887982
+      Character Knight All AnimationsFinal - Gold_58: -966163668
+      Character Knight All AnimationsFinal - Gold_59: -1877169308
+      Character Knight All AnimationsFinal - Gold_6: -359475559
+      Character Knight All AnimationsFinal - Gold_60: 1137422523
+      Character Knight All AnimationsFinal - Gold_61: -308914316
+      Character Knight All AnimationsFinal - Gold_62: 1406354554
+      Character Knight All AnimationsFinal - Gold_63: 1195896970
+      Character Knight All AnimationsFinal - Gold_64: -1216839537
+      Character Knight All AnimationsFinal - Gold_65: -312113216
+      Character Knight All AnimationsFinal - Gold_66: 1588630733
+      Character Knight All AnimationsFinal - Gold_67: 2094154231
+      Character Knight All AnimationsFinal - Gold_68: -1342389974
+      Character Knight All AnimationsFinal - Gold_69: 2126257376
+      Character Knight All AnimationsFinal - Gold_7: 1325163112
+      Character Knight All AnimationsFinal - Gold_70: -1554170234
+      Character Knight All AnimationsFinal - Gold_71: -1169021943
+      Character Knight All AnimationsFinal - Gold_72: 194542087
+      Character Knight All AnimationsFinal - Gold_73: 1085809453
+      Character Knight All AnimationsFinal - Gold_74: 199822761
+      Character Knight All AnimationsFinal - Gold_75: -234323264
+      Character Knight All AnimationsFinal - Gold_76: 1944979130
+      Character Knight All AnimationsFinal - Gold_77: 1507006012
+      Character Knight All AnimationsFinal - Gold_78: 1426206216
+      Character Knight All AnimationsFinal - Gold_79: 83872884
+      Character Knight All AnimationsFinal - Gold_8: 1186477642
+      Character Knight All AnimationsFinal - Gold_80: -1374483753
+      Character Knight All AnimationsFinal - Gold_81: -862670973
+      Character Knight All AnimationsFinal - Gold_82: 1502488288
+      Character Knight All AnimationsFinal - Gold_83: -1751351518
+      Character Knight All AnimationsFinal - Gold_84: 867475854
+      Character Knight All AnimationsFinal - Gold_85: 1470182713
+      Character Knight All AnimationsFinal - Gold_86: -1483253552
+      Character Knight All AnimationsFinal - Gold_87: -144526057
+      Character Knight All AnimationsFinal - Gold_88: -1510777601
+      Character Knight All AnimationsFinal - Gold_89: 185797101
+      Character Knight All AnimationsFinal - Gold_9: -1057745425
+      Character Knight All AnimationsFinal - Gold_90: -1942856075
+      Character Knight All AnimationsFinal - Gold_91: -1959809676
+      Character Knight All AnimationsFinal - Gold_92: 1762995533
+      Character Knight All AnimationsFinal - Gold_93: 1210937507
+      Character Knight All AnimationsFinal - Gold_94: 1069065400
+      Character Knight All AnimationsFinal - Gold_95: 1552559095
+      Character Knight All AnimationsFinal - Gold_96: -88652371
+      Character Knight All AnimationsFinal - Gold_97: 1927000153
+      Character Knight All AnimationsFinal - Gold_98: -1916897804
+      Character Knight All AnimationsFinal - Gold_99: 208808067
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
