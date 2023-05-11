@@ -5,13 +5,15 @@ using UnityEngine;
 public class Mapa1 : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static GameObject player;
     public GameObject slimePrefab;
     public GameObject batPrefab;
     public GameObject goblinPrefab;
     public GameObject heroiPrefab;
     public GameObject[] spawnPointInimigo;
     public Vector2 spawnPointHeroi;
-    public int randomInt;
+    public static Vector2 posHero;
+    private int randomInt;
     void Start()
     {
         heroiPrefab = Resources.Load<GameObject>("Prefab/PrefabHeroi/HeroiPrefab");
@@ -20,6 +22,8 @@ public class Mapa1 : MonoBehaviour
         Criaturas.Heroi heroiCriatura = new Criaturas.Heroi();
         PlayerOne heroiScript = heroi.GetComponent<PlayerOne>();
         heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);
+        player = GameObject.FindGameObjectWithTag("Player");
+       
 
 
         //spawnPointInimigo = GameObject.FindGameObjectWithTag("spawn");
@@ -53,24 +57,10 @@ public class Mapa1 : MonoBehaviour
             }
 
         }
-
-        
-       /* GameObject slime = Instantiate(slimePrefab, new Vector2(-91.68f, -2.77f), Quaternion.identity);
-        Criaturas.Slime slimeCriatura = new Criaturas.Slime();
-        Inimigo slimeScript = slime.GetComponent<Inimigo>();
-        slimeScript.Parametros(slimeCriatura.Nome, slimeCriatura.Dano, slimeCriatura.Defesa, slimeCriatura.DisPersegue, slimeCriatura.DisAtaque, slimeCriatura.DisPatrulha, slimeCriatura.Velocidade, slimeCriatura.vidaTotal);*/
-
-        
-        /*GameObject bat = Instantiate(batPrefab, new Vector2(-91.68f, -2.77f), Quaternion.identity);
-        Criaturas.Bat batCriatura = new Criaturas.Bat();
-        Inimigo batScript = bat.GetComponent<Inimigo>();
-        batScript.Parametros(batCriatura.Nome, batCriatura.Dano, batCriatura.Defesa, batCriatura.DisPersegue, batCriatura.DisAtaque, batCriatura.DisPatrulha, batCriatura.Velocidade, batCriatura.vidaTotal);*/
-        
-        
     }
     // Update is called once per frame
     void Update()
     {
-
+        posHero = new Vector2(player.transform.position.x, player.transform.position.y);
     }
 }

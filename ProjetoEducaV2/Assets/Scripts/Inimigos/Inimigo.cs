@@ -11,7 +11,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 */
 public class Inimigo : MonoBehaviour
 {
-    public GameObject player;
+    //public GameObject player;
     public PlayerOne play;
     public GameObject Projetil;
     public LayerMask walLayer;
@@ -22,7 +22,7 @@ public class Inimigo : MonoBehaviour
     public RaycastHit2D obstaculo;
     public Collider2D[] playerHits;
 
-    public Vector2 posHero;//Sugeito a GameManager
+    //public Vector2 posHero;//Sugeito a GameManager
     public Vector2 posInimigo;
     public Vector2 direcao;
     private Vector2 raioAFrente;
@@ -78,7 +78,7 @@ public class Inimigo : MonoBehaviour
         //print("Nome=" + nome);
         pontoInicial = transform.position;
         pontoFinal = pontoInicial + Vector2.right * disPatrulha;
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
         walLayer = LayerMask.GetMask("Chao");
         chao = LayerMask.GetMask("Chao","Platform");
         PlayerLayer = LayerMask.GetMask("Player");
@@ -91,9 +91,9 @@ public class Inimigo : MonoBehaviour
         if (!isDead)
         {
             direcao = indoParaDireita ? Vector2.right : Vector2.left;
-            posHero = new Vector2(player.transform.position.x, player.transform.position.y);
+            //posHero = new Vector2(player.transform.position.x, player.transform.position.y);
             posInimigo = new Vector2(transform.position.x, transform.position.y);
-            herovsInimigo = Vector2.Distance(posHero, posInimigo);
+            herovsInimigo = Vector2.Distance(Mapa1.posHero, posInimigo);
             
             //print(posY);
 
@@ -113,7 +113,7 @@ public class Inimigo : MonoBehaviour
             playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
             disParede = playerOUParece.distance;
 
-            posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(posHero.y);
+            posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(Mapa1.posHero.y);
 
             if (disPlayerRay == 0)
                 disPlayerRay = disParede + 1f;
@@ -251,7 +251,7 @@ public class Inimigo : MonoBehaviour
             Destroy(this.gameObject, tempoDeMorte);
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Inimigo>().enabled = false;
-            play = player.GetComponent<PlayerOne>();
+            play = Mapa1.player.GetComponent<PlayerOne>();
             play.mortos++;
             print(nome + " Mortos "+ play.mortos);
         }
@@ -290,7 +290,7 @@ public class Inimigo : MonoBehaviour
                  {
                     
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
+                    if ((Mapa1.posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
                       {
                         {
                             emAtaque = true;
@@ -312,7 +312,7 @@ public class Inimigo : MonoBehaviour
                 if (!emAtaque )
                  {
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))
+                    if ((Mapa1.posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))
                      {
                         //if (act.isJumping || posY < 0.9)
                         {
@@ -407,7 +407,7 @@ public class Inimigo : MonoBehaviour
 
     public Vector2 ViraParaPlayer()
     {
-        if (posHero.x > posInimigo.x)
+        if (Mapa1.posHero.x > posInimigo.x)
         {
             
             
