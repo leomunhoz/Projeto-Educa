@@ -23,6 +23,6 @@ public class BossComportamento : MonoBehaviour
         //posHero = new Vector2(player.transform.position.x, player.transform.position.y);
         posInimigo = new Vector2(transform.position.x, transform.position.y);
         herovsInimigo = Vector2.Distance(posHero, posInimigo);
-        AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
+        AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Jump");
     }
 }
