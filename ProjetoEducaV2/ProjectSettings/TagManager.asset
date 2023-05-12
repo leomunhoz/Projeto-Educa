@@ -48,3 +48,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: NoLigth
+    uniqueID: 2412922059
+    locked: 0
+  - name: MidLigth
+    uniqueID: 240721461
+    locked: 0
