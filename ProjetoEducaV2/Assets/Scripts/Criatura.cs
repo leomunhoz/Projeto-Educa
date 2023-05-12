@@ -71,13 +71,15 @@ public class Tread: Criatura
     public float DisAtaque { get; set; }
     public float Velocidade { get; set; }
     public float DisPatrulha { get; set; }
-    public Tread(string nome, int vidaTotal, int dano, int defesa, float disPerseguir, float disAtaque, float velocidade, float disPatrulha)
+    public int Coin { get; set; }
+    public Tread(string nome, int vidaTotal, int dano, int defesa, float disPerseguir, float disAtaque, float velocidade, float disPatrulha, int coin)
         : base(nome, vidaTotal, dano, defesa)
     {
         DisPersegue = disPerseguir;
         DisAtaque = disAtaque;
         Velocidade = velocidade;
         DisPatrulha = disPatrulha;
+        Coin = coin;
     }
 
 }

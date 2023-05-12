@@ -95,6 +95,7 @@ public class PlayerOne : MonoBehaviour
     public int mortos;
     public int vida;
     public int defesa;
+    public int coin;
 
     GameObject[] PlayerVida;
 

@@ -53,6 +53,7 @@ public class Inimigo : MonoBehaviour
     public float disPatrulha;//virá do construct
     public int dano;
     public int defesa;
+    public int grana;
     public string nome;
 
     private Rigidbody2D rd;
@@ -60,7 +61,7 @@ public class Inimigo : MonoBehaviour
     /* public float radius;
      public GameObject animacaoDanoPrefab;
      public LayerMask playerLayer;*/
-    public void Parametros(string nomeC, int danoC, int def, float Persegue, float Ataque, float Patrulha, float velo, float vidaToda)
+    public void Parametros(string nomeC, int danoC, int def, float Persegue, float Ataque, float Patrulha, float velo, float vidaToda, int moeda)
     {
         disPersegue = Persegue;
         disAtaque = Ataque;
@@ -70,6 +71,7 @@ public class Inimigo : MonoBehaviour
         defesa = def;
         dano = danoC;
         nome = nomeC;
+        grana = moeda;
     }
 
     private void Start()
@@ -253,6 +255,7 @@ public class Inimigo : MonoBehaviour
             GetComponent<Inimigo>().enabled = false;
             play = Mapa1.player.GetComponent<PlayerOne>();
             play.mortos++;
+            play.coin = play.coin+ grana;
             print(nome + " Mortos "+ play.mortos);
         }
     }

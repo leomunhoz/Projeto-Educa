@@ -10,6 +10,7 @@ public class Mapa1 : MonoBehaviour
     public GameObject batPrefab;
     public GameObject goblinPrefab;
     public GameObject heroiPrefab;
+    public GameObject bossPrefab;
     public GameObject[] spawnPointInimigo;
     public Vector2 spawnPointHeroi;
     public static Vector2 posHero;
@@ -26,10 +27,11 @@ public class Mapa1 : MonoBehaviour
        
 
 
-        //spawnPointInimigo = GameObject.FindGameObjectWithTag("spawn");
+        //Inicio Inimigos
         batPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/batPrefab");
         slimePrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/slimePrefab");
         goblinPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/goblinPrefab");
+        //bossPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/bossPrefab");
         GameObject[] spawnPointInimigo = GameObject.FindGameObjectsWithTag("Spawn");
         foreach (GameObject spawnPoint in spawnPointInimigo)
         {
@@ -39,24 +41,29 @@ public class Mapa1 : MonoBehaviour
                 GameObject goblin = Instantiate(goblinPrefab, spawnPoint.transform.position, Quaternion.identity);
                 Criaturas.Goblin goblinCriatura = new Criaturas.Goblin();
                 Inimigo goblinScript = goblin.GetComponent<Inimigo>();
-                goblinScript.Parametros(goblinCriatura.Nome, goblinCriatura.Dano, goblinCriatura.Defesa, goblinCriatura.DisPersegue, goblinCriatura.DisAtaque, goblinCriatura.DisPatrulha, goblinCriatura.Velocidade, goblinCriatura.vidaTotal);
+                goblinScript.Parametros(goblinCriatura.Nome, goblinCriatura.Dano, goblinCriatura.Defesa, goblinCriatura.DisPersegue, goblinCriatura.DisAtaque, goblinCriatura.DisPatrulha, goblinCriatura.Velocidade, goblinCriatura.vidaTotal, goblinCriatura.Coin);
             }
             else if(randomInt == 1)
             {
                 GameObject slime = Instantiate(slimePrefab, spawnPoint.transform.position, Quaternion.identity);
                 Criaturas.Slime slimeCriatura = new Criaturas.Slime();
                 Inimigo slimeScript = slime.GetComponent<Inimigo>();
-                slimeScript.Parametros(slimeCriatura.Nome, slimeCriatura.Dano, slimeCriatura.Defesa, slimeCriatura.DisPersegue, slimeCriatura.DisAtaque, slimeCriatura.DisPatrulha, slimeCriatura.Velocidade, slimeCriatura.vidaTotal);
+                slimeScript.Parametros(slimeCriatura.Nome, slimeCriatura.Dano, slimeCriatura.Defesa, slimeCriatura.DisPersegue, slimeCriatura.DisAtaque, slimeCriatura.DisPatrulha, slimeCriatura.Velocidade, slimeCriatura.vidaTotal, slimeCriatura.Coin);
             }
             else
             {
                 GameObject bat = Instantiate(batPrefab, spawnPoint.transform.position, Quaternion.identity);
                 Criaturas.Bat batCriatura = new Criaturas.Bat();
                 Inimigo batScript = bat.GetComponent<Inimigo>();
-                batScript.Parametros(batCriatura.Nome, batCriatura.Dano, batCriatura.Defesa, batCriatura.DisPersegue, batCriatura.DisAtaque, batCriatura.DisPatrulha, batCriatura.Velocidade, batCriatura.vidaTotal);
+                batScript.Parametros(batCriatura.Nome, batCriatura.Dano, batCriatura.Defesa, batCriatura.DisPersegue, batCriatura.DisAtaque, batCriatura.DisPatrulha, batCriatura.Velocidade, batCriatura.vidaTotal, batCriatura.Coin);
             }
 
         }
+       /* GameObject boss = Instantiate(batPrefab, spawnPoint.transform.position, Quaternion.identity);
+        Criaturas.Bat bossCriatura = new Criaturas.Bat();
+        Inimigo bossScript = boss.GetComponent<Inimigo>();
+        bossScript.Parametros(bossCriatura.Nome, bossCriatura.Dano, bossCriatura.Defesa, bossCriatura.DisPersegue, bossCriatura.DisAtaque, bossCriatura.DisPatrulha, bossCriatura.Velocidade, bossCriatura.vidaTotal);
+       */
     }
     // Update is called once per frame
     void Update()
