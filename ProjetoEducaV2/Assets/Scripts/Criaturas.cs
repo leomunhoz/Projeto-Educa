@@ -24,7 +24,7 @@ public class Criaturas : Habilidades
                 coin = value;
             }
         }
-        public Heroi() : base("Heroi", 100, 25, 0)// nome=Heroi, vidaTotal=100, Ataque=1,Defesa=0
+        public Heroi() : base("Heroi", 100, 25, 0)// nome=Heroi, vidaTotal=100, Ataque=25,Defesa=0
         {
             ContMortos = contMortos;
             Coin = coin;
@@ -52,13 +52,13 @@ public class Criaturas : Habilidades
         {
 
         }
-        public class BossGoblin : Tread
+    }
+    public class BossGoblin : Tread
+    {
+        public BossGoblin() : base(/*nome=*/"Goblin King", /*vida=*/250, /*dano=*/1, /*defesa=*/20,
+                     /*disPersegue=*/9f, /*disAtaque=*/4.6f, /*velocidade=*/2f, /*DisPatrulha=*/0f, /*Coin=*/1500)
         {
-            public BossGoblin() : base(/*nome=*/"Goblin King", /*vida=*/250, /*dano=*/1, /*defesa=*/20,
-                         /*disPersegue=*/20f, /*disAtaque=*/3f, /*velocidade=*/2f, /*DisPatrulha=*/0f, /*Coin=*/1500)
-            {
 
-            }
         }
     }
 }

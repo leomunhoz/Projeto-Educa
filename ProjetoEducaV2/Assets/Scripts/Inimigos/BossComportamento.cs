@@ -58,7 +58,7 @@ public class BossComportamento : MonoBehaviour
         //Inicia Ataques
         if (herovsInimigo < disPersegue)
         {
-            if (herovsInimigo <= disAtaque && Mathf.Abs(posY) < 2)
+            if (herovsInimigo <= disAtaque && Mathf.Abs(posY) < 3)
             {
                 Clava();
             }
