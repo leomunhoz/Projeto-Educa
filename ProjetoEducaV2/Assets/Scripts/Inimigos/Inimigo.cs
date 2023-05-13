@@ -446,6 +446,10 @@ public class Inimigo : MonoBehaviour
             Player.GetComponent<PlayerOne>().TakeDamage(dano);
         }
     }
+    public bool AtualizaInimigo(bool atualizado)
+    {
+        return true;
+    }
 }
 
 

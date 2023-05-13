@@ -100,11 +100,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39dc6d635aa84db4e87ed884d6dde829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posHero: {x: 0, y: 0}
   posInimigo: {x: 0, y: 0}
+  chao:
+    serializedVersion: 2
+    m_Bits: 0
   player: {fileID: 0}
   animator: {fileID: 0}
   herovsInimigo: 0
+  posY: 0
+  vidaTotal: 0
+  disPersegue: 0
+  velocidade: 0
+  disPatrulha: 0
+  dano: 0
+  defesa: 0
+  grana: 0
+  nome: 
 --- !u!70 &2778014096089825786
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -152,7 +163,7 @@ Animator:
   m_GameObject: {fileID: 2778014096089825790}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 10e456d7cbceaa347be665b412b1a7ed, type: 2}
+  m_Controller: {fileID: 9100000, guid: b085be7bca032cb4bade0e2e78904f3d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
