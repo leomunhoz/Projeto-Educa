@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5729040473668401461}
   - component: {fileID: 5729040473668401460}
+  - component: {fileID: 4938587732980414451}
   m_Layer: 0
   m_Name: Tocha
   m_TagString: Untagged
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
+  m_PointLightInnerAngle: 336.16333
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.4
   m_PointLightOuterRadius: 1.48
@@ -111,3 +112,18 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &4938587732980414451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729040473668401463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461df0cabb77e7746a2ec966f0495447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeFlicking: 1
+  minLigthFlickers: 1
+  maxLigthFlickers: 2
