@@ -1090,7 +1090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &863963447
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1221,7 +1221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 50 Coins
+  m_Text: 50 Moedas
 --- !u!222 &1070912680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1366,7 +1366,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 2
@@ -1377,7 +1377,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Loading...
+  m_Text: Carregando...
 --- !u!222 &1128605057
 CanvasRenderer:
   m_ObjectHideFlags: 0
