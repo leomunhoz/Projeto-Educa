@@ -55,13 +55,16 @@ public class Inimigo : MonoBehaviour
     public int defesa;
     public int grana;
     public string nome;
+    public int posArray;
+    GameManager gameManager;
+    Mapa1 mapa1;
 
     private Rigidbody2D rd;
 
     /* public float radius;
      public GameObject animacaoDanoPrefab;
      public LayerMask playerLayer;*/
-    public void Parametros(string nomeC, int danoC, int def, float Persegue, float Ataque, float Patrulha, float velo, float vidaToda, int moeda)
+    public void Parametros(string nomeC, int danoC, int def, float Persegue, float Ataque, float Patrulha, float velo, float vidaToda, int moeda, int posicao)
     {
         disPersegue = Persegue;
         disAtaque = Ataque;
@@ -72,6 +75,7 @@ public class Inimigo : MonoBehaviour
         dano = danoC;
         nome = nomeC;
         grana = moeda;
+        posArray = posicao;
     }
 
     private void Start()
@@ -86,12 +90,14 @@ public class Inimigo : MonoBehaviour
         PlayerLayer = LayerMask.GetMask("Player");
         currentHealth = vidaTotal;
         rd = GetComponent<Rigidbody2D>();
+        mapa1 = FindObjectOfType<Mapa1>();
     }
 
     private void Update()
     {
         if (!isDead)
         {
+
             direcao = indoParaDireita ? Vector2.right : Vector2.left;
             //posHero = new Vector2(player.transform.position.x, player.transform.position.y);
             posInimigo = new Vector2(transform.position.x, transform.position.y);
@@ -256,7 +262,8 @@ public class Inimigo : MonoBehaviour
             play = Mapa1.player.GetComponent<PlayerOne>();
             play.mortos++;
             play.coin = play.coin+ grana;
-            print(nome + " Mortos "+ play.mortos);
+            mapa1.ReporMorte(posArray);
+            //gameManager.ReporMorte(posArray);
         }
     }
     //
