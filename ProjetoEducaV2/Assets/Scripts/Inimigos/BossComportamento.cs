@@ -65,6 +65,10 @@ public class BossComportamento : MonoBehaviour
     public float tempoPulo = 0f;
     public float tempoGrito = 0f;
 
+    float tempoAtaque = 0f;
+    float ataqueCD = 0.1f;
+    bool podeAtacar = true;
+
 
     /* public float radius;
      public GameObject animacaoDanoPrefab;
@@ -145,7 +149,8 @@ public class BossComportamento : MonoBehaviour
                 //if (Mathf.Abs(Mathf.Abs(posInimigo.y) - Mathf.Abs(posHero.y)) < 2)
                 if (herovsInimigo <= disAtaque && Mathf.Abs(posY) < 3)
                 {
-                    Atacar();
+                    if (tempoAtaque == 0f)
+                        Atacar();
                 }
                 else
                 {
@@ -274,8 +279,6 @@ public class BossComportamento : MonoBehaviour
     //
     public void Atacar()
     {
-        //if (nome == "Slime")
-        //    print("Aqui");
         {
             direcao = ViraParaPlayer();
             if (indoParaDireita)//Direita
@@ -290,6 +293,7 @@ public class BossComportamento : MonoBehaviour
                             emAtaque = true;
                             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                             rd.velocity = direcao * 0;
+                            MelleDano(disAtaque);
                         }
                     }
                 }
@@ -306,6 +310,7 @@ public class BossComportamento : MonoBehaviour
                             emAtaque = true;
                             AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Attack");
                             rd.velocity = direcao * 0;
+                            MelleDano(disAtaque);
                         }
                     }
                 }
@@ -391,6 +396,7 @@ public class BossComportamento : MonoBehaviour
             StartCoroutine(Pular());
         }
         // Implemente a lógica de ataque ao jogador após o salto
+        MelleDano(1);
     }
     public void CalculaCds()
     {
@@ -411,6 +417,23 @@ public class BossComportamento : MonoBehaviour
         {
             podeGritar = true;
             tempoGrito = 0f;
+        }
+        if (podeAtacar == false)
+        {
+            tempoAtaque += Time.deltaTime;
+        }
+        if (tempoAtaque >= ataqueCD)
+        {
+            podeAtacar = true;
+            tempoAtaque = 0f;
+        }
+    }
+    public void MelleDano(float distancia)
+    {
+        playerHits = Physics2D.OverlapCircleAll(transform.position, distancia, LayerMask.GetMask("Player"));
+        foreach (var Player in playerHits)
+        {
+            Player.GetComponent<PlayerOne>().TakeDamage(dano);
         }
     }
 }
