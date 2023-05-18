@@ -54,9 +54,17 @@ public class BossComportamento : MonoBehaviour
     public int defesa;
     public int grana;
     public string nome;
+    public float duracaoAnimacao;
 
     public Rigidbody2D rd;
     public float tempoDecorrido = 0f;
+    public float puloCD = 5f;
+    public float gritoCD = 5f;
+    public bool podeGritar = true;
+    public bool podePular = true;
+    public float tempoPulo = 0f;
+    public float tempoGrito = 0f;
+
 
     /* public float radius;
      public GameObject animacaoDanoPrefab;
@@ -118,6 +126,8 @@ public class BossComportamento : MonoBehaviour
 
             posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(Mapa1.posHero.y);
 
+            CalculaCds();
+
             if (disPlayerRay == 0)
                 disPlayerRay = disParede + 1f;
 
@@ -139,12 +149,22 @@ public class BossComportamento : MonoBehaviour
                 }
                 else
                 {
-                    StartCoroutine(Pular());//PuloMortal();
+                    if (tempoPulo == 0f)
+                    {
+                        StartCoroutine(Pular());//PuloMortal();
+                        
+                    }
+                    else
+                        AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Screen");
+                    emAtaque = false;
                 }
             }
             else
             {
-                Grito();
+                if (tempoGrito==0f)
+                    Grito();
+                else
+                    AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
                 emAtaque = false;
             }
 
@@ -338,24 +358,59 @@ public class BossComportamento : MonoBehaviour
         //Rigidbody2D rb = GetComponent<Rigidbody2D>();
         // Calcule a posição final do salto
         animator.Play("Jump");
-        if (fechaPulo==false) 
-        { }
-        Vector2 posicaoFinal = new Vector2(Mapa1.posHero.x, Mapa1.posHero.y + disPersegue);
-        float duracaoAnimacao = 2f;// GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+        if (fechaPulo == false)
+        {
+            pontoInicial = rd.position;
+            pontoFinal = new Vector2(Mapa1.posHero.x, Mapa1.posHero.y+8);
+            fechaPulo = true;
+            tempoDecorrido = 0f;
+        }
+        duracaoAnimacao = 2f;// GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
 
         // Inicie o salto
         
-        Vector2 posicaoInicial = rd.position;
+        
         while (tempoDecorrido < duracaoAnimacao)
         {
             float t = tempoDecorrido / duracaoAnimacao;
-            rd.position = Vector2.Lerp(posicaoInicial, posicaoFinal, t);
+            rd.position = Vector2.Lerp(pontoInicial, pontoFinal, t);
             tempoDecorrido += Time.deltaTime;
             yield return null;
+            
         }
-
+        if (tempoDecorrido>= duracaoAnimacao)
+        {
+            fechaPulo = false;//controle local
+            podePular = false;//Começa o CD para pular.
+        }
+            
         // Finalize o salto
-        rd.position = posicaoFinal;
+        rd.AddForce(new Vector2(0f, 1), ForceMode2D.Impulse);
+        if (tempoDecorrido < duracaoAnimacao)
+        {
+            StartCoroutine(Pular());
+        }
         // Implemente a lógica de ataque ao jogador após o salto
+    }
+    public void CalculaCds()
+    {
+        if (podePular == false)
+        {
+            tempoPulo += Time.deltaTime;
+        }
+        if (tempoPulo >= puloCD)
+        {
+            podePular = true;
+            tempoPulo = 0f;
+        }
+        if (podeGritar == false)
+        {
+            tempoGrito += Time.deltaTime;
+        }
+        if (tempoGrito >= gritoCD)
+        {
+            podeGritar = true;
+            tempoGrito = 0f;
+        }
     }
 }

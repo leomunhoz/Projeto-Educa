@@ -19,10 +19,10 @@ public class Mapa1 : MonoBehaviour
     private int randomInt;
     private int i = 0;
     GameManager gameManager;
-    private float tempoDerespawn = 10f;
+    private float tempoDerespawn = 60f;
     private float tempo = 0f;
     private bool temNull=false;
-    private List<int> numeros = new List<int>();
+    private Queue<int> numeros = new Queue<int>();
     void Start()
     {
         gameManager = GameManager.Instance;
@@ -81,8 +81,10 @@ public class Mapa1 : MonoBehaviour
             {
                 tempo = 0f;
                 gameManager.temMorto = false;
-                RandomCreature(numeros[0]);//Colocar a posição 0 aqui
-                numeros.RemoveAt(0);
+                RandomCreature(numeros.Peek());//Colocar a posição 0 aqui
+                numeros.Dequeue();
+                gameManager.temMorto = false;
+                ReporMorte(-1);
             }
         }
        /* for (int i = 0; i <= spawnPointInimigo.Length-1;i++)
@@ -93,9 +95,13 @@ public class Mapa1 : MonoBehaviour
     }
     public void ReporMorte(int posicao)
     {
-        numeros.Add(posicao);
-        gameManager.temMorto = true;
-        gameManager.inimigos[posicao] = null;
+        if (posicao>-1)
+        {
+            numeros.Enqueue(posicao);
+            gameManager.temMorto = true;
+            gameManager.inimigos[posicao] = null;
+        }
+        
         for(int i = 0; i< gameManager.inimigos.Length; i++)
         {
             if (gameManager.inimigos[i] == null)
