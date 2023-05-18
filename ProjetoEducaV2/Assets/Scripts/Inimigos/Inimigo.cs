@@ -422,27 +422,21 @@ public class Inimigo : MonoBehaviour
             
             
             indoParaDireita = true;
-            direcao = indoParaDireita ? Vector2.right : Vector2.left;
-            transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
-            playerHitFrente = Physics2D.Raycast(transform.position, direcao, disPersegue, PlayerLayer);
-            disPlayerRay = playerHitFrente.distance;
-            playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
-            disParede = playerOUParece.distance;
-            emAtaque = false;
+
         }
         else//Esquerda
         {
            
             indoParaDireita = false;
-            direcao = indoParaDireita ? Vector2.right : Vector2.left;
-            transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
-            playerHitFrente = Physics2D.Raycast(transform.position, direcao, disPersegue, PlayerLayer);
-            disPlayerRay = playerHitFrente.distance;
-            playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
-            disParede = playerOUParece.distance;
-
-            emAtaque = false;
+            
         }
+        direcao = indoParaDireita ? Vector2.right : Vector2.left;
+        transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
+        playerHitFrente = Physics2D.Raycast(transform.position, direcao, disPersegue, PlayerLayer);
+        disPlayerRay = playerHitFrente.distance;
+        playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
+        disParede = playerOUParece.distance;
+        emAtaque = false;
         return direcao;
     }
     public void MelleDano()

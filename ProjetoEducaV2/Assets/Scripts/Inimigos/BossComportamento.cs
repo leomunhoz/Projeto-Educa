@@ -35,6 +35,7 @@ public class BossComportamento : MonoBehaviour
     public bool isDead = false;
     public bool emAtaque = false;
     public bool parede = false;
+    public bool fechaPulo=false;
 
 
     public float posY;
@@ -54,7 +55,8 @@ public class BossComportamento : MonoBehaviour
     public int grana;
     public string nome;
 
-    private Rigidbody2D rd;
+    public Rigidbody2D rd;
+    public float tempoDecorrido = 0f;
 
     /* public float radius;
      public GameObject animacaoDanoPrefab;
@@ -84,6 +86,7 @@ public class BossComportamento : MonoBehaviour
         PlayerLayer = LayerMask.GetMask("Player");
         currentHealth = vidaTotal;
         rd = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()
@@ -94,10 +97,13 @@ public class BossComportamento : MonoBehaviour
             //posHero = new Vector2(player.transform.position.x, player.transform.position.y);
             posInimigo = new Vector2(transform.position.x, transform.position.y);
             herovsInimigo = Vector2.Distance(Mapa1.posHero, posInimigo);
-
+           /* 
+            rd.velocity = direcao * velocidade;
+            // Vira o inimigo para a direção do movimento
+            transform.localScale = new Vector2(indoParaDireita ? 1f : -1f, 1f);*/
             //print(posY);
 
-            raioAFrente = transform.TransformPoint(0.5f, 0.0f, 0.0f);
+            raioAFrente = transform.TransformPoint(-0.5f, 0.0f, 0.0f);
             RaycastHit2D surfaceHit = Physics2D.Raycast(raioAFrente, Vector2.down, 4f, chao);
             Debug.DrawRay(raioAFrente, dir: transform.TransformDirection(Vector2.down) * 1.75f, color: Color.green);
             disChao = surfaceHit.distance;
@@ -133,7 +139,7 @@ public class BossComportamento : MonoBehaviour
                 }
                 else
                 {
-                    PuloMortal();
+                    StartCoroutine(Pular());//PuloMortal();
                 }
             }
             else
@@ -258,7 +264,7 @@ public class BossComportamento : MonoBehaviour
                 {
 
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((Mapa1.posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))//Está invertido
+                    if ((Mapa1.posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))//Está invertido
                     {
                         {
                             emAtaque = true;
@@ -274,7 +280,7 @@ public class BossComportamento : MonoBehaviour
                 if (!emAtaque)
                 {
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((Mapa1.posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))//Está invertido
+                    if ((Mapa1.posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))//Está invertido
                     {
                         {
                             emAtaque = true;
@@ -288,32 +294,27 @@ public class BossComportamento : MonoBehaviour
     }
     public Vector2 ViraParaPlayer()
     {
-        if (Mapa1.posHero.x < posInimigo.x)
+        if (Mapa1.posHero.x > posInimigo.x)
         {
-
-
             indoParaDireita = true;
-            direcao = indoParaDireita ? Vector2.right : Vector2.left;
-            transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
-            playerHitFrente = Physics2D.Raycast(transform.position, direcao, disPersegue, PlayerLayer);
-            disPlayerRay = playerHitFrente.distance;
-            playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
-            disParede = playerOUParece.distance;
-            emAtaque = false;
+            transform.localScale = new Vector2(-1f, 1f);
         }
         else//Esquerda
         {
 
             indoParaDireita = false;
-            direcao = indoParaDireita ? Vector2.right : Vector2.left;
-            transform.localScale = new Vector2(Mathf.Sign(direcao.x), 1f);
-            playerHitFrente = Physics2D.Raycast(transform.position, direcao, disPersegue, PlayerLayer);
-            disPlayerRay = playerHitFrente.distance;
-            playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
-            disParede = playerOUParece.distance;
+            transform.localScale = new Vector2(1f, 1f);
 
-            emAtaque = false;
         }
+        direcao = indoParaDireita ? Vector2.right : Vector2.left;
+
+        //transform.localScale = new Vector2(indoParaDireita ? 1f : -1f, 1f);
+        playerHitFrente = Physics2D.Raycast(transform.position, direcao, disPersegue, PlayerLayer);
+        disPlayerRay = playerHitFrente.distance;
+        playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
+        disParede = playerOUParece.distance;
+
+        emAtaque = false;
         return direcao;
     }
     public bool AtualizaInimigo(bool atualizado)
@@ -328,15 +329,33 @@ public class BossComportamento : MonoBehaviour
     public void PuloMortal()
     {
         AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Jump");
+        float duracaoAnimacao = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+        print("duracaoAnimacao" + duracaoAnimacao);
+    }
+    IEnumerator Pular()
+    {
+        Animator animator = GetComponent<Animator>();
+        //Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        // Calcule a posição final do salto
+        animator.Play("Jump");
+        if (fechaPulo==false) 
+        { }
+        Vector2 posicaoFinal = new Vector2(Mapa1.posHero.x, Mapa1.posHero.y + disPersegue);
+        float duracaoAnimacao = 2f;// GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+
+        // Inicie o salto
+        
+        Vector2 posicaoInicial = rd.position;
+        while (tempoDecorrido < duracaoAnimacao)
+        {
+            float t = tempoDecorrido / duracaoAnimacao;
+            rd.position = Vector2.Lerp(posicaoInicial, posicaoFinal, t);
+            tempoDecorrido += Time.deltaTime;
+            yield return null;
+        }
+
+        // Finalize o salto
+        rd.position = posicaoFinal;
+        // Implemente a lógica de ataque ao jogador após o salto
     }
 }
-
-
-
-
-
-
-
-
-
-

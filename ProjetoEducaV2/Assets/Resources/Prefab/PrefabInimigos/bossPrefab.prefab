@@ -100,14 +100,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39dc6d635aa84db4e87ed884d6dde829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posInimigo: {x: 0, y: 0}
+  play: {fileID: 0}
+  Projetil: {fileID: 0}
+  walLayer:
+    serializedVersion: 2
+    m_Bits: 0
   chao:
     serializedVersion: 2
     m_Bits: 0
-  player: {fileID: 0}
-  animator: {fileID: 0}
-  herovsInimigo: 0
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerHits: []
+  posInimigo: {x: 0, y: 0}
+  direcao: {x: 0, y: 0}
+  pontoInicial: {x: 0, y: 0}
+  pontoFinal: {x: 0, y: 0}
+  spearPosition: {x: 0, y: 0}
+  indoParaDireita: 1
+  fechadura: 0
+  isDead: 0
+  emAtaque: 0
+  parede: 0
   posY: 0
+  disPlayerRay: 0
+  disParede: 0
+  disChao: 0
+  currentHealth: 0
+  tempoDeMorte: 20
+  herovsInimigo: 0
   vidaTotal: 0
   disPersegue: 0
   velocidade: 0

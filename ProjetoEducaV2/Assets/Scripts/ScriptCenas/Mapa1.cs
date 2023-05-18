@@ -50,31 +50,6 @@ public class Mapa1 : MonoBehaviour
          foreach (GameObject spawnPoint in spawnPointInimigo)
          {
             RandomCreature(i);
-            /* randomInt =  Random.Range(0, 3);
-             if (randomInt == 0)
-             {
-                 GameObject goblin = Instantiate(goblinPrefab, spawnPoint.transform.position, Quaternion.identity);
-                 Criaturas.Goblin goblinCriatura = new Criaturas.Goblin();
-                 Inimigo goblinScript = goblin.GetComponent<Inimigo>();
-                 goblinScript.Parametros(goblinCriatura.Nome, goblinCriatura.Dano, goblinCriatura.Defesa, goblinCriatura.DisPersegue, goblinCriatura.DisAtaque, goblinCriatura.DisPatrulha, goblinCriatura.Velocidade, goblinCriatura.vidaTotal, goblinCriatura.Coin,i);
-                 gameManager.inimigos[i] = goblin;
-            }
-             else if(randomInt == 1)
-             {
-                 GameObject slime = Instantiate(slimePrefab, spawnPoint.transform.position, Quaternion.identity);
-                 Criaturas.Slime slimeCriatura = new Criaturas.Slime();
-                 Inimigo slimeScript = slime.GetComponent<Inimigo>();
-                 slimeScript.Parametros(slimeCriatura.Nome, slimeCriatura.Dano, slimeCriatura.Defesa, slimeCriatura.DisPersegue, slimeCriatura.DisAtaque, slimeCriatura.DisPatrulha, slimeCriatura.Velocidade, slimeCriatura.vidaTotal, slimeCriatura.Coin, i);
-                gameManager.inimigos[i] = slime;
-            }
-             else
-             {
-                 GameObject bat = Instantiate(batPrefab, spawnPoint.transform.position, Quaternion.identity);
-                 Criaturas.Bat batCriatura = new Criaturas.Bat();
-                 Inimigo batScript = bat.GetComponent<Inimigo>();
-                 batScript.Parametros(batCriatura.Nome, batCriatura.Dano, batCriatura.Defesa, batCriatura.DisPersegue, batCriatura.DisAtaque, batCriatura.DisPatrulha, batCriatura.Velocidade, batCriatura.vidaTotal, batCriatura.Coin, i);
-                gameManager.inimigos[i] = bat;
-            }*/
             i++;
          }
         
@@ -99,7 +74,7 @@ public class Mapa1 : MonoBehaviour
     void Update()
     {
         posHero = new Vector2(player.transform.position.x, player.transform.position.y);
-        if (gameManager.temMorto == true && temNull==true)
+        if (gameManager.temMorto == true || temNull==true)
         {
             tempo += Time.deltaTime;
             if (tempo >= tempoDerespawn)
