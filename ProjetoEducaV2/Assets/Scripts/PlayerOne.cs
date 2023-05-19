@@ -62,7 +62,7 @@ public class PlayerOne : MonoBehaviour
     private bool isMousePress;
     private bool isJumping;
     private bool isWallSliding;
-    private bool isDead;
+    public bool isDead;
     public bool IMORTAL=false;
 
     public int hashS = "Spear(Clone)".GetHashCode();
@@ -439,6 +439,7 @@ public class PlayerOne : MonoBehaviour
                 rb2d.gravityScale = 0;
                 rb2d.velocity = Vector2.zero;
                 StartCoroutine(SceneLoad());
+                
                
             }
             
@@ -508,5 +509,6 @@ public class PlayerOne : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(0);
+        Debug.Log("Load");
     }
 }
