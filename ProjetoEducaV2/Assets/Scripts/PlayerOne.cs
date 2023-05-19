@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem.Controls;
 using UnityEditor;
+using UnityEngine.UI;
 
 public class PlayerOne : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class PlayerOne : MonoBehaviour
     private string currantState;
 
     public PlayerOneWayPlatform platform;
+    public HealthBar healthBar;
 
     #region Const Anim
     const string Idle = "Idle";
@@ -99,7 +101,7 @@ public class PlayerOne : MonoBehaviour
     public int defesa;
     public int coin;
 
-    GameObject[] PlayerVida;
+    public Slider PlayerVida;
 
    
 
@@ -119,8 +121,10 @@ public class PlayerOne : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim.GetComponent<Animator>();
         platform = GetComponent<PlayerOneWayPlatform>();
-
-       PlayerVida = GameObject.FindGameObjectsWithTag("Life");
+        healthBar = FindObjectOfType<HealthBar>();  
+        PlayerVida = Slider.FindObjectOfType<Slider>();
+        healthBar.MaxHealth(vida);
+       
 
 
     }
@@ -420,17 +424,7 @@ public class PlayerOne : MonoBehaviour
         if (!IMORTAL)
             currentHealth = currentHealth -(damage - defesa);
         //ChangeAnimState(Hurt);
-        for (int i = 0; i < PlayerVida.Length; i++)
-        {
-            if (currentHealth >= (i + 1) * 10)
-            {
-                PlayerVida[i].SetActive(true);
-            }
-            else
-            {
-                PlayerVida[i].SetActive(false);
-            }
-        }
+        healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
             isDead = true;
@@ -514,4 +508,6 @@ public class PlayerOne : MonoBehaviour
         SceneManager.LoadScene(0);
         Debug.Log("Load");
     }
+
+   
 }

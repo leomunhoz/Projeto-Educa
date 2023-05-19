@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke(nameof(ShowInterstitial), 5);
+        Invoke(nameof(ShowInterstitial), 0);
     }
 
     void ShowInterstitial()
