@@ -47,6 +47,8 @@ public class PlayerOne : MonoBehaviour
     const string Down = "Down";
     const string Death = "Death";
     const string Climb = "Climb";
+    const string Hurt = "Hurt";
+
 
 
     #endregion
@@ -417,6 +419,7 @@ public class PlayerOne : MonoBehaviour
     {
         if (!IMORTAL)
             currentHealth = currentHealth -(damage - defesa);
+        //ChangeAnimState(Hurt);
         for (int i = 0; i < PlayerVida.Length; i++)
         {
             if (currentHealth >= (i + 1) * 10)

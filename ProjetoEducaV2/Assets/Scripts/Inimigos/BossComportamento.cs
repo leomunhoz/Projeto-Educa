@@ -69,6 +69,8 @@ public class BossComportamento : MonoBehaviour
     float ataqueCD = 0.1f;
     bool podeAtacar = true;
 
+    Mapa1 mapa1;
+
 
     /* public float radius;
      public GameObject animacaoDanoPrefab;
@@ -88,7 +90,7 @@ public class BossComportamento : MonoBehaviour
 
     private void Start()
     {
-
+        mapa1 = FindObjectOfType<Mapa1>();
         //print("Nome=" + nome);
         pontoInicial = transform.position;
         pontoFinal = pontoInicial + Vector2.right * disPatrulha;
@@ -98,7 +100,8 @@ public class BossComportamento : MonoBehaviour
         PlayerLayer = LayerMask.GetMask("Player");
         currentHealth = vidaTotal;
         rd = GetComponent<Rigidbody2D>();
-        
+        //mapa1 = mapa1.GetComponent<Mapa1>();
+
     }
 
     private void Update()
@@ -108,7 +111,7 @@ public class BossComportamento : MonoBehaviour
             direcao = indoParaDireita ? Vector2.right : Vector2.left;
             //posHero = new Vector2(player.transform.position.x, player.transform.position.y);
             posInimigo = new Vector2(transform.position.x, transform.position.y);
-            herovsInimigo = Vector2.Distance(Mapa1.posHero, posInimigo);
+            herovsInimigo = Vector2.Distance(mapa1.posHero, posInimigo);
            /* 
             rd.velocity = direcao * velocidade;
             // Vira o inimigo para a direção do movimento
@@ -128,7 +131,7 @@ public class BossComportamento : MonoBehaviour
             playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
             disParede = playerOUParece.distance;
 
-            posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(Mapa1.posHero.y);
+            posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(mapa1.posHero.y);
 
             CalculaCds();
 
@@ -249,7 +252,7 @@ public class BossComportamento : MonoBehaviour
             Destroy(this.gameObject, tempoDeMorte);
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Inimigo>().enabled = false;
-            play = Mapa1.player.GetComponent<PlayerOne>();
+            play = mapa1.player.GetComponent<PlayerOne>();
             play.mortos++;
             play.coin = play.coin + grana;
             print(nome + " Mortos " + play.mortos);
@@ -287,7 +290,7 @@ public class BossComportamento : MonoBehaviour
                 {
 
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((Mapa1.posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))//Está invertido
+                    if ((mapa1.posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))//Está invertido
                     {
                         {
                             emAtaque = true;
@@ -304,7 +307,7 @@ public class BossComportamento : MonoBehaviour
                 if (!emAtaque)
                 {
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((Mapa1.posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))//Está invertido
+                    if ((mapa1.posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))//Está invertido
                     {
                         {
                             emAtaque = true;
@@ -319,7 +322,7 @@ public class BossComportamento : MonoBehaviour
     }
     public Vector2 ViraParaPlayer()
     {
-        if (Mapa1.posHero.x > posInimigo.x)
+        if (mapa1.posHero.x > posInimigo.x)
         {
             indoParaDireita = true;
             transform.localScale = new Vector2(-1f, 1f);
@@ -366,7 +369,7 @@ public class BossComportamento : MonoBehaviour
         if (fechaPulo == false)
         {
             pontoInicial = rd.position;
-            pontoFinal = new Vector2(Mapa1.posHero.x, Mapa1.posHero.y+8);
+            pontoFinal = new Vector2(mapa1.posHero.x, mapa1.posHero.y+8);
             fechaPulo = true;
             tempoDecorrido = 0f;
         }
