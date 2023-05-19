@@ -47,6 +47,8 @@ public class PlayerOne : MonoBehaviour
     const string Down = "Down";
     const string Death = "Death";
     const string Climb = "Climb";
+    const string Hurt = "Hurt";
+
 
 
     #endregion
@@ -62,7 +64,7 @@ public class PlayerOne : MonoBehaviour
     private bool isMousePress;
     private bool isJumping;
     private bool isWallSliding;
-    private bool isDead;
+    public bool isDead;
     public bool IMORTAL=false;
 
     public int hashS = "Spear(Clone)".GetHashCode();
@@ -417,6 +419,7 @@ public class PlayerOne : MonoBehaviour
     {
         if (!IMORTAL)
             currentHealth = currentHealth -(damage - defesa);
+        //ChangeAnimState(Hurt);
         for (int i = 0; i < PlayerVida.Length; i++)
         {
             if (currentHealth >= (i + 1) * 10)
@@ -439,6 +442,7 @@ public class PlayerOne : MonoBehaviour
                 rb2d.gravityScale = 0;
                 rb2d.velocity = Vector2.zero;
                 StartCoroutine(SceneLoad());
+                
                
             }
             
@@ -508,5 +512,6 @@ public class PlayerOne : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(0);
+        Debug.Log("Load");
     }
 }

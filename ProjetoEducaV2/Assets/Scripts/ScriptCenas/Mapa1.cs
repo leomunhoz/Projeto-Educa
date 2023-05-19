@@ -7,7 +7,7 @@ using UnityEngine;
 public class Mapa1 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static GameObject player;
+    public GameObject player;
     public GameObject slimePrefab;
     public GameObject batPrefab;
     public GameObject goblinPrefab;
@@ -15,7 +15,7 @@ public class Mapa1 : MonoBehaviour
     public GameObject bossPrefab;
     public GameObject[] spawnPointInimigo;
     public Vector2 spawnPointHeroi;
-    public static Vector2 posHero;
+    public Vector2 posHero;
     private int randomInt;
     private int i = 0;
     GameManager gameManager;
