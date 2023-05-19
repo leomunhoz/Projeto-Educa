@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     public int index;
+    
 
     // Start is called before the first frame update
     void Start()

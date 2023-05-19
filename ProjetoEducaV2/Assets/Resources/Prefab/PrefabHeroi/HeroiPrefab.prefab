@@ -669,7 +669,9 @@ MonoBehaviour:
   isClimbing: 0
   direction: {x: 0, y: 0}
   platform: {fileID: 0}
+  healthBar: {fileID: 0}
   isGrounded: 0
+  isDead: 0
   IMORTAL: 0
   hashS: -1621330533
   wallJumpDuration: 0.1
@@ -701,6 +703,7 @@ MonoBehaviour:
   vida: 100
   defesa: 0
   coin: 0
+  PlayerVida: {fileID: 0}
 --- !u!114 &1084106264063448202
 MonoBehaviour:
   m_ObjectHideFlags: 0
