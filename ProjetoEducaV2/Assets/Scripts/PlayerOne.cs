@@ -123,7 +123,7 @@ public class PlayerOne : MonoBehaviour
         anim.GetComponent<Animator>();
         platform = GetComponent<PlayerOneWayPlatform>();
         healthBar = FindObjectOfType<HealthBar>();  
-       // PlayerVida = Slider.FindObjectOfType<Slider>();
+        PlayerVida = Slider.FindObjectOfType<Slider>();
         healthBar.MaxHealth(vida);
        
 

@@ -12,6 +12,7 @@ TagManager:
   - Chain
   - Life
   - Dig
+  - Tocha
   layers:
   - Default
   - TransparentFX

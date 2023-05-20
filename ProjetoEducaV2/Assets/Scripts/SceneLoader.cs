@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-
+    public string cena;
     private void Awake()
     {
         GameManager tem = GameManager.Instance;
