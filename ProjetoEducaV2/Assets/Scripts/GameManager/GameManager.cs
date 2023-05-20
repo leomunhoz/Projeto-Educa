@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class GameManager : IPresistentSingleton<GameManager>
 {
-    
-    public GameObject[] inimigos=new GameObject[57];
+
+    public GameObject[] inimigos;//=new GameObject[57];
+    public Vector2[] spawns; //= new Vector2[57];
     //public GameObject[] spawnPointInimigo= new GameObject[53];
     public bool temMorto=true;
     private void Start()

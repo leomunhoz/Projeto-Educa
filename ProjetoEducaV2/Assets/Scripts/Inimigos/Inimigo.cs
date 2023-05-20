@@ -263,7 +263,8 @@ public class Inimigo : MonoBehaviour
             play = mapa1.player.GetComponent<PlayerOne>();
             play.mortos++;
             play.coin = play.coin+ grana;
-            mapa1.ReporMorte(posArray);
+            //print("Posição: "+posArray);
+            mapa1.ReporMorte(posArray,pontoInicial);
             //gameManager.ReporMorte(posArray);
         }
     }
