@@ -106,7 +106,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnity
         if (_adUnitId.Equals(_rewardedId))
         {
             int count = PlayerPrefs.GetInt("COINS");
-            count += 30;
+            count += 2;
             PlayerPrefs.SetInt("COINS", count);
             Debug.Log("TOTAL [COINS] QUANTITY: " + count);
             PlayerPrefs.Save();

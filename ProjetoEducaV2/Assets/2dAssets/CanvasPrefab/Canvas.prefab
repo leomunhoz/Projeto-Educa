@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 754839797}
   - component: {fileID: 754839796}
   - component: {fileID: 1011461950}
+  - component: {fileID: 3381727757829280433}
   m_Layer: 5
   m_Name: DialogueBox
-  m_TagString: Untagged
+  m_TagString: Dig
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +86,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754839793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04f0bb6ef54cce0429249c1d41c25777, type: 3}
   m_Name: 
@@ -97,6 +98,21 @@ MonoBehaviour:
   - 
   textSpeed: 0
   index: 0
+--- !u!114 &3381727757829280433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754839793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 731822e5577c1b14499c7903f11f9f8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 8474595669914589759}
+  sentences: []
+  typingSpeed: 0.05
 --- !u!1 &266329368664440664
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +961,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: -1777464361, guid: 04637083d9f087e438e8ebc4cc0a0eb3, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
