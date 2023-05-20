@@ -11,6 +11,7 @@ TagManager:
   - Spawn
   - Chain
   - Life
+  - Dig
   layers:
   - Default
   - TransparentFX

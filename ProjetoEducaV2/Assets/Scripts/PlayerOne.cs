@@ -66,6 +66,7 @@ public class PlayerOne : MonoBehaviour
     private bool isMousePress;
     private bool isJumping;
     private bool isWallSliding;
+    public bool isInteract;
     public bool isDead;
     public bool IMORTAL=false;
 
@@ -122,7 +123,7 @@ public class PlayerOne : MonoBehaviour
         anim.GetComponent<Animator>();
         platform = GetComponent<PlayerOneWayPlatform>();
         healthBar = FindObjectOfType<HealthBar>();  
-        PlayerVida = Slider.FindObjectOfType<Slider>();
+       // PlayerVida = Slider.FindObjectOfType<Slider>();
         healthBar.MaxHealth(vida);
        
 
@@ -152,6 +153,7 @@ public class PlayerOne : MonoBehaviour
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
+        isInteract = Gamepad.current.buttonWest.isPressed;
 
         //isMousePress = Mouse.current.leftButton.isPressed;
         wallJump();
