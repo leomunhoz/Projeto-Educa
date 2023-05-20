@@ -19,11 +19,11 @@ public class Mapa1 : MonoBehaviour
     private int randomInt;
     private int i = 0;
     GameManager gameManager;
-    private float tempoDerespawn = 60f;
+    private float tempoDerespawn = 2f;
     private float tempo = 0f;
     private bool temNull=false;
     private Queue<int> numeros = new Queue<int>();
-    void Start()
+    void Awake()
     {
         gameManager = GameManager.Instance;
         if (gameManager != null)
@@ -34,7 +34,8 @@ public class Mapa1 : MonoBehaviour
 
         heroiPrefab = Resources.Load<GameObject>("Prefab/PrefabHeroi/HeroiPrefab");
         spawnPointHeroi = GameObject.Find("SpawnPointHeroi").transform.position;
-        GameObject heroi = Instantiate(heroiPrefab, spawnPointHeroi, Quaternion.identity);
+        //GameObject heroi = Instantiate(heroiPrefab, spawnPointHeroi, Quaternion.identity);
+        GameObject heroi = Instantiate(heroiPrefab, new Vector2(56.01263f, 28.315f), Quaternion.identity);
         Criaturas.Heroi heroiCriatura = new Criaturas.Heroi();
         PlayerOne heroiScript = heroi.GetComponent<PlayerOne>();
         heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);
@@ -66,7 +67,7 @@ public class Mapa1 : MonoBehaviour
          BossComportamento bossScript = boss.GetComponent<BossComportamento>();
          bossScript.Parametros(bossCriatura.Nome, bossCriatura.Dano, bossCriatura.Defesa, bossCriatura.DisPersegue, bossCriatura.DisAtaque, bossCriatura.DisPatrulha, bossCriatura.Velocidade, bossCriatura.vidaTotal, bossCriatura.Coin);*/
         gameManager.temMorto = false;
-        //print("Quantidade de inimigos: " + i);
+        print("Quantidade de inimigos: " + i);
         i = 0;
     }
 

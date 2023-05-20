@@ -9,11 +9,13 @@ public class StartDialogue : MonoBehaviour
     public PlayerOne playerOne;
     public GameObject DialogueBox;
     public bool canTalk;
+    Mapa1 mapa1;
     // Start is called before the first frame update
     void Start()
     {
+        mapa1 = FindObjectOfType<Mapa1>();
         dialogue = FindObjectOfType<Dialogue>();
-        playerOne = FindObjectOfType<PlayerOne>();
+        playerOne = mapa1.player.GetComponent<PlayerOne>();
         DialogueBox = GameObject.FindGameObjectWithTag("Dig");
            
     }

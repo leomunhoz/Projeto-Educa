@@ -453,13 +453,3 @@ public class Inimigo : MonoBehaviour
         return true;
     }
 }
-
-
-
-
-
-
-
-
-
-
