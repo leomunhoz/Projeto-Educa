@@ -13,6 +13,8 @@ TagManager:
   - Life
   - Dig
   - Tocha
+  - Door
+  - Interacao
   layers:
   - Default
   - TransparentFX

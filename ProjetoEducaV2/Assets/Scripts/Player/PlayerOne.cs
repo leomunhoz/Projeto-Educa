@@ -73,6 +73,7 @@ public class PlayerOne : MonoBehaviour
     public bool isDead;
     public bool isDodging = false;
     public bool IMORTAL=false;
+    public bool canButtun;
 
     public int hashS = "Spear(Clone)".GetHashCode();
     public float wallJumpDuration;
@@ -166,6 +167,15 @@ public class PlayerOne : MonoBehaviour
         DownPlat();
         ParemetroDeAnim();
         Climbing();
+
+        if (canButtun)
+        {
+            if (isInteract)
+            {
+                StartCoroutine(SceneLoad());
+            }
+        }
+
         if (Keyboard.current.lKey.wasPressedThisFrame)
         {
 
@@ -295,15 +305,16 @@ public class PlayerOne : MonoBehaviour
     }
     public void Dodge() 
     {
-        if (isRollingPressed && !isDodging && !isJumping)
+        if (isRollingPressed && !isDodging && !isJumping && rb2d.velocity.x != 0)
         {
             isDodging = true;
+            IMORTAL = true;
             if (isDodging)
             {
-                print("Dodge");
-                //ChangeAnimState(Roll);
+               
+                ChangeAnimState(Roll);
                 TakeDamage(0);
-                rb2d.AddForce(new Vector2(rb2d.velocity.x * dodgeForce, rb2d.velocity.y), ForceMode2D.Impulse);
+                speed = 10;
                 StartCoroutine(EndDodge());
             }
            
@@ -406,6 +417,7 @@ public class PlayerOne : MonoBehaviour
     {
         
         yield return new WaitForSeconds(dodgeDuration);
+        IMORTAL = false;
         isDodging = false;
     }
     private void OnDrawGizmosSelected()
@@ -508,16 +520,25 @@ public class PlayerOne : MonoBehaviour
         }
 
         
-
+        
 
 
     }
+
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Chain"))
         {
             isChain = true;
             //print("Sobe");
+        }
+
+        if (collision.gameObject.CompareTag("Door"))
+        {
+
+            canButtun = true;
+           
         }
     }
 
@@ -529,7 +550,12 @@ public class PlayerOne : MonoBehaviour
             isChain = false;
         }
 
+        if (collision.gameObject.CompareTag("Door"))
+        {
 
+            canButtun = false;
+
+        }
     }
     IEnumerator SceneLoad() 
     {

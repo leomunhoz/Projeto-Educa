@@ -4806,7 +4806,7 @@ MonoBehaviour:
   _iOsRewardedId: Rewarded_iOS
   _androidGameId: 5278751
   _iOSGameId: 5278750
-  _testMode: 1
+  _testMode: 0
 --- !u!1 &554978345
 GameObject:
   m_ObjectHideFlags: 0
@@ -10944,7 +10944,7 @@ Tilemap:
       - {fileID: -2002074844, guid: 9c90dd706baad414ba5841a61adb7863, type: 3}
       - {fileID: -1549757294, guid: 9c90dd706baad414ba5841a61adb7863, type: 3}
       - {fileID: -905486208, guid: 9c90dd706baad414ba5841a61adb7863, type: 3}
-      m_AnimationSpeed: 7.0000005
+      m_AnimationSpeed: 7
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
