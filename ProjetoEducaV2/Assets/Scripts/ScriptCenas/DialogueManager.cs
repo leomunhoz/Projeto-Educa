@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-       // playerOne = FindObjectOfType<PlayerOne>();
+        //playerOne = FindObjectOfType<PlayerOne>();
         dialogueText.text = string.Empty;
         dialogueStarted = false;
     }

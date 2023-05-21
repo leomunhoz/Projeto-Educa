@@ -14,6 +14,7 @@ public class NPCInteraction : MonoBehaviour
     {
         //interactionButton.SetActive(false);
         playerOne = FindObjectOfType<PlayerOne>();
+       
     }
 
     private void Update()
