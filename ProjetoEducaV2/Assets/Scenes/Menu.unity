@@ -4806,7 +4806,7 @@ MonoBehaviour:
   _iOsRewardedId: Rewarded_iOS
   _androidGameId: 5278751
   _iOSGameId: 5278750
-  _testMode: 0
+  _testMode: 1
 --- !u!1 &554978345
 GameObject:
   m_ObjectHideFlags: 0
