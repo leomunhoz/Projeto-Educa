@@ -72,10 +72,6 @@ public class BossComportamento : MonoBehaviour
     BossBattle bossBattle;
     GameManager gameManager;
 
-
-    /* public float radius;
-     public GameObject animacaoDanoPrefab;
-     public LayerMask playerLayer;*/
     public void Parametros(string nomeC, int danoC, int def, float Persegue, float Ataque, float Patrulha, float velo, float vidaToda, int moeda)
     {
         disPersegue = Persegue;
@@ -113,7 +109,7 @@ public class BossComportamento : MonoBehaviour
             direcao = indoParaDireita ? Vector2.right : Vector2.left;
             //posHero = new Vector2(player.transform.position.x, player.transform.position.y);
             posInimigo = new Vector2(transform.position.x, transform.position.y);
-            herovsInimigo = Vector2.Distance(gameManager.posHero, posInimigo);
+            herovsInimigo = Vector2.Distance(bossBattle.posHero, posInimigo);
            /* 
             rd.velocity = direcao * velocidade;
             // Vira o inimigo para a direção do movimento
@@ -133,7 +129,7 @@ public class BossComportamento : MonoBehaviour
             playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
             disParede = playerOUParece.distance;
 
-            posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(gameManager.posHero.y);
+            posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(bossBattle.posHero.y);
 
             CalculaCds();
 
@@ -292,7 +288,7 @@ public class BossComportamento : MonoBehaviour
                 {
 
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((gameManager.posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))//Está invertido
+                    if ((bossBattle.posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))//Está invertido
                     {
                         {
                             emAtaque = true;
@@ -309,7 +305,7 @@ public class BossComportamento : MonoBehaviour
                 if (!emAtaque)
                 {
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((gameManager.posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))//Está invertido
+                    if ((bossBattle.posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))//Está invertido
                     {
                         {
                             emAtaque = true;
@@ -324,7 +320,7 @@ public class BossComportamento : MonoBehaviour
     }
     public Vector2 ViraParaPlayer()
     {
-        if (gameManager.posHero.x > posInimigo.x)
+        if (bossBattle.posHero.x > posInimigo.x)
         {
             indoParaDireita = true;
             transform.localScale = new Vector2(-1f, 1f);
@@ -371,7 +367,7 @@ public class BossComportamento : MonoBehaviour
         if (fechaPulo == false)
         {
             pontoInicial = rd.position;
-            pontoFinal = new Vector2(gameManager.posHero.x, gameManager.posHero.y+8);
+            pontoFinal = new Vector2(bossBattle.posHero.x, bossBattle.posHero.y+8);
             fechaPulo = true;
             tempoDecorrido = 0f;
         }

@@ -13,10 +13,10 @@ public class GameManager : IPresistentSingleton<GameManager>
     public bool temMorto=true;
     //public GameObject bossPrefab;
     //public Vector2 spawnPointHeroi;
-    public Vector2 posHero;
+    //public Vector2 posHero;
     //public GameObject heroiPrefab;
-    public GameObject player;
-    bool cenaCarregada = false;
+    //public GameObject player;
+    //bool cenaCarregada = false;
     //Mapa1 mapa1;
     private void Start()
     {
@@ -24,7 +24,7 @@ public class GameManager : IPresistentSingleton<GameManager>
     }
     public void Update()
     {
-        if (SceneManager.GetSceneByName("Gameplay").isLoaded && cenaCarregada==false)
+        /*if (SceneManager.GetSceneByName("Gameplay").isLoaded && cenaCarregada==false)
         {
             /*mapa1 = FindObjectOfType<Mapa1>();
             spawnPointHeroi = GameObject.Find("SpawnPointHeroi").transform.position;
@@ -33,10 +33,10 @@ public class GameManager : IPresistentSingleton<GameManager>
             Criaturas.Heroi heroiCriatura = new Criaturas.Heroi();
             PlayerOne heroiScript = heroi.GetComponent<PlayerOne>();
             heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);*/
-            player = GameObject.FindGameObjectWithTag("Player");
+            /*player = GameObject.FindGameObjectWithTag("Player");
             cenaCarregada = true;
         }
         if (cenaCarregada)
-            posHero = new Vector2(player.transform.position.x, player.transform.position.y);
+            posHero = new Vector2(player.transform.position.x, player.transform.position.y);*/
     }
 }

@@ -20,6 +20,7 @@ public class Mapa1 : MonoBehaviour
     GameManager gameManager;
     private float tempoDerespawn = 21f;//não pode ser menor que 20
     private float tempo = 0f;
+    public Vector2 posHero;
     private bool temNull=false;
     private Queue<int> posArray = new Queue<int>();
     private Queue<Vector2> local = new Queue<Vector2>();
@@ -87,11 +88,11 @@ public class Mapa1 : MonoBehaviour
                 ReporMorte(-1,Vector2.zero);
             }
         }
-       /*for (int i = 0; i <= gameManager.spawns.Length-1;i++)
-        {
-            print("aqui" + gameManager.spawns[i]);
-        }*/
-
+        /*for (int i = 0; i <= gameManager.spawns.Length-1;i++)
+         {
+             print("aqui" + gameManager.spawns[i]);
+         }*/
+        posHero = new Vector2(player.transform.position.x, player.transform.position.y);
     }
     public void ReporMorte(int posicao, Vector2 ondeNasce)
     {
