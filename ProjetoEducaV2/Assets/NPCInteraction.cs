@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class NPCInteraction : MonoBehaviour
 {
-    public GameObject interactionButton;
+    //public GameObject interactionButton;
     public GameObject dialogueBox;
     public DialogueManager dialogueManager;
-
+    public PlayerOne playerOne;
     private bool canInteract;
 
     private void Start()
     {
-        interactionButton.SetActive(false);
+        //interactionButton.SetActive(false);
+        playerOne = FindObjectOfType<PlayerOne>();
     }
 
     private void Update()
     {
-        if (canInteract && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (canInteract && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             dialogueBox.SetActive(true);
             dialogueManager.StartDialogue();
@@ -28,7 +29,7 @@ public class NPCInteraction : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            interactionButton.SetActive(true);
+            //interactionButton.SetActive(true);
             canInteract = true;
         }
     }
@@ -37,7 +38,8 @@ public class NPCInteraction : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            interactionButton.SetActive(false);
+            //interactionButton.SetActive(false);
+            dialogueBox.SetActive(false);
             canInteract = false;
         }
     }

@@ -7,17 +7,21 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
-    public string[] sentences;
+    [TextArea(3,15)]
+    public string[] lines;
     public float typingSpeed = 0.05f;
+    public int index;
 
-    private int currentSentenceIndex;
-    private bool isTyping;
-    private bool isComplete;
+    //private int currentSentenceIndex;
+    public bool isTyping;
+    public bool isComplete;
     private bool dialogueStarted;
+   // PlayerOne playerOne;
 
     private void Start()
     {
-        dialogueText.text = "";
+       // playerOne = FindObjectOfType<PlayerOne>();
+        dialogueText.text = string.Empty;
         dialogueStarted = false;
     }
 
@@ -43,54 +47,55 @@ public class DialogueManager : MonoBehaviour
     {
         if (!dialogueStarted)
         {
+            
             dialogueStarted = true;
-            currentSentenceIndex = 0;
-            StartCoroutine(TypeSentence(sentences[currentSentenceIndex]));
+            index = 0;
+            StartCoroutine(TypeLine());
         }
     }
 
     public void DisplayNextSentence()
     {
-        if (currentSentenceIndex < sentences.Length - 1)
+        if (index < lines.Length - 1)
         {
-            currentSentenceIndex++;
-            dialogueText.text = "";
-            StartCoroutine(TypeSentence(sentences[currentSentenceIndex]));
+            index++;
+            dialogueText.text = string.Empty;
+            StartCoroutine(TypeLine());
         }
         else
         {
-            EndDialogue();
+           dialogueStarted = false;
+           dialogueText.text = string.Empty;
+           gameObject.SetActive(false);
         }
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeLine()
     {
         isTyping = true;
         isComplete = false;
-        dialogueText.text = "";
+        dialogueText.text = string.Empty;
 
-        foreach (char letter in sentence.ToCharArray())
+        yield return new WaitForSeconds(0.1f);
+
+        foreach (char letter in lines[index].ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-
+       
         isTyping = false;
         isComplete = true;
+      
     }
 
     void CompleteSentence()
     {
         StopAllCoroutines();
-        dialogueText.text = sentences[currentSentenceIndex];
+        dialogueText.text = lines[index];
         isTyping = false;
         isComplete = true;
     }
 
-    void EndDialogue()
-    {
-        // Faça o que você precisar aqui, como desativar a caixa de diálogo ou iniciar uma ação do NPC.
-        // Por exemplo:
-        // dialogueBox.SetActive(false);
-    }
+   
 }

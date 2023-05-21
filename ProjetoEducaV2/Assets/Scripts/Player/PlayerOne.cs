@@ -153,7 +153,7 @@ public class PlayerOne : MonoBehaviour
         isAttackingPressed = Gamepad.current.buttonNorth.isPressed || Keyboard.current.fKey.isPressed;
         isRollingPressed = Gamepad.current.buttonEast.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
-        isInteract = Gamepad.current.buttonWest.isPressed;
+        isInteract = Gamepad.current.buttonWest.wasPressedThisFrame;
 
         //isMousePress = Mouse.current.leftButton.isPressed;
         wallJump();
