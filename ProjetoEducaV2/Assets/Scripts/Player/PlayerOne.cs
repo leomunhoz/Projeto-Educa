@@ -23,6 +23,8 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private int axPulosExtras = 1;
     [SerializeField] private float attackDelay = 0.3f;
     [SerializeField] private float attackRange = 0.1f;
+    [SerializeField] private float dodgeForce;
+    [SerializeField] private float dodgeDuration;
     [SerializeField] private int combo;
     public int currentHealth;
     public bool isChain;
@@ -50,6 +52,7 @@ public class PlayerOne : MonoBehaviour
     const string Death = "Death";
     const string Climb = "Climb";
     const string Hurt = "Hurt";
+    const string Roll = "Roll";
 
 
 
@@ -68,6 +71,7 @@ public class PlayerOne : MonoBehaviour
     private bool isWallSliding;
     public bool isInteract;
     public bool isDead;
+    public bool isDodging = false;
     public bool IMORTAL=false;
 
     public int hashS = "Spear(Clone)".GetHashCode();
@@ -140,6 +144,7 @@ public class PlayerOne : MonoBehaviour
         attack();
         WallSlide();
         jump();
+        Dodge();
         
         
         
@@ -288,6 +293,21 @@ public class PlayerOne : MonoBehaviour
 
 
     }
+    public void Dodge() 
+    {
+        if (isRollingPressed && !isDodging)
+        {
+            isDodging = true;
+            if (isDodging)
+            {
+                ChangeAnimState(Roll);
+                TakeDamage(0);
+                rb2d.AddForce(new Vector2(rb2d.velocity.x * dodgeForce, rb2d.velocity.y), ForceMode2D.Impulse);
+                StartCoroutine(EndDodge());
+            }
+           
+        }
+    }
     public void DownPlat()
     {
         if (direction.y < -0.55 && isGrounded)
@@ -381,6 +401,12 @@ public class PlayerOne : MonoBehaviour
         wallJumping = false;
 
     }
+    IEnumerator EndDodge() 
+    {
+        
+        yield return new WaitForSeconds(dodgeDuration);
+        isDodging = false;
+    }
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null && wallCheck == null && groundPoint == null)
@@ -401,7 +427,7 @@ public class PlayerOne : MonoBehaviour
     }
     public void ParemetroDeAnim()
     {
-        if (!isAttacking && !isWallSliding && !(direction.y < 0) && !isDead)
+        if (!isAttacking && !isWallSliding && !(direction.y < 0) && !isDead && !isDodging)
         {
             if (Horizontal != 0 && isGrounded && !isClimbing)
             {

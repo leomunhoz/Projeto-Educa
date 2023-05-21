@@ -18,7 +18,7 @@ public class NPCInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (canInteract && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (canInteract && playerOne.isInteract)
         {
             dialogueBox.SetActive(true);
             dialogueManager.StartDialogue();
