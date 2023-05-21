@@ -102,7 +102,7 @@ public class Inimigo : MonoBehaviour
             direcao = indoParaDireita ? Vector2.right : Vector2.left;
             //posHero = new Vector2(player.transform.position.x, player.transform.position.y);
             posInimigo = new Vector2(transform.position.x, transform.position.y);
-            herovsInimigo = Vector2.Distance(mapa1.posHero, posInimigo);
+            herovsInimigo = Vector2.Distance(gameManager.posHero, posInimigo);
             
             //print(posY);
 
@@ -122,7 +122,7 @@ public class Inimigo : MonoBehaviour
             playerOUParece = Physics2D.Raycast(transform.position, direcao, 1000, walLayer);
             disParede = playerOUParece.distance;
 
-            posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(mapa1.posHero.y);
+            posY = Mathf.Abs(posInimigo.y) - Mathf.Abs(gameManager.posHero.y);
 
             if (disPlayerRay == 0)
                 disPlayerRay = disParede + 1f;
@@ -260,7 +260,7 @@ public class Inimigo : MonoBehaviour
             Destroy(this.gameObject, tempoDeMorte);
             GetComponent<Collider2D>().enabled = false;
             GetComponent<Inimigo>().enabled = false;
-            play = mapa1.player.GetComponent<PlayerOne>();
+            play = gameManager.player.GetComponent<PlayerOne>();
             play.mortos++;
             play.coin = play.coin+ grana;
             //print("Posição: "+posArray);
@@ -302,7 +302,7 @@ public class Inimigo : MonoBehaviour
                  {
                     
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((mapa1.posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
+                    if ((gameManager.posHero.x > posInimigo.x && Vector2.Dot(transform.right, direcao) > 0))
                       {
                         {
                             emAtaque = true;
@@ -324,7 +324,7 @@ public class Inimigo : MonoBehaviour
                 if (!emAtaque )
                  {
                     //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Idle");
-                    if ((mapa1.posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))
+                    if ((gameManager.posHero.x < posInimigo.x && Vector2.Dot(transform.right, direcao) < 0))
                      {
                         //if (act.isJumping || posY < 0.9)
                         {
@@ -419,7 +419,7 @@ public class Inimigo : MonoBehaviour
 
     public Vector2 ViraParaPlayer()
     {
-        if (mapa1.posHero.x > posInimigo.x)
+        if (gameManager.posHero.x > posInimigo.x)
         {
             
             

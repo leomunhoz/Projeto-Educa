@@ -6,7 +6,6 @@ public class BossBattle : MonoBehaviour
 {
     public GameObject bossPrefab;
     public Vector2 spawnPointHeroi;
-    public Vector2 posHero;
     public GameObject heroiPrefab;
     public GameObject player;
 
@@ -33,6 +32,5 @@ public class BossBattle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        posHero = new Vector2(player.transform.position.x, player.transform.position.y);
     }
 }

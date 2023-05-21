@@ -15,7 +15,6 @@ public class Mapa1 : MonoBehaviour
     public GameObject bossPrefab;
     public GameObject[] spawnPointInimigo;
     public Vector2 spawnPointHeroi;
-    public Vector2 posHero;
     private int randomInt;
     private int i = 0;
     GameManager gameManager;
@@ -27,17 +26,6 @@ public class Mapa1 : MonoBehaviour
     void Awake()
     {
         gameManager = GameManager.Instance;
-
-        heroiPrefab = Resources.Load<GameObject>("Prefab/PrefabHeroi/HeroiPrefab");
-        spawnPointHeroi = GameObject.Find("SpawnPointHeroi").transform.position;
-        //GameObject heroi = Instantiate(heroiPrefab, spawnPointHeroi, Quaternion.identity);
-        GameObject heroi = Instantiate(heroiPrefab, new Vector2(56.01263f, 28.315f), Quaternion.identity);
-        Criaturas.Heroi heroiCriatura = new Criaturas.Heroi();
-        PlayerOne heroiScript = heroi.GetComponent<PlayerOne>();
-        heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);
-        player = GameObject.FindGameObjectWithTag("Player");
-
-
 
         //Inicio Inimigos
         spawnPointInimigo = GameObject.FindGameObjectsWithTag("Spawn");
@@ -73,7 +61,7 @@ public class Mapa1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        posHero = new Vector2(player.transform.position.x, player.transform.position.y);
+        
         if (gameManager.temMorto == true || temNull==true)
         {
             tempo += Time.deltaTime;
