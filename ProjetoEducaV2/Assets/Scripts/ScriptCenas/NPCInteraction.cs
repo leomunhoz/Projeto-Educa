@@ -9,11 +9,16 @@ public class NPCInteraction : MonoBehaviour
     public DialogueManager dialogueManager;
     public PlayerOne playerOne;
     private bool canInteract;
+    Mapa1 mapa1;
 
     private void Start()
     {
         //interactionButton.SetActive(false);
-        playerOne = FindObjectOfType<PlayerOne>();
+        mapa1 = FindObjectOfType<Mapa1>();
+        print("playerOne" + playerOne);
+        playerOne = mapa1.player.GetComponent<PlayerOne>();
+        print("playerOne" + playerOne);
+        //playerOne = FindObjectOfType<PlayerOne>();
        
     }
 

@@ -80,6 +80,7 @@ public class Inimigo : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameManager.Instance;
         mapa1 = FindObjectOfType<Mapa1>();
         //print("Nome=" + nome);
         pontoInicial = transform.position;
@@ -90,8 +91,6 @@ public class Inimigo : MonoBehaviour
         PlayerLayer = LayerMask.GetMask("Player");
         currentHealth = vidaTotal;
         rd = GetComponent<Rigidbody2D>();
-        //mapa1 = FindObjectOfType<Mapa1>();
-        //mapa1 = mapa1.GetComponent<Mapa1>();
     }
 
     private void Update()

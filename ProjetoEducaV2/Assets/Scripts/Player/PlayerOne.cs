@@ -23,8 +23,8 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private int axPulosExtras = 1;
     [SerializeField] private float attackDelay = 0.3f;
     [SerializeField] private float attackRange = 0.1f;
-    [SerializeField] private float dodgeForce;
-    [SerializeField] private float dodgeDuration;
+    [SerializeField] private float dodgeForce=5f;
+    [SerializeField] private float dodgeDuration=0.5f;
     [SerializeField] private int combo;
     public int currentHealth;
     public bool isChain;
@@ -295,12 +295,13 @@ public class PlayerOne : MonoBehaviour
     }
     public void Dodge() 
     {
-        if (isRollingPressed && !isDodging)
+        if (isRollingPressed && !isDodging && !isJumping)
         {
             isDodging = true;
             if (isDodging)
             {
-                ChangeAnimState(Roll);
+                print("Dodge");
+                //ChangeAnimState(Roll);
                 TakeDamage(0);
                 rb2d.AddForce(new Vector2(rb2d.velocity.x * dodgeForce, rb2d.velocity.y), ForceMode2D.Impulse);
                 StartCoroutine(EndDodge());

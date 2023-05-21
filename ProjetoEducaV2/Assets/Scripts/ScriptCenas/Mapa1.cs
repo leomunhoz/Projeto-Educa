@@ -25,8 +25,16 @@ public class Mapa1 : MonoBehaviour
     private Queue<Vector2> local = new Queue<Vector2>();
     void Awake()
     {
-        gameManager = GameManager.Instance;
+        heroiPrefab = Resources.Load<GameObject>("Prefab/PrefabHeroi/HeroiPrefab");
+        spawnPointHeroi = GameObject.Find("SpawnPointHeroi").transform.position;
+        //GameObject heroi = Instantiate(heroiPrefab, spawnPointHeroi, Quaternion.identity);
+        GameObject heroi = Instantiate(heroiPrefab, new Vector2(56.01263f, 28.315f), Quaternion.identity);
+        Criaturas.Heroi heroiCriatura = new Criaturas.Heroi();
+        PlayerOne heroiScript = heroi.GetComponent<PlayerOne>();
+        heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);
+        player = GameObject.FindGameObjectWithTag("Player");
 
+        gameManager = GameManager.Instance;
         //Inicio Inimigos
         spawnPointInimigo = GameObject.FindGameObjectsWithTag("Spawn");
         foreach (GameObject spawnPoint in spawnPointInimigo)
@@ -55,7 +63,7 @@ public class Mapa1 : MonoBehaviour
             gameManager.temMorto = false;
         //print("Quantidade de inimigos: " + i);
         i = 0;
-        spawnPointInimigo = null;
+        //spawnPointInimigo = null;
     }
 
     // Update is called once per frame
