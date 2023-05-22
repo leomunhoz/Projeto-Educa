@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HideVipClub : CheckPurchase
 {
-    public GameObject button;
+    //public GameObject button;
     // Start is called before the first frame update
     void Awake()
     {
@@ -14,10 +14,10 @@ public class HideVipClub : CheckPurchase
     // Update is called once per frame
     public override void UpdatePurchaseUI()
     {
-        if (PlayerPrefs.GetInt("vipgoldclub") == 1)
+        if (PlayerPrefs.GetInt("VIP") == 1)
         {
-            button.SetActive(true);
-            gameObject.SetActive(false);
+           // button.SetActive(true);
+            //gameObject.SetActive(false);
             
         }
     }

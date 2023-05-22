@@ -53,15 +53,12 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnity
     public void ShowInterstitial()
     {
 
-        if (PlayerPrefs.GetInt("vipgoldclub") == 1) return;
-            if (PlayerPrefs.GetInt("vipgoldclub") == 0)
+        if (PlayerPrefs.GetInt("VIP") == 1) return;
+            if (PlayerPrefs.GetInt("VIP") == 0)
         {
             ShowAd(_interstitialId);
         }
-        else
-        {
-          
-        }
+       
     }
 
     //-----------------------------------

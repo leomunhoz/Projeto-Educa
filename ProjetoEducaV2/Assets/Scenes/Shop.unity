@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 74783807}
   - component: {fileID: 74783806}
   - component: {fileID: 74783805}
-  - component: {fileID: 74783804}
   m_Layer: 5
   m_Name: ' button Comprar (1)'
   m_TagString: Untagged
@@ -167,19 +166,6 @@ RectTransform:
   m_AnchoredPosition: {x: 214.99995, y: -559.77}
   m_SizeDelta: {x: 359.72, y: 82.31}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &74783804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74783802}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 264e346c5abdf7b4d95a4730ce2e62c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
 --- !u!114 &74783805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: VIP
+  productId: VIPCLUB
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -454,7 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264e346c5abdf7b4d95a4730ce2e62c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 74783802}
 --- !u!1 &161478976
 GameObject:
   m_ObjectHideFlags: 0
