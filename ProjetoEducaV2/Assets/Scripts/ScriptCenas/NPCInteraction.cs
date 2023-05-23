@@ -15,10 +15,7 @@ public class NPCInteraction : MonoBehaviour
     {
         //interactionButton.SetActive(false);
         mapa1 = FindObjectOfType<Mapa1>();
-        print("playerOne" + playerOne);
         playerOne = mapa1.player.GetComponent<PlayerOne>();
-        print("playerOne" + playerOne);
-        //playerOne = FindObjectOfType<PlayerOne>();
        
     }
 

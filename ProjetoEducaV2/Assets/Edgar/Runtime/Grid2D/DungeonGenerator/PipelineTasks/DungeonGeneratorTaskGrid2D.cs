@@ -111,9 +111,10 @@ namespace Edgar.Unity
                 Iterations = generator.IterationsCount,
                 TimeTotal = generator.TimeTotal,
             };
-
+#if UNITY_EDITOR
             Debug.Log($"Layout generated in {stats.TimeTotal / 1000f:F} seconds");
             Debug.Log($"{stats.Iterations} iterations needed, {stats.Iterations / (stats.TimeTotal / 1000d):0} iterations per second");
+#endif
 
             Payload.GeneratedLevel = generatedLevel;
             Payload.GeneratorStats = stats;

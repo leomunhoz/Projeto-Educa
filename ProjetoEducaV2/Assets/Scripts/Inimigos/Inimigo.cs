@@ -245,27 +245,35 @@ public class Inimigo : MonoBehaviour
     }
     public void TakeDemage(int damage)
     {
-        currentHealth = currentHealth - (damage - defesa);
-        //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Hurt");
-        StartCoroutine(Flash());
-        if (currentHealth <= 0)
+        if (damage== -1)
         {
-            AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Death");
-            isDead = true;
-            rd.velocity = direcao * 0;
-            //currentHealth = 0;
-            this.enabled = false;
-            rd.gravityScale = 0;
-            Destroy(this.gameObject, tempoDeMorte);
-            GetComponent<Collider2D>().enabled = false;
-            GetComponent<Inimigo>().enabled = false;
-            play = mapa1.player.GetComponent<PlayerOne>();
-            play.mortos++;
-            play.coin = play.coin+ grana;
-            //print("Posição: "+posArray);
-            mapa1.ReporMorte(posArray,pontoInicial);
-            //gameManager.ReporMorte(posArray);
+            currentHealth -= currentHealth;
         }
+            if (damage-defesa>0)
+                currentHealth = currentHealth - (damage - defesa);
+            //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Hurt");
+            StartCoroutine(Flash());
+            if (currentHealth <= 0)
+            {
+                AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Death");
+                isDead = true;
+                rd.velocity = direcao * 0;
+                //currentHealth = 0;
+                this.enabled = false;
+                rd.gravityScale = 0;
+                Destroy(this.gameObject, tempoDeMorte);
+                GetComponent<Collider2D>().enabled = false;
+                GetComponent<Inimigo>().enabled = false;
+                if (damage!=-1)
+                {
+                    play = mapa1.player.GetComponent<PlayerOne>();
+                    play.mortos++;
+                    play.coin = play.coin + grana;
+                }
+                mapa1.ReporMorte(posArray, pontoInicial);
+            }
+        
+        
     }
     //
     IEnumerator Flash()

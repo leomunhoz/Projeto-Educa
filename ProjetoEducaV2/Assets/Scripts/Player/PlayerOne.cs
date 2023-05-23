@@ -72,6 +72,7 @@ public class PlayerOne : MonoBehaviour
     public bool isInteract;
     public bool isDead;
     public bool isDodging = false;
+    [HideInInspector]
     public bool IMORTAL=false;
     public bool canButtun;
 
@@ -130,6 +131,8 @@ public class PlayerOne : MonoBehaviour
         healthBar = FindObjectOfType<HealthBar>();  
         PlayerVida = Slider.FindObjectOfType<Slider>();
         healthBar.MaxHealth(vida);
+        if (IMORTAL)
+            IMORTAL = false;
        
 
 
@@ -181,7 +184,9 @@ public class PlayerOne : MonoBehaviour
 
             if (!IMORTAL)
             {
+#if UNITY_EDITOR
                 print("Imortal");
+#endif
                 IMORTAL = true;
             }
             else

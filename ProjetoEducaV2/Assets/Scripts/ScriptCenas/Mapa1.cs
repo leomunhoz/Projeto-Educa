@@ -14,6 +14,7 @@ public class Mapa1 : MonoBehaviour
     public GameObject heroiPrefab;
     public GameObject bossPrefab;
     public GameObject[] spawnPointInimigo;
+    public Inimigo inimigo;
     public Vector2 spawnPointHeroi;
     private int randomInt;
     private int i = 0;
@@ -24,6 +25,8 @@ public class Mapa1 : MonoBehaviour
     private bool temNull=false;
     private Queue<int> posArray = new Queue<int>();
     private Queue<Vector2> local = new Queue<Vector2>();
+    public Object temp = null;
+    public int qtdSpawn=0;
     void Awake()
     {
         heroiPrefab = Resources.Load<GameObject>("Prefab/PrefabHeroi/HeroiPrefab");
@@ -34,7 +37,7 @@ public class Mapa1 : MonoBehaviour
         PlayerOne heroiScript = heroi.GetComponent<PlayerOne>();
         heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);
         player = GameObject.FindGameObjectWithTag("Player");
-
+        posHero = new Vector2(player.transform.position.x, player.transform.position.y);
         gameManager = GameManager.Instance;
         //Inicio Inimigos
         spawnPointInimigo = GameObject.FindGameObjectsWithTag("Spawn");
@@ -44,11 +47,13 @@ public class Mapa1 : MonoBehaviour
             i++;
          }
         i = 0;
-        foreach (Vector2 gasta in gameManager.spawns)
+       /* foreach (Vector2 gasta in gameManager.spawns)
         {
             RandomCreature(gasta,i);
             i++;
-        }
+        }*/
+
+        
             /*for (int i = 0; i <= spawnPointInimigo.Length; i++)
             {
                 GameObject spawnPoint = spawnPointInimigo[i];
@@ -56,11 +61,11 @@ public class Mapa1 : MonoBehaviour
                 RandomCreature(i);
             }*/
 
-            /*bossPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/bossPrefab");
-            GameObject boss = Instantiate(bossPrefab, new Vector2(-96.04f, 2f), Quaternion.identity);
-             Criaturas.BossGoblin bossCriatura = new Criaturas.BossGoblin();
-             BossComportamento bossScript = boss.GetComponent<BossComportamento>();
-             bossScript.Parametros(bossCriatura.Nome, bossCriatura.Dano, bossCriatura.Defesa, bossCriatura.DisPersegue, bossCriatura.DisAtaque, bossCriatura.DisPatrulha, bossCriatura.Velocidade, bossCriatura.vidaTotal, bossCriatura.Coin);*/
+        /*bossPrefab = Resources.Load<GameObject>("Prefab/PrefabInimigos/bossPrefab");
+        GameObject boss = Instantiate(bossPrefab, new Vector2(-96.04f, 2f), Quaternion.identity);
+         Criaturas.BossGoblin bossCriatura = new Criaturas.BossGoblin();
+         BossComportamento bossScript = boss.GetComponent<BossComportamento>();
+         bossScript.Parametros(bossCriatura.Nome, bossCriatura.Dano, bossCriatura.Defesa, bossCriatura.DisPersegue, bossCriatura.DisAtaque, bossCriatura.DisPatrulha, bossCriatura.Velocidade, bossCriatura.vidaTotal, bossCriatura.Coin);*/
             gameManager.temMorto = false;
         //print("Quantidade de inimigos: " + i);
         i = 0;
@@ -70,7 +75,7 @@ public class Mapa1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        VerificaSpawn(false);
         if (gameManager.temMorto == true || temNull==true)
         {
             tempo += Time.deltaTime;
@@ -106,7 +111,7 @@ public class Mapa1 : MonoBehaviour
         
         for(int i = 0; i< gameManager.inimigos.Length; i++)
         {
-            if (gameManager.inimigos[i] == null)
+            if (gameManager.inimigos[i] == null && VerificaSpawn(true)==true)
             {
                 temNull = true;
                 return;
@@ -151,5 +156,36 @@ public class Mapa1 : MonoBehaviour
             batScript.Parametros(batCriatura.Nome, batCriatura.Dano, batCriatura.Defesa, batCriatura.DisPersegue, batCriatura.DisAtaque, batCriatura.DisPatrulha, batCriatura.Velocidade, batCriatura.vidaTotal, batCriatura.Coin, i);
             gameManager.inimigos[posicao] = bat;
         }
+    }
+    public bool VerificaSpawn(bool ok)
+    {
+        float posSpawn;
+        float distanciaSpawn=50f;
+        
+        for (int i = 0; i < gameManager.spawns.Length ; i++)
+        {
+            posSpawn =  Vector2.Distance(posHero, gameManager.spawns[i]);
+            if (posSpawn <= distanciaSpawn && gameManager.inimigos[i]==null)
+            {
+                if (!ok)
+                {
+                    qtdSpawn++;
+                    RandomCreature(gameManager.spawns[i], i);
+                }
+                return true;
+            }
+            if (posSpawn > distanciaSpawn && gameManager.inimigos[i] != null)
+            {
+                if (!ok)
+                {
+                    qtdSpawn--;
+                    Destroy(gameManager.inimigos[i]);
+                    gameManager.inimigos[i] = null;
+                    //gameManager.inimigos[i].GetComponent<Inimigo>().TakeDemage(-1);
+                }
+                return false;
+            }
+        }
+        return false;
     }
 }

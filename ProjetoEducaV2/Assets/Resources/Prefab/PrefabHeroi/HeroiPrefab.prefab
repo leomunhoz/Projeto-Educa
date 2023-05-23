@@ -676,7 +676,8 @@ MonoBehaviour:
   isInteract: 0
   isDead: 0
   isDodging: 0
-  IMORTAL: 1
+  IMORTAL: 0
+  canButtun: 0
   hashS: -1621330533
   wallJumpDuration: 0.1
   wallJumpForce: {x: 200, y: 35}

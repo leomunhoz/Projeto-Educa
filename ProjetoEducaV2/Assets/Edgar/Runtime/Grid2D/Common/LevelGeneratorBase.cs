@@ -27,15 +27,18 @@ namespace Edgar.Unity
             {
                 seed = seedsGenerator.Next();
             }
-
+#if UNITY_EDITOR
             Debug.Log($"Random generator seed: {seed}");
+#endif
 
             return new Random(seed);
         }
 
         public virtual object Generate()
         {
+#if UNITY_EDITOR
             Debug.Log($"--- Generator started (Edgar v{AssetInfo.Version}) ---");
+#endif
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
