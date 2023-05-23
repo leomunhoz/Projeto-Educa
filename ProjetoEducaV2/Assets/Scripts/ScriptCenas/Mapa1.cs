@@ -13,19 +13,18 @@ public class Mapa1 : MonoBehaviour
     public GameObject goblinPrefab;
     public GameObject heroiPrefab;
     public GameObject bossPrefab;
+    [HideInInspector]
     public GameObject[] spawnPointInimigo;
-    public Inimigo inimigo;
     public Vector2 spawnPointHeroi;
     private int randomInt;
     private int i = 0;
     GameManager gameManager;
-    private float tempoDerespawn = 21f;//não pode ser menor que 20
+    private float tempoDerespawn = 60f;//não pode ser menor que 20
     private float tempo = 0f;
     public Vector2 posHero;
     private bool temNull=false;
     private Queue<int> posArray = new Queue<int>();
     private Queue<Vector2> local = new Queue<Vector2>();
-    public Object temp = null;
     public int qtdSpawn=0;
     void Awake()
     {
@@ -69,7 +68,7 @@ public class Mapa1 : MonoBehaviour
             gameManager.temMorto = false;
         //print("Quantidade de inimigos: " + i);
         i = 0;
-        //spawnPointInimigo = null;
+        spawnPointInimigo = null;
     }
 
     // Update is called once per frame
@@ -160,7 +159,7 @@ public class Mapa1 : MonoBehaviour
     public bool VerificaSpawn(bool ok)
     {
         float posSpawn;
-        float distanciaSpawn=50f;
+        float distanciaSpawn=35f;
         
         for (int i = 0; i < gameManager.spawns.Length ; i++)
         {
