@@ -44,21 +44,18 @@ public class PlayerOne : MonoBehaviour
     const string Idle = "Idle";
     const string Run = "Run";
     const string Jump = "Jump";
-    const string JumptoFall = "JumptoFall";
-    const string Fall = "Fall";
-    const string Attack = "Attack 1";
     const string WallSliding = "SlideWall";
     const string Down = "Down";
     const string Death = "Death";
     const string Climb = "Climb";
-    const string Hurt = "Hurt";
     const string Roll = "Roll";
+   
+   
+    
 
 
 
     #endregion
-
-
 
     public bool isGrounded;
     private bool isAttacking;
@@ -80,6 +77,8 @@ public class PlayerOne : MonoBehaviour
     public float wallJumpDuration;
     public Vector2 wallJumpForce;
     public bool wallJumping;
+
+
 
 
 
@@ -275,7 +274,7 @@ public class PlayerOne : MonoBehaviour
     }
     void Move()
     {
-        if (!isAttackingPressed && !isSkeyDownPress || !platform.isPlatformDownPressed && isDead)
+        if (!isAttackingPressed && !isSkeyDownPress || !platform.isPlatformDownPressed && !isDead)
         {
             rb2d.velocity = new Vector2(direction.x * speed, Vertical);
         }
@@ -310,7 +309,7 @@ public class PlayerOne : MonoBehaviour
     }
     public void Dodge() 
     {
-        if (isRollingPressed && !isDodging && !isJumping && rb2d.velocity.x != 0)
+        if (isRollingPressed && !isDodging && !isJumping && rb2d.velocity.x != 0 && !isDead)
         {
             isDodging = true;
             IMORTAL = true;
@@ -491,31 +490,36 @@ public class PlayerOne : MonoBehaviour
     }
     public void Climbing()
     {
-        // float vertical = Input.GetAxis("Vertical");
+       
        
         if (isChain && Mathf.Abs(direction.y) > 0)
         {
             isClimbing = true;
-            //print("isClimbing="+ isClimbing);
+           
         }
         if (isClimbing)
         {
-            if(direction.y > 0.55f)
+            if (direction.y > 0.55f) 
             {
                 rb2d.gravityScale = 0;
                 anim.speed = 1;
-                rb2d.velocity = new Vector2(0,direction.y * 5);
+                rb2d.velocity = new Vector2(0, direction.y * 5);
                 ChangeAnimState(Climb);
-                
             }
-            if (direction.y == 0)
+            else if (direction.y < -0.55f) 
             {
                 rb2d.gravityScale = 0;
-                rb2d.velocity = new Vector2(0, direction.y * 0);
-                anim.speed = 0;
+                anim.speed = 1;
+                rb2d.velocity = new Vector2(0, direction.y * 5);
                 ChangeAnimState(Climb);
             }
-           
+            else 
+            {
+                rb2d.gravityScale = 0;
+                anim.speed = 0;
+                rb2d.velocity = new Vector2(0, direction.y * 0);
+            }
+
 
         }
         else

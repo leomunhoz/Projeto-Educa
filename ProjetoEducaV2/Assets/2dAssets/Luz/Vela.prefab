@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5432969331937690795}
   m_Layer: 0
   m_Name: Vela
-  m_TagString: Untagged
+  m_TagString: Tocha
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
