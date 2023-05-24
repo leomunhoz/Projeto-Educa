@@ -177,15 +177,15 @@ public class PlayerOne : MonoBehaviour
                 StartCoroutine(SceneLoad());
             }
         }
-
+#if UNITY_EDITOR
         if (Keyboard.current.lKey.wasPressedThisFrame)
         {
 
             if (!IMORTAL)
             {
-#if UNITY_EDITOR
+
                 print("Imortal");
-#endif
+
                 IMORTAL = true;
             }
             else
@@ -193,7 +193,7 @@ public class PlayerOne : MonoBehaviour
                 print("Mortal");
                 IMORTAL = false;
             }
-                
+#endif                
         }
             
 
