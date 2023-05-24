@@ -35,6 +35,7 @@ public class Inimigo : MonoBehaviour
     public bool isDead = false;
     public bool emAtaque = false;
     public bool parede = false;
+    public bool isNockback = false;
 
 
     public int hashG = "Goblin".GetHashCode();
@@ -45,6 +46,8 @@ public class Inimigo : MonoBehaviour
     public float disChao;
     public float currentHealth;
     public float tempoDeMorte = 20f;
+    public float nockbackForce = 10f;
+    public float nockbackDuration = 0.5f;
     public float herovsInimigo;
     public float vidaTotal;//virá do construct
     public float disPersegue;//virá do construct
@@ -249,8 +252,13 @@ public class Inimigo : MonoBehaviour
         {
             currentHealth -= currentHealth;
         }
-            if (damage-defesa>0)
-                currentHealth = currentHealth - (damage - defesa);
+            if (damage - defesa > 0) 
+            {
+            currentHealth = currentHealth - (damage - defesa);
+            NockBack();
+            }
+                
+
             //AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Hurt");
             StartCoroutine(Flash());
             if (currentHealth <= 0)
@@ -459,5 +467,34 @@ public class Inimigo : MonoBehaviour
     public bool AtualizaInimigo(bool atualizado)
     {
         return true;
+    }
+
+    public void NockBack() 
+    {
+        if (!isNockback)
+        {
+            if (indoParaDireita)
+            {
+                isNockback = true;
+                //rd.velocity = Vector2.zero;
+                rd.AddForce(Vector2.right * nockbackForce, ForceMode2D.Impulse); ;
+                StartCoroutine(EndNockBack());
+            }
+            else
+            {
+                isNockback = true;
+               // rd.velocity = Vector2.zero;
+                rd.AddForce(Vector2.left * nockbackForce, ForceMode2D.Impulse); ;
+                StartCoroutine(EndNockBack());
+            }
+           
+        }
+    }
+
+    IEnumerator EndNockBack() 
+    {
+        yield return new WaitForSeconds(nockbackDuration);
+        isNockback = false;
+    
     }
 }
