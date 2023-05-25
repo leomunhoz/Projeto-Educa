@@ -46,7 +46,7 @@ public class Inimigo : MonoBehaviour
     public float disChao;
     public float currentHealth;
     public float tempoDeMorte = 20f;
-    public float nockbackForce = 10f;
+    public float nockbackForce = 50f;
     public float nockbackDuration = 0.5f;
     public float herovsInimigo;
     public float vidaTotal;//virá do construct
@@ -477,14 +477,16 @@ public class Inimigo : MonoBehaviour
             {
                 isNockback = true;
                 //rd.velocity = Vector2.zero;
-                rd.AddForce(Vector2.right * nockbackForce, ForceMode2D.Impulse); ;
+                //rd.AddForce(Vector2.left * nockbackForce, ForceMode2D.Impulse); ;
+                rd.velocity = Vector2.left * nockbackForce;
                 StartCoroutine(EndNockBack());
             }
             else
             {
                 isNockback = true;
-               // rd.velocity = Vector2.zero;
-                rd.AddForce(Vector2.left * nockbackForce, ForceMode2D.Impulse); ;
+                // rd.velocity = Vector2.zero;
+                //rd.AddForce(Vector2.right * nockbackForce, ForceMode2D.Impulse); ;
+                rd.velocity = Vector2.right * nockbackForce;
                 StartCoroutine(EndNockBack());
             }
            

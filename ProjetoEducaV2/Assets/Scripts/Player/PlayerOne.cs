@@ -570,7 +570,9 @@ public class PlayerOne : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(0);
+#if UNITY_EDITOR
         Debug.Log("Load");
+#endif
     }
 
    
