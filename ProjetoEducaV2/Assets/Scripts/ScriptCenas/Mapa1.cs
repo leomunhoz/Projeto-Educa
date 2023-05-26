@@ -9,6 +9,7 @@ public class Mapa1 : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject slimePrefab;
+    PlayerOne heroiScript;
     public GameObject batPrefab;
     public GameObject goblinPrefab;
     public GameObject heroiPrefab;
@@ -33,7 +34,8 @@ public class Mapa1 : MonoBehaviour
         GameObject heroi = Instantiate(heroiPrefab, spawnPointHeroi, Quaternion.identity);
         //GameObject heroi = Instantiate(heroiPrefab, new Vector2(56.01263f, 28.315f), Quaternion.identity);
         Criaturas.Heroi heroiCriatura = new Criaturas.Heroi();
-        PlayerOne heroiScript = heroi.GetComponent<PlayerOne>();
+        heroiScript = heroi.GetComponent<PlayerOne>();
+        heroiScript.rb2d.gravityScale = 0;
         heroiScript.Parametros(heroiCriatura.contMortos, heroiCriatura.Dano, heroiCriatura.vida, heroiCriatura.Defesa);
         player = GameObject.FindGameObjectWithTag("Player");
         posHero = new Vector2(player.transform.position.x, player.transform.position.y);
@@ -71,6 +73,10 @@ public class Mapa1 : MonoBehaviour
         spawnPointInimigo = null;
     }
 
+    private void Start()
+    {
+        heroiScript.rb2d.gravityScale = 0;
+    }
     // Update is called once per frame
     void Update()
     {

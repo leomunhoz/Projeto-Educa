@@ -1,13 +1,26 @@
 using UnityEngine;
 using UnityEngine.Purchasing;
 
+
 public class InAppPurchased : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   // public string environment = "production";
+
+    //async void Start()
+    //{
+    //    try
+    //    {
+    //        var options = new InitializationOptions()
+    //            .SetEnvironmentName(environment);
+
+    //        await UnityServices.InitializeAsync(options);
+    //    }
+    //    catch (Exception exception)
+    //    {
+    //        // An error occurred during initialization.
+    //    }
+    //}
 
     public void OnPurchaseCompled(Product product)
     {

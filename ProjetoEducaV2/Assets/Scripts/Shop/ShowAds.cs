@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class ShowAds : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -10,8 +10,12 @@ public class GameController : MonoBehaviour
         Invoke(nameof(ShowInterstitial), 0);
     }
 
-    void ShowInterstitial()
+ public  void ShowInterstitial()
     {
         FindObjectOfType<AdsManager>().ShowInterstitial();
+    }
+    public void ShowRewarded()
+    {
+        FindObjectOfType<AdsManager>().ShowRewarded();
     }
 }

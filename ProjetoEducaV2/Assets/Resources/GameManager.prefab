@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3264535093988018262}
   - component: {fileID: 3264535093988018261}
+  - component: {fileID: 8291398046375368697}
+  - component: {fileID: 5827936017493246186}
+  - component: {fileID: 6067243973991302879}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -161,8 +164,66 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   temMorto: 1
-  bossPrefab: {fileID: 0}
-  spawnPointHeroi: {x: 0, y: 0}
-  posHero: {x: 0, y: 0}
-  heroiPrefab: {fileID: 0}
-  player: {fileID: 0}
+--- !u!114 &8291398046375368697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3264535093988018260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518d5f445dfb0944ba91cb99cf7b84f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidInterstitialId: Interstitial_Android
+  _iOsInterstitialId: Interstitial_iOS
+  _androidRewardedId: Rewarded_Android
+  _iOsRewardedId: Rewarded_iOS
+  _androidGameId: 5278751
+  _iOSGameId: 5278750
+  _testMode: 0
+--- !u!114 &5827936017493246186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3264535093988018260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7dd963c1a8b427b96975fa211478a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  consumePurchase: 1
+  dontDestroyOnLoad: 0
+  onPurchaseComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6067243973991302879}
+        m_TargetAssemblyTypeName: InAppPurchased, Assembly-CSharp
+        m_MethodName: OnPurchaseCompled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPurchaseFailed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6067243973991302879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3264535093988018260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496e95923b078e04ba480c852b95ed00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

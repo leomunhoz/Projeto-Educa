@@ -478,7 +478,8 @@ public class Inimigo : MonoBehaviour
                 isNockback = true;
                 //rd.velocity = Vector2.zero;
                 //rd.AddForce(Vector2.left * nockbackForce, ForceMode2D.Impulse); ;
-                rd.velocity = Vector2.left * nockbackForce;
+                //Vector2.
+                rd.velocity = new Vector2(-2f * nockbackForce,0);
                 StartCoroutine(EndNockBack());
             }
             else
@@ -486,7 +487,7 @@ public class Inimigo : MonoBehaviour
                 isNockback = true;
                 // rd.velocity = Vector2.zero;
                 //rd.AddForce(Vector2.right * nockbackForce, ForceMode2D.Impulse); ;
-                rd.velocity = Vector2.right * nockbackForce;
+                rd.velocity = new Vector2(2f * nockbackForce, 0);
                 StartCoroutine(EndNockBack());
             }
            
