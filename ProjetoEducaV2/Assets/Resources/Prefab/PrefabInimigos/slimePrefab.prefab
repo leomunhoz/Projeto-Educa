@@ -169,6 +169,7 @@ MonoBehaviour:
   isDead: 0
   emAtaque: 0
   parede: 0
+  isNockback: 0
   hashG: -137741679
   hashB: 696030471
   posY: 0
@@ -177,6 +178,8 @@ MonoBehaviour:
   disChao: 0
   currentHealth: 0
   tempoDeMorte: 20
+  nockbackForce: 10
+  nockbackDuration: 0.5
   herovsInimigo: 0
   vidaTotal: 0
   disPersegue: 0

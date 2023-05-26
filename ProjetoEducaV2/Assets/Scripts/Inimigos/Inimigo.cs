@@ -46,8 +46,8 @@ public class Inimigo : MonoBehaviour
     public float disChao;
     public float currentHealth;
     public float tempoDeMorte = 20f;
-    public float nockbackForce = 50f;
-    public float nockbackDuration = 0.5f;
+   [SerializeField] private float nockbackForce = 1.0f;
+   [SerializeField] private float nockbackDuration = 0.5f;
     public float herovsInimigo;
     public float vidaTotal;//virá do construct
     public float disPersegue;//virá do construct
@@ -254,8 +254,13 @@ public class Inimigo : MonoBehaviour
         }
             if (damage - defesa > 0) 
             {
-            currentHealth = currentHealth - (damage - defesa);
-            NockBack();
+                currentHealth = currentHealth - (damage - defesa);
+            float randomValue = Random.Range(0f, 1f);
+                if (randomValue < 0.5f)
+                {
+                NockBack();
+                }
+           
             }
                 
 
@@ -263,9 +268,11 @@ public class Inimigo : MonoBehaviour
             StartCoroutine(Flash());
             if (currentHealth <= 0)
             {
+                 StopAllCoroutines();
+                 isDead = true;
+                 isNockback = false;
                 AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Death");
-                isDead = true;
-                rd.velocity = direcao * 0;
+                rd.velocity = Vector2.zero;
                 //currentHealth = 0;
                 this.enabled = false;
                 rd.gravityScale = 0;
@@ -469,29 +476,43 @@ public class Inimigo : MonoBehaviour
         return true;
     }
 
-    public void NockBack() 
+    public void NockBack()
     {
         if (!isNockback)
         {
+            isNockback = true;
+
+            Vector2 nockbackDirection = Vector2.zero;
             if (indoParaDireita)
-            {
-                isNockback = true;
-                //rd.velocity = Vector2.zero;
-                //rd.AddForce(Vector2.left * nockbackForce, ForceMode2D.Impulse); ;
-                //Vector2.
-                rd.velocity = new Vector2(-2f * nockbackForce,0);
-                StartCoroutine(EndNockBack());
-            }
+                nockbackDirection = new Vector2(-1f, 0f);
             else
-            {
-                isNockback = true;
-                // rd.velocity = Vector2.zero;
-                //rd.AddForce(Vector2.right * nockbackForce, ForceMode2D.Impulse); ;
-                rd.velocity = new Vector2(2f * nockbackForce, 0);
-                StartCoroutine(EndNockBack());
-            }
-           
+                nockbackDirection = new Vector2(1f, 0f);
+
+            Vector2 targetVelocity = nockbackDirection * nockbackForce;
+
+           StartCoroutine(ApplyNockback(targetVelocity));
         }
+    }
+
+    private IEnumerator ApplyNockback(Vector2 targetVelocity)
+    {
+        float elapsedTime = 0f;
+        float accelerationTime = 0.2f; 
+        Vector2 initialVelocity = rd.velocity;
+        Vector2 currentVelocity = initialVelocity;
+
+        while (elapsedTime < accelerationTime)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / accelerationTime);
+            currentVelocity = Vector2.Lerp(initialVelocity, targetVelocity, t);
+            rd.velocity = currentVelocity;
+
+            yield return null;
+        }
+
+        rd.velocity = targetVelocity; 
+        StartCoroutine(EndNockBack());
     }
 
     IEnumerator EndNockBack() 
