@@ -25,6 +25,7 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private float attackRange = 0.1f;
     [SerializeField] private float dodgeForce=5f;
     [SerializeField] private float dodgeDuration=0.5f;
+    [SerializeField] private int TotalPotion;
     [SerializeField] private int combo;
     public int currentHealth;
     public bool isChain;
@@ -32,7 +33,9 @@ public class PlayerOne : MonoBehaviour
 
 
     public Vector2 direction;
-
+    public GameObject[] pocoes;
+    public GameObject interactionButton;
+    public GameObject healingButton;
 
 
     private string currantState;
@@ -67,6 +70,7 @@ public class PlayerOne : MonoBehaviour
     private bool isJumping;
     private bool isWallSliding;
     public bool isInteract;
+    public bool isHealing;
     public bool isDead;
     public bool isDodging = false;
     [HideInInspector]
@@ -91,7 +95,7 @@ public class PlayerOne : MonoBehaviour
     [SerializeField] private LayerMask WallLayer;
     [SerializeField] private LayerMask GroundLayer;
     [SerializeField] private LayerMask EnemyLayers;
-    private LayerMask SpearLayer;
+    
 
 
 
@@ -129,7 +133,15 @@ public class PlayerOne : MonoBehaviour
         platform = GetComponent<PlayerOneWayPlatform>();
         healthBar = FindObjectOfType<HealthBar>();  
         PlayerVida = Slider.FindObjectOfType<Slider>();
+        pocoes = GameObject.FindGameObjectsWithTag("Healing");
+        interactionButton = GameObject.Find("Interaction");
+        healingButton = GameObject.Find("HealLife");
         healthBar.MaxHealth(vida);
+        TotalPotion = pocoes.Length;
+        if (healingButton.activeSelf)
+        {
+            interactionButton.SetActive(false);
+        }
         if (IMORTAL)
             IMORTAL = false;
        
@@ -151,6 +163,7 @@ public class PlayerOne : MonoBehaviour
         
         
         
+        
 
 
     }
@@ -162,6 +175,8 @@ public class PlayerOne : MonoBehaviour
         isRollingPressed = Gamepad.current.buttonEast.isPressed;
         isSkeyDownPress = Keyboard.current.sKey.isPressed;
         isInteract = Gamepad.current.buttonWest.wasPressedThisFrame;
+        isHealing = Gamepad.current.buttonWest.wasPressedThisFrame;
+
 
         //isMousePress = Mouse.current.leftButton.isPressed;
         wallJump();
@@ -169,6 +184,8 @@ public class PlayerOne : MonoBehaviour
         DownPlat();
         ParemetroDeAnim();
         Climbing();
+        HealingLife();
+
 
         if (canButtun)
         {
@@ -307,6 +324,27 @@ public class PlayerOne : MonoBehaviour
 
 
     }
+    public void HealingLife()
+    {
+        if (isHealing && currentHealth < 100)
+        {
+            if (TotalPotion != 0)
+            {
+                currentHealth = currentHealth + 25;
+                healthBar.SetHealth(currentHealth);
+                TotalPotion--;
+                pocoes[TotalPotion].gameObject.SetActive(false);
+            }
+            else
+            {
+                currentHealth += 0;
+            }
+            
+        }
+        
+
+    }
+
     public void Dodge() 
     {
         if (isRollingPressed && !isDodging && !isJumping && rb2d.velocity.x != 0 && !isDead)
@@ -547,6 +585,8 @@ public class PlayerOne : MonoBehaviour
         {
 
             canButtun = true;
+            interactionButton.SetActive(true);
+            healingButton.SetActive(false);
            
         }
     }
@@ -563,7 +603,8 @@ public class PlayerOne : MonoBehaviour
         {
 
             canButtun = false;
-
+            interactionButton.SetActive(false);
+            healingButton.SetActive(true);
         }
     }
     IEnumerator SceneLoad() 
