@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public string[] lines;
     public float typingSpeed = 0.05f;
     public int index;
+   // public bool CanInteractAgain;
     public PlayerOne player;
 
     //private int currentSentenceIndex;

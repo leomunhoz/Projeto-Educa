@@ -31,8 +31,8 @@ public class Mapa1 : MonoBehaviour
     {
         heroiPrefab = Resources.Load<GameObject>("Prefab/PrefabHeroi/HeroiPrefab");
         spawnPointHeroi = GameObject.Find("SpawnPointHeroi").transform.position;
-        //GameObject heroi = Instantiate(heroiPrefab, spawnPointHeroi, Quaternion.identity);
-        GameObject heroi = Instantiate(heroiPrefab, new Vector2(56.01263f, 28.315f), Quaternion.identity);
+        GameObject heroi = Instantiate(heroiPrefab, spawnPointHeroi, Quaternion.identity);
+       // GameObject heroi = Instantiate(heroiPrefab, new Vector2(56.01263f, 28.315f), Quaternion.identity);
         Criaturas.Heroi heroiCriatura = new Criaturas.Heroi();
         heroiScript = heroi.GetComponent<PlayerOne>();
         heroiScript.rb2d.gravityScale = 0;
@@ -46,6 +46,7 @@ public class Mapa1 : MonoBehaviour
          {
             gameManager.spawns[i]= spawnPointInimigo[i].transform.position;
             i++;
+           
          }
         i = 0;
        /* foreach (Vector2 gasta in gameManager.spawns)

@@ -6,6 +6,8 @@ public class NPCInteraction : MonoBehaviour
 {
     //public GameObject interactionButton;
     public GameObject dialogueBox;
+    public GameObject interactionButton;
+    public GameObject healingButton;
     public DialogueManager dialogueManager;
     public PlayerOne playerOne;
     private bool canInteract;
@@ -32,7 +34,8 @@ public class NPCInteraction : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //interactionButton.SetActive(true);
+            interactionButton.SetActive(true);
+            healingButton.SetActive(false);
             canInteract = true;
         }
     }
@@ -41,7 +44,8 @@ public class NPCInteraction : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //interactionButton.SetActive(false);
+            interactionButton.SetActive(false);
+            healingButton.SetActive(true);
             dialogueBox.SetActive(false);
             canInteract = false;
         }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public string cena;
+    public int cena;
     private void Awake()
     {
         GameManager tem = GameManager.Instance;
@@ -13,14 +13,14 @@ public class SceneLoader : MonoBehaviour
 
 
 
-    public void loadscene(string cena)
+    public void loadscene(int cena)
     {
-        SceneManager.LoadScene(cena);
+        GameManager.Instance.LoadIndexLvl(cena);
     }
 
-    public void RestartScene(string cena)
+    public void RestartScene(int cena)
     {
-        SceneManager.LoadScene(cena);
+        GameManager.Instance.LoadIndexLvl(cena);
     }
 
     public void Exit()
