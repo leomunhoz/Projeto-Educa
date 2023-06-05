@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public string[] lines;
     public float typingSpeed = 0.05f;
     public int index;
+    public PlayerOne player;
 
     //private int currentSentenceIndex;
     public bool isTyping;
@@ -20,7 +21,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        //playerOne = FindObjectOfType<PlayerOne>();
+        player = FindObjectOfType<PlayerOne>();
         dialogueText.text = string.Empty;
         dialogueStarted = false;
     }
@@ -28,18 +29,22 @@ public class DialogueManager : MonoBehaviour
     private void Update()
     {
         // Verifica se o jogador tocou brevemente na tela após interagir com o NPC
-        if (dialogueStarted && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (dialogueStarted /*&& Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began*/)
         {
-            if (isTyping)
+            if(player.isInteract) 
             {
-                // Se estiver digitando, exibe o texto completo
-                CompleteSentence();
+                if (isTyping)
+                {
+                    // Se estiver digitando, exibe o texto completo
+                    CompleteSentence();
+                }
+                else if (isComplete)
+                {
+                    // Se o texto estiver completo, avança para a próxima sentença
+                    DisplayNextSentence();
+                }
             }
-            else if (isComplete)
-            {
-                // Se o texto estiver completo, avança para a próxima sentença
-                DisplayNextSentence();
-            }
+            
         }
     }
 
