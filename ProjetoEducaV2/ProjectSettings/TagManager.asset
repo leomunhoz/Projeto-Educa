@@ -15,7 +15,6 @@ TagManager:
   - Tocha
   - Door
   - Interacao
-  - Healing
   layers:
   - Default
   - TransparentFX
