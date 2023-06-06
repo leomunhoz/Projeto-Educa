@@ -16,8 +16,8 @@ public class GameManager : IPresistentSingleton<GameManager>
     [Header("LoadScene")]
     public float transitionTime = 1f;
     public int index;
-    public Animator animator;
-    public Canvas canvas;
+    //public Animator animator;
+    //public Canvas canvas;
     [Header("Audio")]
     public Sound[] musicSounds, sfxSounds;
     public AudioClip[] footStep;
@@ -39,7 +39,7 @@ public class GameManager : IPresistentSingleton<GameManager>
     }
     IEnumerator LoadLevel(int index)
     {
-        animator.SetTrigger("Start");
+       // animator.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(index);
