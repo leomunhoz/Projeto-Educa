@@ -56,7 +56,7 @@ public class GameManager : IPresistentSingleton<GameManager>
         if (s == null)
         {
             Debug.Log("Musica não encontrada");
-            return;
+            
         }
         else
         {
@@ -70,7 +70,7 @@ public class GameManager : IPresistentSingleton<GameManager>
         if (s == null)
         {
             Debug.Log("Musica não encontrada");
-            return;
+            
         }
         else
         {

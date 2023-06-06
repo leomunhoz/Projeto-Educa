@@ -364,7 +364,11 @@ public class PlayerOne : MonoBehaviour
     {
         if (direction.y < -0.55 && isGrounded)
         {
-            ChangeAnimState(Down);
+            if (!isClimbing)
+            {
+                ChangeAnimState(Down);
+            }
+           
             speed = 0;
             if (direction.y < 0 && platform.isPlatformDownPressed || isSkeyDownPress)
             {
@@ -551,6 +555,12 @@ public class PlayerOne : MonoBehaviour
                 anim.speed = 1;
                 rb2d.velocity = new Vector2(0, direction.y * 5);
                 ChangeAnimState(Climb);
+                platform.isPlatformDownPressed = true;
+
+                if (platform.currentOneWayPlatform != null)
+                {
+                    platform.StartCoroutine(platform.DisableCollision(0.4f));
+                }
             }
             else 
             {
