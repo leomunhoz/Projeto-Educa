@@ -351,7 +351,7 @@ public class PlayerOne : MonoBehaviour
             IMORTAL = true;
             if (isDodging)
             {
-                GameManager.Instance.PlaySFX("Dodge");
+                GameManager.Instance.PlaySFX("Roll");
                 ChangeAnimState(Roll);
                 TakeDamage(0);
                 speed = 10;
@@ -507,8 +507,10 @@ public class PlayerOne : MonoBehaviour
     public void TakeDamage(int damage) 
     {
         if (!IMORTAL)
-         currentHealth = currentHealth -(damage - defesa);
-         GameManager.Instance.PlaySFX("Hurt");
+        {
+            GameManager.Instance.PlaySFX("Hurt");
+            currentHealth = currentHealth - (damage - defesa);
+        }
         //ChangeAnimState(Hurt);
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)

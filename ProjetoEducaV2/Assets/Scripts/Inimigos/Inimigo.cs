@@ -267,10 +267,10 @@ public class Inimigo : MonoBehaviour
             if (currentHealth <= 0)
             {
                  StopAllCoroutines();
-            GameManager.Instance.PlaySFX("Death");
                  isDead = true;
                  isNockback = false;
                 AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Death");
+                GameManager.Instance.PlaySFX("Death");
                 rd.velocity = Vector2.zero;
                 //currentHealth = 0;
                 this.enabled = false;

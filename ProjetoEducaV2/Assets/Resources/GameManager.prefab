@@ -424,8 +424,6 @@ MonoBehaviour:
   temMorto: 1
   transitionTime: 1
   index: 0
-  animator: {fileID: 0}
-  canvas: {fileID: 0}
   musicSounds:
   - nome: Crusader
     clip: {fileID: 8300000, guid: 7f7f97c054b9c1840845b43d6bab567a, type: 3}
@@ -434,7 +432,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 952f4e06b9fc14a4abd72725f0c66eb2, type: 3}
   - nome: Jump
     clip: {fileID: 8300000, guid: 5a18f2ef7db9f1943bedda13ff85ee89, type: 3}
-  - nome: Dodge
+  - nome: Roll
     clip: {fileID: 8300000, guid: cc0a09af0c0ff0e45843d8ebcf4bf2e0, type: 3}
   - nome: Hurt
     clip: {fileID: 8300000, guid: 4acaf282c31675042873963419dc479d, type: 3}
