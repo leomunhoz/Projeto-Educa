@@ -244,6 +244,7 @@ public class PlayerOne : MonoBehaviour
                     rb2d.velocity = new Vector2(direction.x * 0, Vertical);
                     if (Time.time > tempParaProximoAtaque)
                     {
+                        GameManager.Instance.PlaySFX("Attack");
                         anim.Play(Animcombo[animAtual].name);
                         tempParaProximoAtaque = Time.time + tempoMax;
                         animAtual++;

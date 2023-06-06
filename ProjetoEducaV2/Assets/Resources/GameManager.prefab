@@ -431,7 +431,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7f7f97c054b9c1840845b43d6bab567a, type: 3}
   sfxSounds:
   - nome: Attack
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 952f4e06b9fc14a4abd72725f0c66eb2, type: 3}
   - nome: Jump
     clip: {fileID: 8300000, guid: 5a18f2ef7db9f1943bedda13ff85ee89, type: 3}
   - nome: Dodge
