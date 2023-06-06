@@ -126,7 +126,7 @@ public class PlayerOne : MonoBehaviour
 
     void Start()
     {
-        
+        GameManager.Instance.PlayMusic("Crusader");
         currentHealth = vida;
         axPulosExtras = pulosExtras;
         rb2d = GetComponent<Rigidbody2D>();
@@ -189,6 +189,7 @@ public class PlayerOne : MonoBehaviour
         {
             if (isInteract)
             {
+                GameManager.Instance.musicSource.Stop();
                 GameManager.Instance.LoadIndexLvl(0);
             }
         }
@@ -303,6 +304,7 @@ public class PlayerOne : MonoBehaviour
 
             if (!isJumping && isGrounded == true && !isWallSliding)
             {
+                GameManager.Instance.PlaySFX("Jump");
                 rb2d.velocity = Vector2.up * jumpForce;
             }
             else if (isJumping && isGrounded == false && axPulosExtras > 0 && !isWallSliding)
@@ -348,7 +350,7 @@ public class PlayerOne : MonoBehaviour
             IMORTAL = true;
             if (isDodging)
             {
-               
+                GameManager.Instance.PlaySFX("Dodge");
                 ChangeAnimState(Roll);
                 TakeDamage(0);
                 speed = 10;
@@ -369,7 +371,7 @@ public class PlayerOne : MonoBehaviour
 
                 if (platform.currentOneWayPlatform != null)
                 {
-                    platform.StartCoroutine(platform.DisableCollision());
+                    platform.StartCoroutine(platform.DisableCollision(0.4f));
                 }
             }
         }
@@ -500,7 +502,8 @@ public class PlayerOne : MonoBehaviour
     public void TakeDamage(int damage) 
     {
         if (!IMORTAL)
-            currentHealth = currentHealth -(damage - defesa);
+         currentHealth = currentHealth -(damage - defesa);
+         GameManager.Instance.PlaySFX("Hurt");
         //ChangeAnimState(Hurt);
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
@@ -508,11 +511,13 @@ public class PlayerOne : MonoBehaviour
             isDead = true;
             if (isDead)
             {
+                GameManager.Instance.PlaySFX("Death");
                 ChangeAnimState(Death);
                 speed = 0;
                 jumpForce = 0;
                 rb2d.gravityScale = 0;
                 rb2d.velocity = Vector2.zero;
+                GameManager.Instance.musicSource.Stop();
                 GameManager.Instance.LoadIndexLvl(0);
                 
                

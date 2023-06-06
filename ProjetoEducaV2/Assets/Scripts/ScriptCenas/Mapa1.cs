@@ -77,6 +77,7 @@ public class Mapa1 : MonoBehaviour
     private void Start()
     {
         heroiScript.rb2d.gravityScale = 0;
+       
     }
     // Update is called once per frame
     void Update()

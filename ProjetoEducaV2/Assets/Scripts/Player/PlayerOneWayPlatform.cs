@@ -40,16 +40,16 @@ public class PlayerOneWayPlatform : MonoBehaviour
     }
 
     
-    public IEnumerator DisableCollision() 
+    public IEnumerator DisableCollision(float DiableColliderTime) 
     {
         if (isPlatformDownPressed )
         {
             CompositeCollider2D platformCollidier = currentOneWayPlatform.GetComponent<CompositeCollider2D>();
-            //Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier);
-            platformCollidier.isTrigger = true;
-            yield return new WaitForSeconds(0.5f);
-            platformCollidier.isTrigger = false;
-            //Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier, false);
+            Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier);
+           // platformCollidier.isTrigger = true;
+            yield return new WaitForSeconds(DiableColliderTime);
+           // platformCollidier.isTrigger = false;
+            Physics2D.IgnoreCollision(capsuleCollider2D, platformCollidier, false);
         }
         
     }

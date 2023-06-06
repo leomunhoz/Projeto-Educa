@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 
 public class GameManager : IPresistentSingleton<GameManager>
@@ -12,12 +13,15 @@ public class GameManager : IPresistentSingleton<GameManager>
     public Vector2[] spawns; //= new Vector2[57];
     public bool temMorto=true;
 
-    ////LoadLevelTransition/////
+    [Header("LoadScene")]
     public float transitionTime = 1f;
     public int index;
     public Animator animator;
     public Canvas canvas;
-
+    [Header("Audio")]
+    public Sound[] musicSounds, sfxSounds;
+    public AudioClip[] footStep;
+    public AudioSource musicSource, sfxSource;
 
     public void LoadNextLevel() 
     {
@@ -29,6 +33,10 @@ public class GameManager : IPresistentSingleton<GameManager>
         
         StartCoroutine(LoadLevel(index));
     }
+    public void Exit() 
+    {
+        Application.Quit();
+    }
     IEnumerator LoadLevel(int index)
     {
         animator.SetTrigger("Start");
@@ -39,5 +47,38 @@ public class GameManager : IPresistentSingleton<GameManager>
 
 
 
+    }
+    //////////////////////////////////////
+    //////////////////////////////////////
+    public void PlayMusic(string name) 
+    {
+        Sound s = Array.Find(musicSounds, x => x.nome == name);
+        if (s == null)
+        {
+            Debug.Log("Musica não encontrada");
+            return;
+        }
+        else
+        {
+            musicSource.clip = s.clip;
+            musicSource.Play();
+        }
+    }
+    public void PlaySFX(string name) 
+    {
+        Sound s = Array.Find(sfxSounds, x => x.nome == name);
+        if (s == null)
+        {
+            Debug.Log("Musica não encontrada");
+            return;
+        }
+        else
+        {
+            sfxSource.PlayOneShot(s.clip);
+        }
+    }
+    public void PlayFootStep() 
+    {
+        sfxSource.PlayOneShot(footStep[UnityEngine.Random.Range(0, footStep.Length)]);
     }
 }

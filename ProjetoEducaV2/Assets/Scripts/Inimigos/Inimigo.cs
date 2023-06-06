@@ -255,11 +255,9 @@ public class Inimigo : MonoBehaviour
             if (damage - defesa > 0) 
             {
                 currentHealth = currentHealth - (damage - defesa);
-            float randomValue = Random.Range(0f, 1f);
-                if (randomValue < 0.5f)
-                {
+                GameManager.Instance.PlaySFX("Hurt");
                 NockBack();
-                }
+                
            
             }
                 
@@ -269,6 +267,7 @@ public class Inimigo : MonoBehaviour
             if (currentHealth <= 0)
             {
                  StopAllCoroutines();
+            GameManager.Instance.PlaySFX("Death");
                  isDead = true;
                  isNockback = false;
                 AnimaInimigo.ChangeAnimState(GetComponent<Animator>(), "Death");
