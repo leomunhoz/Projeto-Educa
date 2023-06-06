@@ -506,7 +506,7 @@ public class PlayerOne : MonoBehaviour
   
     public void TakeDamage(int damage) 
     {
-        if (!IMORTAL)
+        if (!IMORTAL && !isDead)
         {
             GameManager.Instance.PlaySFX("Hurt");
             currentHealth = currentHealth - (damage - defesa);

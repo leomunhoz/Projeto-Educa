@@ -23,6 +23,7 @@ public class GameManager : IPresistentSingleton<GameManager>
     public AudioClip[] footStep;
     public AudioSource musicSource, sfxSource;
 
+    
     public void LoadNextLevel() 
     {
        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
@@ -48,8 +49,7 @@ public class GameManager : IPresistentSingleton<GameManager>
 
 
     }
-    //////////////////////////////////////
-    //////////////////////////////////////
+  
     public void PlayMusic(string name) 
     {
         Sound s = Array.Find(musicSounds, x => x.nome == name);
