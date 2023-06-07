@@ -46,7 +46,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -426,18 +426,22 @@ MonoBehaviour:
   index: 0
   musicSounds:
   - nome: Crusader
-    clip: {fileID: 8300000, guid: 7f7f97c054b9c1840845b43d6bab567a, type: 3}
+    clip: {fileID: 8300000, guid: 5c572a9aed5fb6343a582e6ab3eb04ce, type: 3}
+  - nome: Menu
+    clip: {fileID: 8300000, guid: 96a0ffb2a678da744b0689301d5c44c1, type: 3}
   sfxSounds:
   - nome: Attack
     clip: {fileID: 8300000, guid: 952f4e06b9fc14a4abd72725f0c66eb2, type: 3}
   - nome: Jump
-    clip: {fileID: 8300000, guid: 5a18f2ef7db9f1943bedda13ff85ee89, type: 3}
+    clip: {fileID: 8300000, guid: 1d143aa6ce3578f47a92ea3859d9b578, type: 3}
   - nome: Roll
     clip: {fileID: 8300000, guid: cc0a09af0c0ff0e45843d8ebcf4bf2e0, type: 3}
   - nome: Hurt
     clip: {fileID: 8300000, guid: 4acaf282c31675042873963419dc479d, type: 3}
   - nome: Death
     clip: {fileID: 8300000, guid: 628c4205ac542644b9286a339010668f, type: 3}
+  - nome: Healing
+    clip: {fileID: 8300000, guid: 0428cdadb0116034ba81d7ee919f825d, type: 3}
   footStep:
   - {fileID: 8300000, guid: 1a631ada4ecd9cf49a88b135aa70c396, type: 3}
   - {fileID: 8300000, guid: ee00faf8b8432ff40a6e008c84d5ae59, type: 3}

@@ -9,10 +9,7 @@ public class MenuAudio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            GameManager.Instance.PlayMusic("Menu");
-        }
+        
        
     }
 

@@ -9,10 +9,10 @@ public class SceneLoader: MonoBehaviour
 
     public void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            GameManager.Instance.PlayMusic("Menu");
-        }
+        GameManager.Instance.PlayMusic("Menu");
+# if UNITY_EDITOR
+        Debug.Log("MenuIniciado");
+#endif
     }
 
     public void loadscene(int cena)

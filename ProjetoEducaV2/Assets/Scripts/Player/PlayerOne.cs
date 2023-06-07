@@ -33,6 +33,7 @@ public class PlayerOne : MonoBehaviour
 
 
     public Vector2 direction;
+    private Vector3 esq, dir;
     public GameObject InteractionButton;
     public GameObject HealingButton;
     public GameObject[] potion;
@@ -127,6 +128,9 @@ public class PlayerOne : MonoBehaviour
     void Start()
     {
         GameManager.Instance.PlayMusic("Crusader");
+        dir = transform.localScale;
+        esq = transform.localScale;
+        esq.x = esq.x * -1;
         currentHealth = vida;
         axPulosExtras = pulosExtras;
         rb2d = GetComponent<Rigidbody2D>();
@@ -221,22 +225,31 @@ public class PlayerOne : MonoBehaviour
 
     public void Flip()
     {
-
-        if (isFacingRigth && Horizontal < 0 || !isFacingRigth && Horizontal > 0)
+        if (direction.x > 0)
         {
-            isFacingRigth = !isFacingRigth;
-            Vector3 LocalScale = transform.localScale;
-            LocalScale.x *= -1;
-            transform.localScale = LocalScale;
-
+            transform.localScale = dir;
         }
+        else if (direction.x < 0)
+        {
+            transform.localScale = esq;
+        }
+       
+
+        //if (isFacingRigth && Horizontal < 0 || !isFacingRigth && Horizontal > 0)
+        //{
+        //    isFacingRigth = !isFacingRigth;
+        //    Vector3 LocalScale = transform.localScale;
+        //    LocalScale.x *= -1;
+        //    transform.localScale = LocalScale;
+
+        //}
     }
     public void attack()
     {
-        if (isAttackingPressed || isMousePress && !isDead)
+        if (isAttackingPressed || isMousePress)
         {
 
-            if (!isAttacking)
+            if (!isAttacking && !isDead)
             {
                 isAttacking = true;
                 if (isGrounded)
@@ -332,6 +345,7 @@ public class PlayerOne : MonoBehaviour
             if (isHealing && totalPotion != 0)
             {
                 currentHealth = currentHealth + 25;
+                GameManager.Instance.PlaySFX("Healing");
                 healthBar.SetHealth(currentHealth);
                 totalPotion--;
                 potion[totalPotion].gameObject.SetActive(false);
@@ -519,6 +533,7 @@ public class PlayerOne : MonoBehaviour
             if (isDead)
             {
                 GameManager.Instance.PlaySFX("Death");
+                GameManager.Instance.sfxSource.Stop();
                 ChangeAnimState(Death);
                 speed = 0;
                 jumpForce = 0;
