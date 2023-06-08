@@ -14,10 +14,10 @@ public class HideVipClub : CheckPurchase
     // Update is called once per frame
     public override void UpdatePurchaseUI()
     {
-        if (PlayerPrefs.GetInt("VIPCLUB") == 1)
+        if (PlayerPrefs.GetInt("VipClub") == 1)
         {
            // button.SetActive(true);
-            //gameObject.SetActive(false);
+            gameObject.SetActive(false);
             
         }
     }

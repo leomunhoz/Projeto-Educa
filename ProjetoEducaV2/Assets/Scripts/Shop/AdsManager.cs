@@ -15,7 +15,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnity
 
     [SerializeField] string _androidGameId;
     [SerializeField] string _iOSGameId;
-    [SerializeField] bool _testMode = true;
+    [SerializeField] bool _testMode = false;
     private string _gameId;
 
     void Awake()
@@ -54,12 +54,16 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnity
     public void ShowInterstitial()
     {
 
-        if (PlayerPrefs.GetInt("VIPCLUB") == 1) return;
-            if (PlayerPrefs.GetInt("VIPCLUB") == 0)
+        
+            if (PlayerPrefs.GetInt("VipClub") == 0) 
         {
             ShowAd(_interstitialId);
         }
-       
+        else
+        {
+            //Debug.Log("Usuario comprou VIP CLUB, nao vamos mostrar interstitial");
+        }
+
     }
 
     //-----------------------------------
